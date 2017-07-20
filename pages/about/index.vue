@@ -145,8 +145,24 @@ export default {
   max-width: calc(20% - 14px);
 }
 
+@media (min-width: 450px) {
+  .technology-row {
+    padding-left: calc(100% - 75vw);
+    padding-right: calc(100% - 75vw);
+  }
+}
+
+@media (min-width: 1000px) {
+  .technology-row {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+
 .container {
   padding-bottom: 65px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .content__second-heading {

@@ -1,34 +1,38 @@
 <template>
   <div class="container">
     <div class="header" style="text-align: center">
-      <h1>WEBDEV STORIES</h1>
+      <h1 v-text="title"></h1>
     </div>
     <div class="banner">
-      <h2>Hey I am Kevin</h2>
-      <h3>I am a Fullstack Developer</h3>
-      <h3>Think twice - code once</h3>
+      <h2>Hey I am {{author}}</h2>
+      <h3>I am a {{jobTitle}}</h3>
+      <h3 v-text="motto"></h3>
     </div>
     <div class="blogposts__heading">
       <div class="line__wrapper"></div>
       <h2>Recent Blogposts</h2>
     </div>
     <div class="blogposts__articles pure-g" style="padding-left: 24px; padding-right: 24px;">
-      <div class="pure-u-1-1 blogpost__article">
-        <div class="blogpost__article__image">
-          <img src="http://i.imgur.com/tS6vDB5.png" alt=""></img>
-        </div>
-        <div class="blogpost__article__content">
-          <h2>jQuery Selector Performance</h2>
-          <p>Are jQuery selectors a good idea and how can we improve performance. A good guide on how to reduce loading times inside of big JavaScript applications. With the help of the Chrome developer tools (dev tools) we will analyse on how to optimize jQuery selectors.</p>
+      <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
+        <div class="blogpost__article">
+          <div class="blogpost__article__image">
+            <img src="http://i.imgur.com/tS6vDB5.png" alt=""></img>
+          </div>
+          <div class="blogpost__article__content">
+            <h2>jQuery Selector Performance</h2>
+            <p>Are jQuery selectors a good idea and how can we improve performance. A good guide on how to reduce loading times inside of big JavaScript applications. With the help of the Chrome developer tools (dev tools) we will analyse on how to optimize jQuery selectors.</p>
+          </div>
         </div>
       </div>
-      <div class="pure-u-1-1 blogpost__article">
-        <div class="blogpost__article__image">
-          <img src="http://i.imgur.com/tS6vDB5.png" alt=""></img>
-        </div>
-        <div class="blogpost__article__content">
-          <h2>jQuery Selector Performance</h2>
-          <p>Are jQuery selectors a good idea and how can we improve performance. A good guide on how to reduce loading times inside of big JavaScript applications. With the help of the Chrome developer tools (dev tools) we will analyse on how to optimize jQuery selectors.</p>
+      <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
+        <div class="blogpost__article">
+          <div class="blogpost__article__image">
+            <img src="http://i.imgur.com/tS6vDB5.png" alt=""></img>
+          </div>
+          <div class="blogpost__article__content">
+            <h2>jQuery Selector Performance</h2>
+            <p>Are jQuery selectors a good idea and how can we improve performance. A good guide on how to reduce loading times inside of big JavaScript applications. With the help of the Chrome developer tools (dev tools) we will analyse on how to optimize jQuery selectors.</p>
+          </div>
         </div>
       </div>
       <div class="pure-u-1-1 blogpost__more">
@@ -42,7 +46,11 @@
   export default {
     data () {
       return {
-        online: true
+        online: true,
+        title: 'WEB DEV STORIES',
+        author: 'Kevin',
+        jobTitle: 'Full Stack Developer',
+        motto: 'Think twice - code once',
       }
     },
     mounted () {
@@ -67,8 +75,18 @@
 </script>
 
 <style scoped>
+
+@media (min-width: 768px) {
+  .blogposts__articles > div {
+    padding: 10px;
+  }
+}
+
+
 .container {
   padding-bottom: 75px;
+  max-width: 1000px;
+  margin:auto;
 }
 
 .blogpost__more {
@@ -133,6 +151,12 @@
   box-sizing: border-box;
 }
 
+@media (min-width: 768px) {
+  .header {
+    display: none;
+  }
+}
+
 h1 {
   font-weight: 300;
   font-size: 24px;
@@ -162,6 +186,14 @@ h3 {
   padding-bottom: 32px;
   background: #a1c4fd;
   background: linear-gradient(to right, #a1c4fd 0%,#c2e9fb 100%);
+  width: 100vw;
+}
+
+@media (min-width: 1000px) {
+  .banner {
+    margin-left: calc(50vw - (100vw - 1000px / 2));
+    padding-left: calc((100vw - 1000px) / 2 + 20px);
+  }
 }
 
 .banner h2 {
@@ -177,6 +209,12 @@ h3 {
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 8px;
   display: inline-block;
+}
+
+@media (min-width: 1000px) {
+  .blogposts__heading {
+    border-bottom: 1px solid transparent;
+  }
 }
 
 .blogposts__heading h2 {

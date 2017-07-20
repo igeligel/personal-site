@@ -1,9 +1,30 @@
 <template>
   <div>
+    <div class="navbar">
+      <div class="navbar__title" style="display: inline-block;">
+        <h1 style="display: inline-block;">WEB DEV STORIES</h1>
+      </div>
+      <div class="menu">
+        <ul style="margin-top: calc(0.67em + 10px);">
+          <li class="menu__item">
+            <router-link to="/">Home</router-link>
+          </li>
+          <li class="menu__item">
+            <router-link to="/blog">Blog</router-link>
+          </li>
+          <li class="menu__item">
+            <router-link to="/projects">Projects</router-link>
+          </li>
+          <li class="menu__item">
+          <router-link to="/about">About</router-link>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div>
       <nuxt/>
     </div>
-    <div class="menu">
+    <div class="mobile-menu">
       <div class="pure-g">
         <div class="pure-u-1-4" style="text-align: center; display: flex; height: 53px;">
           <router-link to="/" style="margin: auto;">
@@ -43,6 +64,95 @@
   </div>
 </template>
 
+<style scoped>
+.menu {
+  float: right;
+  height: 100%;
+}
+
+@media (max-width: 1030px) {
+  .menu {
+    margin-right: 30px;
+  }
+}
+
+.menu__item {
+  display: inline-block;
+  margin-right: 5px;
+  font-weight: 300;
+}
+
+.menu__item:last-child {
+  margin-right: 0px;
+}
+
+.menu__item > a {
+  color: #4096c4;
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.menu__item > a:link {
+  color: #4096c4;
+  text-decoration: none;
+}
+
+.menu__item > a:visited {
+  color: #4096c4;
+  text-decoration: none;
+}
+
+.menu__item > a:hover {
+  border: 1px solid #c2e9fb;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+  height: 78px;
+  width: 100%;
+  color: #4096c4;
+  max-width: 1000px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
+
+.navbar__title  {
+  padding-left: 20px;
+}
+
+.navbar__title > h1 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.mobile-menu {
+  position: fixed;
+  bottom: 0;
+  height: 53px;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-top: 2px solid #e9f7ff;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+</style>
+
+
 <style>
 html
 {
@@ -56,15 +166,6 @@ html
 {
   box-sizing: border-box;
   margin: 0;
-}
-
-.menu {
-  position: fixed;
-  bottom: 0;
-  height: 53px;
-  width: 100%;
-  background-color: #f9f9f9;
-  border-top: 2px solid #e9f7ff;
 }
 </style>
 

@@ -134,6 +134,12 @@
   display: inline-block;
 }
 
+@media (min-width: 1000px) {
+  .blogposts__heading {
+    border-bottom: 1px solid transparent;
+  }
+}
+
 .blogposts__heading h1 {
   font-weight: 400;
   color: #4096c4;

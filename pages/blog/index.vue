@@ -5,22 +5,26 @@
       <h2>Blogposts</h2>
     </div>
     <div class="blogposts__articles pure-g" style="padding-left: 24px; padding-right: 24px;">
-      <div class="pure-u-1-1 blogpost__article">
-        <div class="blogpost__article__image">
-          <img src="http://i.imgur.com/tS6vDB5.png" alt=""></img>
-        </div>
-        <div class="blogpost__article__content">
-          <h2>jQuery Selector Performance</h2>
-          <p>Are jQuery selectors a good idea and how can we improve performance. A good guide on how to reduce loading times inside of big JavaScript applications. With the help of the Chrome developer tools (dev tools) we will analyse on how to optimize jQuery selectors.</p>
+      <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
+        <div class="blogpost__article">
+          <div class="blogpost__article__image">
+            <img src="http://i.imgur.com/tS6vDB5.png" alt=""></img>
+          </div>
+          <div class="blogpost__article__content">
+            <h2>jQuery Selector Performance</h2>
+            <p>Are jQuery selectors a good idea and how can we improve performance. A good guide on how to reduce loading times inside of big JavaScript applications. With the help of the Chrome developer tools (dev tools) we will analyse on how to optimize jQuery selectors.</p>
+          </div>
         </div>
       </div>
-      <div class="pure-u-1-1 blogpost__article">
-        <div class="blogpost__article__image">
-          <img src="http://i.imgur.com/tS6vDB5.png" alt=""></img>
-        </div>
-        <div class="blogpost__article__content">
-          <h2>jQuery Selector Performance</h2>
-          <p>Are jQuery selectors a good idea and how can we improve performance. A good guide on how to reduce loading times inside of big JavaScript applications. With the help of the Chrome developer tools (dev tools) we will analyse on how to optimize jQuery selectors.</p>
+      <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
+        <div class="blogpost__article">
+          <div class="blogpost__article__image">
+            <img src="http://i.imgur.com/tS6vDB5.png" alt=""></img>
+          </div>
+          <div class="blogpost__article__content">
+            <h2>jQuery Selector Performance</h2>
+            <p>Are jQuery selectors a good idea and how can we improve performance. A good guide on how to reduce loading times inside of big JavaScript applications. With the help of the Chrome developer tools (dev tools) we will analyse on how to optimize jQuery selectors.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -56,14 +60,28 @@
 </script>
 
 <style scoped>
+@media (min-width: 768px) {
+  .blogposts__articles > div {
+    padding: 10px;
+  }
+}
+
 .container {
   padding-bottom: 75px;
+  max-width: 1000px;
+  margin: auto;
 }
 .blogposts__heading {
   padding-top: 24px;
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 8px;
   display: inline-block;
+}
+
+@media (min-width: 1000px) {
+  .blogposts__heading {
+    border-bottom: 1px solid transparent;
+  }
 }
 
 .blogposts__heading h2 {

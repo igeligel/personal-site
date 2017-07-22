@@ -5,35 +5,16 @@
       <h1>Projects</h1>
     </div>
     <div class="project__list pure-g">
-      <div class="project__summary pure-u-1-1">
-        <h2>Freelance Web Developer</h2>
-        <img src="http://i.imgur.com/5JsIdre.png"></img>
-        <ul>
-          <li>
-            Developed an eSport focussed site
-          </li>
-          <li>
-            Built with ASP.NET, jQuery, Bootstrap
-          </li>
-        </ul>
-        <div class="pure-u-1-1 blogpost__more">
-          <router-link to="/">See more</router-link>
+      <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
+        <div class="project__summary" style="position: relative;">
+          <img src="http://svgur.com/i/2M7.svg" style="width: 100%;"></img>
+          <img src="http://svgur.com/i/2Lm.svg" class="project__logo"></img>
         </div>
       </div>
-      <div class="project__divider pure-u-1-1"></div>
-      <div class="project__summary pure-u-1-1">
-        <h2>Skadisteam</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" style="height: 100px;"></img>
-        <ul>
-          <li>
-            Reverse engineered the steam web API
-          </li>
-          <li>
-            Built with .NET Standard, .NET Core
-          </li>
-        </ul>
-        <div class="pure-u-1-1 blogpost__more">
-          <router-link to="/">See more</router-link>
+      <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
+        <div class="project__summary" style="position: relative;">
+          <img src="http://svgur.com/i/2M7.svg" style="width: 100%;"></img>
+          <img src="http://svgur.com/i/2Lm.svg" class="project__logo"></img>
         </div>
       </div>
     </div>
@@ -69,6 +50,28 @@
 </script>
 
 <style scoped>
+.project__summary:hover .project__logo {
+  position: absolute;
+  width: 30%;
+  left: calc((100% - 30%) / 2);
+  top: 30%;
+}
+
+@media (min-width: 768px) {
+  .project__summary:hover {
+    transform: scale(1.08, 1.05);
+  }
+}
+
+
+.project__logo {
+  position: absolute;
+  width: 20%;
+  left: calc((100% - 20%) / 2);
+  top: 40%;
+  transition: all 0.3s ease;
+}
+
 .project__divider {
   width: 100%;
   border-top: 1px solid #dbdbdb;
@@ -77,6 +80,7 @@
 
 .project__summary {
   color: #706f6f;
+  transition: all 0.3s ease;
 }
 
 .project__summary img {
@@ -116,46 +120,11 @@
   padding-right: 24px;
 }
 
-.project__summary h2 {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.project__summary img {
-  width: 100%;
-}
-
-.project__summary ul {
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.project__summary li {
-  margin-top: 16px;
-  line-height: 14px;
-}
-.project__summary li::before {
-  content: "-";
-  text-indent: -20px;
-}
-
-.project__summary a {
-  color: #4096c4;
-  text-decoration: none;
-}
-
-.project__summary a:link {
-  color: #4096c4;
-  text-decoration: none;
-}
-
-.project__summary a:visited {
-  color: #4096c4;
-  text-decoration: none;
-}
-
 .container {
   padding-bottom: 75px;
+  max-width: 1000px;
+  margin: auto;
+  max-height: calc(100vh - 53px);
 }
 
 .blogposts__heading {

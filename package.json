@@ -5,7 +5,10 @@
   "author": "igeligel <kevinigeligeligel@gmail.com>",
   "private": true,
   "dependencies": {
+    "@nuxtjs/markdownit": "^1.1.0",
     "@nuxtjs/pwa": "latest",
+    "markdown-it-attrs": "^0.9.0",
+    "markdown-it-container": "^2.0.0",
     "nuxt": "latest"
   },
   "scripts": {

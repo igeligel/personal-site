@@ -31,12 +31,23 @@ module.exports = {
   ** Modules
   */
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/markdownit'
   ],
   css: [
     '~assets/css/pure-min.css',
     '~assets/css/grids-responsive-min.css',
-    '~assets/css/lato.css'
+    '~assets/css/lato.css',
+    '~assets/css/highlight-js.css'
   ],
-  plugins: []
+  plugins: [],
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    use: [
+      'markdown-it-container',
+      'markdown-it-attrs'
+    ]
+  }
 }

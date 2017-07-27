@@ -14,7 +14,7 @@
     </div>
     <div class="blogposts__articles pure-g" style="padding-left: 24px; padding-right: 24px;">
       <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1" v-bind:key="blogpost.title" v-for="blogpost in minimizedBlogposts">
-        <div class="blogpost__article">
+        <div class="blogpost__article" @click="redirect(blogpost)">
           <div class="blogpost__article__image">
             <img :src="blogpost.previewImage" :alt="blogpost.altTag"></img>
           </div>
@@ -61,7 +61,10 @@
     methods: {
       _toggleNetworkStatus ({ type }) {
         this.online = type === 'online'
-      }
+      },
+      redirect(blogpost) {
+        this.$router.push(blogpost.url);
+      },
     },
     destroyed () {
       window.removeEventListener('offline', this._toggleNetworkStatus)
@@ -107,6 +110,7 @@
 }
 
 .blogpost__article {
+  cursor: pointer;
   margin-top: 16px;
   border-radius: 4px;
   border: 1px solid #dbdbdb;

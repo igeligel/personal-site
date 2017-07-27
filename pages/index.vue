@@ -13,25 +13,14 @@
       <h2>Recent Blogposts</h2>
     </div>
     <div class="blogposts__articles pure-g" style="padding-left: 24px; padding-right: 24px;">
-      <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
+      <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1" v-bind:key="blogpost.title" v-for="blogpost in minimizedBlogposts">
         <div class="blogpost__article">
           <div class="blogpost__article__image">
-            <img src="http://i.imgur.com/tS6vDB5.png" alt=""></img>
+            <img :src="blogpost.previewImage" :alt="blogpost.altTag"></img>
           </div>
           <div class="blogpost__article__content">
-            <h2>jQuery Selector Performance</h2>
-            <p>Are jQuery selectors a good idea and how can we improve performance. A good guide on how to reduce loading times inside of big JavaScript applications. With the help of the Chrome developer tools (dev tools) we will analyse on how to optimize jQuery selectors.</p>
-          </div>
-        </div>
-      </div>
-      <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-        <div class="blogpost__article">
-          <div class="blogpost__article__image">
-            <img src="http://i.imgur.com/tS6vDB5.png" alt=""></img>
-          </div>
-          <div class="blogpost__article__content">
-            <h2>jQuery Selector Performance</h2>
-            <p>Are jQuery selectors a good idea and how can we improve performance. A good guide on how to reduce loading times inside of big JavaScript applications. With the help of the Chrome developer tools (dev tools) we will analyse on how to optimize jQuery selectors.</p>
+            <h2 v-text="blogpost.title"></h2>
+            <p v-text="blogpost.description"></p>
           </div>
         </div>
       </div>
@@ -43,6 +32,7 @@
 </template>
 
 <script>
+  import blogposts from '../content/blogposts';
   export default {
     data () {
       return {
@@ -51,7 +41,13 @@
         author: 'Kevin',
         jobTitle: 'Full Stack Developer',
         motto: 'Think twice - code once',
+        blogposts,
       }
+    },
+    computed: {
+      minimizedBlogposts: function getMinimizedBlogposts() {
+        return blogposts.slice(0, 3);
+      },
     },
     mounted () {
       if (!window.navigator) {
@@ -167,9 +163,7 @@ h1 {
 }
 
 h2 {
-
   font-weight: 300;
-  color: #706f6f;
   font-size: 24px;
 }
 

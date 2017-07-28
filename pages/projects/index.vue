@@ -14,8 +14,20 @@
         </div>
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
           <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject">
-            <img src="http://svgur.com/i/2M7.svg" style="width: 100%;"></img>
-            <img src="http://svgur.com/i/2Lm.svg" class="project__logo"></img>
+            <img src="~assets/svg/gradient-backgrounds/1.svg" style="width: 100%;"></img>
+            <img src="~assets/svg/gradient-backgrounds/vue-readme-logo.svg" class="project__logo"></img>
+          </div>
+        </div>
+        <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
+          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject">
+            <img src="~assets/svg/gradient-backgrounds/2.svg" style="width: 100%;"></img>
+            <img src="~assets/svg/gradient-backgrounds/backpack-login-logo.svg" class="project__logo"></img>
+          </div>
+        </div>
+        <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
+          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject">
+            <img src="~assets/svg/gradient-backgrounds/3.svg" style="width: 100%;"></img>
+            <img src="~assets/svg/gradient-backgrounds/teamfortressoutpost-api-logo.svg" class="project__logo"></img>
           </div>
         </div>
       </div>

@@ -8,26 +8,26 @@
       <div class="project__list pure-g">
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
           <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject">
-            <img src="http://svgur.com/i/2M7.svg" style="width: 100%;"></img>
-            <img src="http://svgur.com/i/2Lm.svg" class="project__logo"></img>
+            <img src="~assets/svg/gradient-backgrounds/terminal.svg" style="width: 100%;"></img>
+            <img src="~assets/svg/gradient-backgrounds/skadisteam-logo.svg" class="project__logo"></img>
           </div>
         </div>
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
           <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject">
             <img src="~assets/svg/gradient-backgrounds/1.svg" style="width: 100%;"></img>
-            <img src="~assets/svg/gradient-backgrounds/vue-readme-logo.svg" class="project__logo"></img>
+            <img src="~assets/svg/gradient-backgrounds/vue-readme-logo.svg" class="project__logo--center"></img>
           </div>
         </div>
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
           <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject">
             <img src="~assets/svg/gradient-backgrounds/2.svg" style="width: 100%;"></img>
-            <img src="~assets/svg/gradient-backgrounds/backpack-login-logo.svg" class="project__logo"></img>
+            <img src="~assets/svg/gradient-backgrounds/backpack-login-logo.svg" class="project__logo--center"></img>
           </div>
         </div>
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
           <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject">
             <img src="~assets/svg/gradient-backgrounds/3.svg" style="width: 100%;"></img>
-            <img src="~assets/svg/gradient-backgrounds/teamfortressoutpost-api-logo.svg" class="project__logo"></img>
+            <img src="~assets/svg/gradient-backgrounds/teamfortressoutpost-api-logo.svg" class="project__logo--center"></img>
           </div>
         </div>
       </div>
@@ -210,8 +210,19 @@ export default {
   top: 30%;
 }
 
+.project__summary:hover .project__logo--center {
+  position: absolute;
+  width: 30%;
+  left: calc((100% - 30%) / 2);
+  top: 20%;
+}
+
 @media (min-width: 768px) {
   .project__summary:hover {
+    transform: scale(1.08, 1.05);
+  }
+
+  .project__logo--center {
     transform: scale(1.08, 1.05);
   }
 }
@@ -222,6 +233,14 @@ export default {
   width: 20%;
   left: calc((100% - 20%) / 2);
   top: 40%;
+  transition: all 0.3s ease;
+}
+
+.project__logo--center {
+  position: absolute;
+  width: 20%;
+  left: calc((100% - 20%) / 2);
+  top: 30%;
   transition: all 0.3s ease;
 }
 

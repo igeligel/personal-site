@@ -7,25 +7,25 @@
       </div>
       <div class="project__list pure-g">
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject">
+          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject(projects.skadisteam)">
             <img src="~assets/svg/gradient-backgrounds/terminal.svg" style="width: 100%;"></img>
             <img src="~assets/svg/gradient-backgrounds/skadisteam-logo.svg" class="project__logo"></img>
           </div>
         </div>
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject">
+          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject(projects.vueReadme)">
             <img src="~assets/svg/gradient-backgrounds/1.svg" style="width: 100%;"></img>
             <img src="~assets/svg/gradient-backgrounds/vue-readme-logo.svg" class="project__logo--center"></img>
           </div>
         </div>
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject">
+          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject(projects.backpackLogin)">
             <img src="~assets/svg/gradient-backgrounds/2.svg" style="width: 100%;"></img>
             <img src="~assets/svg/gradient-backgrounds/backpack-login-logo.svg" class="project__logo--center"></img>
           </div>
         </div>
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject">
+          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject(projects.teamFortressOutpostApi)">
             <img src="~assets/svg/gradient-backgrounds/3.svg" style="width: 100%;"></img>
             <img src="~assets/svg/gradient-backgrounds/teamfortressoutpost-api-logo.svg" class="project__logo--center"></img>
           </div>
@@ -40,9 +40,8 @@
         <close-svg></close-svg>
       </div>
       <div class="project-content">
-        <h2 class="project-content__heading">skadisteam - a project to allow interacting with steamcommunity.com</h2>
-        <p>War klar dass die Hamburger ihre absolut mittelmäßige Stadt wieder auf die eins (abgesehen von offensichtlichen Scherzantworten (Siegen, Wuppertal, Berlin) votieren mussten.</p>
-        <p>Ich verstehe gar nicht, wie Hamburger immer darauf kommen, dass sie in der schönsten Stadt des Universums wohnen, wenn es nicht mal die schönste Stadt Deutschlands ist. Jedes mal, wenn es um irgendeine Stadteigenschaft geht kommt der Hamburger an und erzählt, dass das in Hamburg natürlich besser ist. Offensichtlich sogar bei den Straßenmagazinen. Diesen Städtewettbewerb, den die Hamburger überall sehen, scheinen auch nur Hamburger zu kennen. Wenn man in der Hamburger MOPO über den Wettbewerb zwischen Berlin und Hamburg liest, interessiert in Berlin sowas einfach keinen. Wenn jemand einen Spruch bringt wie "Home is where your heart is" und "Zuhause ist es einfach am schönsten", erkennt man den Hamburger daran, dass dieser erstmal erzählt, dass Hamburg schöner ist. Wieso? Keine Ahnung, Hamburg ist einfach geil, weils geil ist. Wenn die Hamburger nicht so unglaublich bescheuert auf ihre eigene Stadt abfahren würden und es nicht jedem bei jeder erdenkbaren Situation auf die Nase binden würden, wäre die Stadt ja ganz durchschnittlich. Aber so? Einfach nicht auszuhalten. Diese Selbstillusion kann ich mir eigentlich nur dadurch erklären, dass Hamburg einfach ein riesiger Kreiswichs ist. Natürlich schwärmt so manch einer von seiner Heimat, aber Hamburger übertreiben es einfach, indem sie zum Beispiel bei einer nüchternen Auflistung von Straßenmagazinen erzählen, dass ihr Straßenmagazin das einzig wahre wäre.</p>
+        <h2 class="project-content__heading" v-text="projectHeading"></h2>
+        <div v-html="projectDescription"></div>
       </div>
     </div>
   </div>
@@ -59,6 +58,26 @@ export default {
     return {
       online: true,
       showMain: true,
+      projects: {
+        skadisteam: {
+          heading: 'skadisteam',
+          description: '<p>Skadisteam is a .NET Standard project containing several C# class libraries which acts as a wrapper around the Steam Web API. They are designed in the background of the microservice oattern. Each package has Unit tests and is featured with continuous deployment.</p>',
+        },
+        vueReadme: {
+          heading: 'vue-readme',
+          description: '<p>Serverless vue.js application for creating project readmes in markdown. Easily create and manage your readme\'s of your GitHub repositories.</p>',
+        },
+        backpackLogin: {
+          heading: 'BackpackLogin',
+          description: '<p>A .NET Standard library to handle the login to Backpack.tf. Backpack.tf is a trading site for Team Fortress 2, Counter-Strike: Global Offensive, and Dota 2. Community item pricing, item trading and stats, and much more.</p>',
+        },
+        teamFortressOutpostApi: {
+          heading: 'TeamFortressOutpostApi',
+          description: '<p>An API wrapper for the TF2 Outpost platform. A platform to find great deals for your Team Fortress 2, Counter-Strike: Global Offensive and Dota 2 items with zero hassle.</p>',
+        },
+      },
+      projectHeading: '',
+      projectDescription: '',
     }
   },
   computed: {
@@ -88,7 +107,9 @@ export default {
     _toggleNetworkStatus ({ type }) {
       this.online = type === 'online'
     },
-    showProject() {
+    showProject(project) {
+      this.projectHeading = project.heading;
+      this.projectDescription = project.description;
       this.$refs.offContainer.style.display = 'block';
       this.showMain = false;
     },
@@ -146,14 +167,14 @@ export default {
   }
 }
 
-.project-content > p {
+.project-content > div {
   font-size: 16px;
   line-height: 28px;
   letter-spacing: -.004em;
 }
 
 @media (min-width: 700px) {
-  .project-content > p {
+  .project-content > div {
     font-size: 19px;
     line-height: 33px;
   }

@@ -32,45 +32,70 @@
 </template>
 
 <script>
-  import blogposts from '../content/blogposts';
-  export default {
-    data () {
-      return {
-        online: true,
-        title: 'WEB DEV STORIES',
-        author: 'Kevin',
-        jobTitle: 'Full Stack Developer',
-        motto: 'Think twice - code once',
-        blogposts,
-      }
-    },
-    computed: {
-      minimizedBlogposts: function getMinimizedBlogposts() {
-        return blogposts.slice(0, 3);
-      },
-    },
-    mounted () {
-      if (!window.navigator) {
-        this.online = false
-        return
-      }
-      this.online = Boolean(window.navigator.onLine)
-      window.addEventListener('offline', this._toggleNetworkStatus)
-      window.addEventListener('online', this._toggleNetworkStatus)
-    },
-    methods: {
-      _toggleNetworkStatus ({ type }) {
-        this.online = type === 'online'
-      },
-      redirect(blogpost) {
-        this.$router.push(blogpost.url);
-      },
-    },
-    destroyed () {
-      window.removeEventListener('offline', this._toggleNetworkStatus)
-      window.removeEventListener('online', this._toggleNetworkStatus)
+import blogposts from '../content/blogposts';
+export default {
+  data () {
+    return {
+      online: true,
+      title: 'WEB DEV STORIES',
+      author: 'Kevin',
+      jobTitle: 'Full Stack Developer',
+      motto: 'Think twice - code once',
+      blogposts,
     }
+  },
+  computed: {
+    minimizedBlogposts: function getMinimizedBlogposts() {
+      return blogposts.slice(0, 3);
+    },
+  },
+  head: {
+    title: 'Home | Web Dev Stories by Kevin Peters',
+    meta: [
+      { name: 'description', content: 'Web Dev Stories by Kevin Peters' },
+      { name: 'subject', content: 'Homepage of Kevin Peters' },
+      { name: 'abstract', content: 'Homepage of Kevin Peters, a web developer enthusiast from Berlin. He likes Vue.js and .NET.' },
+      { name: 'url', content: 'https://kevinpeters.net' },
+
+      { name: 'article:author', content: 'Kevin Peters' },
+      { name: 'og:url', content: 'https://kevinpeters.net' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:title', content: 'Home | Web Dev Stories by Kevin Peters' },
+      { name: 'og:image', content: '' },
+      { name: 'og:description', content: 'Homepage of Kevin Peters. Find cool blog posts about .NET and Vue.js' },
+
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: '@kevinpeters_' },
+      { name: 'twitter:creator', content: '@kevinpeters_' },
+      { name: 'twitter:url', content: 'https://kevinpeters.net' },
+      { name: 'twitter:title', content: 'Home | Web Dev Stories by Kevin Peters' },
+      { name: 'twitter:description', content: 'Homepage of Kevin Peters. Find cool blog posts about .NET and Vue.js' },
+      { name: 'twitter:image', content: '' },
+      { name: 'twitter:image:alt', content: '' }
+    ]
+  },
+  mounted () {
+    if (!window.navigator) {
+      this.online = false
+      return
+    }
+    this.online = Boolean(window.navigator.onLine)
+    window.addEventListener('offline', this._toggleNetworkStatus)
+    window.addEventListener('online', this._toggleNetworkStatus)
+  },
+  methods: {
+    _toggleNetworkStatus ({ type }) {
+      this.online = type === 'online'
+    },
+    redirect(blogpost) {
+      this.$router.push(blogpost.url);
+    },
+  },
+  destroyed () {
+    window.removeEventListener('offline', this._toggleNetworkStatus)
+    window.removeEventListener('online', this._toggleNetworkStatus)
   }
+}
 </script>
 
 <style scoped>

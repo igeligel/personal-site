@@ -80,6 +80,31 @@ export default {
       projectDescription: '',
     }
   },
+  head: {
+    title: 'Projects | Web Dev Stories by Kevin Peters',
+    meta: [
+      { name: 'description', content: 'Projects portfolio of Kevin Peters, a web developer specialized in .NET and Vue.js' },
+      { name: 'subject', content: 'Projects of Kevin Peters' },
+      { name: 'abstract', content: 'Projects of Kevin Peters, a web developer enthusiast from Berlin. This page lists all projects by him.' },
+      { name: 'url', content: 'https://kevinpeters.net/projects' },
+
+      { name: 'article:author', content: 'Kevin Peters' },
+      { name: 'og:url', content: 'https://kevinpeters.net/projects' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:title', content: 'Projects | Web Dev Stories by Kevin Peters' },
+      { name: 'og:image', content: '' },
+      { name: 'og:description', content: 'Projects portfolio of Kevin Peters, a web developer specialized in .NET and Vue.js' },
+
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: '@kevinpeters_' },
+      { name: 'twitter:creator', content: '@kevinpeters_' },
+      { name: 'twitter:url', content: 'https://kevinpeters.net' },
+      { name: 'twitter:title', content: 'Projects | Web Dev Stories by Kevin Peters' },
+      { name: 'twitter:description', content: 'Projects portfolio of Kevin Peters, a web developer specialized in .NET and Vue.js' },
+      { name: 'twitter:image', content: '' },
+      { name: 'twitter:image:alt', content: '' }
+    ]
+  },
   computed: {
     containerClassList: function getContainerClassList() {
       return {

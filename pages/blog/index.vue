@@ -21,50 +21,76 @@
 </template>
 
 <script>
-  import blogPosts from '../../content/blogposts';
-  export default {
-    computed: {
-      chunkedBlogPosts: function getChunkedBlogposts() {
-        return this.chunkArray(this.blogposts, 3);
-      }
-    },
-    data () {
-      return {
-        blogposts: blogPosts,
-        online: true
-      }
-    },
-    mounted () {
-      if (!window.navigator) {
-        this.online = false
-        return
-      }
-      this.online = Boolean(window.navigator.onLine)
-      window.addEventListener('offline', this._toggleNetworkStatus)
-      window.addEventListener('online', this._toggleNetworkStatus)
-    },
-    methods: {
-      _toggleNetworkStatus ({ type }) {
-        this.online = type === 'online'
-      },
-      chunkArray(arr, len) {
-        var chunks = [];
-        var i = 0;
-        var n = arr.length;
-        while (i < n) {
-          chunks.push(arr.slice(i, i += len));
-        }
-        return chunks;
-      },
-      redirect(blogpost) {
-        this.$router.push(blogpost.url);
-      },
-    },
-    destroyed () {
-      window.removeEventListener('offline', this._toggleNetworkStatus)
-      window.removeEventListener('online', this._toggleNetworkStatus)
+import blogPosts from '../../content/blogposts';
+export default {
+  computed: {
+    chunkedBlogPosts: function getChunkedBlogposts() {
+      return this.chunkArray(this.blogposts, 3);
     }
+  },
+  data () {
+    return {
+      blogposts: blogPosts,
+      online: true
+    }
+  },
+  head: {
+    title: '',
+    meta: [
+      { name: 'description', content: '' },
+      { name: 'subject', content: '' },
+      { name: 'abstract', content: '' },
+      { name: 'url', content: '' },
+
+      { name: 'og:url', content: '' },
+      { name: 'og:type', content: '' },
+      { name: 'og:title', content: '' },
+      { name: 'og:image', content: '' },
+      { name: 'og:description', content: '' },
+      { name: 'og:locale', content: '' },
+
+      { name: 'article:author', content: '' },
+      { name: 'twitter:card', content: '' },
+      { name: 'twitter:site', content: '' },
+      { name: 'twitter:creator', content: '' },
+      { name: 'twitter:url', content: '' },
+      { name: 'twitter:title', content: '' },
+      { name: 'twitter:description', content: '' },
+      { name: 'twitter:image', content: '' },
+      { name: 'twitter:image:alt', content: '' }
+    ]
+  },
+  mounted () {
+    if (!window.navigator) {
+      this.online = false
+      return
+    }
+    this.online = Boolean(window.navigator.onLine)
+    window.addEventListener('offline', this._toggleNetworkStatus)
+    window.addEventListener('online', this._toggleNetworkStatus)
+  },
+  methods: {
+    _toggleNetworkStatus ({ type }) {
+      this.online = type === 'online'
+    },
+    chunkArray(arr, len) {
+      var chunks = [];
+      var i = 0;
+      var n = arr.length;
+      while (i < n) {
+        chunks.push(arr.slice(i, i += len));
+      }
+      return chunks;
+    },
+    redirect(blogpost) {
+      this.$router.push(blogpost.url);
+    },
+  },
+  destroyed () {
+    window.removeEventListener('offline', this._toggleNetworkStatus)
+    window.removeEventListener('online', this._toggleNetworkStatus)
   }
+}
 </script>
 
 <style scoped>

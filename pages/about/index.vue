@@ -109,6 +109,32 @@ import WebpackSvg from '../../components/technology-icons/webpack';
 import YarnSvg from '../../components/technology-icons/yarn';
 
 export default {
+  head: {
+    title: '',
+    meta: [
+      { name: 'description', content: '' },
+      { name: 'subject', content: '' },
+      { name: 'abstract', content: '' },
+      { name: 'url', content: '' },
+
+      { name: 'og:url', content: '' },
+      { name: 'og:type', content: '' },
+      { name: 'og:title', content: '' },
+      { name: 'og:image', content: '' },
+      { name: 'og:description', content: '' },
+      { name: 'og:locale', content: '' },
+
+      { name: 'article:author', content: '' },
+      { name: 'twitter:card', content: '' },
+      { name: 'twitter:site', content: '' },
+      { name: 'twitter:creator', content: '' },
+      { name: 'twitter:url', content: '' },
+      { name: 'twitter:title', content: '' },
+      { name: 'twitter:description', content: '' },
+      { name: 'twitter:image', content: '' },
+      { name: 'twitter:image:alt', content: '' }
+    ]
+  },
   components: {
     'babel-svg': BabelSvg,
     'c-sharp-svg': CsharpSvg,

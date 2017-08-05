@@ -49,7 +49,7 @@ module.exports = {
     'start_url': '.',
     'display': 'standalone',
     'background_color': '#fff',
-    'description': 'A simply readable Hacker News app.',
+    'description': 'Homepage of the web developer Kevin Peters.',
     'related_applications': [{
       'platform': 'web'
     }]

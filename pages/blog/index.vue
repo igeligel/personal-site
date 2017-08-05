@@ -35,27 +35,26 @@ export default {
     }
   },
   head: {
-    title: '',
+    title: 'Blog | Web Dev Stories by Kevin Peters',
     meta: [
-      { name: 'description', content: '' },
-      { name: 'subject', content: '' },
-      { name: 'abstract', content: '' },
-      { name: 'url', content: '' },
+      { name: 'description', content: 'Blog articles by Kevin Peters. Interesting articles about Vue.js, .NET and the whole world of JavaScript.' },
+      { name: 'subject', content: 'Blog articles of Kevin Peters.' },
+      { name: 'abstract', content: 'Blog articles of Kevin Peters.' },
+      { name: 'url', content: 'https://kevinpeters.net/blog/' },
+      { name: 'article:author', content: 'Kevin Peters' },
 
-      { name: 'og:url', content: '' },
-      { name: 'og:type', content: '' },
-      { name: 'og:title', content: '' },
+      { name: 'og:url', content: 'https://kevinpeters.net/about/' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:title', content: 'Blog | Web Dev Stories by Kevin Peters' },
       { name: 'og:image', content: '' },
-      { name: 'og:description', content: '' },
-      { name: 'og:locale', content: '' },
+      { name: 'og:description', content: 'Blog articles by Kevin Peters. Interesting articles about Vue.js, .NET and the whole world of JavaScript.' },
 
-      { name: 'article:author', content: '' },
-      { name: 'twitter:card', content: '' },
-      { name: 'twitter:site', content: '' },
-      { name: 'twitter:creator', content: '' },
-      { name: 'twitter:url', content: '' },
-      { name: 'twitter:title', content: '' },
-      { name: 'twitter:description', content: '' },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: '@kevinpeters_' },
+      { name: 'twitter:creator', content: '@kevinpeters_' },
+      { name: 'twitter:url', content: 'https://kevinpeters.net/about/' },
+      { name: 'twitter:title', content: 'Blog | Web Dev Stories by Kevin Peters' },
+      { name: 'twitter:description', content: 'Blog articles by Kevin Peters. Interesting articles about Vue.js, .NET and the whole world of JavaScript.' },
       { name: 'twitter:image', content: '' },
       { name: 'twitter:image:alt', content: '' }
     ]

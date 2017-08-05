@@ -63,6 +63,7 @@ module.exports = {
     ['@nuxtjs/google-analytics', { ua: 'UA-104059616-1' }],
     ['@nuxtjs/sitemap', {
       path: '/sitemap.xml',
+      hostname: 'https://www.kevinpeters.net',
       generate: true,
       routes: [
         {

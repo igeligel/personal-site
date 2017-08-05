@@ -110,27 +110,25 @@ import YarnSvg from '../../components/technology-icons/yarn';
 
 export default {
   head: {
-    title: '',
+    title: 'About | Web Dev Stories by Kevin Peters',
     meta: [
-      { name: 'description', content: '' },
-      { name: 'subject', content: '' },
-      { name: 'abstract', content: '' },
-      { name: 'url', content: '' },
+      { name: 'description', content: 'About page of Kevin Peters. Here are several personal information about the programmer and web developer Kevin Peters.' },
+      { name: 'subject', content: 'Information about Kevin Peters' },
+      { name: 'abstract', content: 'Information about Kevin Peters' },
+      { name: 'url', content: 'https://kevinpeters.net/about/' },
+      { name: 'article:author', content: 'Kevin Peters' },
 
-      { name: 'og:url', content: '' },
-      { name: 'og:type', content: '' },
-      { name: 'og:title', content: '' },
+      { name: 'og:url', content: 'https://kevinpeters.net/about/' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:title', content: 'About | Web Dev Stories by Kevin Peters' },
       { name: 'og:image', content: '' },
-      { name: 'og:description', content: '' },
-      { name: 'og:locale', content: '' },
-
-      { name: 'article:author', content: '' },
-      { name: 'twitter:card', content: '' },
-      { name: 'twitter:site', content: '' },
-      { name: 'twitter:creator', content: '' },
-      { name: 'twitter:url', content: '' },
-      { name: 'twitter:title', content: '' },
-      { name: 'twitter:description', content: '' },
+      { name: 'og:description', content: 'About page of Kevin Peters. Here are several personal information about the programmer and web developer Kevin Peters.' },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: '@kevinpeters_' },
+      { name: 'twitter:creator', content: '@kevinpeters_' },
+      { name: 'twitter:url', content: 'https://kevinpeters.net/about/' },
+      { name: 'twitter:title', content: 'About | Web Dev Stories by Kevin Peters' },
+      { name: 'twitter:description', content: 'About page of Kevin Peters. Here are several personal information about the programmer and web developer Kevin Peters.' },
       { name: 'twitter:image', content: '' },
       { name: 'twitter:image:alt', content: '' }
     ]

@@ -8,7 +8,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'google', content: 'notranslate' },
-      { name: 'google-site-verification', content: 'LjLq4uuyoDkD5m1JCsWBVDKy7ZlJm2uacbXZNUmJaUo' },
+      { name: 'google-site-verification', content: 't15rKEcRCZ457RDQnD7E3FBI05TfLjzKINO6QhcPbiY' },
       { name: 'referrer', content: 'no-referrer' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'ICBM', content: '52.52, 13.4050' },

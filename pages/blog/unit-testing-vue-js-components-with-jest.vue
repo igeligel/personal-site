@@ -1,0 +1,334 @@
+<template>
+  <div class="blog-container">
+    <div v-html="hello"></div>
+  </div>
+</template>
+
+<script>
+import hello from './markdown/unit-testing-vue-js-components-with-jest.md'
+
+export default {
+  head: {
+    title: 'jQuery Selector Performance | Web Dev Stories by Kevin Peters',
+    meta: [
+      { hid:'description', name: 'description', content: 'Blog article about jQuery selectors and the performance issues inside web applications.' },
+      { hid:'subject', name: 'subject', content: 'jQuery selector performance.' },
+      { hid:'abstract', name: 'abstract', content: 'Article about jQuery selector performance.' },
+      { hid:'url', name: 'url', content: 'https://www.kevinpeters.net/blog/jquery-selector-performance' },
+
+      { hid:'article:author', name: 'article:author', content: 'Kevin Peters' },
+
+      { hid:'og:url', name: 'og:url', content: 'https://www.kevinpeters.net/blog/jquery-selector-performance' },
+      { hid:'og:type', name: 'og:type', content: 'website' },
+      { hid:'og:title', name: 'og:title', content: 'jQuery Selector Performance | Web Dev Stories by Kevin Peters' },
+      { hid:'og:image', name: 'og:image', content: '' },
+      { hid:'og:description', name: 'og:description', content: 'Blog article about jQuery selectors and the performance issues inside web applications.' },
+
+      { hid:'twitter:card', name: 'twitter:card', content: 'summary' },
+      { hid:'twitter:site', name: 'twitter:site', content: '@kevinpeters_' },
+      { hid:'twitter:creator', name: 'twitter:creator', content: '@kevinpeters_' },
+      { hid:'twitter:url', name: 'twitter:url', content: 'https://www.kevinpeters.net/blog/jquery-selector-performance' },
+      { hid:'twitter:title', name: 'twitter:title', content: 'jQuery Selector Performance | Web Dev Stories by Kevin Peters' },
+      { hid:'twitter:description', name: 'twitter:description', content: 'Blog article about jQuery selectors and the performance issues inside web applications.' },
+      { hid:'twitter:image', name: 'twitter:image', content: '' },
+      { hid:'twitter:image:alt', name: 'twitter:image:alt', content: '' }
+    ]
+  },
+  computed: {
+    hello() {
+      return hello;
+    },
+  },
+}
+</script>
+
+<style scoped>
+.blog-container {
+  max-width: 710px;
+  margin:auto;
+  padding-bottom: 75px;
+}
+</style>
+
+<style>
+.blog-container {
+  color: rgba(0,0,0,.8);
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .blog-container {
+    padding-top: 13px;
+  }
+}
+
+.blog-container a:link {
+  color: #4096c4;
+  text-decoration: none;
+  border-bottom: 1px solid #4096c4;
+}
+
+/* visited link */
+.blog-container a:visited {
+  color: #4096c4;
+}
+
+/* mouse over link */
+.blog-container a:hover {
+  color: #4096c4;
+}
+
+/* selected link */
+.blog-container a:active {
+  color: #4096c4;
+}
+
+.blog-container h1 {
+  --x-height-multiplier: 0.363;
+  --baseline-multiplier: 0.157;
+  letter-spacing: -.02em;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  margin-left: -2.5px;
+  line-height: 1.04;
+  letter-spacing: -.028em;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .blog-container h1 {
+    font-size: 33px;
+  }
+}
+
+.blog-container h2 {
+  --x-height-multiplier: 0.363;
+  --baseline-multiplier: 0.157;
+  letter-spacing: -.02em;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  margin-left: -1.5px;
+  line-height: 1.22;
+  letter-spacing: -.018em;
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .blog-container h2 {
+    font-size: 21px;
+  }
+}
+
+.blog-container p {
+  --x-height-multiplier: 0.35;
+  --baseline-multiplier: 0.179;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+}
+
+@media (max-width: 768px) {
+  .blog-container p {
+    font-size: 18px;
+  }
+}
+
+.blog-container pre {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  padding: 6px;
+  border: 1px solid #c2e9fb;
+  border-radius: 4px;
+}
+
+.blog-container img {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.blog-container ul {
+  margin-top: 29px;
+  margin-bottom: 29px;
+}
+
+.blog-container li {
+  --x-height-multiplier:0.35;
+  --baseline-multiplier:0.179;
+  margin-left: 30px;
+  margin-bottom: 14px;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+  line-height: 1.58;
+  letter-spacing: -.003em
+}
+
+@media (max-width: 768px) {
+  .blog-container li {
+    font-size: 18px;
+    margin-left: 18px;
+  }
+}
+
+.blog-container li:last-child {
+  margin-bottom: 0
+}
+
+.blog-container h3 {
+  --x-height-multiplier: 0.363;
+  --baseline-multiplier: 0.157;
+  letter-spacing: -.02em;
+  font-size: 18px;
+  margin-left: -1.5px;
+  line-height: 1.22;
+  letter-spacing: -.018em;
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+
+
+.blog-container table,th,td {
+  border: none
+}
+
+.blog-container table {
+  width: 100%;
+  display: table
+}
+
+.blog-container table.bordered>thead>tr,table.bordered>tbody>tr {
+  border-bottom: 1px solid #d0d0d0
+}
+
+.blog-container table.striped>tbody>tr:nth-child(odd) {
+  background-color: #f2f2f2
+}
+
+.blog-container table.striped>tbody>tr>td {
+  border-radius: 0
+}
+
+.blog-container table.highlight>tbody>tr {
+  transition: background-color .25s ease
+}
+
+.blog-container table.highlight>tbody>tr:hover {
+  background-color: #f2f2f2
+}
+
+.blog-container table.centered thead tr th,table.centered tbody tr td {
+  text-align: center
+}
+
+.blog-container thead {
+  border-bottom: 1px solid #d0d0d0
+}
+
+.blog-container td,th {
+  padding: 15px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px
+}
+
+@media only screen and (max-width: 992px) {
+  .blog-container table.responsive-table {
+    width:100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    position: relative
+  }
+
+  .blog-container table.responsive-table td:empty:before {
+    content: '\00a0'
+  }
+
+  .blog-container table.responsive-table th,table.responsive-table td {
+    margin: 0;
+    vertical-align: top
+  }
+
+  .blog-container table.responsive-table th {
+    text-align: left
+  }
+
+  .blog-container table.responsive-table thead {
+    display: block;
+    float: left
+  }
+
+  .blog-container table.responsive-table thead tr {
+    display: block;
+    padding: 0 10px 0 0
+  }
+
+  .blog-container table.responsive-table thead tr th::before {
+    content: "\00a0"
+  }
+
+  .blog-container table.responsive-table tbody {
+    display: block;
+    width: auto;
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap
+  }
+
+  .blog-container table.responsive-table tbody tr {
+    display: inline-block;
+    vertical-align: top
+  }
+
+  .blog-container table.responsive-table th {
+    display: block;
+    text-align: right
+  }
+
+  .blog-container table.responsive-table td {
+    display: block;
+    min-height: 1.25em;
+    text-align: left
+  }
+
+  .blog-container table.responsive-table tr {
+    padding: 0 10px
+  }
+
+  .blog-container table.responsive-table thead {
+    border: 0;
+    border-right: 1px solid #d0d0d0
+  }
+
+  .blog-container table.responsive-table.bordered th {
+    border-bottom: 0;
+    border-left: 0
+  }
+
+  .blog-container table.responsive-table.bordered td {
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0
+  }
+
+  .blog-container table.responsive-table.bordered tr {
+    border: 0
+  }
+
+  .blog-container table.responsive-table.bordered tbody tr {
+    border-right: 1px solid #d0d0d0
+  }
+}
+
+</style>
+
+

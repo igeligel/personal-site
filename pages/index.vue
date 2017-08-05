@@ -169,6 +169,7 @@ export default {
 
 * {
   font-family: 'Lato', sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 .header {
@@ -220,11 +221,11 @@ h3 {
 }
 
 .banner h2 {
-  color: #ffffff;
+  color: #1e2c44;
 }
 
 .banner h3 {
-  color: #ffffff;
+  color: #1e2c44;
 }
 
 .blogposts__heading {

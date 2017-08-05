@@ -163,5 +163,6 @@ export default {
 
 * {
   font-family: 'Lato', sans-serif;
+  text-rendering: optimizeLegibility;
 }
 </style>

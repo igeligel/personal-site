@@ -70,7 +70,7 @@
           <polygon class="st1" points="182.9,26.5 150,83.6 117.1,26.5 64.5,26.5 150,174.7 235.5,26.5 	"/>
         </g>
       </svg> and .NET</p>
-      <a class="content__link" href="https://www.google.com" target="_blank">Résumé<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right" style="transform:translate(4px, 6px);"><line x1="6" y1="18" x2="18" y2="6"></line><polyline points="9 6 18 6 18 15"></polyline></svg></a>
+      <a class="content__link" rel="noopener noreferrer" href="https://drive.google.com/file/d/0B5bsFD4wxCdmczVJQnFLWXAwNEU/view?usp=sharing" target="_blank">Résumé<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right" style="transform:translate(4px, 6px);"><line x1="6" y1="18" x2="18" y2="6"></line><polyline points="9 6 18 6 18 15"></polyline></svg></a>
       <h2 class="content__second-heading">Technologies i use</h2>
       <div class="technology-row">
         <vuejs-svg></vuejs-svg>

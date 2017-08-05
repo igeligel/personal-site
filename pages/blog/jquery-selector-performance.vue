@@ -9,27 +9,27 @@ import hello from './markdown/jquery-selector-performance.md'
 
 export default {
   head: {
-    title: '',
+    title: 'jQuery Selector Performance | Web Dev Stories by Kevin Peters',
     meta: [
-      { name: 'description', content: '' },
-      { name: 'subject', content: '' },
-      { name: 'abstract', content: '' },
-      { name: 'url', content: '' },
+      { name: 'description', content: 'Blog article about jQuery selectors and the performance issues inside web applications.' },
+      { name: 'subject', content: 'jQuery selector performance.' },
+      { name: 'abstract', content: 'Article about jQuery selector performance.' },
+      { name: 'url', content: 'https://www.kevinpeters.net/blog/jquery-selector-performance' },
 
-      { name: 'og:url', content: '' },
-      { name: 'og:type', content: '' },
-      { name: 'og:title', content: '' },
+      { name: 'article:author', content: 'Kevin Peters' },
+
+      { name: 'og:url', content: 'https://www.kevinpeters.net/blog/jquery-selector-performance' },
+      { name: 'og:type', content: 'website' },
+      { name: 'og:title', content: 'jQuery Selector Performance | Web Dev Stories by Kevin Peters' },
       { name: 'og:image', content: '' },
-      { name: 'og:description', content: '' },
-      { name: 'og:locale', content: '' },
+      { name: 'og:description', content: 'Blog article about jQuery selectors and the performance issues inside web applications.' },
 
-      { name: 'article:author', content: '' },
-      { name: 'twitter:card', content: '' },
-      { name: 'twitter:site', content: '' },
-      { name: 'twitter:creator', content: '' },
-      { name: 'twitter:url', content: '' },
-      { name: 'twitter:title', content: '' },
-      { name: 'twitter:description', content: '' },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: '@kevinpeters_' },
+      { name: 'twitter:creator', content: '@kevinpeters_' },
+      { name: 'twitter:url', content: 'https://www.kevinpeters.net/blog/jquery-selector-performance' },
+      { name: 'twitter:title', content: 'jQuery Selector Performance | Web Dev Stories by Kevin Peters' },
+      { name: 'twitter:description', content: 'Blog article about jQuery selectors and the performance issues inside web applications.' },
       { name: 'twitter:image', content: '' },
       { name: 'twitter:image:alt', content: '' }
     ]

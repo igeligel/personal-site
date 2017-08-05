@@ -67,7 +67,9 @@ module.exports = {
     '~assets/css/lato.css',
     '~assets/css/highlight-js.css'
   ],
-  plugins: [],
+  plugins: [
+    { src: '~plugins/ga.js', ssr: false }
+  ],
   markdownit: {
     preset: 'default',
     linkify: true,

@@ -16,17 +16,18 @@ export default {
       { name: 'abstract', content: '' },
       { name: 'url', content: '' },
 
+      { name: 'article:author', content: 'Kevin Peters' },
+
       { name: 'og:url', content: '' },
-      { name: 'og:type', content: '' },
+      { name: 'og:type', content: 'website' },
       { name: 'og:title', content: '' },
       { name: 'og:image', content: '' },
       { name: 'og:description', content: '' },
       { name: 'og:locale', content: '' },
 
-      { name: 'article:author', content: '' },
-      { name: 'twitter:card', content: '' },
-      { name: 'twitter:site', content: '' },
-      { name: 'twitter:creator', content: '' },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: '@kevinpeters_' },
+      { name: 'twitter:creator', content: '@kevinpeters_' },
       { name: 'twitter:url', content: '' },
       { name: 'twitter:title', content: '' },
       { name: 'twitter:description', content: '' },

@@ -1,23 +1,45 @@
-# kevin-peters-net
+# personal-site by <a href="https://github.com/igeligel">igeligel</a>
 
-> Nuxt.js project
+<div align="center"> <a href="https://www.paypal.me/kevinpeters96/1"><img src="https://img.shields.io/badge/Donate-Paypal-003087.svg?style=flat" alt="badge Donate" /></a> <a href="https://steamcommunity.com/tradeoffer/new/?partner=68364320&token=CzTCv8JM"><img src="https://img.shields.io/badge/Donate-Steam-000000.svg?style=flat" alt="badge Donate" /></a> <a href="https://github.com/igeligel/personal-site/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-1da1f2.svg?style=flat" alt="badge License" /></a> </div>
 
-## Build Setup
+<div style="text-align:center"><img src ="./docs/iphone.png" /></div>
+<div style="text-align:center"><img src ="./docs/desktop.png" /></div>
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+## Description
 
-# serve with hot reload at localhost:3000
-# service worker is disabled in dev
-$ npm run dev
+> Nuxt.js webage portfolio of myself
 
-# build for production and launch server
-$ npm run build
-$ npm start
+## Installation
 
-# generate static project
-$ npm run generate
-```
+1. Clone the repository
+1. Run ``yarn install``
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+## How To Use
+
+For development:
+
+1. Run ``yarn run dev``
+1. Open your browser using the url: [http://127.0.0.1:3000/](http://127.0.0.1:3000/)
+
+For production:
+
+1. Run ``yarn generate``
+1. Use the files under the ``dist`` folder and host them. Its a complete static site so it is really easy to deploy.
+
+## Examples
+
+- [Official site](https://www.kevinpeters.net/)
+
+## Resources
+
+### Motivation
+
+Wanted to try out [nuxt.js](https://nuxtjs.org/) and created a new portfolio because the old one was really bad.
+
+## License
+
+*personal-site* is realeased under the MIT License.
+
+## This readme is powered by vue-readme
+
+Check out vue-readme [[Website](https://igeligel.github.io/vue-readme) | [GitHub](https://github.com/igeligel/vue-readme)]

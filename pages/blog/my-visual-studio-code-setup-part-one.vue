@@ -9,28 +9,27 @@ import hello from './markdown/my-visual-studio-code-setup-part-one.md';
 
 export default {
   head: {
-    title: '',
+    title: 'My Visual Studio Code Setup - Part 1 | Web Dev Stories by Kevin Peters',
     meta: [
-      { name: 'description', content: '' },
-      { name: 'subject', content: '' },
-      { name: 'abstract', content: '' },
-      { name: 'url', content: '' },
+      { name: 'description', content: 'Blog article about the Visual Studio Code setup of Kevin Peters to work with .NET Core, Standard, ES6 and Vue.js.' },
+      { name: 'subject', content: 'Visual Studio Code Setup' },
+      { name: 'abstract', content: 'Article about Visual Studio Code Setup.' },
+      { name: 'url', content: 'https://www.kevinpeters.net/blog/my-visual-studio-code-setup-part-one' },
 
       { name: 'article:author', content: 'Kevin Peters' },
 
-      { name: 'og:url', content: '' },
+      { name: 'og:url', content: 'https://www.kevinpeters.net/blog/my-visual-studio-code-setup-part-one' },
       { name: 'og:type', content: 'website' },
-      { name: 'og:title', content: '' },
+      { name: 'og:title', content: 'My Visual Studio Code Setup - Part 1 | Web Dev Stories by Kevin Peters' },
       { name: 'og:image', content: '' },
-      { name: 'og:description', content: '' },
-      { name: 'og:locale', content: '' },
+      { name: 'og:description', content: 'Blog article about the Visual Studio Code setup of Kevin Peters to work with .NET Core, Standard, ES6 and Vue.js.' },
 
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:site', content: '@kevinpeters_' },
       { name: 'twitter:creator', content: '@kevinpeters_' },
-      { name: 'twitter:url', content: '' },
-      { name: 'twitter:title', content: '' },
-      { name: 'twitter:description', content: '' },
+      { name: 'twitter:url', content: 'https://www.kevinpeters.net/blog/my-visual-studio-code-setup-part-one' },
+      { name: 'twitter:title', content: 'My Visual Studio Code Setup - Part 1 | Web Dev Stories by Kevin Peters' },
+      { name: 'twitter:description', content: 'Blog article about the Visual Studio Code setup of Kevin Peters to work with .NET Core, Standard, ES6 and Vue.js.' },
       { name: 'twitter:image', content: '' },
       { name: 'twitter:image:alt', content: '' }
     ]

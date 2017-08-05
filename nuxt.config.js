@@ -59,7 +59,8 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/pwa',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    ['@nuxtjs/google-analytics', { ua: 'UA-104059616-1' }]
   ],
   css: [
     '~assets/css/pure-min.css',
@@ -67,9 +68,7 @@ module.exports = {
     '~assets/css/lato.css',
     '~assets/css/highlight-js.css'
   ],
-  plugins: [
-    { src: '~plugins/ga.js', ssr: false }
-  ],
+  plugins: [],
   markdownit: {
     preset: 'default',
     linkify: true,

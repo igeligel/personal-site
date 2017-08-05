@@ -8,6 +8,7 @@
     "@nuxtjs/google-analytics": "^1.0.0",
     "@nuxtjs/markdownit": "^1.1.0",
     "@nuxtjs/pwa": "latest",
+    "@nuxtjs/sitemap": "^0.0.3",
     "markdown-it-attrs": "^0.9.0",
     "markdown-it-container": "^2.0.0",
     "nuxt": "latest"

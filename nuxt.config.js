@@ -60,7 +60,49 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/markdownit',
-    ['@nuxtjs/google-analytics', { ua: 'UA-104059616-1' }]
+    ['@nuxtjs/google-analytics', { ua: 'UA-104059616-1' }],
+    ['@nuxtjs/sitemap', {
+      path: '/sitemap.xml',
+      generate: true,
+      routes: [
+        {
+          url: '/',
+          changefreq: 'weekly',
+          priority: 1,
+          lastmodISO: '2017-08-05T19:30:00.000Z'
+        }, {
+          url: '/blog',
+          changefreq: 'weekly',
+          priority: 0.8,
+          lastmodISO: '2017-08-05T19:30:00.000Z'
+        }, {
+          url: '/projects',
+          changefreq: 'monthly',
+          priority: 0.2,
+          lastmodISO: '2017-08-05T19:30:00.000Z'
+        }, {
+          url: '/about',
+          changefreq: 'yearly',
+          priority: 0.4,
+          lastmodISO: '2017-08-05T19:30:00.000Z'
+        }, {
+          url: '/blog/writing-a-progressive-image-loading-component',
+          changefreq: 'never',
+          priority: 0.7,
+          lastmodISO: '2017-08-05T19:30:00.000Z'
+        }, {
+          url: '/blog/my-visual-studio-code-setup-part-one',
+          changefreq: 'never',
+          priority: 0.7,
+          lastmodISO: '2017-08-05T19:30:00.000Z'
+        }, {
+          url: '/blog/jquery-selector-performance',
+          changefreq: 'never',
+          priority: 0.7,
+          lastmodISO: '2017-08-05T19:30:00.000Z'
+        }
+      ]
+    }]
   ],
   css: [
     '~assets/css/pure-min.css',

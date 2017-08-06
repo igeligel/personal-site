@@ -23,7 +23,7 @@ export default {
     'blogpost-article': BlogpostArticle,
   },
   computed: {
-    chunkedBlogPosts: function getChunkedBlogposts() {
+    chunkedBlogPosts() {
       return this.chunkArray(this.blogposts, 3);
     }
   },
@@ -32,6 +32,10 @@ export default {
       blogposts: blogPosts,
       online: true
     }
+  },
+  destroyed () {
+    window.removeEventListener('offline', this._toggleNetworkStatus)
+    window.removeEventListener('online', this._toggleNetworkStatus)
   },
   head: {
     title: 'Blog | Web Dev Stories by Kevin Peters',
@@ -58,23 +62,14 @@ export default {
       { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: '' }
     ]
   },
-  mounted () {
-    if (!window.navigator) {
-      this.online = false
-      return
-    }
-    this.online = Boolean(window.navigator.onLine)
-    window.addEventListener('offline', this._toggleNetworkStatus)
-    window.addEventListener('online', this._toggleNetworkStatus)
-  },
   methods: {
     _toggleNetworkStatus ({ type }) {
       this.online = type === 'online'
     },
     chunkArray(arr, len) {
-      var chunks = [];
-      var i = 0;
-      var n = arr.length;
+      const chunks = [];
+      const n = arr.length;
+      let i = 0;
       while (i < n) {
         chunks.push(arr.slice(i, i += len));
       }
@@ -84,22 +79,22 @@ export default {
       this.$router.push(blogpost.url);
     },
   },
-  destroyed () {
-    window.removeEventListener('offline', this._toggleNetworkStatus)
-    window.removeEventListener('online', this._toggleNetworkStatus)
-  }
+  mounted () {
+    if (!window.navigator) {
+      this.online = false
+      return
+    }
+    this.online = Boolean(window.navigator.onLine)
+    window.addEventListener('offline', this._toggleNetworkStatus)
+    window.addEventListener('online', this._toggleNetworkStatus)
+  },
 }
 </script>
 
 <style scoped>
-.blogposts__articles > div {
-  cursor: pointer;
-}
-
-@media (min-width: 768px) {
-  .blogposts__articles > div {
-    padding: 10px;
-  }
+* {
+  font-family: 'Lato', sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -107,6 +102,7 @@ export default {
   max-width: 1000px;
   margin: auto;
 }
+
 .blogposts__heading {
   padding-top: 24px;
   border-bottom: 1px solid #dbdbdb;
@@ -128,8 +124,13 @@ export default {
   display: inline-block;
 }
 
-* {
-  font-family: 'Lato', sans-serif;
-  text-rendering: optimizeLegibility;
+.blogposts__articles > div {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .blogposts__articles > div {
+    padding: 10px;
+  }
 }
 </style>

@@ -5,12 +5,19 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: 'standard',
+  extends: 'airbnb',
   // required to lint *.vue files
   plugins: [
     'html'
   ],
   // add your custom rules here
   rules: {},
-  globals: {}
+  globals: {},
+  settings: {
+    "import/resolver": {
+      "node": {
+        "paths": ["~assets"]
+      }
+    }
+  }
 }

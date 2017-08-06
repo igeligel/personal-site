@@ -32,8 +32,8 @@ module.exports = {
       { name: 'full-screen', content: 'yes' },
       { name: 'browsermode', content: 'application' },
       { name: 'layoutmode', content: 'fitscreen' },
-      { name: 'wap-font-scale', content: 'no' }
-    ]
+      { name: 'wap-font-scale', content: 'no' },
+    ],
   },
   /*
   ** Customize the progress-bar color
@@ -43,16 +43,16 @@ module.exports = {
   ** Customize app manifest
   */
   manifest: {
-    'name': 'Web Dev Stories',
-    'short_name': 'WDS',
-    'theme_color': '#4096c4',
-    'start_url': '.',
-    'display': 'standalone',
-    'background_color': '#fff',
-    'description': 'Homepage of the web developer Kevin Peters.',
-    'related_applications': [{
-      'platform': 'web'
-    }]
+    name: 'Web Dev Stories',
+    short_name: 'WDS',
+    theme_color: '#4096c4',
+    start_url: '.',
+    display: 'standalone',
+    background_color: '#fff',
+    description: 'Homepage of the web developer Kevin Peters.',
+    related_applications: [{
+      platform: 'web',
+    }],
   },
   /*
   ** Modules
@@ -70,46 +70,46 @@ module.exports = {
           url: '/',
           changefreq: 'weekly',
           priority: 1,
-          lastmodISO: '2017-08-05T19:30:00.000Z'
+          lastmodISO: '2017-08-05T19:30:00.000Z',
         }, {
           url: '/blog',
           changefreq: 'weekly',
           priority: 0.8,
-          lastmodISO: '2017-08-05T19:30:00.000Z'
+          lastmodISO: '2017-08-05T19:30:00.000Z',
         }, {
           url: '/projects',
           changefreq: 'monthly',
           priority: 0.2,
-          lastmodISO: '2017-08-05T19:30:00.000Z'
+          lastmodISO: '2017-08-05T19:30:00.000Z',
         }, {
           url: '/about',
           changefreq: 'yearly',
           priority: 0.4,
-          lastmodISO: '2017-08-05T19:30:00.000Z'
+          lastmodISO: '2017-08-05T19:30:00.000Z',
         }, {
           url: '/blog/writing-a-progressive-image-loading-component',
           changefreq: 'never',
           priority: 0.7,
-          lastmodISO: '2017-08-05T19:30:00.000Z'
+          lastmodISO: '2017-08-05T19:30:00.000Z',
         }, {
           url: '/blog/my-visual-studio-code-setup-part-one',
           changefreq: 'never',
           priority: 0.7,
-          lastmodISO: '2017-08-05T19:30:00.000Z'
+          lastmodISO: '2017-08-05T19:30:00.000Z',
         }, {
           url: '/blog/jquery-selector-performance',
           changefreq: 'never',
           priority: 0.7,
-          lastmodISO: '2017-08-05T19:30:00.000Z'
-        }
-      ]
-    }]
+          lastmodISO: '2017-08-05T19:30:00.000Z',
+        },
+      ],
+    }],
   ],
   css: [
     '~assets/css/pure-min.css',
     '~assets/css/grids-responsive-min.css',
     '~assets/css/lato.css',
-    '~assets/css/highlight-js.css'
+    '~assets/css/highlight-js.css',
   ],
   plugins: [],
   markdownit: {
@@ -118,7 +118,7 @@ module.exports = {
     breaks: true,
     use: [
       'markdown-it-container',
-      'markdown-it-attrs'
-    ]
-  }
-}
+      'markdown-it-attrs',
+    ],
+  },
+};

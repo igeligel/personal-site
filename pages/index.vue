@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <div class="header" style="text-align: center">
-      <h1 v-text="title"></h1>
-    </div>
     <div class="banner">
       <h2>Hey, I am {{author}}</h2>
       <h3>I am a {{jobTitle}}</h3>
@@ -12,26 +9,16 @@
       <div class="line__wrapper"></div>
       <h2>Recent Blogposts</h2>
     </div>
-    <div class="blogposts__articles pure-g" style="padding-left: 24px; padding-right: 24px;">
-      <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1" v-bind:key="blogpost.title" v-for="blogpost in minimizedBlogposts">
-        <blogpost-article
-          :blogpost="blogpost">
-        </blogpost-article>
-      </div>
-      <div class="pure-u-1-1 blogpost__more">
-        <router-link to="/blog">Read more</router-link>
-      </div>
-    </div>
+    <blogpost-articles></blogpost-articles>
   </div>
 </template>
 
 <script>
-import blogposts from '../content/blogposts';
-import BlogpostArticle from '../components/BlogpostArticle.vue';
+import BlogpostArticles from '../components/BlogpostArticles';
 
 export default {
   components: {
-    'blogpost-article': BlogpostArticle,
+    BlogpostArticles,
   },
   data () {
     return {
@@ -40,13 +27,7 @@ export default {
       author: 'Kevin',
       jobTitle: 'Full Stack Developer',
       motto: 'Think twice - code once',
-      blogposts,
     }
-  },
-  computed: {
-    minimizedBlogposts: function getMinimizedBlogposts() {
-      return blogposts.slice(0, 3);
-    },
   },
   head: {
     title: 'Home | Web Dev Stories by Kevin Peters',
@@ -86,9 +67,6 @@ export default {
     _toggleNetworkStatus ({ type }) {
       this.online = type === 'online'
     },
-    redirect(blogpost) {
-      this.$router.push(blogpost.url);
-    },
   },
   destroyed () {
     window.removeEventListener('offline', this._toggleNetworkStatus)
@@ -98,44 +76,15 @@ export default {
 </script>
 
 <style scoped>
-
-@media (min-width: 768px) {
-  .blogposts__articles > div {
-    padding: 10px;
-  }
+* {
+  font-family: 'Lato', sans-serif;
+  text-rendering: optimizeLegibility;
 }
-
 
 .container {
   padding-bottom: 75px;
   max-width: 1000px;
   margin:auto;
-}
-
-.blogpost__more {
-  margin-top: 16px;
-  margin-left: 16px;
-}
-
-.blogpost__more a {
-  font-size: 18px;
-  color: #4096c4;
-  text-decoration: none;
-}
-
-.blogpost__more a:link {
-  color: #4096c4;
-  text-decoration: none;
-}
-
-.blogpost__more a:visited {
-  color: #4096c4;
-  text-decoration: none;
-}
-
-* {
-  font-family: 'Lato', sans-serif;
-  text-rendering: optimizeLegibility;
 }
 
 .header {
@@ -147,15 +96,6 @@ export default {
   .header {
     display: none;
   }
-}
-
-h1 {
-  font-weight: 300;
-  font-size: 24px;
-  color: #4096c4;
-  margin: 0;
-  margin-bottom: 30px;
-  margin-top: 24px;
 }
 
 h2 {

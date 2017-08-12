@@ -2,7 +2,7 @@
   <div>
     <div class="navbar">
       <div class="navbar__title" style="display: inline-block;">
-        <h1 style="display: inline-block;">WEB DEV STORIES</h1>
+        <h1 style="display: inline-block;"><router-link to="/" style="color: #4096c4; text-decoration: none;">WEB DEV STORIES</router-link></h1>
       </div>
       <div class="menu">
         <ul style="margin-top: calc(0.67em + 10px);">

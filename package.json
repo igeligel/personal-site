@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "@nuxtjs/google-analytics": "^1.0.0",
+    "@nuxtjs/icon": "^1.0.1",
     "@nuxtjs/markdownit": "^1.1.0",
     "@nuxtjs/pwa": "latest",
     "@nuxtjs/sitemap": "^0.0.3",

@@ -104,6 +104,7 @@ module.exports = {
         },
       ],
     }],
+    '@nuxtjs/icon',
   ],
   css: [
     '~assets/css/pure-min.css',

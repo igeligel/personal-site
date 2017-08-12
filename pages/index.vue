@@ -4,7 +4,7 @@
       <h1 v-text="title"></h1>
     </div>
     <div class="banner">
-      <h2>Hey I am {{author}}</h2>
+      <h2>Hey, I am {{author}}</h2>
       <h3>I am a {{jobTitle}}</h3>
       <h3 v-text="motto"></h3>
     </div>

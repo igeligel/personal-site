@@ -61,11 +61,11 @@ export default {
       projects: {
         skadisteam: {
           heading: 'skadisteam',
-          description: '<p>Skadisteam is a .NET Standard project containing several C# class libraries which acts as a wrapper around the Steam Web API. They are designed in the background of the microservice oattern. Each package has Unit tests and is featured with continuous deployment.</p>',
+          description: '<p>Skadisteam is a .NET Standard project containing several C# class libraries which acts as a wrapper around the Steam Web API. They are designed according to the microservice pattern. Each package has unit tests and uses continuous deployment.</p>',
         },
         vueReadme: {
           heading: 'vue-readme',
-          description: '<p>Serverless vue.js application for creating project readmes in markdown. Easily create and manage your readme\'s of your GitHub repositories.</p>',
+          description: '<p>Serverless vue.js application for creating project readmes in markdown. Easily create and manage the readmes of your GitHub repositories.</p>',
         },
         backpackLogin: {
           heading: 'BackpackLogin',

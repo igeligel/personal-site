@@ -5,27 +5,7 @@
         <img src="~assets/img/profile-border-radius.png" alt="image of kevin peters" style="width: 117px;  float: right;">
       </div>
       <div class="pure-u-1-2">
-        <div>
-          <a :href="socialMedia.twitter" target="_blank" rel="noopener noreferrer">
-            <twitter-svg></twitter-svg>
-          </a>
-          <a :href="socialMedia.email" target="_blank" rel="noopener noreferrer">
-            <email-svg></email-svg>
-          </a>
-        </div>
-        <div>
-          <a :href="socialMedia.linkedin" target="_blank" rel="noopener noreferrer">
-            <linkedin-svg></linkedin-svg>
-          </a>
-          <a :href="socialMedia.xing" target="_blank" rel="noopener noreferrer">
-            <xing-svg></xing-svg>
-          </a>
-        </div>
-        <div>
-          <a :href="socialMedia.medium" target="_blank" rel="noopener noreferrer">
-            <medium-svg></medium-svg>
-          </a>
-        </div>
+        <profile-links :socialMedia="socialMedia"></profile-links>
       </div>
     </div>
     <div class="content">
@@ -41,15 +21,10 @@
 </template>
 
 <script>
-import EmailSvg from '../../components/general-icons/Email';
-import LinkedinSvg from '../../components/general-icons/Linkedin';
-import MediumSvg from '../../components/general-icons/Medium';
-import TwitterSvg from '../../components/general-icons/Twitter';
-import XingSvg from '../../components/general-icons/Xing';
-
 import ArrowUpperRightSvg from '../../components/ArrowUpperRight';
 import VueInlineSvg from '../../components/technology-icons/VueInline';
 
+import ProfileLinks from '../../components/ProfileLinks';
 import TechnologiesList from '../../components/TechnologiesList';
 
 export default {
@@ -78,13 +53,9 @@ export default {
     ]
   },
   components: {
-    EmailSvg,
-    LinkedinSvg,
-    MediumSvg,
-    TwitterSvg,
-    XingSvg,
     ArrowUpperRightSvg,
     VueInlineSvg,
+    ProfileLinks,
     TechnologiesList,
   },
   data () {

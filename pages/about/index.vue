@@ -2,7 +2,7 @@
   <div class="container">
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <img src="~assets/img/profile-border-radius.png" alt="image of kevin peters" style="width: 117px;  float: right;">
+        <img class="profile-image" src="~assets/img/profile-border-radius.png" alt="image of kevin peters">
       </div>
       <div class="pure-u-1-2">
         <profile-links :socialMedia="socialMedia"></profile-links>
@@ -11,7 +11,7 @@
     <div class="content">
       <h1>About me</h1>
       <p>Hey there, I’m Kevin! I am a web developer living in Berlin. I love crafting stuff in the web and am really deep into <vue-inline-svg></vue-inline-svg> and .NET</p>
-      <a class="content__link" rel="noopener noreferrer" href="https://drive.google.com/file/d/0B5bsFD4wxCdmczVJQnFLWXAwNEU/view?usp=sharing" target="_blank">
+      <a class="content__link" rel="noopener noreferrer" :href="resume" target="_blank">
         Résumé <arrow-upper-right-svg></arrow-upper-right-svg>
       </a>
       <h2 class="content__second-heading">Technologies I use</h2>
@@ -68,6 +68,7 @@ export default {
         xing: 'https://www.xing.com/profile/Kevin_Peters32',
         medium: 'https://medium.com/@kevin_peters',
       },
+      resume: 'https://drive.google.com/file/d/0B5bsFD4wxCdmczVJQnFLWXAwNEU/view?usp=sharing',
     }
   },
   mounted () {
@@ -92,6 +93,11 @@ export default {
 </script>
 
 <style scoped>
+.profile-image {
+  width: 117px;
+  float: right;
+}
+
 .container {
   padding-bottom: 65px;
   max-width: 1000px;

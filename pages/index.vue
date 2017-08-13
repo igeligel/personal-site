@@ -1,24 +1,25 @@
 <template>
   <div class="container">
-    <div class="banner">
-      <h2>Hey, I am {{author}}</h2>
-      <h3>I am a {{jobTitle}}</h3>
-      <h3 v-text="motto"></h3>
-    </div>
-    <div class="blogposts__heading">
-      <div class="line__wrapper"></div>
-      <h2>Recent Blogposts</h2>
-    </div>
+    <introduction-banner
+      :author="author"
+      :jobTitle="jobTitle"
+      :motto="motto">
+    </introduction-banner>
+    <site-heading :label="'Recent Blogposts'"></site-heading>
     <blogpost-articles></blogpost-articles>
   </div>
 </template>
 
 <script>
 import BlogpostArticles from '../components/BlogpostArticles';
+import IntroductionBanner from '../components/IntroductionBanner';
+import SiteHeading from '../components/SiteHeading';
 
 export default {
   components: {
     BlogpostArticles,
+    IntroductionBanner,
+    SiteHeading,
   },
   data () {
     return {
@@ -85,73 +86,5 @@ export default {
   padding-bottom: 75px;
   max-width: 1000px;
   margin:auto;
-}
-
-.header {
-  display: block;
-  box-sizing: border-box;
-}
-
-@media (min-width: 768px) {
-  .header {
-    display: none;
-  }
-}
-
-h2 {
-  font-weight: 300;
-  font-size: 24px;
-}
-
-h3 {
-  font-weight: 300;
-  color: #706f6f;
-  font-size: 14px;
-}
-
-.banner {
-  padding-left: 45px;
-  padding-right: 45px;
-  padding-top: 24px;
-  padding-bottom: 32px;
-  background: #a1c4fd;
-  background: linear-gradient(to right, #a1c4fd 0%,#c2e9fb 100%);
-  width: 100vw;
-}
-
-@media (min-width: 1000px) {
-  .banner {
-    margin-left: calc(50vw - (100vw - 1000px / 2));
-    padding-left: calc((100vw - 1000px) / 2 + 20px);
-  }
-}
-
-.banner h2 {
-  color: #1e2c44;
-}
-
-.banner h3 {
-  color: #1e2c44;
-}
-
-.blogposts__heading {
-  padding-top: 24px;
-  border-bottom: 1px solid #dbdbdb;
-  padding-bottom: 8px;
-  display: inline-block;
-}
-
-@media (min-width: 1000px) {
-  .blogposts__heading {
-    border-bottom: 1px solid transparent;
-  }
-}
-
-.blogposts__heading h2 {
-  font-weight: 400;
-  color: #4096c4;
-  font-size: 18px;
-  margin-left: 45px;
-  display: inline-block;
 }
 </style>

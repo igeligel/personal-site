@@ -22,9 +22,7 @@ export default {
     BlogpostArticle,
   },
   computed: {
-    minimizedBlogposts: function getMinimizedBlogposts() {
-      return blogposts.slice(0, 3);
-    },
+    minimizedBlogposts: () => blogposts.slice(0, 3),
   },
   data() {
     return {

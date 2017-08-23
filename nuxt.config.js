@@ -112,7 +112,9 @@ module.exports = {
     '~assets/css/lato.css',
     '~assets/css/highlight-js.css',
   ],
-  plugins: [],
+  plugins: [
+    '~/plugins/vue-scrollto',
+  ],
   markdownit: {
     preset: 'default',
     linkify: true,

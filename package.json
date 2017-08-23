@@ -12,7 +12,8 @@
     "@nuxtjs/sitemap": "^0.0.3",
     "markdown-it-attrs": "^0.9.0",
     "markdown-it-container": "^2.0.0",
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "vue-scrollto": "^2.7.4"
   },
   "scripts": {
     "dev": "nuxt",

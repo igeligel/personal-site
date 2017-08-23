@@ -1,13 +1,15 @@
 <template>
-  <div class="blogpost__article" @click="redirect(blogpost)">
-    <div class="blogpost__article__image">
-      <img :src="blogpost.previewImage" :alt="blogpost.altTag"></img>
+  <router-link :to="blogpost.url">
+    <div class="blogpost__article">
+      <div class="blogpost__article__image">
+        <img :src="blogpost.previewImage" :alt="blogpost.altTag"></img>
+      </div>
+      <div class="blogpost__article__content">
+        <h2 v-text="blogpost.title"></h2>
+        <p v-text="blogpost.description"></p>
+      </div>
     </div>
-    <div class="blogpost__article__content">
-      <h2 v-text="blogpost.title"></h2>
-      <p v-text="blogpost.description"></p>
-    </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -16,15 +18,15 @@ export default {
   props: {
     blogpost: Object,
   },
-  methods: {
-    redirect(blogpost) {
-      this.$router.push(blogpost.url);
-    },
-  },
 };
 </script>
 
 <style scoped>
+a {
+  color: black;
+  text-decoration: none;
+}
+
 .blogpost__article {
   cursor: pointer;
   margin-top: 16px;

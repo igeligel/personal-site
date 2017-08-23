@@ -935,6 +935,10 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bezier-easing@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.0.3.tgz#cb493fddb7f8920ecca00973344ce0518885f17e"
+
 big.js@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.1.3.tgz#4cada2193652eb3ca9ec8e55c9015669c9806978"
@@ -5466,6 +5470,12 @@ vue-meta@^1.0.4:
 vue-router@^2.5.3:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.7.0.tgz#16d424493aa51c3c8cce8b7c7210ea4c3a89aff1"
+
+vue-scrollto@^2.7.4:
+  version "2.7.4"
+  resolved "https://registry.yarnpkg.com/vue-scrollto/-/vue-scrollto-2.7.4.tgz#5c8df831f502569db3f7add9efc67cf25d4c626e"
+  dependencies:
+    bezier-easing "^2.0.3"
 
 vue-server-renderer@~2.3.3:
   version "2.3.4"

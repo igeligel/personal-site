@@ -56,6 +56,7 @@ export default {
   },
   data () {
     return {
+      positionBeforeProjectSummary: 0,
       online: true,
       showMain: true,
       projects: {
@@ -133,6 +134,8 @@ export default {
       this.online = type === 'online'
     },
     showProject(project) {
+      this.positionBeforeProjectSummary = document.body.scrollTop;
+      this.$scrollTo(this.$refs.offContainer, 300, {});
       this.projectHeading = project.heading;
       this.projectDescription = project.description;
       this.$refs.offContainer.style.display = 'block';
@@ -141,6 +144,9 @@ export default {
     goToMain() {
       this.showMain = true;
       this.$refs.offContainer.style.display = 'none';
+      this.$scrollTo(this.$refs.offContainer, 300, {
+        offset: this.positionBeforeProjectSummary,
+      });
     },
   },
   destroyed () {
@@ -151,6 +157,10 @@ export default {
 </script>
 
 <style scoped>
+.project__list {
+  margin-bottom: 75px;
+}
+
 .project__heading {
   padding-top: 24px;
   border-bottom: 1px solid #dbdbdb;

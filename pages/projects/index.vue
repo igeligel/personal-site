@@ -7,26 +7,26 @@
       </div>
       <div class="project__list pure-g">
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject(projects.skadisteam)">
-            <img src="~assets/svg/gradient-backgrounds/terminal.svg" style="width: 100%;"></img>
+          <div class="project__summary" @click="showProject(projects.skadisteam)">
+            <img src="~assets/svg/gradient-backgrounds/terminal.svg" class="project__background"></img>
             <img src="~assets/svg/gradient-backgrounds/skadisteam-logo.svg" class="project__logo"></img>
           </div>
         </div>
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject(projects.vueReadme)">
-            <img src="~assets/svg/gradient-backgrounds/1.svg" style="width: 100%;"></img>
+          <div class="project__summary" @click="showProject(projects.vueReadme)">
+            <img src="~assets/svg/gradient-backgrounds/1.svg" class="project__background"></img>
             <img src="~assets/svg/gradient-backgrounds/vue-readme-logo.svg" class="project__logo--center"></img>
           </div>
         </div>
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject(projects.backpackLogin)">
-            <img src="~assets/svg/gradient-backgrounds/2.svg" style="width: 100%;"></img>
+          <div class="project__summary" @click="showProject(projects.backpackLogin)">
+            <img src="~assets/svg/gradient-backgrounds/2.svg" class="project__background"></img>
             <img src="~assets/svg/gradient-backgrounds/backpack-login-logo.svg" class="project__logo--center"></img>
           </div>
         </div>
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" style="position: relative; cursor: pointer;" @click="showProject(projects.teamFortressOutpostApi)">
-            <img src="~assets/svg/gradient-backgrounds/3.svg" style="width: 100%;"></img>
+          <div class="project__summary" @click="showProject(projects.teamFortressOutpostApi)">
+            <img src="~assets/svg/gradient-backgrounds/3.svg" class="project__background"></img>
             <img src="~assets/svg/gradient-backgrounds/teamfortressoutpost-api-logo.svg" class="project__logo--center"></img>
           </div>
         </div>
@@ -49,6 +49,7 @@
 
 <script>
 import CloseSvg from '~components/close';
+import head from './projects-head';
 
 export default {
   components: {
@@ -81,31 +82,7 @@ export default {
       projectDescription: '',
     }
   },
-  head: {
-    title: 'Projects | Web Dev Stories by Kevin Peters',
-    meta: [
-      { hid:'description', name: 'description', content: 'Projects portfolio of Kevin Peters, a web developer specialized in .NET and Vue.js' },
-      { hid:'subject', name: 'subject', content: 'Projects of Kevin Peters' },
-      { hid:'abstract', name: 'abstract', content: 'Projects of Kevin Peters, a web developer enthusiast from Berlin. This page lists all projects by him.' },
-      { hid:'url', name: 'url', content: 'https://kevinpeters.net/projects' },
-
-      { hid:'article:author', name: 'article:author', content: 'Kevin Peters' },
-      { hid:'og:url', name: 'og:url', content: 'https://kevinpeters.net/projects' },
-      { hid:'og:type', name: 'og:type', content: 'website' },
-      { hid:'og:title', name: 'og:title', content: 'Projects | Web Dev Stories by Kevin Peters' },
-      { hid:'og:image', name: 'og:image', content: '' },
-      { hid:'og:description', name: 'og:description', content: 'Projects portfolio of Kevin Peters, a web developer specialized in .NET and Vue.js' },
-
-      { hid:'twitter:card', name: 'twitter:card', content: 'summary' },
-      { hid:'twitter:site', name: 'twitter:site', content: '@kevinpeters_' },
-      { hid:'twitter:creator', name: 'twitter:creator', content: '@kevinpeters_' },
-      { hid:'twitter:url', name: 'twitter:url', content: 'https://kevinpeters.net' },
-      { hid:'twitter:title', name: 'twitter:title', content: 'Projects | Web Dev Stories by Kevin Peters' },
-      { hid:'twitter:description', name: 'twitter:description', content: 'Projects portfolio of Kevin Peters, a web developer specialized in .NET and Vue.js' },
-      { hid:'twitter:image', name: 'twitter:image', content: '' },
-      { hid:'twitter:image:alt', name: 'twitter:image:alt', content: '' }
-    ]
-  },
+  head,
   computed: {
     containerClassList: function getContainerClassList() {
       return {
@@ -157,6 +134,10 @@ export default {
 </script>
 
 <style scoped>
+.project__background {
+  width: 100%;
+}
+
 .project__list {
   margin-bottom: 75px;
 }
@@ -309,6 +290,8 @@ export default {
 .project__summary {
   color: #706f6f;
   transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
 }
 
 .project__summary img {

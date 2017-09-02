@@ -1,0 +1,28 @@
+<template>
+  <div class="pure-u-1-4 menu__column--mobile">
+    <router-link class="menu__icon--mobile" :to="route">
+      <slot name="icon">Test</slot>
+    </router-link>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'MobileMenuItem',
+  props: {
+    route: String,
+  },
+};
+</script>
+
+<style scoped>
+.menu__column--mobile {
+  text-align: center;
+  display: flex;
+  height: 53px;
+}
+
+.menu__icon--mobile {
+  margin: auto;
+}
+</style>

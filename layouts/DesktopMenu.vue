@@ -26,8 +26,8 @@
 
 <script>
 export default {
-
-}
+  name: 'DesktopMenu',
+};
 </script>
 
 <style scoped>

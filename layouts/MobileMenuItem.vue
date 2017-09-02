@@ -1,7 +1,7 @@
 <template>
   <div class="pure-u-1-4 menu__column--mobile">
     <router-link class="menu__icon--mobile" :to="route">
-      <slot name="icon">Test</slot>
+      <slot name="icon"></slot>
     </router-link>
   </div>
 </template>

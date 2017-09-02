@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="navbar__title">
       <h1>
-        <router-link to="/" style="">WEB DEV STORIES</router-link>
+        <router-link to="/">web dev stories</router-link>
       </h1>
     </div>
     <div class="menu">
@@ -17,7 +17,7 @@
           <router-link to="/projects">Projects</router-link>
         </li>
         <li class="menu__item">
-        <router-link to="/about">About</router-link>
+          <router-link to="/about">About</router-link>
         </li>
       </ul>
     </div>
@@ -98,9 +98,10 @@ export default {
   display: inline-block;
 }
 
-.navbar__title h1 a {
+.navbar__title > h1 > a {
   color: #4096c4;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .navbar__title > h1 {

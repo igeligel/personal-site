@@ -35,8 +35,5 @@ export default {
     DesktopMenu,
     MobileMenu,
   },
-  data() {
-    return {};
-  },
 };
 </script>

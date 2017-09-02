@@ -4,8 +4,16 @@
       <div class="line__wrapper"></div>
       <h2>Blogposts</h2>
     </div>
-    <div class="blogposts__articles pure-g" style="padding-left: 24px; padding-right: 24px;" v-bind:key="blogpostChunk[0].title + blogpostChunk[0].url" v-for="blogpostChunk in chunkedBlogPosts">
-      <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1" v-for="blogpost in blogpostChunk" v-bind:key="blogpost.title">
+    <div
+      class="blogposts__articles pure-g"
+      v-for="blogpostChunk in chunkedBlogPosts"
+      :key="blogpostChunk[0].title + blogpostChunk[0].url"
+    >
+      <div
+        class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1"
+        v-for="blogpost in blogpostChunk"
+        :key="blogpost.title"
+      >
         <blogpost-article
           :blogpost="blogpost">
         </blogpost-article>
@@ -122,6 +130,11 @@ export default {
   font-size: 18px;
   margin-left: 45px;
   display: inline-block;
+}
+
+.blogposts__articles {
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .blogposts__articles > div {

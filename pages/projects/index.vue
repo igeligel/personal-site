@@ -7,6 +7,12 @@
       </div>
       <div class="project__list pure-g">
         <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
+          <div class="project__summary" @click="showProject(projects.vueSteamChat)">
+            <img src="~assets/svg/gradient-backgrounds/4.svg" class="project__background"></img>
+            <img src="~assets/svg/gradient-backgrounds/vue-steam-chat-logo.svg" class="project__logo--center"></img>
+          </div>
+        </div>
+        <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
           <div class="project__summary" @click="showProject(projects.skadisteam)">
             <img src="~assets/svg/gradient-backgrounds/terminal.svg" class="project__background"></img>
             <img src="~assets/svg/gradient-backgrounds/skadisteam-logo.svg" class="project__logo"></img>
@@ -34,7 +40,7 @@
     </div>
     <div :class="offContainerClassList" ref="offContainer">
       <div class="project__heading">
-        <h1>skadisteam</h1>
+        <!--<h1>skadisteam</h1>-->
       </div>
       <div style="position: absolute; right: 24px; top: 24px; cursor: pointer;" @click="goToMain">
         <close-svg></close-svg>
@@ -61,6 +67,10 @@ export default {
       online: true,
       showMain: true,
       projects: {
+        vueSteamChat: {
+          heading: 'vue-steam-chat',
+          description: '<p>vue-steam-chat is a Vue.js 2 component imitating steam\'s web chat. This project was created since i had an old codepen left and wanted to convert it to a Vue.js component.</p>',
+        },
         skadisteam: {
           heading: 'skadisteam',
           description: '<p>Skadisteam is a .NET Standard project containing several C# class libraries which acts as a wrapper around the Steam Web API. They are designed according to the microservice pattern. Each package has unit tests and uses continuous deployment.</p>',

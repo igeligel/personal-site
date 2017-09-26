@@ -40,7 +40,12 @@
     </div>
     <div :class="offContainerClassList" ref="offContainer">
       <div class="project__heading">
-        <!--<h1>skadisteam</h1>-->
+        <span class="links">
+          <span v-for="(item, index) in projectLinks" :key="index">
+            <a :href="item.url" target="_blank" rel="noopener noreferrer">{{item.label}}</a>
+            <span v-if="index !== projectLinks.length - 1"> | </span>
+          </span>
+        </span>
       </div>
       <div style="position: absolute; right: 24px; top: 24px; cursor: pointer;" @click="goToMain">
         <close-svg></close-svg>
@@ -56,6 +61,7 @@
 <script>
 import CloseSvg from '~components/close';
 import head from './projects-head';
+import VueSteamChatHtml from '../../content/projects/vue-steam-chat.md';
 
 export default {
   components: {
@@ -69,27 +75,44 @@ export default {
       projects: {
         vueSteamChat: {
           heading: 'vue-steam-chat',
-          description: '<p>vue-steam-chat is a Vue.js 2 component imitating steam\'s web chat. This project was created since i had an old codepen left and wanted to convert it to a Vue.js component.</p>',
+          links: [
+            {
+              label: 'GitHub',
+              url: 'https://github.com/igeligel/vue-steam-chat',
+            }, {
+              label: 'npm',
+              url: 'https://www.npmjs.com/package/vue-steam-chat',
+            }, {
+              label: 'live',
+              url: 'https://codesandbox.io/s/8kyrl4xlzj',
+            }
+          ],
+          description: VueSteamChatHtml,
         },
         skadisteam: {
           heading: 'skadisteam',
+          links: [],
           description: '<p>Skadisteam is a .NET Standard project containing several C# class libraries which acts as a wrapper around the Steam Web API. They are designed according to the microservice pattern. Each package has unit tests and uses continuous deployment.</p>',
         },
         vueReadme: {
           heading: 'vue-readme',
+          links: [],
           description: '<p>Serverless vue.js application for creating project readmes in markdown. Easily create and manage the readmes of your GitHub repositories.</p>',
         },
         backpackLogin: {
           heading: 'BackpackLogin',
+          links: [],
           description: '<p>A .NET Standard library to handle the login to Backpack.tf. Backpack.tf is a trading site for Team Fortress 2, Counter-Strike: Global Offensive, and Dota 2. Community item pricing, item trading and stats, and much more.</p>',
         },
         teamFortressOutpostApi: {
           heading: 'TeamFortressOutpostApi',
+          links: [],
           description: '<p>An API wrapper for the TF2 Outpost platform. A platform to find great deals for your Team Fortress 2, Counter-Strike: Global Offensive and Dota 2 items with zero hassle.</p>',
         },
       },
       projectHeading: '',
       projectDescription: '',
+      projectLinks: [],
     }
   },
   head,
@@ -125,6 +148,7 @@ export default {
       this.$scrollTo(this.$refs.offContainer, 300, {});
       this.projectHeading = project.heading;
       this.projectDescription = project.description;
+      this.projectLinks = project.links;
       this.$refs.offContainer.style.display = 'block';
       this.showMain = false;
     },
@@ -165,9 +189,19 @@ export default {
   }
 }
 
-.project__heading h1 {
+.project__heading a {
   font-weight: 400;
   color: #4096c4;
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+.project__heading .links {
+  font-weight: 400;
+  color: rgba(64,150,196, 0.3);
   font-size: 18px;
   margin-left: 45px;
   display: inline-block;

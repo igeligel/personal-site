@@ -12,7 +12,7 @@
       <h1>About me</h1>
       <p>Hey there, I’m Kevin! I am a web developer living in Berlin. I love crafting stuff in the web and am really deep into <vue-inline-svg></vue-inline-svg> and .NET</p>
       <a class="content__link" rel="noopener noreferrer" :href="resume" target="_blank">
-        Résumé <arrow-upper-right-svg></arrow-upper-right-svg>
+        Resume <arrow-upper-right-svg></arrow-upper-right-svg>
       </a>
       <h2 class="content__second-heading">Technologies I use</h2>
       <technologies-list></technologies-list>

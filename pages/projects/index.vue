@@ -75,38 +75,57 @@ export default {
       projects: {
         vueSteamChat: {
           heading: 'vue-steam-chat',
-          links: [
-            {
-              label: 'GitHub',
-              url: 'https://github.com/igeligel/vue-steam-chat',
-            }, {
-              label: 'npm',
-              url: 'https://www.npmjs.com/package/vue-steam-chat',
-            }, {
-              label: 'live',
-              url: 'https://codesandbox.io/s/8kyrl4xlzj',
-            }
-          ],
+          links: [{
+            label: 'GitHub',
+            url: 'https://github.com/igeligel/vue-steam-chat',
+          }, {
+            label: 'npm',
+            url: 'https://www.npmjs.com/package/vue-steam-chat',
+          }, {
+            label: 'live',
+            url: 'https://codesandbox.io/s/8kyrl4xlzj',
+          }],
           description: VueSteamChatHtml,
         },
         skadisteam: {
           heading: 'skadisteam',
-          links: [],
+          links: [{
+            label: 'GitHub',
+            url: 'https://github.com/igeligel/skadisteam',
+          }],
           description: '<p>Skadisteam is a .NET Standard project containing several C# class libraries which acts as a wrapper around the Steam Web API. They are designed according to the microservice pattern. Each package has unit tests and uses continuous deployment.</p>',
         },
         vueReadme: {
           heading: 'vue-readme',
-          links: [],
+          links: [{
+            label: 'GitHub',
+            url: 'https://github.com/igeligel/vue-readme',
+          }, {
+            label: 'live',
+            url: 'https://igeligel.github.io/vue-readme',
+          }],
           description: '<p>Serverless vue.js application for creating project readmes in markdown. Easily create and manage the readmes of your GitHub repositories.</p>',
         },
         backpackLogin: {
           heading: 'BackpackLogin',
-          links: [],
+          links: [{
+            label: 'GitHub',
+            url: 'https://github.com/igeligel/BackpackLogin',
+          }, {
+            label: 'nuget',
+            url: 'https://www.nuget.org/packages/BackpackLogin',
+          }],
           description: '<p>A .NET Standard library to handle the login to Backpack.tf. Backpack.tf is a trading site for Team Fortress 2, Counter-Strike: Global Offensive, and Dota 2. Community item pricing, item trading and stats, and much more.</p>',
         },
         teamFortressOutpostApi: {
           heading: 'TeamFortressOutpostApi',
-          links: [],
+          links: [{
+            label: 'GitHub',
+            url: 'https://github.com/igeligel/TeamFortressOutpostApi',
+          }, {
+            label: 'nuget',
+            url: 'https://www.nuget.org/packages/TeamFortressOutpostApi',
+          }],
           description: '<p>An API wrapper for the TF2 Outpost platform. A platform to find great deals for your Team Fortress 2, Counter-Strike: Global Offensive and Dota 2 items with zero hassle.</p>',
         },
       },

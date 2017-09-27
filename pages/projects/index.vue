@@ -40,12 +40,9 @@
     </div>
     <div :class="offContainerClassList" ref="offContainer">
       <div class="project__heading">
-        <span class="links">
-          <span v-for="(item, index) in projectLinks" :key="index">
-            <a :href="item.url" target="_blank" rel="noopener noreferrer">{{item.label}}</a>
-            <span v-if="index !== projectLinks.length - 1"> | </span>
-          </span>
-        </span>
+        <project-links
+          :projectLinks="projectLinks">
+        </project-links>
       </div>
       <div style="position: absolute; right: 24px; top: 24px; cursor: pointer;" @click="goToMain">
         <close-svg></close-svg>
@@ -62,10 +59,12 @@
 import CloseSvg from '~components/close';
 import head from './projects-head';
 import VueSteamChatHtml from '../../content/projects/vue-steam-chat.md';
+import ProjectLinks from '../../components/ProjectLinks';
 
 export default {
   components: {
     'close-svg': CloseSvg,
+    'project-links': ProjectLinks,
   },
   data () {
     return {
@@ -206,26 +205,6 @@ export default {
   .project__heading {
     border-bottom: 1px solid transparent;
   }
-}
-
-.project__heading a {
-  font-weight: 400;
-  color: #4096c4;
-  font-size: 18px;
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-decoration: none;
-}
-
-.project__heading .links {
-  font-weight: 400;
-  color: rgba(64,150,196, 0.3);
-  font-size: 18px;
-  margin-left: 45px;
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
 }
 
 .project-content {

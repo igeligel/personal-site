@@ -44,7 +44,7 @@
           :projectLinks="projectLinks">
         </project-links>
       </div>
-      <div style="position: absolute; right: 24px; top: 24px; cursor: pointer;" @click="goToMain">
+      <div class="project__close-container" @click="goToMain">
         <close-svg></close-svg>
       </div>
       <div class="project-content">
@@ -195,6 +195,13 @@ export default {
 
 
 <style scoped>
+.project__close-container {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  cursor: pointer;
+}
+
 .project__background {
   width: 100%;
 }

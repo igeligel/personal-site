@@ -162,7 +162,9 @@ export default {
       this.online = type === 'online'
     },
     showProject(project) {
-      this.positionBeforeProjectSummary = document.body.scrollTop;
+      var doc = document.documentElement;
+      var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+      this.positionBeforeProjectSummary = top;
       this.$scrollTo(this.$refs.offContainer, 300, {});
       this.projectHeading = project.heading;
       this.projectDescription = project.description;
@@ -184,6 +186,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.project-content img {
+  max-width: 100%;
+}
+</style>
+
 
 <style scoped>
 .project__background {

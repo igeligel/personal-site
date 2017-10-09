@@ -47,10 +47,16 @@
       <div class="project__close-container" @click="goToMain">
         <close-svg></close-svg>
       </div>
+      <project-content
+        :heading="projectHeading"
+        :description="projectDescription">
+      </project-content>
+      <!--
       <div class="project-content">
         <h2 class="project-content__heading" v-text="projectHeading"></h2>
         <div v-html="projectDescription"></div>
       </div>
+      -->
     </div>
   </div>
 </template>
@@ -60,11 +66,13 @@ import CloseSvg from '~components/close';
 import head from './projects-head';
 import VueSteamChatHtml from '../../content/projects/vue-steam-chat.md';
 import ProjectLinks from '../../components/ProjectLinks';
+import ProjectContent from '../../components/ProjectContent';
 
 export default {
   components: {
     'close-svg': CloseSvg,
     'project-links': ProjectLinks,
+    'project-content': ProjectContent,
   },
   data () {
     return {
@@ -188,9 +196,7 @@ export default {
 </script>
 
 <style>
-.project-content img {
-  max-width: 100%;
-}
+
 </style>
 
 
@@ -220,37 +226,6 @@ export default {
 @media (min-width: 700px) {
   .project__heading {
     border-bottom: 1px solid transparent;
-  }
-}
-
-.project-content {
-  padding-top: 24px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 75px;
-}
-
-.project-content__heading {
-  font-size: 24px;
-  margin-bottom: 18px;
-}
-
-@media (min-width: 700px) {
-  .project-content__heading {
-    font-size: 32px;
-  }
-}
-
-.project-content > div {
-  font-size: 16px;
-  line-height: 28px;
-  letter-spacing: -.004em;
-}
-
-@media (min-width: 700px) {
-  .project-content > div {
-    font-size: 19px;
-    line-height: 33px;
   }
 }
 

@@ -51,12 +51,6 @@
         :heading="projectHeading"
         :description="projectDescription">
       </project-content>
-      <!--
-      <div class="project-content">
-        <h2 class="project-content__heading" v-text="projectHeading"></h2>
-        <div v-html="projectDescription"></div>
-      </div>
-      -->
     </div>
   </div>
 </template>

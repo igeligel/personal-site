@@ -21,11 +21,11 @@
 </template>
 
 <script>
-import ArrowUpperRightSvg from '../../components/ArrowUpperRight';
-import VueInlineSvg from '../../components/technology-icons/VueInline';
+import ArrowUpperRightSvg from '~/components/ArrowUpperRight';
+import VueInlineSvg from '~/components/technology-icons/VueInline';
 
-import ProfileLinks from '../../components/ProfileLinks';
-import TechnologiesList from '../../components/TechnologiesList';
+import ProfileLinks from '~/components/ProfileLinks';
+import TechnologiesList from '~/components/TechnologiesList';
 import head from './about-head';
 
 export default {

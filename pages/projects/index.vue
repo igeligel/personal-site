@@ -189,11 +189,6 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
-
-
 <style scoped>
 .project__close-container {
   position: absolute;

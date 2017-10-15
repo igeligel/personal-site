@@ -10,7 +10,3 @@ export default {
   name: 'arrow-upper-right-svg',
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

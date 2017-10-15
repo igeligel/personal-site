@@ -9,7 +9,3 @@ export default {
   name: 'xing-svg',
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

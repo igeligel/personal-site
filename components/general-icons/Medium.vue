@@ -11,7 +11,3 @@ export default {
   name: 'medium-svg',
 };
 </script>
-
-<style>
-
-</style>

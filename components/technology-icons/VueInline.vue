@@ -16,7 +16,3 @@ export default {
   name: 'vue-inline-svg',
 };
 </script>
-
-<style>
-
-</style>

@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'javascript-svg',
+  name: 'JavascriptSvg',
 }
 </script>
 

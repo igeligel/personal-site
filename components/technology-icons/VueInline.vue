@@ -13,6 +13,6 @@
 
 <script>
 export default {
-  name: 'vue-inline-svg',
+  name: 'VueInlineSvg',
 };
 </script>

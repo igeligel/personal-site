@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'css-3-svg',
+  name: 'Css3Svg',
 }
 </script>
 

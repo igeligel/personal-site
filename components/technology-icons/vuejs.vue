@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'vuejs-svg',
+  name: 'VuejsSvg',
 }
 </script>
 

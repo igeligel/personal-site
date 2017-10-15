@@ -140,8 +140,8 @@
 
 <script>
 export default {
-
-}
+  name: 'DotnetSvg',
+};
 </script>
 
 <style scoped>

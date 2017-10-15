@@ -7,6 +7,13 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'LogoSvg',
+};
+</script>
+
+
 <style>
 .VueToNuxtLogo
 {

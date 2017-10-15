@@ -36,7 +36,7 @@ import WebpackSvg from './technology-icons/webpack';
 import YarnSvg from './technology-icons/yarn';
 
 export default {
-  name: 'technologies-list',
+  name: 'TechnologiesList',
   components: {
     'babel-svg': BabelSvg,
     'c-sharp-svg': CsharpSvg,

@@ -6,11 +6,6 @@
 
 <script>
 export default {
-  name: 'twitter-svg',
+  name: 'TwitterSvg',
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>
-

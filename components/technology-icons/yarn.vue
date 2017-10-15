@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'yarn-svg',
+  name: 'YarnSvg',
 }
 </script>
 

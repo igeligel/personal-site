@@ -32,7 +32,7 @@ import TwitterSvg from './general-icons/Twitter';
 import XingSvg from './general-icons/Xing';
 
 export default {
-  name: 'profile-links',
+  name: 'ProfileLinks',
   components: {
     EmailSvg,
     LinkedinSvg,

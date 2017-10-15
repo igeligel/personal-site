@@ -8,6 +8,6 @@
 
 <script>
 export default {
-  name: 'medium-svg',
+  name: 'MediumSvg',
 };
 </script>

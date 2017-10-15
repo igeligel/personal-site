@@ -7,6 +7,6 @@
 
 <script>
 export default {
-  name: 'arrow-upper-right-svg',
+  name: 'ArrowUpperRightSvg',
 };
 </script>

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'sass-svg',
+  name: 'SassSvg',
 }
 </script>
 

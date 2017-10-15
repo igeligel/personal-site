@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'webpack-svg',
+  name: 'WebpackSvg',
 }
 </script>
 

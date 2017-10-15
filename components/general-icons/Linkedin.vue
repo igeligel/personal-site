@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'linkedin-svg',
+  name: 'LinkedinSvg',
 };
 </script>
 

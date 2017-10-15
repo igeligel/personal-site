@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'git-svg',
+  name: 'GitSvg',
 }
 </script>
 

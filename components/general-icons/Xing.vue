@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'xing-svg',
+  name: 'XingSvg',
 };
 </script>

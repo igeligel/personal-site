@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'postgres-svg',
+  name: 'PostgresSvg',
 }
 </script>
 

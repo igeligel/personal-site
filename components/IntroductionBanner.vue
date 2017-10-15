@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'introduction-banner',
+  name: 'IntroductionBanner',
   props: {
     author: String,
     jobTitle: String,

@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'blogpost-article',
+  name: 'BlogpostArticle',
   props: {
     blogpost: Object,
   },

@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'babel-svg',
+  name: 'BabelSvg',
 }
 </script>
 

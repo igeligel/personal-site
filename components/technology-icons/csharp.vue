@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'csharp-svg',
+  name: 'CsharpSvg',
 }
 </script>
 

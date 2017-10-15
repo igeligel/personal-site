@@ -29,7 +29,7 @@ export default {
       blogposts,
     };
   },
-  name: 'blogpost-articles',
+  name: 'BlogpostArticles',
 };
 </script>
 

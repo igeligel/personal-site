@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'email-svg',
+  name: 'EmailSvg',
 };
 </script>
 

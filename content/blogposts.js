@@ -1,7 +1,7 @@
-import JquerySelectorPerformance from '~assets/img/jquery-selector-performance.png';
-import MyVisualStudioCodeSetupImage from '~assets/img/my-visual-studio-code-setup.png';
-import WritingAProgressiveImageLoadingComponentImage from '~assets/img/writing-a-progressive-image-loading-component-in-vue.js.png';
-import UnitTestingVueJsComponentsWithJest from '~assets/img/unit-testing-vue-js-components-with-jest.png';
+import JquerySelectorPerformance from '~/assets/img/jquery-selector-performance.png';
+import MyVisualStudioCodeSetupImage from '~/assets/img/my-visual-studio-code-setup.png';
+import WritingAProgressiveImageLoadingComponentImage from '~/assets/img/writing-a-progressive-image-loading-component-in-vue.js.png';
+import UnitTestingVueJsComponentsWithJest from '~/assets/img/unit-testing-vue-js-components-with-jest.png';
 
 const blogposts = [
   {

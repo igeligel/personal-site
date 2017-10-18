@@ -56,9 +56,9 @@
 </template>
 
 <script>
-import CloseSvg from '~components/close';
-import ProjectLinks from '~components/ProjectLinks';
-import ProjectContent from '~components/ProjectContent';
+import CloseSvg from '~/components/close';
+import ProjectLinks from '~/components/ProjectLinks';
+import ProjectContent from '~/components/ProjectContent';
 import head from './projects-head';
 import VueSteamChatHtml from '../../content/projects/vue-steam-chat.md';
 

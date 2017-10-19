@@ -1,13 +1,5 @@
 <template>
-  <svg
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    width="34"
-    height="34"
-    viewBox="0 0 34 34"
-    style="margin: auto;"
-  >
+  <svg width="34" height="34">
     <path
       d="M16 2.672l-5.331 5.331v-2.133h-4.265v6.398l-3.755 3.755 0.754 0.754 12.597-12.597 12.597 12.597 0.754-0.754-13.351-13.351zM7.47 6.937h2.132v2.132l-2.133 2.133v-4.265z"
       :fill="this.$route.name === 'index' ? '#4096c4' : '#000000'"

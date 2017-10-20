@@ -1,5 +1,5 @@
 <template>
-  <svg width="34" height="34">
+  <svg>
     <path
       d="M16 2.672l-5.331 5.331v-2.133h-4.265v6.398l-3.755 3.755 0.754 0.754 12.597-12.597 12.597 12.597 0.754-0.754-13.351-13.351zM7.47 6.937h2.132v2.132l-2.133 2.133v-4.265z"
       :fill="this.$route.name === 'index' ? '#4096c4' : '#000000'"
@@ -16,3 +16,10 @@ export default {
   name: 'HomeSvgIcon',
 };
 </script>
+
+<style lang="scss" scoped>
+svg {
+  width: 34px;
+  height: 34px;
+}
+</style>

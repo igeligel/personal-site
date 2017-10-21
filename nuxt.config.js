@@ -46,7 +46,7 @@ module.exports = {
     name: 'Web Dev Stories',
     short_name: 'WDS',
     theme_color: '#4096c4',
-    start_url: '.',
+    start_url: '/',
     display: 'standalone',
     background_color: '#fff',
     description: 'Homepage of the web developer Kevin Peters.',

@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="blogpost.url">
+  <router-link :aria-label="`Link to blogpost ${blogpost.title}`" :to="blogpost.url">
     <div class="blogpost__article">
       <div class="blogpost__article__image">
         <img :src="blogpost.previewImage" :alt="blogpost.altTag"></img>

@@ -1,23 +1,23 @@
 <template>
   <div>
     <div>
-      <a :href="socialMedia.twitter" target="_blank" rel="noopener noreferrer">
+      <a aria-label="Link to Twitter" :href="socialMedia.twitter" target="_blank" rel="noopener noreferrer">
         <twitter-svg></twitter-svg>
       </a>
-      <a :href="socialMedia.email" target="_blank" rel="noopener noreferrer">
+      <a aria-label="Link to open email dialog" :href="socialMedia.email" target="_blank" rel="noopener noreferrer">
         <email-svg></email-svg>
       </a>
     </div>
     <div>
-      <a :href="socialMedia.linkedin" target="_blank" rel="noopener noreferrer">
+      <a aria-label="Link to open linkedin" :href="socialMedia.linkedin" target="_blank" rel="noopener noreferrer">
         <linkedin-svg></linkedin-svg>
       </a>
-      <a :href="socialMedia.xing" target="_blank" rel="noopener noreferrer">
+      <a aria-label="Link to open xing" :href="socialMedia.xing" target="_blank" rel="noopener noreferrer">
         <xing-svg></xing-svg>
       </a>
     </div>
     <div>
-      <a :href="socialMedia.medium" target="_blank" rel="noopener noreferrer">
+      <a aria-label="Link to open medium" :href="socialMedia.medium" target="_blank" rel="noopener noreferrer">
         <medium-svg></medium-svg>
       </a>
     </div>

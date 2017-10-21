@@ -8,7 +8,7 @@
       <blogpost-article :blogpost="blogpost"></blogpost-article>
     </div>
     <div class="pure-u-1-1 blogpost__more">
-      <router-link to="/blog">Read more</router-link>
+      <router-link aria-label="Link to blog" to="/blog">Read more</router-link>
     </div>
   </div>
 </template>

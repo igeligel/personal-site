@@ -1,6 +1,6 @@
 <template>
   <div class="pure-u-1-4 menu__column--mobile">
-    <router-link class="menu__icon--mobile" :to="route">
+    <router-link class="menu__icon--mobile" :to="route" :aria-label="`Link to ${route}`">
       <slot name="icon"></slot>
     </router-link>
   </div>

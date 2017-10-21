@@ -2,22 +2,22 @@
   <div class="navbar">
     <div class="navbar__title">
       <h1>
-        <router-link to="/">web dev stories</router-link>
+        <router-link aria-label="Link to homepage" to="/">web dev stories</router-link>
       </h1>
     </div>
     <div class="menu">
       <ul class="menu__list">
         <li class="menu__item">
-          <router-link to="/">Home</router-link>
+          <router-link to="/" aria-label="Link to homepage">Home</router-link>
         </li>
         <li class="menu__item">
-          <router-link to="/blog">Blog</router-link>
+          <router-link to="/blog" aria-label="Link to blog">Blog</router-link>
         </li>
         <li class="menu__item">
-          <router-link to="/projects">Projects</router-link>
+          <router-link to="/projects" aria-label="Link to projects">Projects</router-link>
         </li>
         <li class="menu__item">
-          <router-link to="/about">About</router-link>
+          <router-link to="/about" aria-label="Link to about page">About</router-link>
         </li>
       </ul>
     </div>

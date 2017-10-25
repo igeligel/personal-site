@@ -1,73 +1,69 @@
 <template>
   <div class="blogposts__articles pure-g">
     <div
-      class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1"
+      v-for="blogpost in slicedBlogposts"
       :key="blogpost.title"
-      v-for="blogpost in minimizedBlogposts"
+      class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1"
     >
-      <blogpost-article :blogpost="blogpost"></blogpost-article>
+      <blogpost-article :blogpost="blogpost" />
     </div>
     <div class="pure-u-1-1 blogpost__more">
-      <router-link aria-label="Link to blog" to="/blog">Read more</router-link>
+      <router-link to="/blog" aria-label="Link to blog">
+        Read more
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
-import BlogpostArticle from '../components/BlogpostArticle.vue';
-import blogposts from '../content/blogposts';
+import BlogpostArticle from '@/components/BlogpostArticle.vue';
+import blogposts from '@/content/blogposts';
 
 export default {
+  name: 'BlogpostArticles',
   components: {
     BlogpostArticle,
   },
   computed: {
-    minimizedBlogposts: () => blogposts.slice(0, 3),
+    slicedBlogposts: () => blogposts.slice(0, 3),
   },
-  data() {
-    return {
-      blogposts,
-    };
-  },
-  name: 'BlogpostArticles',
 };
 </script>
 
 <style scoped lang="scss">
+$link-color: #4096c4;
+
 @mixin no-link-style-color($color) {
   color: $color;
   text-decoration: none;
 }
 
-* {
+.blogposts__articles {
+  padding: 0 1.5em;
   font-family: 'Lato', sans-serif;
   text-rendering: optimizeLegibility;
 }
 
-.blogposts__articles {
-  padding: 0 24px
-}
-
 @media (min-width: 768px) {
   .blogposts__articles > div {
-    padding: 10px;
+    padding: 0.625em;
   }
 }
 
 .blogpost__more {
-  margin: 16px 0 0 16px;
+  margin: 1em 0 0 1em;
 
   a {
-    font-size: 18px;
-    @include no-link-style-color(#4096c4);
+    font-size: 1.125em;
+    @include no-link-style-color($link-color);
   }
 
   a:link {
-    @include no-link-style-color(#4096c4);
+    @include no-link-style-color($link-color);
   }
 
   a:visited {
-    @include no-link-style-color(#4096c4);
+    @include no-link-style-color($link-color);
   }
 }
 </style>

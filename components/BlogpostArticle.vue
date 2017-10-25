@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 $border-color: #dbdbdb;
 $image-border-color: #4096c4;
 

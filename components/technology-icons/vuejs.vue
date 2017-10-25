@@ -16,7 +16,7 @@
 <script>
 export default {
   name: 'VuejsSvg',
-}
+};
 </script>
 
 <style scoped lang="scss">

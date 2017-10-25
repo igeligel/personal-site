@@ -30,7 +30,7 @@
 <script>
 export default {
   name: 'Css3Svg',
-}
+};
 </script>
 
 <style scoped>

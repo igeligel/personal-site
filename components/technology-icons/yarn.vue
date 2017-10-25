@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'YarnSvg',
-}
+};
 </script>
 
 <style scoped lang="scss">

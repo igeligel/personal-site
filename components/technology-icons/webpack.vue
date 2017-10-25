@@ -16,7 +16,7 @@
 <script>
 export default {
   name: 'WebpackSvg',
-}
+};
 </script>
 
 <style scoped lang="scss">

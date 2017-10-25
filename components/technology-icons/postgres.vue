@@ -21,7 +21,7 @@
 <script>
 export default {
   name: 'PostgresSvg',
-}
+};
 </script>
 
 <style scoped>

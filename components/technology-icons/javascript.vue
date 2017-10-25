@@ -14,7 +14,7 @@
 <script>
 export default {
   name: 'JavascriptSvg',
-}
+};
 </script>
 
 <style scoped>

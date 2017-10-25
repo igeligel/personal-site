@@ -72,7 +72,7 @@
 <script>
 export default {
   name: 'DockerSvg',
-}
+};
 </script>
 
 <style scoped>

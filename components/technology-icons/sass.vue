@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'SassSvg',
-}
+};
 </script>
 
 <style scoped lang="scss">

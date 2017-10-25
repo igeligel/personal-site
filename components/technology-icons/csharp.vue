@@ -9,7 +9,7 @@
 <script>
 export default {
   name: 'CsharpSvg',
-}
+};
 </script>
 
 <style scoped lang="scss">

@@ -15,13 +15,11 @@ export default {
 $grey: #706F6F;
 
 svg {
-  max-width: 40px;
-  max-height: 40px;
-  width: 24px;
-  height: 24px;
+  width: 1.5em;
+  height: 1.5em;
   fill: $grey;
   stroke: $grey;
-  stroke-width: 2px;
+  stroke-width: 0.125em;
   stroke-linecap: round;
   stroke-linejoin: round;
 }

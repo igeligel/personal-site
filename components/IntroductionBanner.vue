@@ -1,48 +1,62 @@
 <template>
-  <div class="banner">
-    <h2>Hey, I am {{author}}</h2>
-    <h3>I am a {{jobTitle}}</h3>
-    <h3 v-text="motto"></h3>
+  <div class="headline__container">
+    <h2 class="headline__heading" v-text="welcomeLine" />
+    <h3 class="headline__sub-heading" v-text="jobRepresentation" />
+    <h3 class="headline__sub-heading" v-text="motto" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IntroductionBanner',
+  name: 'HeadlineContainer',
   props: {
     author: String,
     jobTitle: String,
     motto: String,
   },
+  computed: {
+    welcomeLine() {
+      return `Hey, I am ${this.author}`;
+    },
+    jobRepresentation() {
+      return `I am a ${this.jobTitle}`;
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.banner {
-  padding-left: 45px;
-  padding-right: 45px;
-  padding-top: 24px;
-  padding-bottom: 32px;
-  background: #a1c4fd;
-  background: linear-gradient(to right, #a1c4fd 0%,#c2e9fb 100%);
-  width: 100vw;
-}
+$gradient-higher: #a1c4fd;
+$gradient-lower: #c2e9fb;
+$font-color: #1e2c44;
 
-@media (min-width: 1000px) {
-  .banner {
+.headline__container {
+  padding-left: 2.8125em;
+  padding-right: 2.8125em;
+  padding-top: 1.5em;
+  padding-bottom: 2em;
+  background: $gradient-higher;
+  background: linear-gradient(
+    to right,
+    $gradient-higher 0%,
+    $gradient-lower 100%
+  );
+  width: 100vw;
+
+  @media (min-width: 1000px) {
     margin-left: calc(50vw - (100vw - 1000px / 2));
-    padding-left: calc((100vw - 1000px) / 2 + 20px);
+    padding-left: calc((100vw - 1000px) / 2 + 1.25em);
   }
 }
 
-.banner h2 {
-  color: #1e2c44;
+.headline__heading {
+  color: $font-color;
   font-weight: 300;
 }
 
-.banner h3 {
-  color: #1e2c44;
+.headline__sub-heading {
+  color: $font-color;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 0.875em;
 }
 </style>

@@ -1,35 +1,26 @@
 <template>
   <div>
-    <div>
-      <a aria-label="Link to Twitter" :href="socialMedia.twitter" target="_blank" rel="noopener noreferrer">
-        <twitter-svg></twitter-svg>
-      </a>
-      <a aria-label="Link to open email dialog" :href="socialMedia.email" target="_blank" rel="noopener noreferrer">
-        <email-svg></email-svg>
-      </a>
-    </div>
-    <div>
-      <a aria-label="Link to open linkedin" :href="socialMedia.linkedin" target="_blank" rel="noopener noreferrer">
-        <linkedin-svg></linkedin-svg>
-      </a>
-      <a aria-label="Link to open xing" :href="socialMedia.xing" target="_blank" rel="noopener noreferrer">
-        <xing-svg></xing-svg>
-      </a>
-    </div>
-    <div>
-      <a aria-label="Link to open medium" :href="socialMedia.medium" target="_blank" rel="noopener noreferrer">
-        <medium-svg></medium-svg>
+    <div v-for="row in splicedArray" :key="row[0].key">
+      <a
+        v-for="{ key, ariaLabel, url, component } in row"
+        :key="key"
+        :aria-label="ariaLabel"
+        :href="url"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <component :is="component" />
       </a>
     </div>
   </div>
 </template>
 
 <script>
-import EmailSvg from './general-icons/Email';
-import LinkedinSvg from './general-icons/Linkedin';
-import MediumSvg from './general-icons/Medium';
-import TwitterSvg from './general-icons/Twitter';
-import XingSvg from './general-icons/Xing';
+import EmailSvg from '~/components/general-icons/Email';
+import LinkedinSvg from '~/components/general-icons/Linkedin';
+import MediumSvg from '~/components/general-icons/Medium';
+import TwitterSvg from '~/components/general-icons/Twitter';
+import XingSvg from '~/components/general-icons/Xing';
 
 export default {
   name: 'ProfileLinks',
@@ -41,11 +32,38 @@ export default {
     XingSvg,
   },
   props: {
-    socialMedia: Object,
+    socialMediaList: Array,
+  },
+  data() {
+    return {
+      keyComponentDictionary: {
+        twitter: 'TwitterSvg',
+        email: 'EmailSvg',
+        linkedin: 'LinkedinSvg',
+        xing: 'XingSvg',
+        medium: 'MediumSvg',
+      },
+    };
+  },
+  computed: {
+    splicedArray() {
+      const array = this.socialMediaListIncludingComponents;
+      let chunks = [];
+      while (array.length > 0) {
+        chunks.push(array.splice(0, 2));
+      }
+      return chunks;
+    },
+    socialMediaListIncludingComponents() {
+      return this.socialMediaList.map(socialMediaListElement => {
+        const copy = Object.assign({}, socialMediaListElement);
+        copy['component'] = this.keyComponentDictionary[
+          socialMediaListElement.key
+        ];
+        return copy;
+      });
+    },
   },
 };
+
 </script>
-
-<style lang="scss" scoped>
-
-</style>

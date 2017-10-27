@@ -1,7 +1,7 @@
 <template>
-  <div class="project-content">
-    <h2 class="project-content__heading" v-text="heading"></h2>
-    <div v-html="description"></div>
+  <div class="project-content__container">
+    <h2 class="project-content__heading" v-text="heading" />
+    <div class="project-content__description" v-html="description" />
   </div>
 </template>
 
@@ -16,40 +16,37 @@ export default {
 </script>
 
 <style>
-.project-content img {
+.project-content__container img {
   max-width: 100%;
 }
 </style>
 
 <style lang="scss" scoped>
-.project-content {
-  padding-top: 24px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-bottom: 75px;
+.project-content__container {
+  padding-top: 1.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 4.6875em;
 }
 
 .project-content__heading {
-  font-size: 24px;
-  margin-bottom: 18px;
-}
+  font-size: 1.5em;
+  margin-bottom: 0.75em;
 
-@media (min-width: 700px) {
-  .project-content__heading {
-    font-size: 32px;
+  @media (min-width: 700px) {
+    font-size: 2em;
+    margin-bottom: 0.5em;
   }
 }
 
-.project-content > div {
-  font-size: 16px;
-  line-height: 28px;
+.project-content__description {
+  font-size: 1em;
+  line-height: 1.75em;
   letter-spacing: -.004em;
-}
 
-@media (min-width: 700px) {
-  .project-content > div {
-    font-size: 19px;
-    line-height: 33px;
+  @media (min-width: 700px) {
+    font-size: 1.1875em;
+    line-height: 1.74em;
   }
 }
 </style>

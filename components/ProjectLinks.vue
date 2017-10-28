@@ -1,8 +1,18 @@
 <template>
-  <span class="links">
-    <span v-for="(item, index) in projectLinks" :key="index">
-      <a :aria-label="`Link to open project on ${item.label}`" :href="item.url" target="_blank" rel="noopener noreferrer">{{item.label}}</a>
-      <span v-if="index !== projectLinks.length - 1"> | </span>
+  <span class="project-links__container">
+    <span
+      v-for="(projectLink, index) in projectLinksRepresentation"
+      :key="index"
+    >
+      <a
+        :aria-label="projectLink.ariaLabel"
+        :href="projectLink.url"
+        v-text="projectLink.label"
+        class="project-links__link"
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+      <span v-if="index !== projectLinks.length - 1" v-text="' | '" />
     </span>
   </span>
 </template>
@@ -15,27 +25,29 @@ export default {
       type: Array,
     },
   },
+  computed: {
+    projectLinksRepresentation() {
+      return this.projectLinks.map(projectLink => {
+        var copy = Object.assign({}, projectLink);
+        copy.ariaLabel = `Link to open project on ${projectLink.label}`;
+        return copy;
+      });
+    },
+  },
 };
 </script>
 
-<style scoped>
-.links {
-  font-weight: 400;
-  color: rgba(64,150,196, 0.3);
-  font-size: 18px;
-  margin-left: 45px;
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
+<style lang="scss" scoped>
+$main-color: #4096c4;
+
+.project-links__container {
+  color: rgba($main-color, 0.3);
+  font-size: 1.125em;
+  margin-left: 2.5em;
 }
 
-a {
-  font-weight: 400;
-  color: #4096c4;
-  font-size: 18px;
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
+.project-links__link {
+  color: $main-color;
   text-decoration: none;
 }
 </style>

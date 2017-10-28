@@ -1,22 +1,22 @@
 <template>
   <div>
-    <div class="technology-row">
-      <vuejs-svg></vuejs-svg>
-      <javascript-svg></javascript-svg>
-      <webpack-svg></webpack-svg>
-      <babel-svg></babel-svg>
-      <dotnet-svg></dotnet-svg>
+    <div class="technology__row">
+      <VuejsSvg />
+      <JavaScriptSvg />
+      <WebpackSvg />
+      <BabelSvg />
+      <DotnetSvg />
     </div>
-    <div class="technology-row">
-      <c-sharp-svg></c-sharp-svg>
-      <css-3-svg></css-3-svg>
-      <sass-svg></sass-svg>
-      <yarn-svg></yarn-svg>
-      <docker-svg></docker-svg>
+    <div class="technology__row">
+      <CsharpSvg />
+      <Css3Svg />
+      <SassSvg />
+      <YarnSvg />
+      <DockerSvg />
     </div>
-    <div class="technology-row">
-      <postgres-svg></postgres-svg>
-      <git-svg></git-svg>
+    <div class="technology__row">
+      <PostgresSvg />
+      <GitSvg />
     </div>
   </div>
 </template>
@@ -38,48 +38,45 @@ import YarnSvg from './technology-icons/yarn';
 export default {
   name: 'TechnologiesList',
   components: {
-    'babel-svg': BabelSvg,
-    'c-sharp-svg': CsharpSvg,
-    'css-3-svg': Css3Svg,
-    'docker-svg': DockerSvg,
-    'dotnet-svg': DotnetSvg,
-    'git-svg': GitSvg,
-    'javascript-svg': JavaScriptSvg,
-    'postgres-svg': PostgresSvg,
-    'sass-svg': SassSvg,
-    'vuejs-svg': VuejsSvg,
-    'webpack-svg': WebpackSvg,
-    'yarn-svg': YarnSvg,
+    BabelSvg,
+    CsharpSvg,
+    Css3Svg,
+    DockerSvg,
+    DotnetSvg,
+    GitSvg,
+    JavaScriptSvg,
+    PostgresSvg,
+    SassSvg,
+    VuejsSvg,
+    WebpackSvg,
+    YarnSvg,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.technology-row svg {
-  max-height: calc(20% - 14px);
-  max-width: calc(20% - 14px);
-}
+.technology__row {
+  svg {
+    max-height: calc(20% - 0.875em);
+    max-width: calc(20% - 0.875em);
+  }
 
-.technology-row svg:nth-child(n+2) {
-  margin-left: 17.5px;
-}
+  svg:nth-child(n + 2) {
+    margin-left: 1.09375em;
+  }
 
-.technology-row:nth-child(n+2) {
-  margin-top: 10px;
-}
+  &:nth-child(n + 2) {
+    margin-top: 0.625em;
+  }
 
-@media (min-width: 450px) {
-  .technology-row {
+  @media (min-width: 450px) {
     padding-left: calc(100% - 75vw);
     padding-right: calc(100% - 75vw);
   }
-}
 
-@media (min-width: 1000px) {
-  .technology-row {
-    padding-left: 200px;
-    padding-right: 200px;
+  @media (min-width: 1000px) {
+    padding-left: 12.5em;
+    padding-right: 12.5em;
   }
 }
 </style>
-

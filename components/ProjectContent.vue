@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 .project-content__container {
-  padding-top: 1.5em;
+  padding-top: 0.25em;
   padding-left: 1.5em;
   padding-right: 1.5em;
   padding-bottom: 4.6875em;

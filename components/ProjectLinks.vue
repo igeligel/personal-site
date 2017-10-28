@@ -12,7 +12,7 @@
         target="_blank"
         rel="noopener noreferrer"
       />
-      <span v-if="index !== projectLinks.length - 1" v-text="' | '" />
+      <span v-if="index !== projectLinks.length - 1" v-text="defaultSplitter" />
     </span>
   </span>
 </template>
@@ -24,6 +24,11 @@ export default {
     projectLinks: {
       type: Array,
     },
+  },
+  data() {
+    return {
+      defaultSplitter: ' | ',
+    };
   },
   computed: {
     projectLinksRepresentation() {

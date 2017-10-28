@@ -1,19 +1,15 @@
 <template>
   <div class="container">
-    <introduction-banner
-      :author="author"
-      :jobTitle="jobTitle"
-      :motto="motto">
-    </introduction-banner>
-    <site-heading :label="'Recent Blogposts'"></site-heading>
-    <blogpost-articles></blogpost-articles>
+    <IntroductionBanner :author="author" :jobTitle="jobTitle" :motto="motto" />
+    <SiteHeading :label="'Recent Blogposts'" />
+    <BlogpostArticles />
   </div>
 </template>
 
 <script>
-import BlogpostArticles from '../components/BlogpostArticles';
-import IntroductionBanner from '../components/IntroductionBanner';
-import SiteHeading from '../components/SiteHeading';
+import BlogpostArticles from '~/components/BlogpostArticles';
+import IntroductionBanner from '~/components/IntroductionBanner';
+import SiteHeading from '~/components/SiteHeading';
 import head from './home-head';
 
 export default {

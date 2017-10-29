@@ -60,7 +60,7 @@ module.exports = {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/markdownit',
-    ['@nuxtjs/google-analytics', { ua: 'UA-104059616-1' }],
+    ['@nuxtjs/google-analytics', { id: 'UA-104059616-1' }],
     ['@nuxtjs/sitemap', {
       path: '/sitemap.xml',
       hostname: 'https://www.kevinpeters.net',

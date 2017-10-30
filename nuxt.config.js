@@ -8,7 +8,10 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'google', content: 'notranslate' },
-      { name: 'google-site-verification', content: 't15rKEcRCZ457RDQnD7E3FBI05TfLjzKINO6QhcPbiY' },
+      {
+        name: 'google-site-verification',
+        content: 't15rKEcRCZ457RDQnD7E3FBI05TfLjzKINO6QhcPbiY',
+      },
       { name: 'referrer', content: 'no-referrer' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'ICBM', content: '52.52, 13.4050' },
@@ -20,7 +23,10 @@ module.exports = {
       { name: 'apple-mobile-web-app-title', content: 'Web Dev Stories' },
       { name: 'theme-color', content: '#a1c4fd' },
       { name: 'application-name', content: 'Web Dev Stories' },
-      { name: 'msapplication-tooltip', content: 'Web development stories by a .NET and Vue.js enthusiast.' },
+      {
+        name: 'msapplication-tooltip',
+        content: 'Web development stories by a .NET and Vue.js enthusiast.',
+      },
       { name: 'msapplication-starturl', content: '/' },
       { name: 'msapplication-navbutton-color', content: '#ffffff' },
       { name: 'msapplication-TileColor', content: '#a1c4fd' },
@@ -50,9 +56,11 @@ module.exports = {
     display: 'standalone',
     background_color: '#fff',
     description: 'Homepage of the web developer Kevin Peters.',
-    related_applications: [{
-      platform: 'web',
-    }],
+    related_applications: [
+      {
+        platform: 'web',
+      },
+    ],
   },
   /*
   ** Modules
@@ -61,49 +69,58 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxtjs/markdownit',
     ['@nuxtjs/google-analytics', { id: 'UA-104059616-1' }],
-    ['@nuxtjs/sitemap', {
-      path: '/sitemap.xml',
-      hostname: 'https://www.kevinpeters.net',
-      generate: true,
-      routes: [
-        {
-          url: '/',
-          changefreq: 'weekly',
-          priority: 1,
-          lastmodISO: '2017-08-05T19:30:00.000Z',
-        }, {
-          url: '/blog',
-          changefreq: 'weekly',
-          priority: 0.8,
-          lastmodISO: '2017-08-05T19:30:00.000Z',
-        }, {
-          url: '/projects',
-          changefreq: 'monthly',
-          priority: 0.2,
-          lastmodISO: '2017-08-05T19:30:00.000Z',
-        }, {
-          url: '/about',
-          changefreq: 'yearly',
-          priority: 0.4,
-          lastmodISO: '2017-08-05T19:30:00.000Z',
-        }, {
-          url: '/blog/writing-a-progressive-image-loading-component',
-          changefreq: 'never',
-          priority: 0.7,
-          lastmodISO: '2017-08-05T19:30:00.000Z',
-        }, {
-          url: '/blog/my-visual-studio-code-setup-part-one',
-          changefreq: 'never',
-          priority: 0.7,
-          lastmodISO: '2017-08-05T19:30:00.000Z',
-        }, {
-          url: '/blog/jquery-selector-performance',
-          changefreq: 'never',
-          priority: 0.7,
-          lastmodISO: '2017-08-05T19:30:00.000Z',
-        },
-      ],
-    }],
+    [
+      '@nuxtjs/sitemap',
+      {
+        path: '/sitemap.xml',
+        hostname: 'https://www.kevinpeters.net',
+        generate: true,
+        routes: [
+          {
+            url: '/',
+            changefreq: 'weekly',
+            priority: 1,
+            lastmodISO: '2017-08-05T19:30:00.000Z',
+          },
+          {
+            url: '/blog',
+            changefreq: 'weekly',
+            priority: 0.8,
+            lastmodISO: '2017-08-05T19:30:00.000Z',
+          },
+          {
+            url: '/projects',
+            changefreq: 'monthly',
+            priority: 0.2,
+            lastmodISO: '2017-08-05T19:30:00.000Z',
+          },
+          {
+            url: '/about',
+            changefreq: 'yearly',
+            priority: 0.4,
+            lastmodISO: '2017-08-05T19:30:00.000Z',
+          },
+          {
+            url: '/blog/writing-a-progressive-image-loading-component',
+            changefreq: 'never',
+            priority: 0.7,
+            lastmodISO: '2017-08-05T19:30:00.000Z',
+          },
+          {
+            url: '/blog/my-visual-studio-code-setup-part-one',
+            changefreq: 'never',
+            priority: 0.7,
+            lastmodISO: '2017-08-05T19:30:00.000Z',
+          },
+          {
+            url: '/blog/jquery-selector-performance',
+            changefreq: 'never',
+            priority: 0.7,
+            lastmodISO: '2017-08-05T19:30:00.000Z',
+          },
+        ],
+      },
+    ],
     '@nuxtjs/icon',
   ],
   css: [
@@ -112,16 +129,11 @@ module.exports = {
     '~assets/css/lato.css',
     '~assets/css/highlight-js.css',
   ],
-  plugins: [
-    '~/plugins/vue-scrollto',
-  ],
+  plugins: ['~/plugins/vue-scrollto'],
   markdownit: {
     preset: 'default',
     linkify: true,
     breaks: true,
-    use: [
-      'markdown-it-container',
-      'markdown-it-attrs',
-    ],
+    use: ['markdown-it-container', 'markdown-it-attrs'],
   },
 };

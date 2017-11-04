@@ -13,7 +13,7 @@
     "markdown-it-attrs": "^1.2.0",
     "markdown-it-container": "^2.0.0",
     "nuxt": "^1.0.0-rc11",
-    "vue-scrollto": "^2.7.8"
+    "vue-scrollto": "^2.7.9"
   },
   "scripts": {
     "dev": "nuxt",

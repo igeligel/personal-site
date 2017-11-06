@@ -6,36 +6,14 @@
         <h1>Projects</h1>
       </div>
       <div class="project__list pure-g">
-        <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" @click="showProject(projects.vueSteamChat)">
-            <img src="~assets/svg/gradient-backgrounds/4.svg" class="project__background"></img>
-            <img src="~assets/svg/gradient-backgrounds/vue-steam-chat-logo.svg" class="project__logo--center"></img>
-          </div>
-        </div>
-        <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" @click="showProject(projects.skadisteam)">
-            <img src="~assets/svg/gradient-backgrounds/terminal.svg" class="project__background"></img>
-            <img src="~assets/svg/gradient-backgrounds/skadisteam-logo.svg" class="project__logo"></img>
-          </div>
-        </div>
-        <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" @click="showProject(projects.vueReadme)">
-            <img src="~assets/svg/gradient-backgrounds/1.svg" class="project__background"></img>
-            <img src="~assets/svg/gradient-backgrounds/vue-readme-logo.svg" class="project__logo--center"></img>
-          </div>
-        </div>
-        <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" @click="showProject(projects.backpackLogin)">
-            <img src="~assets/svg/gradient-backgrounds/2.svg" class="project__background"></img>
-            <img src="~assets/svg/gradient-backgrounds/backpack-login-logo.svg" class="project__logo--center"></img>
-          </div>
-        </div>
-        <div class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1">
-          <div class="project__summary" @click="showProject(projects.teamFortressOutpostApi)">
-            <img src="~assets/svg/gradient-backgrounds/3.svg" class="project__background"></img>
-            <img src="~assets/svg/gradient-backgrounds/teamfortressoutpost-api-logo.svg" class="project__logo--center"></img>
-          </div>
-        </div>
+        <ProjectCard
+          v-for="project in projects"
+          :key="project.heading"
+          :background="project.background"
+          :logo="project.logo"
+          :center="project.center"
+          v-on:summaryClick="showProject(project)"
+        />
       </div>
     </div>
     <div :class="offContainerClassList" ref="offContainer">
@@ -59,23 +37,38 @@
 import CloseSvg from '~/components/close';
 import ProjectLinks from '~/components/ProjectLinks';
 import ProjectContent from '~/components/ProjectContent';
+import ProjectCard from '~/components/ProjectCard';
 import head from './projects-head';
 import VueSteamChatHtml from '../../content/projects/vue-steam-chat.md';
+import GradientBackground1 from '~/assets/svg/gradient-backgrounds/1.svg';
+import GradientBackground2 from '~/assets/svg/gradient-backgrounds/2.svg';
+import GradientBackground3 from '~/assets/svg/gradient-backgrounds/3.svg';
+import GradientBackground4 from '~/assets/svg/gradient-backgrounds/4.svg';
+import TerminalLogo from '~/assets/svg/gradient-backgrounds/terminal.svg';
+import SkadisteamLogo from '~/assets/svg/gradient-backgrounds/skadisteam-logo.svg';
+import VueReadmeLogo from '~/assets/svg/gradient-backgrounds/vue-readme-logo.svg';
+import BackpackLoginLogo from '~/assets/svg/gradient-backgrounds/backpack-login-logo.svg';
+import TeamfortressOutpostApiLogo from '~/assets/svg/gradient-backgrounds/teamfortressoutpost-api-logo.svg';
+import VueSteamChatLogo from '~/assets/svg/gradient-backgrounds/vue-steam-chat-logo.svg';
 
 export default {
   components: {
     'close-svg': CloseSvg,
     'project-links': ProjectLinks,
     'project-content': ProjectContent,
+    ProjectCard,
   },
   data () {
     return {
       positionBeforeProjectSummary: 0,
       online: true,
       showMain: true,
-      projects: {
-        vueSteamChat: {
+      projects: [
+        {
           heading: 'vue-steam-chat',
+          background: GradientBackground4,
+          logo: VueSteamChatLogo,
+          center: true,
           links: [{
             label: 'GitHub',
             url: 'https://github.com/igeligel/vue-steam-chat',
@@ -87,17 +80,21 @@ export default {
             url: 'https://codesandbox.io/s/8kyrl4xlzj',
           }],
           description: VueSteamChatHtml,
-        },
-        skadisteam: {
+        }, {
           heading: 'skadisteam',
+          background: TerminalLogo,
+          logo: SkadisteamLogo,
+          center: false,
           links: [{
             label: 'GitHub',
             url: 'https://github.com/igeligel/skadisteam',
           }],
           description: '<p>Skadisteam is a .NET Standard project containing several C# class libraries which acts as a wrapper around the Steam Web API. They are designed according to the microservice pattern. Each package has unit tests and uses continuous deployment.</p>',
-        },
-        vueReadme: {
+        }, {
           heading: 'vue-readme',
+          background: GradientBackground1,
+          logo: VueReadmeLogo,
+          center: true,
           links: [{
             label: 'GitHub',
             url: 'https://github.com/igeligel/vue-readme',
@@ -106,9 +103,11 @@ export default {
             url: 'https://igeligel.github.io/vue-readme',
           }],
           description: '<p>Serverless vue.js application for creating project readmes in markdown. Easily create and manage the readmes of your GitHub repositories.</p>',
-        },
-        backpackLogin: {
+        }, {
           heading: 'BackpackLogin',
+          background: GradientBackground2,
+          logo: BackpackLoginLogo,
+          center: true,
           links: [{
             label: 'GitHub',
             url: 'https://github.com/igeligel/BackpackLogin',
@@ -117,9 +116,11 @@ export default {
             url: 'https://www.nuget.org/packages/BackpackLogin',
           }],
           description: '<p>A .NET Standard library to handle the login to Backpack.tf. Backpack.tf is a trading site for Team Fortress 2, Counter-Strike: Global Offensive, and Dota 2. Community item pricing, item trading and stats, and much more.</p>',
-        },
-        teamFortressOutpostApi: {
+        }, {
           heading: 'TeamFortressOutpostApi',
+          background: GradientBackground3,
+          logo: TeamfortressOutpostApiLogo,
+          center: true,
           links: [{
             label: 'GitHub',
             url: 'https://github.com/igeligel/TeamFortressOutpostApi',
@@ -129,7 +130,7 @@ export default {
           }],
           description: '<p>An API wrapper for the TF2 Outpost platform. A platform to find great deals for your Team Fortress 2, Counter-Strike: Global Offensive and Dota 2 items with zero hassle.</p>',
         },
-      },
+      ],
       projectHeading: '',
       projectDescription: '',
       projectLinks: [],

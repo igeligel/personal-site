@@ -18,9 +18,9 @@
     </div>
     <div :class="offContainerClassList" ref="offContainer">
       <div class="project__heading">
-        <project-links
-          :projectLinks="projectLinks">
-        </project-links>
+        <ProjectLinks
+          :projectLinks="projectLinks"
+        />
       </div>
       <div class="project__close-container" @click="goToMain">
         <close-svg></close-svg>
@@ -54,7 +54,7 @@ import VueSteamChatLogo from '~/assets/svg/gradient-backgrounds/vue-steam-chat-l
 export default {
   components: {
     'close-svg': CloseSvg,
-    'project-links': ProjectLinks,
+    ProjectLinks,
     'project-content': ProjectContent,
     ProjectCard,
   },

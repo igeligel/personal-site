@@ -25,10 +25,10 @@
       <div class="project__close-container" @click="goToMain">
         <close-svg></close-svg>
       </div>
-      <project-content
+      <ProjectContent
         :heading="projectHeading"
-        :description="projectDescription">
-      </project-content>
+        :description="projectDescription"
+      />
     </div>
   </div>
 </template>
@@ -55,7 +55,7 @@ export default {
   components: {
     'close-svg': CloseSvg,
     ProjectLinks,
-    'project-content': ProjectContent,
+    ProjectContent,
     ProjectCard,
   },
   data () {

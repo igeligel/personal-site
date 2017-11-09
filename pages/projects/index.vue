@@ -23,7 +23,7 @@
         />
       </div>
       <div class="project__close-container" @click="goToMain">
-        <close-svg></close-svg>
+        <CloseSvg />
       </div>
       <ProjectContent
         :heading="projectHeading"
@@ -53,7 +53,7 @@ import VueSteamChatLogo from '~/assets/svg/gradient-backgrounds/vue-steam-chat-l
 
 export default {
   components: {
-    'close-svg': CloseSvg,
+    CloseSvg,
     ProjectLinks,
     ProjectContent,
     ProjectCard,
@@ -261,70 +261,6 @@ export default {
 
 .container__off {
   opacity: 0.00;
-}
-
-.project__summary:hover .project__logo {
-  position: absolute;
-  width: 30%;
-  left: calc((100% - 30%) / 2);
-  top: 30%;
-}
-
-.project__summary:hover .project__logo--center {
-  position: absolute;
-  width: 30%;
-  left: calc((100% - 30%) / 2);
-  top: 20%;
-}
-
-@media (min-width: 768px) {
-  .project__summary:hover {
-    transform: scale(1.08, 1.05);
-  }
-
-  .project__logo--center {
-    transform: scale(1.08, 1.05);
-  }
-}
-
-
-.project__logo {
-  position: absolute;
-  width: 20%;
-  left: calc((100% - 20%) / 2);
-  top: 40%;
-  transition: all 0.3s ease;
-}
-
-.project__logo--center {
-  position: absolute;
-  width: 20%;
-  left: calc((100% - 20%) / 2);
-  top: 30%;
-  transition: all 0.3s ease;
-}
-
-.project__divider {
-  width: 100%;
-  border-top: 1px solid #dbdbdb;
-  margin-top: 16px;
-}
-
-.project__summary {
-  color: #706f6f;
-  transition: all 0.3s ease;
-  position: relative;
-  cursor: pointer;
-}
-
-.project__summary img {
-  margin-top: 16px;
-}
-
-.project__summary ul {
-  padding: 0;
-  padding-left: 8px;
-  list-style-type: none;
 }
 
 .blogpost__more {

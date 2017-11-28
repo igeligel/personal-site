@@ -1,29 +1,34 @@
 <template>
-  <div class="blogpost__article">
+  <div class="blogpost__article" :style="borderStyle">
     <router-link
+      v-if="!blogpost.type"
       class="blogpost__article-link"
       :aria-label="ariaLabel"
       :to="blogpost.url"
     >
-      <img
-        class="blogpost__article-image"
-        :src="blogpost.previewImage"
-        :alt="blogpost.altTag"
-      />
-      <div class="blogpost__article-content">
-        <h2 class="blogpost__article-title" v-text="blogpost.title" />
-        <p
-          class="blogpost__article-description"
-          v-text="blogpost.description"
-        />
-      </div>
+      <BlogpostArticleContent :blogpost="blogpost" />
     </router-link>
+    <a
+      v-if="blogpost.type"
+      class="blogpost__article-link"
+      :aria-label="ariaLabel"
+      :href="blogpost.url"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <BlogpostArticleContent :blogpost="blogpost" />
+    </a>
   </div>
 </template>
 
 <script>
+import BlogpostArticleContent from './BlogpostArticleContent';
+
 export default {
   name: 'BlogpostArticle',
+  components: {
+    BlogpostArticleContent,
+  },
   props: {
     blogpost: Object,
   },
@@ -31,13 +36,19 @@ export default {
     ariaLabel() {
       return `Link to blogpost ${this.blogpost.title}`;
     },
+    borderStyle() {
+      const mediumColor = '#03a87c';
+      if (this.blogpost.type === 'medium') {
+        return `border-color: ${mediumColor}`
+      }
+      return '';
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 $border-color: #dbdbdb;
-$image-border-color: #4096c4;
 
 .blogpost__article {
   cursor: pointer;
@@ -49,27 +60,5 @@ $image-border-color: #4096c4;
 .blogpost__article-link {
   color: black;
   text-decoration: none;
-}
-
-.blogpost__article-image {
-  border-top-left-radius: 0.25em;
-  border-top-right-radius: 0.25em;
-  border-bottom: 1px solid $image-border-color;
-  width: 100%;
-}
-
-.blogpost__article-content {
-  padding: 1em 0.75em;
-}
-
-.blogpost__article-title {
-  font-size: 1.125em;
-  font-weight: 400;
-  padding-bottom: 0.45em;
-}
-
-.blogpost__article-description {
-  font-size: 0.875em;
-  font-weight: 400;
 }
 </style>

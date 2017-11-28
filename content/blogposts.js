@@ -10,6 +10,7 @@ const blogposts = [
     url: '/blog/unit-testing-vue-js-components-with-jest',
     previewImage: UnitTestingVueJsComponentsWithJest,
     altTag: 'Vue.js and Jest logo on some generic paper background',
+    type: null,
   },
   {
     title: 'jQuery Selector Performance',
@@ -17,18 +18,21 @@ const blogposts = [
     url: '/blog/jquery-selector-performance',
     previewImage: JquerySelectorPerformance,
     altTag: 'image showing a laptop',
+    type: null,
   }, {
     title: 'My Visual Studio Code setup',
     description: 'A blogpost about Visual Studio Code, the installation of the editor and the basic setup of the plugin settings sync.',
     url: '/blog/my-visual-studio-code-setup-part-one',
     previewImage: MyVisualStudioCodeSetupImage,
     altTag: 'image showing a laptop',
+    type: null,
   }, {
     title: 'Writing a progressive image loading component in vue.js',
     description: 'We want small load times for images, but when we are on mobile there is not always a good connection so we could use a placeholder or an image reduced in size so it loads faster.',
     url: '/blog/writing-a-progressive-image-loading-component',
     previewImage: WritingAProgressiveImageLoadingComponentImage,
     altTag: 'picture of an island out of birds perspective',
+    type: null,
   },
 ];
 

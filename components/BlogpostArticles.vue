@@ -5,7 +5,7 @@
       :key="blogpost.title"
       class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1"
     >
-      <blogpost-article :blogpost="blogpost" />
+      <BlogpostArticle :blogpost="blogpost" />
     </div>
     <div class="pure-u-1-1 blogpost__more">
       <router-link to="/blog" aria-label="Link to blog">

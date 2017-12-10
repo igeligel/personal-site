@@ -15,6 +15,8 @@
       :href="blogpost.url"
       target="_blank"
       rel="noopener noreferrer"
+      @mouseover="isHovered = true"
+      @mouseleave="isHovered = false"
     >
       <BlogpostArticleContent :blogpost="blogpost" />
     </a>
@@ -32,12 +34,18 @@ export default {
   props: {
     blogpost: Object,
   },
+  data() {
+    return {
+      isHovered: false,
+    };
+  },
   computed: {
     ariaLabel() {
       return `Link to blogpost ${this.blogpost.title}`;
     },
     borderStyle() {
-      const mediumColor = '#03a87c';
+      const opactity = this.isHovered ? 0.5 : 0.3;
+      const mediumColor = `rgba(3, 168, 124, ${opactity})`;
       if (this.blogpost.type === 'medium') {
         return `border-color: ${mediumColor}`
       }

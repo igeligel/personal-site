@@ -6,9 +6,9 @@
   "private": true,
   "dependencies": {
     "@nuxtjs/google-analytics": "2.0.2",
-    "@nuxtjs/icon": "^1.1.2",
+    "@nuxtjs/icon": "^2.0.1",
     "@nuxtjs/markdownit": "^1.2.0",
-    "@nuxtjs/pwa": "^1.0.2",
+    "@nuxtjs/pwa": "^2.0.4",
     "@nuxtjs/sitemap": "^0.0.3",
     "markdown-it-attrs": "^1.2.0",
     "markdown-it-container": "^2.0.0",

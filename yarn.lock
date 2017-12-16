@@ -2,11 +2,11 @@
 # yarn lockfile v1
 
 
-"@nuxtjs/google-analytics@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/google-analytics/-/google-analytics-2.0.1.tgz#224dffb4f1a7f9d196ea92d3284e4f68ddffb099"
+"@nuxtjs/google-analytics@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/google-analytics/-/google-analytics-2.0.2.tgz#75353143628fd7697b41eb5aa7da38a513394eca"
   dependencies:
-    vue-analytics "^5.1.1"
+    vue-analytics "^5.4.0"
 
 "@nuxtjs/icon@^1.1.2":
   version "1.1.2"
@@ -30,9 +30,9 @@
     loader-utils "^1.1.0"
     markdown-it "^8.3.1"
 
-"@nuxtjs/markdownit@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/markdownit/-/markdownit-1.1.2.tgz#5913cde96a9585aa7f956db163b3fe8789bc0931"
+"@nuxtjs/markdownit@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/markdownit/-/markdownit-1.2.0.tgz#4779117333486419b5aaa58ed66a4034aa087268"
   dependencies:
     "@nuxtjs/markdownit-loader" "^1.1.1"
     raw-loader "^0.5.1"
@@ -3762,10 +3762,6 @@ load-json-file@^2.0.0:
     pify "^2.0.0"
     strip-bom "^3.0.0"
 
-load-script@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/load-script/-/load-script-1.0.0.tgz#0491939e0bee5643ee494a7e3da3d2bac70c6ca4"
-
 loader-fs-cache@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/loader-fs-cache/-/loader-fs-cache-1.0.1.tgz#56e0bf08bd9708b26a765b68509840c8dec9fdbc"
@@ -6711,11 +6707,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-analytics@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/vue-analytics/-/vue-analytics-5.1.1.tgz#ba36f3854bb178a06da284a9e1a851230c387fc0"
-  dependencies:
-    load-script "^1.0.0"
+vue-analytics@^5.4.0:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/vue-analytics/-/vue-analytics-5.6.0.tgz#5a0669760bb2c04eef87abef899057c380133864"
 
 vue-hot-reload-api@^2.2.0:
   version "2.2.0"
@@ -6751,9 +6745,9 @@ vue-router@^2.7.0:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.8.1.tgz#9833c9ee57ac83beb0269056fefee71713f20695"
 
-vue-scrollto@^2.7.10:
-  version "2.7.10"
-  resolved "https://registry.yarnpkg.com/vue-scrollto/-/vue-scrollto-2.7.10.tgz#f79dd9e9068c22a40fab92ee14851227ff2b1554"
+vue-scrollto@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/vue-scrollto/-/vue-scrollto-2.8.0.tgz#289ab662067e75c8c00aec309a051d4f3edd6692"
   dependencies:
     bezier-easing "^2.0.3"
 

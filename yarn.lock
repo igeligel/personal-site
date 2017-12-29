@@ -8,11 +8,11 @@
   dependencies:
     vue-analytics "^5.4.0"
 
-"@nuxtjs/icon@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/icon/-/icon-2.0.1.tgz#c770a487d265e86bd1253d9caf119f1d1386b49b"
+"@nuxtjs/icon@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/icon/-/icon-2.0.2.tgz#a560ea96644e575c2a51ae320aa31af025c4e2ad"
   dependencies:
-    fs-extra "^4.0.2"
+    fs-extra "^5.0.0"
     hash-sum "^1.0.2"
     jimp "^0.2.28"
 
@@ -37,17 +37,17 @@
     "@nuxtjs/markdownit-loader" "^1.1.1"
     raw-loader "^0.5.1"
 
-"@nuxtjs/meta@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/meta/-/meta-2.0.1.tgz#9262fe5a32c7d143b3595abe4f22733db7dd278e"
+"@nuxtjs/meta@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/meta/-/meta-2.0.2.tgz#48f450913f638ae16711d0c8a8798f5f80376d21"
 
-"@nuxtjs/pwa@^2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-2.0.4.tgz#df1ab5f38d55cd2e6a9d391a5c16103dcb9fbf1b"
+"@nuxtjs/pwa@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-2.0.5.tgz#2685ad7ba95184b30750143f085819b06b45aee0"
   dependencies:
-    "@nuxtjs/icon" "^2.0.1"
+    "@nuxtjs/icon" "^2.0.2"
     "@nuxtjs/manifest" "^2.1.0"
-    "@nuxtjs/meta" "^2.0.1"
+    "@nuxtjs/meta" "^2.0.2"
     "@nuxtjs/workbox" "^2.1.1"
 
 "@nuxtjs/sitemap@^0.0.3":
@@ -2281,7 +2281,7 @@ eslint-import-resolver-node@^0.3.1:
     debug "^2.6.8"
     resolve "^1.2.0"
 
-eslint-loader@^1.6.1:
+eslint-loader@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/eslint-loader/-/eslint-loader-1.9.0.tgz#7e1be9feddca328d3dcfaef1ad49d5beffe83a13"
   dependencies:
@@ -2298,15 +2298,15 @@ eslint-module-utils@^2.1.1:
     debug "^2.6.8"
     pkg-dir "^1.0.0"
 
-eslint-plugin-html@^2.0.0:
+eslint-plugin-html@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/eslint-plugin-html/-/eslint-plugin-html-2.0.3.tgz#7c89883ab0c85fa5d28b666a14a4e906aa90b897"
   dependencies:
     htmlparser2 "^3.8.2"
 
-eslint-plugin-import@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.7.0.tgz#21de33380b9efb55f5ef6d2e210ec0e07e7fa69f"
+eslint-plugin-import@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.8.0.tgz#fa1b6ef31fcb3c501c09859c1b86f1fc5b986894"
   dependencies:
     builtin-modules "^1.1.1"
     contains-path "^0.1.0"
@@ -2331,20 +2331,20 @@ eslint-plugin-jsx-a11y@^5.1.1:
     emoji-regex "^6.1.0"
     jsx-ast-utils "^1.4.0"
 
-eslint-plugin-promise@^3.4.1:
+eslint-plugin-promise@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-3.6.0.tgz#54b7658c8f454813dc2a870aff8152ec4969ba75"
 
-eslint-plugin-react@^7.1.0:
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.4.0.tgz#300a95861b9729c087d362dd64abcc351a74364a"
+eslint-plugin-react@^7.5.1:
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.5.1.tgz#52e56e8d80c810de158859ef07b880d2f56ee30b"
   dependencies:
     doctrine "^2.0.0"
     has "^1.0.1"
     jsx-ast-utils "^2.0.0"
-    prop-types "^15.5.10"
+    prop-types "^15.6.0"
 
-eslint-plugin-standard@^2.0.1:
+eslint-plugin-standard@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-standard/-/eslint-plugin-standard-2.3.1.tgz#6765bd2a6d9ecdc7bdf1b145ae4bb30e2b7b86f8"
 
@@ -2817,9 +2817,9 @@ fs-extra@^4.0.1:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^4.0.2:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
+fs-extra@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
@@ -5432,7 +5432,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10:
+prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -6372,9 +6372,9 @@ svg-baker@^1.2.0:
     query-string "^4.3.2"
     traverse "^0.6.6"
 
-svg-baker@^1.2.16:
-  version "1.2.16"
-  resolved "https://registry.yarnpkg.com/svg-baker/-/svg-baker-1.2.16.tgz#675853ac37da6bf02bee4a643ec1c444489b5e36"
+svg-baker@^1.2.17:
+  version "1.2.17"
+  resolved "https://registry.yarnpkg.com/svg-baker/-/svg-baker-1.2.17.tgz#452ceaa604f784e4b864740e4b6b3faf6458d016"
   dependencies:
     bluebird "^3.5.0"
     clone "^2.1.1"
@@ -6390,16 +6390,16 @@ svg-baker@^1.2.16:
     query-string "^4.3.2"
     traverse "^0.6.6"
 
-svg-sprite-loader@^3.5.2:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/svg-sprite-loader/-/svg-sprite-loader-3.5.2.tgz#6aec95a0d51a7cb75f32037e7172e4d0fe45a8ad"
+svg-sprite-loader@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/svg-sprite-loader/-/svg-sprite-loader-3.6.2.tgz#3d700a9c4728c12934f400597364e80eaa0f9e6e"
   dependencies:
     bluebird "^3.5.0"
     deepmerge "1.3.2"
     domready "1.0.8"
     escape-string-regexp "1.0.5"
     loader-utils "^1.1.0"
-    svg-baker "^1.2.16"
+    svg-baker "^1.2.17"
     svg-baker-runtime "^1.3.3"
     url-slug "2.0.0"
 

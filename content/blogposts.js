@@ -3,8 +3,19 @@ import MyVisualStudioCodeSetupImage from '~/assets/img/my-visual-studio-code-set
 import WritingAProgressiveImageLoadingComponentImage from '~/assets/img/writing-a-progressive-image-loading-component-in-vue.js.png';
 import UnitTestingVueJsComponentsWithJest from '~/assets/img/unit-testing-vue-js-components-with-jest.png';
 import LargeScaleVuexApplicationStructures from '~/assets/img/large-scale-vuex-application-structures.png';
+import WhatHappenedToVuejsIn2017 from '~/assets/img/what-happened-to-vuejs-in-2017.png';
 
 const blogposts = [
+  {
+    title: 'What happened to Vue.js in 2017',
+    description:
+      'Vue.js performed really great in 2017. Gained a lot in attraction and evolved a lot. Let\'s see what happened and if the goals of the last year are fulfilled.',
+    url:
+      'https://medium.com/@kevin_peters/what-happened-to-vue-js-in-2017-aeaaa69c2c6f',
+    previewImage: WhatHappenedToVuejsIn2017,
+    altTag: 'image showing the vue.js logo and the number 2017',
+    type: 'medium',
+  },
   {
     title: 'Large-scale Vuex application structures',
     description:

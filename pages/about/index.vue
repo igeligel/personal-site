@@ -59,6 +59,10 @@ export default {
         key: 'medium',
         ariaLabel: 'Link to open medium',
         url: 'https://medium.com/@kevin_peters',
+      }, {
+        key: 'github',
+        ariaLabel: 'Link to open github profile',
+        url: 'https://github.com/igeligel',
       }],
       resume: 'https://drive.google.com/file/d/0B5bsFD4wxCdmczVJQnFLWXAwNEU/view?usp=sharing',
     }

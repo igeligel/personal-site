@@ -21,6 +21,7 @@ import LinkedinSvg from '~/components/general-icons/Linkedin';
 import MediumSvg from '~/components/general-icons/Medium';
 import TwitterSvg from '~/components/general-icons/Twitter';
 import XingSvg from '~/components/general-icons/Xing';
+import GitHubSvg from '~/components/general-icons/GitHub';
 
 export default {
   name: 'ProfileLinks',
@@ -30,6 +31,7 @@ export default {
     MediumSvg,
     TwitterSvg,
     XingSvg,
+    GitHubSvg,
   },
   props: {
     socialMediaList: Array,
@@ -42,6 +44,7 @@ export default {
         linkedin: 'LinkedinSvg',
         xing: 'XingSvg',
         medium: 'MediumSvg',
+        github: 'GitHubSvg',
       },
     };
   },

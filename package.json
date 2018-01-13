@@ -10,9 +10,9 @@
     "@nuxtjs/markdownit": "^1.2.0",
     "@nuxtjs/pwa": "^2.0.5",
     "@nuxtjs/sitemap": "^0.0.3",
-    "markdown-it-attrs": "^1.2.0",
+    "markdown-it-attrs": "^1.2.1",
     "markdown-it-container": "^2.0.0",
-    "nuxt": "^1.0.0",
+    "nuxt": "^1.1.1",
     "vue-scrollto": "^2.8.0"
   },
   "scripts": {
@@ -30,7 +30,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
     "node-sass": "^4.7.2",
-    "prettier": "^1.10.1",
+    "prettier": "^1.10.2",
     "sass-loader": "^6.0.6",
     "svg-sprite-loader": "^3.6.2"
   }

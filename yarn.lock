@@ -3960,9 +3960,9 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-markdown-it-attrs@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-attrs/-/markdown-it-attrs-1.2.0.tgz#6baad67036a411483d5902c127d46ee229435484"
+markdown-it-attrs@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/markdown-it-attrs/-/markdown-it-attrs-1.2.1.tgz#5e1560f47e896f6c21650e3abc1b12ce9f967d09"
 
 markdown-it-container@^2.0.0:
   version "2.0.0"
@@ -4458,9 +4458,9 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nuxt@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-1.0.0.tgz#ca8e41a068d074e84ac48e3688b16fedc76612ce"
+nuxt@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-1.1.1.tgz#a4fbeafb243b8431c317834c013a8b7d0d7b74f1"
   dependencies:
     "@nuxtjs/youch" "^4.2.3"
     ansi-html "^0.0.7"
@@ -5466,9 +5466,9 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.10.1:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.10.1.tgz#01423fea6957ea23618d37d339ef0e7f7c967fc6"
+prettier@^1.10.2:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.10.2.tgz#1af8356d1842276a99a5b5529c82dd9e9ad3cc93"
 
 prettier@^1.7.0:
   version "1.7.4"

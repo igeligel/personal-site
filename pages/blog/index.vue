@@ -34,29 +34,29 @@ export default {
   computed: {
     chunkedBlogPosts() {
       return this.chunkArray(this.blogposts, 3);
-    }
+    },
   },
-  data () {
+  data() {
     return {
       blogposts: blogPosts,
-      online: true
-    }
+      online: true,
+    };
   },
-  destroyed () {
-    window.removeEventListener('offline', this._toggleNetworkStatus)
-    window.removeEventListener('online', this._toggleNetworkStatus)
+  destroyed() {
+    window.removeEventListener('offline', this._toggleNetworkStatus);
+    window.removeEventListener('online', this._toggleNetworkStatus);
   },
   head: Heads.Blog,
   methods: {
-    _toggleNetworkStatus ({ type }) {
-      this.online = type === 'online'
+    _toggleNetworkStatus({ type }) {
+      this.online = type === 'online';
     },
     chunkArray(arr, len) {
       const chunks = [];
       const n = arr.length;
       let i = 0;
       while (i < n) {
-        chunks.push(arr.slice(i, i += len));
+        chunks.push(arr.slice(i, (i += len)));
       }
       return chunks;
     },
@@ -64,16 +64,16 @@ export default {
       this.$router.push(blogpost.url);
     },
   },
-  mounted () {
+  mounted() {
     if (!window.navigator) {
-      this.online = false
-      return
+      this.online = false;
+      return;
     }
-    this.online = Boolean(window.navigator.onLine)
-    window.addEventListener('offline', this._toggleNetworkStatus)
-    window.addEventListener('online', this._toggleNetworkStatus)
+    this.online = Boolean(window.navigator.onLine);
+    window.addEventListener('offline', this._toggleNetworkStatus);
+    window.addEventListener('online', this._toggleNetworkStatus);
   },
-}
+};
 </script>
 
 <style scoped>

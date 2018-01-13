@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$grey: #706F6F;
+$grey: #706f6f;
 
 svg {
   width: 1.5em;

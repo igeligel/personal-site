@@ -7,8 +7,7 @@
 </template>
 
 <style>
-html
-{
+html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -16,8 +15,9 @@ html
   box-sizing: border-box;
 }
 
-*, *:before, *:after
-{
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
   -webkit-font-smoothing: antialiased;

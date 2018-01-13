@@ -47,7 +47,7 @@ export default {
       const opactity = this.isHovered ? 0.5 : 0.3;
       const mediumColor = `rgba(3, 168, 124, ${opactity})`;
       if (this.blogpost.type === 'medium') {
-        return `border-color: ${mediumColor}`
+        return `border-color: ${mediumColor}`;
       }
       return '';
     },

@@ -18,35 +18,35 @@ export default {
     IntroductionBanner,
     SiteHeading,
   },
-  data () {
+  data() {
     return {
       online: true,
       title: 'WEB DEV STORIES',
       author: 'Kevin',
       jobTitle: 'Full Stack Developer',
       motto: 'Think twice - code once',
-    }
+    };
   },
   head,
-  mounted () {
+  mounted() {
     if (!window.navigator) {
-      this.online = false
-      return
+      this.online = false;
+      return;
     }
-    this.online = Boolean(window.navigator.onLine)
-    window.addEventListener('offline', this._toggleNetworkStatus)
-    window.addEventListener('online', this._toggleNetworkStatus)
+    this.online = Boolean(window.navigator.onLine);
+    window.addEventListener('offline', this._toggleNetworkStatus);
+    window.addEventListener('online', this._toggleNetworkStatus);
   },
   methods: {
-    _toggleNetworkStatus ({ type }) {
-      this.online = type === 'online'
+    _toggleNetworkStatus({ type }) {
+      this.online = type === 'online';
     },
   },
-  destroyed () {
-    window.removeEventListener('offline', this._toggleNetworkStatus)
-    window.removeEventListener('online', this._toggleNetworkStatus)
-  }
-}
+  destroyed() {
+    window.removeEventListener('offline', this._toggleNetworkStatus);
+    window.removeEventListener('online', this._toggleNetworkStatus);
+  },
+};
 </script>
 
 <style scoped>
@@ -58,6 +58,6 @@ export default {
 .container {
   padding-bottom: 75px;
   max-width: 1000px;
-  margin:auto;
+  margin: auto;
 }
 </style>

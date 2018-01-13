@@ -37,7 +37,7 @@ export default {
     borderStyle() {
       const mediumColor = 'rgba(3, 168, 124, 0.5)';
       if (this.blogpost.type === 'medium') {
-        return `border-color: ${mediumColor}`
+        return `border-color: ${mediumColor}`;
       }
       return '';
     },

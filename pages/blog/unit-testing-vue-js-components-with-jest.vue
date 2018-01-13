@@ -15,20 +15,20 @@ export default {
       return hello;
     },
   },
-}
+};
 </script>
 
 <style scoped>
 .blog-container {
   max-width: 710px;
-  margin:auto;
+  margin: auto;
   padding-bottom: 75px;
 }
 </style>
 
 <style>
 .blog-container {
-  color: rgba(0,0,0,.8);
+  color: rgba(0, 0, 0, 0.8);
   padding-right: 20px;
   padding-left: 20px;
 }
@@ -63,13 +63,13 @@ export default {
 .blog-container h1 {
   --x-height-multiplier: 0.363;
   --baseline-multiplier: 0.157;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   font-weight: 700;
   font-style: normal;
   font-size: 40px;
   margin-left: -2.5px;
   line-height: 1.04;
-  letter-spacing: -.028em;
+  letter-spacing: -0.028em;
   margin: 0;
 }
 
@@ -82,13 +82,13 @@ export default {
 .blog-container h2 {
   --x-height-multiplier: 0.363;
   --baseline-multiplier: 0.157;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   font-weight: 700;
   font-style: normal;
   font-size: 24px;
   margin-left: -1.5px;
   line-height: 1.22;
-  letter-spacing: -.018em;
+  letter-spacing: -0.018em;
   margin-bottom: 12px;
   margin-top: 12px;
 }
@@ -102,12 +102,12 @@ export default {
 .blog-container p {
   --x-height-multiplier: 0.35;
   --baseline-multiplier: 0.179;
-  letter-spacing: .01rem;
+  letter-spacing: 0.01rem;
   font-weight: 400;
   font-style: normal;
   font-size: 21px;
   line-height: 1.58;
-  letter-spacing: -.003em;
+  letter-spacing: -0.003em;
 }
 
 @media (max-width: 768px) {
@@ -135,16 +135,16 @@ export default {
 }
 
 .blog-container li {
-  --x-height-multiplier:0.35;
-  --baseline-multiplier:0.179;
+  --x-height-multiplier: 0.35;
+  --baseline-multiplier: 0.179;
   margin-left: 30px;
   margin-bottom: 14px;
-  letter-spacing: .01rem;
+  letter-spacing: 0.01rem;
   font-weight: 400;
   font-style: normal;
   font-size: 21px;
   line-height: 1.58;
-  letter-spacing: -.003em
+  letter-spacing: -0.003em;
 }
 
 @media (max-width: 768px) {
@@ -155,101 +155,106 @@ export default {
 }
 
 .blog-container li:last-child {
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 .blog-container h3 {
   --x-height-multiplier: 0.363;
   --baseline-multiplier: 0.157;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
   font-size: 18px;
   margin-left: -1.5px;
   line-height: 1.22;
-  letter-spacing: -.018em;
+  letter-spacing: -0.018em;
   margin-bottom: 12px;
   margin-top: 12px;
 }
 
-
-.blog-container table,th,td {
-  border: none
+.blog-container table,
+th,
+td {
+  border: none;
 }
 
 .blog-container table {
   width: 100%;
-  display: table
+  display: table;
 }
 
-.blog-container table.bordered>thead>tr,table.bordered>tbody>tr {
-  border-bottom: 1px solid #d0d0d0
+.blog-container table.bordered > thead > tr,
+table.bordered > tbody > tr {
+  border-bottom: 1px solid #d0d0d0;
 }
 
-.blog-container table.striped>tbody>tr:nth-child(odd) {
-  background-color: #f2f2f2
+.blog-container table.striped > tbody > tr:nth-child(odd) {
+  background-color: #f2f2f2;
 }
 
-.blog-container table.striped>tbody>tr>td {
-  border-radius: 0
+.blog-container table.striped > tbody > tr > td {
+  border-radius: 0;
 }
 
-.blog-container table.highlight>tbody>tr {
-  transition: background-color .25s ease
+.blog-container table.highlight > tbody > tr {
+  transition: background-color 0.25s ease;
 }
 
-.blog-container table.highlight>tbody>tr:hover {
-  background-color: #f2f2f2
+.blog-container table.highlight > tbody > tr:hover {
+  background-color: #f2f2f2;
 }
 
-.blog-container table.centered thead tr th,table.centered tbody tr td {
-  text-align: center
+.blog-container table.centered thead tr th,
+table.centered tbody tr td {
+  text-align: center;
 }
 
 .blog-container thead {
-  border-bottom: 1px solid #d0d0d0
+  border-bottom: 1px solid #d0d0d0;
 }
 
-.blog-container td,th {
+.blog-container td,
+th {
   padding: 15px 5px;
   display: table-cell;
   text-align: left;
   vertical-align: middle;
-  border-radius: 2px
+  border-radius: 2px;
 }
 
 @media only screen and (max-width: 992px) {
   .blog-container table.responsive-table {
-    width:100%;
+    width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
     display: block;
-    position: relative
+    position: relative;
   }
 
   .blog-container table.responsive-table td:empty:before {
-    content: '\00a0'
+    content: '\00a0';
   }
 
-  .blog-container table.responsive-table th,table.responsive-table td {
+  .blog-container table.responsive-table th,
+  table.responsive-table td {
     margin: 0;
-    vertical-align: top
+    vertical-align: top;
   }
 
   .blog-container table.responsive-table th {
-    text-align: left
+    text-align: left;
   }
 
   .blog-container table.responsive-table thead {
     display: block;
-    float: left
+    float: left;
   }
 
   .blog-container table.responsive-table thead tr {
     display: block;
-    padding: 0 10px 0 0
+    padding: 0 10px 0 0;
   }
 
   .blog-container table.responsive-table thead tr th::before {
-    content: "\00a0"
+    content: '\00a0';
   }
 
   .blog-container table.responsive-table tbody {
@@ -257,54 +262,51 @@ export default {
     width: auto;
     position: relative;
     overflow-x: auto;
-    white-space: nowrap
+    white-space: nowrap;
   }
 
   .blog-container table.responsive-table tbody tr {
     display: inline-block;
-    vertical-align: top
+    vertical-align: top;
   }
 
   .blog-container table.responsive-table th {
     display: block;
-    text-align: right
+    text-align: right;
   }
 
   .blog-container table.responsive-table td {
     display: block;
     min-height: 1.25em;
-    text-align: left
+    text-align: left;
   }
 
   .blog-container table.responsive-table tr {
-    padding: 0 10px
+    padding: 0 10px;
   }
 
   .blog-container table.responsive-table thead {
     border: 0;
-    border-right: 1px solid #d0d0d0
+    border-right: 1px solid #d0d0d0;
   }
 
   .blog-container table.responsive-table.bordered th {
     border-bottom: 0;
-    border-left: 0
+    border-left: 0;
   }
 
   .blog-container table.responsive-table.bordered td {
     border-left: 0;
     border-right: 0;
-    border-bottom: 0
+    border-bottom: 0;
   }
 
   .blog-container table.responsive-table.bordered tr {
-    border: 0
+    border: 0;
   }
 
   .blog-container table.responsive-table.bordered tbody tr {
-    border-right: 1px solid #d0d0d0
+    border-right: 1px solid #d0d0d0;
   }
 }
-
 </style>
-
-

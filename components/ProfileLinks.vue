@@ -58,7 +58,7 @@ export default {
       return chunks;
     },
     socialMediaListIncludingComponents() {
-      return this.socialMediaList.map(socialMediaListElement => {
+      return this.socialMediaList.map((socialMediaListElement) => {
         const copy = Object.assign({}, socialMediaListElement);
         copy['component'] = this.keyComponentDictionary[
           socialMediaListElement.key

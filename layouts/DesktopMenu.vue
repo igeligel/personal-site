@@ -93,7 +93,7 @@ export default {
   }
 }
 
-.navbar__title  {
+.navbar__title {
   padding-left: 20px;
   display: inline-block;
 }

@@ -42,7 +42,7 @@ export default {
 .project-content__description {
   font-size: 1em;
   line-height: 1.75em;
-  letter-spacing: -.004em;
+  letter-spacing: -0.004em;
 
   @media (min-width: 700px) {
     font-size: 1.1875em;

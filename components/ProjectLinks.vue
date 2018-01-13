@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     projectLinksRepresentation() {
-      return this.projectLinks.map(projectLink => {
+      return this.projectLinks.map((projectLink) => {
         var copy = Object.assign({}, projectLink);
         copy.ariaLabel = `Link to open project on ${projectLink.label}`;
         return copy;

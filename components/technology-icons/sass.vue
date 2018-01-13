@@ -16,7 +16,7 @@ svg {
   max-height: 40px;
 
   path {
-    fill:#888;
+    fill: #888;
   }
 }
 </style>

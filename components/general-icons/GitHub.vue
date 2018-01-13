@@ -28,4 +28,3 @@ path {
   fill: #b0b5b3;
 }
 </style>
-

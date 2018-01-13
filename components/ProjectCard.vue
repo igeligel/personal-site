@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     summaryClick() {
-      this.$emit('summaryClick')
+      this.$emit('summaryClick');
     },
   },
 };
@@ -53,7 +53,6 @@ export default {
     transform: scale(1.08, 1.05);
   }
 }
-
 
 .project__logo {
   position: absolute;

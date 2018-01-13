@@ -9,7 +9,7 @@
 <script>
 export default {
   name: 'BabelSvg',
-}
+};
 </script>
 
 <style scoped lang="scss">

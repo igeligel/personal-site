@@ -17,6 +17,6 @@ svg {
 }
 
 path {
-  fill:#8b8b8b;
+  fill: #8b8b8b;
 }
 </style>

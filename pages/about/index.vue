@@ -11,8 +11,14 @@
     <div class="content">
       <h1>About me</h1>
       <p>Hey there, I’m Kevin! I am a web developer living in Berlin. I love crafting stuff in the web and am really deep into <vue-inline-svg></vue-inline-svg> and .NET</p>
+      <p>You can find my resume on the following link:</p>
       <a aria-label="Link to open resume" class="content__link" rel="noopener noreferrer" :href="resume" target="_blank">
         Resume <arrow-upper-right-svg></arrow-upper-right-svg>
+      </a>
+      <p>Also I am a passionate blog writer. You can find my blog articles on this page or on medium.</p>
+      <p>I have more than 20.000 views on my articles and more than 2000 claps. You can check the articles on medium here:</p>
+      <a aria-label="Link to open medium profile page" class="content__link" rel="noopener noreferrer" :href="mediumProfile" target="_blank">
+        Medium <arrow-upper-right-svg></arrow-upper-right-svg>
       </a>
       <h2 class="content__second-heading">Technologies I use</h2>
       <technologies-list></technologies-list>
@@ -73,6 +79,7 @@ export default {
       ],
       resume:
         'https://drive.google.com/file/d/0B5bsFD4wxCdmczVJQnFLWXAwNEU/view?usp=sharing',
+      mediumProfile: 'https://medium.com/@kevin_peters',
     };
   },
   mounted() {

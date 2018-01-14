@@ -2,26 +2,52 @@
   <div class="container">
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <img class="profile-image" src="~assets/img/profile-border-radius.png" alt="image of kevin peters">
+        <img
+          class="profile-image"
+          src="~assets/img/profile-border-radius.png"
+          alt="image of kevin peters"
+        />
       </div>
       <div class="pure-u-1-2">
-        <profile-links :socialMediaList="socialMedia" />
+        <ProfileLinks :socialMediaList="socialMedia" />
       </div>
     </div>
     <div class="content">
       <h1>About me</h1>
-      <p>Hey there, I’m Kevin! I am a web developer living in Berlin. I love crafting stuff in the web and am really deep into <vue-inline-svg></vue-inline-svg> and .NET</p>
+      <p>
+        Hey there, I’m Kevin! I am a web developer living in Berlin. I love
+        crafting stuff in the web and am really deep into <VueInlineSvg /> and
+        .NET
+      </p>
       <p>You can find my resume on the following link:</p>
-      <a aria-label="Link to open resume" class="content__link" rel="noopener noreferrer" :href="resume" target="_blank">
-        Resume <arrow-upper-right-svg></arrow-upper-right-svg>
+      <a
+        aria-label="Link to open resume"
+        class="content__link"
+        rel="noopener noreferrer"
+        :href="resume"
+        target="_blank"
+      >
+        Resume <ArrowUpperRightSvg />
       </a>
-      <p>Also I am a passionate blog writer. You can find my blog articles on this page or on medium.</p>
-      <p>I have more than 20.000 views on my articles and more than 2000 claps. You can check the articles on medium here:</p>
-      <a aria-label="Link to open medium profile page" class="content__link" rel="noopener noreferrer" :href="mediumProfile" target="_blank">
-        Medium <arrow-upper-right-svg></arrow-upper-right-svg>
+      <p>
+        Also I am a passionate blog writer. You can find my blog articles on
+        this page or on medium.
+      </p>
+      <p>
+        I have more than 20.000 views on my articles and more than 2000 claps.
+        You can check the articles on medium here:
+      </p>
+      <a
+        aria-label="Link to open medium profile page"
+        class="content__link"
+        rel="noopener noreferrer"
+        :href="mediumProfile"
+        target="_blank"
+      >
+        Medium <ArrowUpperRightSvg />
       </a>
       <h2 class="content__second-heading">Technologies I use</h2>
-      <technologies-list></technologies-list>
+      <TechnologiesList />
     </div>
   </div>
 </template>

@@ -11,8 +11,8 @@
 export default {
   name: 'ProjectCard',
   props: {
-    background: Object,
-    logo: Object,
+    background: String,
+    logo: String,
     center: Boolean,
   },
   computed: {

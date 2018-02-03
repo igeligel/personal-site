@@ -2,25 +2,23 @@
   <div>
     <div :class="containerClassList">
       <div class="blogposts__heading">
-        <div class="line__wrapper"></div>
+        <div class="line__wrapper" />
         <h1>Projects</h1>
       </div>
-      <div class="project__list pure-g">
+      <div class="project__list">
         <ProjectCard
           v-for="project in projects"
           :key="project.heading"
           :background="project.background"
           :logo="project.logo"
           :center="project.center"
-          v-on:summaryClick="showProject(project)"
+          @summaryClick="showProject(project)"
         />
       </div>
     </div>
     <div :class="offContainerClassList" ref="offContainer">
       <div class="project__heading">
-        <ProjectLinks
-          :projectLinks="projectLinks"
-        />
+        <ProjectLinks :projectLinks="projectLinks" />
       </div>
       <div class="project__close-container" @click="goToMain">
         <CloseSvg />
@@ -38,12 +36,14 @@ import CloseSvg from '~/components/close';
 import ProjectLinks from '~/components/ProjectLinks';
 import ProjectContent from '~/components/ProjectContent';
 import ProjectCard from '~/components/ProjectCard';
-import head from './projects-head';
+import ProjectsHead from './projects-head';
 import VueSteamChatHtml from '../../content/projects/vue-steam-chat.md';
-import GradientBackground1 from '~/assets/svg/gradient-backgrounds/1.svg';
-import GradientBackground2 from '~/assets/svg/gradient-backgrounds/2.svg';
-import GradientBackground3 from '~/assets/svg/gradient-backgrounds/3.svg';
-import GradientBackground4 from '~/assets/svg/gradient-backgrounds/4.svg';
+import {
+  GradientBackground1,
+  GradientBackground2,
+  GradientBackground3,
+  GradientBackground4,
+} from '~/assets/svg/gradient-backgrounds/backgrounds';
 import TerminalLogo from '~/assets/svg/gradient-backgrounds/terminal.svg';
 import SkadisteamLogo from '~/assets/svg/gradient-backgrounds/skadisteam-logo.svg';
 import VueReadmeLogo from '~/assets/svg/gradient-backgrounds/vue-readme-logo.svg';
@@ -52,6 +52,7 @@ import TeamfortressOutpostApiLogo from '~/assets/svg/gradient-backgrounds/teamfo
 import VueSteamChatLogo from '~/assets/svg/gradient-backgrounds/vue-steam-chat-logo.svg';
 
 export default {
+  head: ProjectsHead,
   components: {
     CloseSvg,
     ProjectLinks,
@@ -159,7 +160,6 @@ export default {
       projectLinks: [],
     };
   },
-  head,
   computed: {
     containerClassList: function getContainerClassList() {
       return {
@@ -183,6 +183,10 @@ export default {
     window.addEventListener('offline', this._toggleNetworkStatus);
     window.addEventListener('online', this._toggleNetworkStatus);
   },
+  destroyed() {
+    window.removeEventListener('offline', this._toggleNetworkStatus);
+    window.removeEventListener('online', this._toggleNetworkStatus);
+  },
   methods: {
     _toggleNetworkStatus({ type }) {
       this.online = type === 'online';
@@ -205,10 +209,6 @@ export default {
         offset: this.positionBeforeProjectSummary,
       });
     },
-  },
-  destroyed() {
-    window.removeEventListener('offline', this._toggleNetworkStatus);
-    window.removeEventListener('online', this._toggleNetworkStatus);
   },
 };
 </script>

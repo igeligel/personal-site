@@ -18,6 +18,7 @@ export default {
     IntroductionBanner,
     SiteHeading,
   },
+  head,
   data() {
     return {
       online: true,
@@ -27,7 +28,6 @@ export default {
       motto: 'Think twice - code once',
     };
   },
-  head,
   mounted() {
     if (!window.navigator) {
       this.online = false;

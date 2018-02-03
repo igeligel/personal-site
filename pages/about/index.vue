@@ -117,14 +117,14 @@ export default {
     window.addEventListener('offline', this._toggleNetworkStatus);
     window.addEventListener('online', this._toggleNetworkStatus);
   },
+  destroyed() {
+    window.removeEventListener('offline', this._toggleNetworkStatus);
+    window.removeEventListener('online', this._toggleNetworkStatus);
+  },
   methods: {
     _toggleNetworkStatus({ type }) {
       this.online = type === 'online';
     },
-  },
-  destroyed() {
-    window.removeEventListener('offline', this._toggleNetworkStatus);
-    window.removeEventListener('online', this._toggleNetworkStatus);
   },
 };
 </script>

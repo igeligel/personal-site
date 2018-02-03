@@ -2,11 +2,7 @@
   <div class="about-me__container">
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <img
-          class="about-me__profile-image"
-          src="~assets/img/profile-border-radius.png"
-          alt="image of kevin peters"
-        />
+        <ProfilePicture :name="'Kevin Peters'" :image="profilePicture" />
       </div>
       <div class="pure-u-1-2">
         <ProfileLinks :socialMediaList="socialMedia" />
@@ -19,7 +15,9 @@
         crafting stuff in the web and am really deep into <VueInlineSvg /> and
         .NET
       </p>
-      <p class="about-me__paragraph">You can find my resume on the following link:</p>
+      <p class="about-me__paragraph">
+        You can find my resume on the following link:
+      </p>
       <a
         aria-label="Link to open resume"
         class="about-me__link"
@@ -58,7 +56,9 @@ import VueInlineSvg from '~/components/technology-icons/VueInline';
 
 import ProfileLinks from '~/components/ProfileLinks';
 import TechnologiesList from '~/components/TechnologiesList';
+import ProfilePicture from '~/components/ProfilePicture';
 import AboutHead from './AboutHead';
+import ProfilePictureRaw from '~/assets/img/profile-border-radius.png';
 
 export default {
   head: AboutHead,
@@ -67,6 +67,7 @@ export default {
     VueInlineSvg,
     ProfileLinks,
     TechnologiesList,
+    ProfilePicture,
   },
   data() {
     return {
@@ -106,6 +107,7 @@ export default {
       resume:
         'https://drive.google.com/file/d/0B5bsFD4wxCdmczVJQnFLWXAwNEU/view?usp=sharing',
       mediumProfile: 'https://medium.com/@kevin_peters',
+      profilePicture: ProfilePictureRaw,
     };
   },
   mounted() {
@@ -142,10 +144,6 @@ $text-blue: #4096c4;
     margin: auto;
     padding-bottom: 65px;
     text-rendering: optimizeLegibility;
-  }
-
-  &__profile-image {
-    float: right;
   }
 
   &__heading {

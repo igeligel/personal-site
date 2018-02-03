@@ -14,22 +14,22 @@
         v-for="blogpost in blogpostChunk"
         :key="blogpost.title"
       >
-        <blogpost-article
-          :blogpost="blogpost">
-        </blogpost-article>
+        <BlogpostArticle
+          :blogpost="blogpost"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import blogPosts from '../../content/blogposts';
 import BlogpostArticle from '../../components/BlogpostArticle';
+import blogPosts from '../../content/blogposts';
 import Heads from './heads';
 
 export default {
   components: {
-    'blogpost-article': BlogpostArticle,
+    BlogpostArticle,
   },
   computed: {
     chunkedBlogPosts() {
@@ -51,12 +51,12 @@ export default {
     _toggleNetworkStatus({ type }) {
       this.online = type === 'online';
     },
-    chunkArray(arr, len) {
+    chunkArray(array, length) {
       const chunks = [];
-      const n = arr.length;
+      const arrayLength = array.length;
       let i = 0;
-      while (i < n) {
-        chunks.push(arr.slice(i, (i += len)));
+      while (i < arrayLength) {
+        chunks.push(array.slice(i, (i += length)));
       }
       return chunks;
     },

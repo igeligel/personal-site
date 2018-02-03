@@ -21,6 +21,7 @@ import ProfileLinks from '~/components/ProfileLinks';
 import TheAboutMeContent from '~/components/TheAboutMeContent';
 
 import AboutHead from './AboutHead';
+import SocialMediaProfiles from '../../content/SocialMediaProfiles';
 import ProfilePictureRaw from '~/assets/img/profile-border-radius.png';
 
 export default {
@@ -33,38 +34,7 @@ export default {
   data() {
     return {
       online: true,
-      socialMedia: [
-        {
-          key: 'twitter',
-          ariaLabel: 'Link to Twitter',
-          url: 'https://twitter.com/kevinpeters_',
-        },
-        {
-          key: 'email',
-          ariaLabel: 'Link to open email dialog',
-          url: 'mailto:kevinpeterscareer@gmail.com',
-        },
-        {
-          key: 'linkedin',
-          ariaLabel: 'Link to open linked in',
-          url: 'https://www.linkedin.com/in/kevinpetersde',
-        },
-        {
-          key: 'xing',
-          ariaLabel: 'Link to open xing',
-          url: 'https://www.xing.com/profile/Kevin_Peters32',
-        },
-        {
-          key: 'medium',
-          ariaLabel: 'Link to open medium',
-          url: 'https://medium.com/@kevin_peters',
-        },
-        {
-          key: 'github',
-          ariaLabel: 'Link to open github profile',
-          url: 'https://github.com/igeligel',
-        },
-      ],
+      socialMedia: SocialMediaProfiles,
       resumeLink:
         'https://drive.google.com/file/d/0B5bsFD4wxCdmczVJQnFLWXAwNEU/view?usp=sharing',
       mediumProfileLink: 'https://medium.com/@kevin_peters',

@@ -130,68 +130,61 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.about-me__container {
-  padding-bottom: 65px;
-  max-width: 1000px;
-  margin: auto;
-  font-family: 'Lato', sans-serif;
-  text-rendering: optimizeLegibility;
-}
+@import '../../assets/scss/mixins.scss';
 
-.about-me__profile-image {
-  float: right;
-}
+$text-grey: #706f6f;
+$text-blue: #4096c4;
 
-.about-me__heading {
-  &--first {
-    font-size: 1.5625em;
-    margin-top: 0.75em;
-    margin-bottom: 0.75em;
-    color: #706f6f;
-    font-weight: 300;
+.about-me {
+  &__container {
+    font-family: 'Lato', sans-serif;
+    max-width: 1000px;
+    margin: auto;
+    padding-bottom: 65px;
+    text-rendering: optimizeLegibility;
   }
 
-  &--second {
-    font-size: 1.3em;
+  &__profile-image {
+    float: right;
+  }
+
+  &__heading {
+    &--first {
+      color: $text-grey;
+      font-size: 1.5625em;
+      font-weight: 300;
+      margin-top: 0.75em;
+      margin-bottom: 0.75em;
+    }
+
+    &--second {
+      color: $text-grey;
+      font-size: 1.3em;
+      font-weight: 300;
+      line-height: 1.5625em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  &__link {
+    @include no-text-decoration();
+
+    color: $text-blue;
+    font-size: 1.125em;
+    line-height: (7 / 3) + 0em;
+    padding-left: (1 / 3) + 0em;
+  }
+
+  &__content {
+    padding-left: 1.5625em;
+    padding-right: 1.5625em;
+  }
+
+  &__paragraph {
+    color: $text-grey;
+    font-size: 1em;
+    font-weight: 300;
     line-height: 1.5625em;
-    margin-bottom: 0.5em;
-    color: #706f6f;
-    font-weight: 300;
   }
-}
-
-.about-me__link {
-  line-height: (7 / 3) + 0em;
-  font-size: 1.125em;
-  color: #4096c4;
-  padding-left: (1 / 3) + 0em;
-
-  &:link {
-    text-decoration: none;
-  }
-
-  &:visited {
-    text-decoration: none;
-  }
-
-  &:hover {
-    text-decoration: none;
-  }
-
-  &:active {
-    text-decoration: none;
-  }
-}
-
-.about-me__content {
-  padding-left: 1.5625em;
-  padding-right: 1.5625em;
-}
-
-.about-me__paragraph {
-  font-size: 1em;
-  color: #706f6f;
-  font-weight: 300;
-  line-height: 1.5625em;
 }
 </style>

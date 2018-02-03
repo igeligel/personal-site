@@ -58,10 +58,10 @@ import VueInlineSvg from '~/components/technology-icons/VueInline';
 
 import ProfileLinks from '~/components/ProfileLinks';
 import TechnologiesList from '~/components/TechnologiesList';
-import head from './about-head';
+import AboutHead from './AboutHead';
 
 export default {
-  head,
+  head: AboutHead,
   components: {
     ArrowUpperRightSvg,
     VueInlineSvg,

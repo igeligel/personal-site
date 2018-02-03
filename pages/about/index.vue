@@ -1,9 +1,9 @@
 <template>
-  <div class="container">
+  <div class="about-me__container">
     <div class="pure-g">
       <div class="pure-u-1-2">
         <img
-          class="profile-image"
+          class="about-me__profile-image"
           src="~assets/img/profile-border-radius.png"
           alt="image of kevin peters"
         />
@@ -12,41 +12,41 @@
         <ProfileLinks :socialMediaList="socialMedia" />
       </div>
     </div>
-    <div class="content">
-      <h1>About me</h1>
-      <p>
+    <div class="about-me__content">
+      <h1 class="about-me__heading--first">About me</h1>
+      <p class="about-me__paragraph">
         Hey there, I’m Kevin! I am a web developer living in Berlin. I love
         crafting stuff in the web and am really deep into <VueInlineSvg /> and
         .NET
       </p>
-      <p>You can find my resume on the following link:</p>
+      <p class="about-me__paragraph">You can find my resume on the following link:</p>
       <a
         aria-label="Link to open resume"
-        class="content__link"
+        class="about-me__link"
         rel="noopener noreferrer"
         :href="resume"
         target="_blank"
       >
         Resume <ArrowUpperRightSvg />
       </a>
-      <p>
+      <p class="about-me__paragraph">
         Also I am a passionate blog writer. You can find my blog articles on
         this page or on medium.
       </p>
-      <p>
+      <p class="about-me__paragraph">
         I have more than 20.000 views on my articles and more than 2000 claps.
         You can check the articles on medium here:
       </p>
       <a
         aria-label="Link to open medium profile page"
-        class="content__link"
+        class="about-me__link"
         rel="noopener noreferrer"
         :href="mediumProfile"
         target="_blank"
       >
         Medium <ArrowUpperRightSvg />
       </a>
-      <h2 class="content__second-heading">Technologies I use</h2>
+      <h2 class="about-me__heading--second">Technologies I use</h2>
       <TechnologiesList />
     </div>
   </div>
@@ -129,70 +129,69 @@ export default {
 };
 </script>
 
-<style scoped>
-.profile-image {
-  width: 117px;
-  float: right;
-}
-
-.container {
+<style scoped lang="scss">
+.about-me__container {
   padding-bottom: 65px;
   max-width: 1000px;
   margin: auto;
-}
-
-.content__second-heading {
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 25px;
-  margin-bottom: 8px;
-}
-
-.content__link {
-  line-height: 42px;
-  font-size: 18px;
-  color: #4096c4;
-  padding-left: 5px;
-}
-
-.content__link:link {
-  text-decoration: none;
-}
-
-.content__link:visited {
-  text-decoration: none;
-}
-
-.content__link:hover {
-  text-decoration: none;
-}
-
-.content__link:active {
-  text-decoration: none;
-}
-
-.content {
-  padding-left: 25px;
-  padding-right: 25px;
-}
-
-h1 {
-  font-size: 25px;
-  font-weight: 300;
-  margin-top: 19px;
-  margin-bottom: 19px;
-  color: #706f6f;
-}
-
-p {
-  font-size: 16px;
-  color: #706f6f;
-  font-weight: 300;
-  line-height: 25px;
-}
-
-* {
   font-family: 'Lato', sans-serif;
   text-rendering: optimizeLegibility;
+}
+
+.about-me__profile-image {
+  float: right;
+}
+
+.about-me__heading {
+  &--first {
+    font-size: 1.5625em;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    color: #706f6f;
+    font-weight: 300;
+  }
+
+  &--second {
+    font-size: 1.3em;
+    line-height: 1.5625em;
+    margin-bottom: 0.5em;
+    color: #706f6f;
+    font-weight: 300;
+  }
+}
+
+.about-me__link {
+  line-height: (7 / 3) + 0em;
+  font-size: 1.125em;
+  color: #4096c4;
+  padding-left: (1 / 3) + 0em;
+
+  &:link {
+    text-decoration: none;
+  }
+
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.about-me__content {
+  padding-left: 1.5625em;
+  padding-right: 1.5625em;
+}
+
+.about-me__paragraph {
+  font-size: 1em;
+  color: #706f6f;
+  font-weight: 300;
+  line-height: 1.5625em;
 }
 </style>

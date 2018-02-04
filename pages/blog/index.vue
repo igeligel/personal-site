@@ -1,34 +1,20 @@
 <template>
   <div class="container">
     <TheBlogpostHeading />
-    <div
-      class="blogposts__articles pure-g"
-      v-for="blogpostChunk in chunkedBlogPosts"
-      :key="blogpostChunk[0].title + blogpostChunk[0].url"
-    >
-      <div
-        class="pure-u-lg-1-3 pure-u-md-1-2 pure-u-1-1"
-        v-for="blogpost in blogpostChunk"
-        :key="blogpost.title"
-      >
-        <BlogpostArticle
-          :blogpost="blogpost"
-        />
-      </div>
-    </div>
+    <BlogpostArticleList :chunkedBlogPosts="chunkedBlogPosts" />
   </div>
 </template>
 
 <script>
 import TheBlogpostHeading from '../../components/TheBlogpostHeading';
-import BlogpostArticle from '../../components/BlogpostArticle';
+import BlogpostArticleList from '../../components/BlogpostArticleList';
 import blogPosts from '../../content/blogposts';
 import Heads from './heads';
 
 export default {
   components: {
-    BlogpostArticle,
     TheBlogpostHeading,
+    BlogpostArticleList,
   },
   computed: {
     chunkedBlogPosts() {
@@ -76,29 +62,11 @@ export default {
 </script>
 
 <style scoped>
-* {
-  font-family: 'Lato', sans-serif;
-  text-rendering: optimizeLegibility;
-}
-
 .container {
   padding-bottom: 75px;
   max-width: 1000px;
   margin: auto;
-}
-
-.blogposts__articles {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.blogposts__articles > div {
-  cursor: pointer;
-}
-
-@media (min-width: 768px) {
-  .blogposts__articles > div {
-    padding: 10px;
-  }
+  font-family: 'Lato', sans-serif;
+  text-rendering: optimizeLegibility;
 }
 </style>

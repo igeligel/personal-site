@@ -1,9 +1,6 @@
 <template>
   <div class="container">
-    <div class="blogposts__heading">
-      <div class="line__wrapper"></div>
-      <h2>Blogposts</h2>
-    </div>
+    <TheBlogpostHeading />
     <div
       class="blogposts__articles pure-g"
       v-for="blogpostChunk in chunkedBlogPosts"
@@ -23,6 +20,7 @@
 </template>
 
 <script>
+import TheBlogpostHeading from '../../components/TheBlogpostHeading';
 import BlogpostArticle from '../../components/BlogpostArticle';
 import blogPosts from '../../content/blogposts';
 import Heads from './heads';
@@ -30,6 +28,7 @@ import Heads from './heads';
 export default {
   components: {
     BlogpostArticle,
+    TheBlogpostHeading,
   },
   computed: {
     chunkedBlogPosts() {
@@ -86,27 +85,6 @@ export default {
   padding-bottom: 75px;
   max-width: 1000px;
   margin: auto;
-}
-
-.blogposts__heading {
-  padding-top: 24px;
-  border-bottom: 1px solid #dbdbdb;
-  padding-bottom: 8px;
-  display: inline-block;
-}
-
-@media (min-width: 1000px) {
-  .blogposts__heading {
-    border-bottom: 1px solid transparent;
-  }
-}
-
-.blogposts__heading h2 {
-  font-weight: 400;
-  color: #4096c4;
-  font-size: 18px;
-  margin-left: 45px;
-  display: inline-block;
 }
 
 .blogposts__articles {

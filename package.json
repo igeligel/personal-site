@@ -37,7 +37,7 @@
     "prettier": "^1.10.2",
     "sass-loader": "^6.0.6",
     "svg-sprite-loader": "^3.6.2",
-    "vue-jest": "^2.0.0"
+    "vue-jest": "^2.0.1"
   },
   "jest": {
     "moduleFileExtensions": ["js", "json", "vue"],

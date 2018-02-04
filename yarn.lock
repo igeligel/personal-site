@@ -8190,9 +8190,9 @@ vue-hot-reload-api@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.0.tgz#9a21b35ced3634434a43ee80efb7350ea8fb206d"
 
-vue-jest@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/vue-jest/-/vue-jest-2.0.0.tgz#fd85ffde96d1ea8640a240fa898f7cc55464cb2e"
+vue-jest@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/vue-jest/-/vue-jest-2.0.1.tgz#3fa14f1c129f5871c058d652a8e52106b918bff4"
   dependencies:
     babel-plugin-transform-es2015-modules-commonjs "^6.26.0"
     chalk "^2.1.0"

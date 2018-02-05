@@ -17,11 +17,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.blog-container {
-  max-width: 710px;
-  margin: auto;
-  padding-bottom: 75px;
-}
-</style>

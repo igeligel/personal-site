@@ -1,19 +1,19 @@
 <template>
   <div class="blog-container">
-    <div v-html="hello"></div>
+    <div v-html="content" />
   </div>
 </template>
 
 <script>
-import hello from './markdown/unit-testing-vue-js-components-with-jest.md';
+import UnitTestingVueJsComponentsWithJest from './markdown/unit-testing-vue-js-components-with-jest.md';
 import Heads from './heads';
 
 export default {
   head: Heads.UnitTestingVueJsComponentsWithJest,
-  computed: {
-    hello() {
-      return hello;
-    },
+  data() {
+    return {
+      content: UnitTestingVueJsComponentsWithJest,
+    };
   },
 };
 </script>

@@ -1,19 +1,19 @@
 <template>
   <div class="blog-container">
-    <div v-html="hello"></div>
+    <div v-html="content" />
   </div>
 </template>
 
 <script>
-import hello from './markdown/writing-a-progressive-image-loading-component.md';
+import WritingAProgressiveImageLoadingComponent from './markdown/writing-a-progressive-image-loading-component.md';
 import Heads from './heads';
 
 export default {
   head: Heads.WritingAProgressiveImageLoadingComponent,
-  computed: {
-    hello() {
-      return hello;
-    },
+  data() {
+    return {
+      content: WritingAProgressiveImageLoadingComponent,
+    };
   },
 };
 </script>

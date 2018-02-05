@@ -1,19 +1,19 @@
 <template>
   <div class="blog-container">
-    <div v-html="hello"></div>
+    <div v-html="content" />
   </div>
 </template>
 
 <script>
-import hello from './markdown/my-visual-studio-code-setup-part-one.md';
+import MyVisualStudioCodeSetupPartOne from './markdown/my-visual-studio-code-setup-part-one.md';
 import Heads from './heads';
 
 export default {
   head: Heads.MyVisualStudioCodeSetupPartOne,
-  computed: {
-    hello() {
-      return hello;
-    },
+  data() {
+    return {
+      content: MyVisualStudioCodeSetupPartOne,
+    };
   },
 };
 </script>

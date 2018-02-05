@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-container">
+  <div class="container">
     <TheBlogpostHeading />
     <BlogpostArticleList :blogposts="blogposts" />
   </div>
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style scoped>
-.blog-container {
+.container {
   padding-bottom: 75px;
   max-width: 1000px;
   margin: auto;

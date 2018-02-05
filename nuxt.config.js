@@ -128,6 +128,7 @@ module.exports = {
     '~assets/css/grids-responsive-min.css',
     '~assets/css/lato.css',
     '~assets/css/highlight-js.css',
+    '~assets/scss/blog.scss',
   ],
   plugins: ['~/plugins/vue-scrollto'],
   markdownit: {

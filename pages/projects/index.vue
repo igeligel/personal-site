@@ -161,13 +161,13 @@ export default {
     };
   },
   computed: {
-    containerClassList: function getContainerClassList() {
+    containerClassList() {
       return {
         container: true,
         container__off: !this.showMain,
       };
     },
-    offContainerClassList: function getOffContainerClassList() {
+    offContainerClassList() {
       return {
         offContainer: true,
         offContainer__show: !this.showMain,

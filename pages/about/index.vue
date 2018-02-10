@@ -36,7 +36,7 @@ export default {
       online: true,
       socialMedia: SocialMediaProfiles,
       resumeLink:
-        'https://drive.google.com/file/d/0B5bsFD4wxCdmczVJQnFLWXAwNEU/view?usp=sharing',
+        'https://drive.google.com/open?id=1vlNzCOvAkwDdlLsUO6ROuTex87k2kW1i',
       mediumProfileLink: 'https://medium.com/@kevin_peters',
       profilePicture: ProfilePictureRaw,
     };

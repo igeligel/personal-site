@@ -12,8 +12,8 @@
     "@nuxtjs/sitemap": "^0.0.3",
     "markdown-it-attrs": "^1.2.1",
     "markdown-it-container": "^2.0.0",
-    "nuxt": "^1.3.0",
-    "vue-scrollto": "^2.8.0"
+    "nuxt": "^1.4.0",
+    "vue-scrollto": "^2.9.0"
   },
   "scripts": {
     "dev": "nuxt",
@@ -27,15 +27,15 @@
     "*.{js,json,md,vue}": ["prettier --write", "git add"]
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.11",
-    "babel-jest": "^22.2.2",
+    "@vue/test-utils": "^1.0.0-beta.12",
+    "babel-jest": "^22.4.1",
     "husky": "^0.14.3",
-    "jest": "^22.3.0",
+    "jest": "^22.4.2",
     "jest-serializer-vue": "^0.3.0",
-    "lint-staged": "^6.1.1",
+    "lint-staged": "^7.0.0",
     "node-sass": "^4.7.2",
-    "prettier": "^1.10.2",
-    "sass-loader": "^6.0.6",
+    "prettier": "^1.11.1",
+    "sass-loader": "^6.0.7",
     "svg-sprite-loader": "^3.6.2",
     "vue-jest": "^2.1.0"
   },

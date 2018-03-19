@@ -16,9 +16,9 @@
   dependencies:
     vue-analytics "^5.4.0"
 
-"@nuxtjs/icon@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/icon/-/icon-2.0.2.tgz#a560ea96644e575c2a51ae320aa31af025c4e2ad"
+"@nuxtjs/icon@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/icon/-/icon-2.1.0.tgz#d06ff69778d54a65506a39862fe12ab2bba627b5"
   dependencies:
     fs-extra "^5.0.0"
     hash-sum "^1.0.2"
@@ -45,18 +45,18 @@
     "@nuxtjs/markdownit-loader" "^1.1.1"
     raw-loader "^0.5.1"
 
-"@nuxtjs/meta@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/meta/-/meta-2.0.2.tgz#48f450913f638ae16711d0c8a8798f5f80376d21"
+"@nuxtjs/meta@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/meta/-/meta-2.2.1.tgz#ad7c8658ef0357cdef56856a9ff21d595102e089"
 
-"@nuxtjs/pwa@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-2.0.5.tgz#2685ad7ba95184b30750143f085819b06b45aee0"
+"@nuxtjs/pwa@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/pwa/-/pwa-2.0.8.tgz#0e36ea1e3a63c1531f4e9e6b1d03a9390b09f8b5"
   dependencies:
-    "@nuxtjs/icon" "^2.0.2"
+    "@nuxtjs/icon" "^2.1.0"
     "@nuxtjs/manifest" "^2.1.0"
-    "@nuxtjs/meta" "^2.0.2"
-    "@nuxtjs/workbox" "^2.1.1"
+    "@nuxtjs/meta" "^2.2.1"
+    "@nuxtjs/workbox" "^2.2.0"
 
 "@nuxtjs/sitemap@^0.0.3":
   version "0.0.3"
@@ -70,9 +70,9 @@
     pify "^3.0.0"
     sitemap "^1.13.0"
 
-"@nuxtjs/workbox@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/workbox/-/workbox-2.1.1.tgz#e690c3c384dcd73e8a236d03b2d018949543e345"
+"@nuxtjs/workbox@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/workbox/-/workbox-2.2.0.tgz#c8f0df77afe029ded7783806b77ec950f792d3c3"
   dependencies:
     workbox-build "^2.1.2"
 
@@ -4307,9 +4307,9 @@ jest-runtime@^22.4.2:
     write-file-atomic "^2.1.0"
     yargs "^10.0.3"
 
-jest-serializer-vue@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/jest-serializer-vue/-/jest-serializer-vue-0.3.0.tgz#2128d0c1c83c3bcb2f4fb96104402626bb75506d"
+jest-serializer-vue@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/jest-serializer-vue/-/jest-serializer-vue-1.0.0.tgz#82514e9b3d94a17fe618df3ede84046090f94815"
   dependencies:
     pretty "2.0.0"
 
@@ -7858,9 +7858,9 @@ svg-baker@^1.2.17:
     query-string "^4.3.2"
     traverse "^0.6.6"
 
-svg-sprite-loader@^3.6.2:
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/svg-sprite-loader/-/svg-sprite-loader-3.6.2.tgz#3d700a9c4728c12934f400597364e80eaa0f9e6e"
+svg-sprite-loader@^3.7.3:
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/svg-sprite-loader/-/svg-sprite-loader-3.7.3.tgz#20a243d761d1cde062734fb4fb3e6dee7694a91c"
   dependencies:
     bluebird "^3.5.0"
     deepmerge "1.3.2"
@@ -8358,9 +8358,9 @@ vue-hot-reload-api@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.0.tgz#9a21b35ced3634434a43ee80efb7350ea8fb206d"
 
-vue-jest@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vue-jest/-/vue-jest-2.1.0.tgz#d106560b070cc1ba76f1e3a702eea3689c1bcf2d"
+vue-jest@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/vue-jest/-/vue-jest-2.2.1.tgz#a3a5299548a15fdbc5a00409a3aab5f48c625c57"
   dependencies:
     babel-plugin-transform-es2015-modules-commonjs "^6.26.0"
     chalk "^2.1.0"
@@ -8403,9 +8403,9 @@ vue-router@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
 
-vue-scrollto@^2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/vue-scrollto/-/vue-scrollto-2.9.0.tgz#489ce4674f871ea47547178b1df793302c6aec23"
+vue-scrollto@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/vue-scrollto/-/vue-scrollto-2.11.0.tgz#0657f127faded60a71fbcc841f393279a49aed55"
   dependencies:
     bezier-easing "^2.0.3"
 

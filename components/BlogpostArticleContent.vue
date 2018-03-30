@@ -10,6 +10,7 @@
       <MediumNew
         v-if="blogpost.type === 'medium'"
         class="blogpost__article-source--medium"
+        style="stroke: white; stroke-width: 35; stroke-linecap: round;"
       />
     </div>
     <div class="blogpost__article-content">

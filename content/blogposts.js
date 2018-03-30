@@ -4,12 +4,24 @@ import WritingAProgressiveImageLoadingComponentImage from '~/assets/img/writing-
 import UnitTestingVueJsComponentsWithJest from '~/assets/img/unit-testing-vue-js-components-with-jest.png';
 import LargeScaleVuexApplicationStructures from '~/assets/img/large-scale-vuex-application-structures.png';
 import WhatHappenedToVuejsIn2017 from '~/assets/img/what-happened-to-vuejs-in-2017.png';
+import ComposingComputedPropertiesInVueJs from '~/assets/img/composing-computed-properties-in-vue-js.png';
 
 const blogposts = [
   {
+    title: 'Composing computed properties in Vue.js',
+    description:
+      'Composing computed properties in Vue.js can outgrow in applications really fast. This article concentrates on how to apply patterns to keep computed properties readable and easy.',
+    url:
+      'https://medium.com/@kevin_peters/composing-computed-properties-in-vue-js-87b4507af079',
+    previewImage: ComposingComputedPropertiesInVueJs,
+    altTag:
+      'computed:{commentsMapped(state){constparentComments=[];constmappedComments=state.comments.comments.map(comment=>{constcopy=Object.assign({},comment);copy.isOwner=comment.user.id===state.comments.userData.userId;returncopy;});mappedComments.forEach(comment=>{if(comment.parent===null){constcopy=Object.assign({},comment);copy.textarea.showCommentButton=comment.textarea.text.length>0;parentComments.push(copy);}});',
+    type: 'medium',
+  },
+  {
     title: 'What happened to Vue.js in 2017',
     description:
-      'Vue.js performed really great in 2017. Gained a lot in attraction and evolved a lot. Let\'s see what happened and if the goals of the last year are fulfilled.',
+      "Vue.js performed really great in 2017. Gained a lot in attraction and evolved a lot. Let's see what happened and if the goals of the last year are fulfilled.",
     url:
       'https://medium.com/@kevin_peters/what-happened-to-vue-js-in-2017-aeaaa69c2c6f',
     previewImage: WhatHappenedToVuejsIn2017,

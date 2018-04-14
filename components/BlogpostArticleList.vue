@@ -28,8 +28,8 @@ export default {
 
 <style lang="scss" scoped>
 .blogposts__articles {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }
 
 .blogposts__articles > div {
@@ -38,7 +38,7 @@ export default {
 
 @media (min-width: 768px) {
   .blogposts__articles > div {
-    padding: 10px;
+    padding: 0.625em;
   }
 }
 </style>

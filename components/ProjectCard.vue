@@ -30,18 +30,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.project__summary:hover .project__logo {
+@mixin project-summary-hover($top) {
   position: absolute;
   width: 30%;
   left: calc((100% - 30%) / 2);
-  top: 30%;
+  top: $top;
+}
+
+.project__summary:hover .project__logo {
+  @include project-summary-hover(30%);
 }
 
 .project__summary:hover .project__logo--center {
-  position: absolute;
-  width: 30%;
-  left: calc((100% - 30%) / 2);
-  top: 20%;
+  @include project-summary-hover(20%);
 }
 
 @media (min-width: 768px) {
@@ -75,21 +76,18 @@ export default {
   transition: all 0.3s ease;
   position: relative;
   cursor: pointer;
+  margin-top: 1em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }
 
 .project__summary img {
-  margin-top: 16px;
+  margin-top: 1em;
 }
 
 .project__summary ul {
   padding: 0;
-  padding-left: 8px;
+  padding-left: 0.5em;
   list-style-type: none;
-}
-
-.project__summary {
-  margin-top: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
 }
 </style>

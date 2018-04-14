@@ -9,7 +9,7 @@
       <BlogpostArticleContent :blogpost="blogpost" />
     </router-link>
     <a
-      v-if="blogpost.type"
+      v-else
       class="blogpost__article-link"
       :aria-label="ariaLabel"
       :href="blogpost.url"

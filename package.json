@@ -1,7 +1,8 @@
 {
   "name": "kevin-peters-net",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description":
+    "Personal site of Kevin Peters. PWA powered. Some mix of blog and portfolio which was written with Nuxt.js.",
   "author": "igeligel <kevinigeligeligel@gmail.com>",
   "private": true,
   "dependencies": {

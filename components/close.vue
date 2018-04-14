@@ -12,13 +12,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$grey: #706f6f;
+$gray: #706f6f;
 
 svg {
   width: 1.5em;
   height: 1.5em;
-  fill: $grey;
-  stroke: $grey;
+  fill: $gray;
+  stroke: $gray;
   stroke-width: 0.125em;
   stroke-linecap: round;
   stroke-linejoin: round;

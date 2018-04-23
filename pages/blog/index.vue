@@ -47,12 +47,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import '../../assets/scss/mixins.scss';
+
 .container {
-  padding-bottom: 75px;
-  max-width: 1000px;
-  margin: auto;
-  font-family: 'Lato', sans-serif;
-  text-rendering: optimizeLegibility;
+  @include base-container();
 }
 </style>

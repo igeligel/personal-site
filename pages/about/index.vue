@@ -63,11 +63,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../../assets/scss/mixins.scss';
+
 .about-me__container {
-  font-family: 'Lato', sans-serif;
-  max-width: 1000px;
-  margin: auto;
-  padding-bottom: 65px;
-  text-rendering: optimizeLegibility;
+  @include base-container();
 }
 </style>

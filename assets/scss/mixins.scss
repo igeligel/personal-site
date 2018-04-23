@@ -15,3 +15,11 @@
     text-decoration: none;
   }
 }
+
+@mixin base-container() {
+  padding-bottom: 75px;
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Lato', sans-serif;
+  text-rendering: optimizeLegibility;
+}

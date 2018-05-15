@@ -28,7 +28,7 @@
     "*.{js,json,md,vue}": ["prettier --write", "git add"]
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.15",
+    "@vue/test-utils": "^1.0.0-beta.16",
     "babel-jest": "^22.4.3",
     "husky": "^0.14.3",
     "jest": "^22.4.3",

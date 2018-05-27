@@ -11,33 +11,41 @@
     "nuxt": "^1.4.0",
     "vue-scrollto": "^2.11.0"
   },
-  "description":
-    "Personal site of Kevin Peters. PWA powered. Some mix of blog and portfolio which was written with Nuxt.js.",
+  "description": "Personal site of Kevin Peters. PWA powered. Some mix of blog and portfolio which was written with Nuxt.js.",
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.16",
-    "babel-jest": "^22.4.4",
+    "babel-jest": "^23.0.1",
     "husky": "^0.14.3",
-    "jest": "^22.4.4",
+    "jest": "^23.0.1",
     "jest-serializer-vue": "^1.0.0",
     "lint-staged": "^7.1.2",
     "node-sass": "^4.9.0",
-    "prettier": "^1.12.1",
+    "prettier": "^1.13.0",
     "sass-loader": "^7.0.1",
-    "svg-sprite-loader": "^3.7.3",
+    "svg-sprite-loader": "^3.8.0",
     "vue-jest": "^2.6.0"
   },
   "jest": {
     "mapCoverage": true,
-    "moduleFileExtensions": ["js", "json", "vue"],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
     "moduleNameMapper": {},
-    "snapshotSerializers": ["<rootDir>/node_modules/jest-serializer-vue"],
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-vue"
+    ],
     "transform": {
       ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
     }
   },
   "lint-staged": {
-    "*.{js,json,md,vue}": ["prettier --write", "git add"]
+    "*.{js,json,md,vue}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "name": "kevin-peters-net",
   "scripts": {

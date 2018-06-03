@@ -5,8 +5,19 @@ import UnitTestingVueJsComponentsWithJest from '~/assets/img/unit-testing-vue-js
 import LargeScaleVuexApplicationStructures from '~/assets/img/large-scale-vuex-application-structures.png';
 import WhatHappenedToVuejsIn2017 from '~/assets/img/what-happened-to-vuejs-in-2017.png';
 import ComposingComputedPropertiesInVueJs from '~/assets/img/composing-computed-properties-in-vue-js.png';
+import AutoFormatterForPythonImage from '~/assets/img/auto-formatters-for-python.png';
 
 const blogposts = [
+  {
+    title: 'Auto formatters for Python',
+    description:
+      'Blog article showing the different possibilities to format code within Python with automatic tooling. It will focus on the difference of the tools and showcase edge-cases where the tools behave differently.',
+    url: 'https://medium.com/3yourmind/auto-formatters-for-python-8925065f9505',
+    previewImage: AutoFormatterForPythonImage,
+    altTag:
+      'image gradient from red to purple and showing the names black, autopep8 and yapf which are auto formatters for python',
+    type: 'medium',
+  },
   {
     title: 'Composing computed properties in Vue.js',
     description:

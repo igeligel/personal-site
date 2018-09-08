@@ -58,13 +58,10 @@ export default {
       return chunks;
     },
     socialMediaListIncludingComponents() {
-      return this.socialMediaList.map((socialMediaListElement) => {
-        const copy = Object.assign({}, socialMediaListElement);
-        copy['component'] = this.keyComponentDictionary[
-          socialMediaListElement.key
-        ];
-        return copy;
-      });
+      return this.socialMediaList.map((socialMediaListElement) => ({
+        ...socialMediaListElement,
+        component: this.keyComponentDictionary[socialMediaListElement.key],
+      }));
     },
   },
 };

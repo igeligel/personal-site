@@ -6,8 +6,31 @@ import LargeScaleVuexApplicationStructures from '~/assets/img/large-scale-vuex-a
 import WhatHappenedToVuejsIn2017 from '~/assets/img/what-happened-to-vuejs-in-2017.png';
 import ComposingComputedPropertiesInVueJs from '~/assets/img/composing-computed-properties-in-vue-js.png';
 import AutoFormatterForPythonImage from '~/assets/img/auto-formatters-for-python.png';
+import FunctionParametersInJavaScript from '~/assets/img/function-parameters-in-javascript.png';
+import HowToBeABetterSoftwareEngineerCodeReviews from '~/assets/img/how-to-be-a-better-software-engineer-code-reviews.png';
 
 const blogposts = [
+  {
+    title: 'How to be a better software engineer?  —  Code Reviews',
+    description:
+      'Code reviews are really important in every modern software company team. They will enable the team to stay agile and move fast. Article explains on how to improve those reviews.',
+    url:
+      'https://medium.com/@kevin_peters/how-to-be-a-better-software-engineer-code-reviews-c8f142fa720c',
+    previewImage: HowToBeABetterSoftwareEngineerCodeReviews,
+    altTag: 'The git merge octicon icon on yellow, orange gradient background',
+    type: 'medium',
+  },
+  {
+    title: 'Function parameters in JavaScript  —  Clean Code',
+    description:
+      'This article will show you how to write clean reusable but also extensible functions. This is really important in every growing application.',
+    url:
+      'https://medium.com/@kevin_peters/function-parameters-in-javascript-clean-code-4caac109159b',
+    previewImage: FunctionParametersInJavaScript,
+    altTag:
+      'Image showing some code with a function with an destructured object and default parameters',
+    type: 'medium',
+  },
   {
     title: 'Auto formatters for Python',
     description:

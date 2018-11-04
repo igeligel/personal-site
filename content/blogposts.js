@@ -8,8 +8,19 @@ import ComposingComputedPropertiesInVueJs from '~/assets/img/composing-computed-
 import AutoFormatterForPythonImage from '~/assets/img/auto-formatters-for-python.png';
 import FunctionParametersInJavaScript from '~/assets/img/function-parameters-in-javascript.png';
 import HowToBeABetterSoftwareEngineerCodeReviews from '~/assets/img/how-to-be-a-better-software-engineer-code-reviews.png';
+import WhatMakesANiceDevelopmentSetup from '~/assets/img/what-makes-a-nice-development-setup.png';
 
 const blogposts = [
+  {
+    title: 'What makes a nice development project?',
+    description:
+      'Creating a good setup for developers is hard. But as organization, this is even more important because the first impression counts.',
+    url:
+      'https://medium.com/@kevin_peters/what-makes-a-nice-development-project-49ac358250be',
+    previewImage: WhatMakesANiceDevelopmentSetup,
+    altTag: 'blurred IDE',
+    type: 'medium',
+  },
   {
     title: 'How to be a better software engineer?  —  Code Reviews',
     description:

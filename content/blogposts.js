@@ -9,8 +9,20 @@ import AutoFormatterForPythonImage from '~/assets/img/auto-formatters-for-python
 import FunctionParametersInJavaScript from '~/assets/img/function-parameters-in-javascript.png';
 import HowToBeABetterSoftwareEngineerCodeReviews from '~/assets/img/how-to-be-a-better-software-engineer-code-reviews.png';
 import WhatMakesANiceDevelopmentSetup from '~/assets/img/what-makes-a-nice-development-setup.png';
+import LearnHowToRefactorVueJsSingleFileComponentsWithARealWorldExample from '~/assets/img/learn-how-to-refactor-vue-js-single-file-components-with-a-real-world-example.png';
 
 const blogposts = [
+  {
+    title:
+      'Learn how to refactor Vue.js Single File Components with a real-world example',
+    description:
+      'Given the vue realworld project this blog article will show you how to refactor a simple Vue Single File Component for later use with Clean Code patterns.',
+    url:
+      'https://medium.com/@kevin_peters/learn-how-to-refactor-vue-js-single-file-components-on-a-real-world-example-501b3952ae49',
+    previewImage: LearnHowToRefactorVueJsSingleFileComponentsWithARealWorldExample,
+    altTag: 'coder emoji and two blurred code examples',
+    type: 'medium',
+  },
   {
     title: 'What makes a nice development project?',
     description:

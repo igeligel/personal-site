@@ -23,7 +23,7 @@
       page or on medium.
     </p>
     <p class="about-me__paragraph">
-      I have more than 20.000 views on my articles and more than 2000 claps. You
+      I have more than 100.000 views on my articles and more than 5000 claps. You
       can check the articles on medium here:
     </p>
     <a

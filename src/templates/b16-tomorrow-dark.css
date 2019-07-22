@@ -1,4 +1,4 @@
-code[class*="language-"],
+/* code[class*="language-"],
 pre[class*="language-"] {
     font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
     font-size: 14px;
@@ -139,7 +139,14 @@ pre[class*="language-"] {
     cursor: help;
 }
 
-pre > code.highlight {
-    outline: 0.4em solid #c66;
-    outline-offset: 0.4em;
+ */
+
+ .gatsby-highlight-code-line {
+  background-color: #feb;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #f99;
 }

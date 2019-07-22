@@ -1,64 +1,79 @@
 {
-  "author": "igeligel <kevinigeligeligel@gmail.com>",
+  "name": "gatsby-starter-advanced",
+  "description": "GatsbyJS starter that includes examples for advanced use cases.",
+  "version": "1.1.0",
+  "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
   "dependencies": {
-    "@nuxtjs/google-analytics": "2.0.2",
-    "@nuxtjs/icon": "^2.6.0",
-    "@nuxtjs/markdownit": "^1.2.1",
-    "@nuxtjs/pwa": "^2.6.0",
-    "@nuxtjs/sitemap": "^0.1.1",
-    "markdown-it-attrs": "^1.2.1",
-    "markdown-it-container": "^2.0.0",
-    "nuxt": "^1.4.2",
-    "vue-scrollto": "^2.13.0"
+    "gatsby": "^2.4.3",
+    "gatsby-image": "^2.0.41",
+    "gatsby-plugin-catch-links": "^2.0.13",
+    "gatsby-plugin-feed": "^2.2.0",
+    "gatsby-plugin-google-analytics": "^2.0.19",
+    "gatsby-plugin-lodash": "^3.0.5",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-nprogress": "^2.0.10",
+    "gatsby-plugin-offline": "^2.1.0",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sharp": "^2.0.37",
+    "gatsby-plugin-sitemap": "^2.1.0",
+    "gatsby-plugin-twitter": "^2.0.13",
+    "gatsby-remark-autolink-headers": "^2.0.16",
+    "gatsby-remark-copy-linked-files": "^2.0.12",
+    "gatsby-remark-images": "^3.0.11",
+    "gatsby-remark-prismjs": "^3.2.9",
+    "gatsby-remark-responsive-iframe": "^2.1.1",
+    "gatsby-source-filesystem": "^2.0.33",
+    "gatsby-transformer-remark": "^2.3.12",
+    "gatsby-transformer-sharp": "^2.1.19",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "prismjs": "^1.16.0",
+    "react": "^16.8.6",
+    "react-disqus-comments": "^1.4.0",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "react-share": "^2.4.0",
+    "react-twitter-widgets": "^1.7.1",
+    "url-join": "^4.0.0"
   },
-  "description": "Personal site of Kevin Peters. PWA powered. Some mix of blog and portfolio which was written with Nuxt.js.",
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.25",
-    "babel-jest": "^23.6.0",
-    "husky": "^1.0.1",
-    "jest": "^23.6.0",
-    "jest-serializer-vue": "^2.0.2",
-    "lint-staged": "^7.3.0",
-    "node-sass": "^4.9.3",
-    "prettier": "^1.14.3",
-    "sass-loader": "^7.1.0",
-    "svg-sprite-loader": "^3.9.2",
-    "vue-jest": "^2.6.0"
+    "cli-glob": "^0.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.17.0",
+    "remark-cli": "^6.0.1",
+    "remark-preset-lint-recommended": "^3.0.2",
+    "stylefmt": "^6.0.3",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
+    "write-good": "^1.0.1"
   },
-  "jest": {
-    "mapCoverage": true,
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "vue"
-    ],
-    "moduleNameMapper": {},
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/jest-serializer-vue"
-    ],
-    "transform": {
-      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,md,vue}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "name": "kevin-peters-net",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "start": "nuxt start"
+    "develop": "gatsby develop",
+    "dev": "npm run develop",
+    "serve": "gatsby serve",
+    "build": "gatsby build",
+    "build:pp": "gatsby build --prefix-paths",
+    "build:gh": "npm run clean && npm run build:pp && gh-pages -d public",
+    "clean": "rm -rf public && rm -rf .cache",
+    "lint:js": "eslint --ext .js,.jsx .",
+    "lint:md": "remark content/posts/",
+    "write-good": "write-good $(glob 'content/posts/**/*.md')",
+    "format:js": "prettier '**/*.{js,jsx}' --write"
   },
-  "version": "1.0.0"
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
+  }
 }

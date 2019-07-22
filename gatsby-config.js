@@ -18,6 +18,19 @@ module.exports = {
     }
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Lato`,
+            subsets: [`latin`],
+            variants: [`300`,`400`]
+          }
+        ],
+      },
+    },
+    `gatsby-plugin-styled-components`,
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
     {

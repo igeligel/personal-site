@@ -49,7 +49,8 @@ const LeadContainerHeading = styled.h2`
 const LeadContainerParapraph = styled.p`
   margin: 0;
   font-family: Lato;
-  width: 567px;
+  max-width: 567px;
+  width: 100%;
   font-size: 22px;
   line-height: 35px;
   color: rgba(43, 55, 62, 0.8);
@@ -123,13 +124,14 @@ const StyledLink = styled(Link)`
 `;
 
 const MainStyledLink = styled(Link)`
-margin: 0;
+  margin: 0;
   padding: 0;
   color: #4096c4;
   text-transform: uppercase;
   font-family: Lato, sans-serif;
   font-weight: 300;
-  font-size: 24px;`
+  font-size: 24px;
+`;
 
 class Index extends React.Component {
   render() {
@@ -138,28 +140,23 @@ class Index extends React.Component {
     return (
       <Layout>
         <div className="index-container">
-          <Helmet title={config.siteTitle} />
+          <Helmet title={config.siteTitle}>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+          </Helmet>
           <SEO />
           <NavbarContainer>
             <Navbar>
               <div>
-                <MainStyledLink to={"/"}>
-                  Web Dev Stories
-                </MainStyledLink>
+                <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
               </div>
               <div>
-                <StyledLink to={"/about"}>
-                  About
-                </StyledLink>
-                <StyledLink to={"/articles"}>
-                  Articles
-                </StyledLink>
-                <StyledLink to={"/projects"}>
-                  Projects
-                </StyledLink>
-                <StyledLink to={"/contact"}>
-                  Contact
-                </StyledLink>
+                <StyledLink to={"/about"}>About</StyledLink>
+                <StyledLink to={"/articles"}>Articles</StyledLink>
+                <StyledLink to={"/projects"}>Projects</StyledLink>
+                <StyledLink to={"/contact"}>Contact</StyledLink>
               </div>
             </Navbar>
           </NavbarContainer>

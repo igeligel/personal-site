@@ -116,11 +116,16 @@ const ListItemLink = styled.span`
 const StyledLink = styled(Link)`
   // color: palevioletred;
   // font-weight: bold;
-  color: rgba(64, 150, 196, 1);
+  color:rgba(64,150,196,0.5);
   font-weight: 300;
   font-family: Lato, sans-serif;
   margin-left: 1em;
   line-height: 2em;
+  text-decoration: none;
+
+  &:hover {
+    color:rgba(64,150,196,1);
+  }
 `;
 
 const MainStyledLink = styled(Link)`
@@ -131,7 +136,14 @@ const MainStyledLink = styled(Link)`
   font-family: Lato, sans-serif;
   font-weight: 300;
   font-size: 24px;
+  text-decoration: none;
 `;
+
+const IconWrapper = styled.div`
+width: 32px;
+height: 32px;
+align-self: center;
+`
 
 class Index extends React.Component {
   render() {
@@ -177,7 +189,7 @@ class Index extends React.Component {
                 <ListItem>
                   <ListItemL href="https://github.com/">
                     <div style={{ display: "flex" }}>
-                      <div style={{ width: "32px", height: "32px" }}>
+                      <IconWrapper>
                         <svg viewBox="0 0 128 128">
                           <path
                             d="m-2.3125e-8 8.9337 49.854 0.1586 14.167 24.47 14.432-24.47 49.547-0.1577-63.834 110.14zm126.98 0.6374-24.36 0.0207-38.476 66.052-38.453-66.052-24.749-0.0194 63.211 107.89zm-25.149-0.008-22.745 0.16758l-15.053 24.647-14.817-24.647-22.794-0.1679 37.731 64.476zM25.997 9.3929l23.002 0.0087M25.997 9.3929l23.002 0.0087"
@@ -192,7 +204,7 @@ class Index extends React.Component {
                             fill="#41b883"
                           ></path>
                         </svg>
-                      </div>
+                      </IconWrapper>
                       <ListItemLink>
                         How to debug JavaScript applications and tests
                       </ListItemLink>
@@ -202,7 +214,7 @@ class Index extends React.Component {
                 <ListItem>
                   <ListItemL href="https://github.com/">
                     <div style={{ display: "flex" }}>
-                      <div style={{ width: "32px", height: "32px" }}>
+                      <IconWrapper>
                         <svg viewBox="0 0 128 128">
                           <path
                             d="m-2.3125e-8 8.9337 49.854 0.1586 14.167 24.47 14.432-24.47 49.547-0.1577-63.834 110.14zm126.98 0.6374-24.36 0.0207-38.476 66.052-38.453-66.052-24.749-0.0194 63.211 107.89zm-25.149-0.008-22.745 0.16758l-15.053 24.647-14.817-24.647-22.794-0.1679 37.731 64.476zM25.997 9.3929l23.002 0.0087M25.997 9.3929l23.002 0.0087"
@@ -217,7 +229,7 @@ class Index extends React.Component {
                             fill="#41b883"
                           ></path>
                         </svg>
-                      </div>
+                      </IconWrapper>
                       <ListItemLink>
                         Large-scale Vuex application structures
                       </ListItemLink>
@@ -227,7 +239,7 @@ class Index extends React.Component {
                 <ListItem>
                   <ListItemL href="https://github.com/">
                     <div style={{ display: "flex" }}>
-                      <div style={{ width: "32px", height: "32px" }}>
+                      <IconWrapper>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 128 128"
@@ -290,7 +302,7 @@ class Index extends React.Component {
                             d="M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416-18.276 0-33.092-2.873-33.092-6.416 0-3.544 14.815-6.417 33.092-6.417 18.275 0 33.091 2.872 33.091 6.417z"
                           />
                         </svg>
-                      </div>
+                      </IconWrapper>
                       <ListItemLink>
                         Auto formatters for Python 👨‍💻🤖
                       </ListItemLink>

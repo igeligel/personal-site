@@ -49,6 +49,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "gh-pages": "^2.0.1",
+    "mediumexporter": "^0.1.6",
     "prettier": "^1.18.2",
     "remark-cli": "^6.0.1",
     "remark-preset-lint-recommended": "^3.0.3",
@@ -73,7 +74,8 @@
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:md": "remark content/posts/",
     "write-good": "write-good $(glob 'content/posts/**/*.md')",
-    "format:js": "prettier '**/*.{js,jsx}' --write"
+    "format:js": "prettier '**/*.{js,jsx}' --write",
+    "medium:import": "mediumexporter"
   },
   "remarkConfig": {
     "plugins": [

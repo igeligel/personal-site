@@ -10,7 +10,7 @@ class AboutPage extends Component {
         <div className="about-container">
           <Helmet title={`About | ${config.siteTitle}`} />
           <div>
-            LOL
+            LOLw
           </div>
         </div>
       </Layout>

@@ -37,7 +37,6 @@
   margin-top: 1.6em;
   margin-bottom: 0.618em;
   color: rgb(43, 55, 62);
-  margin-left: -24px;
 }
 
 .blog-content h3 a {
@@ -52,7 +51,13 @@
 }
 
 .blog-content h3 .anchor {
+  text-decoration: none;
   padding-right: 10px;
+  border: 0;
+  margin-left: -26px;
+}
+
+.blog-content h3 .anchor:hover {
   border: 0;
 }
 

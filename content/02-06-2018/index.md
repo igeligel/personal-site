@@ -121,4 +121,3 @@ This blog post was written in cooperation with the company [3YOURMIND](https://w
 
 > Thanks for reading this. You rock* 🤘*
 > If you have any feedback or want to add something to this article just comment here. You can also follow me on [twitter](https://twitter.com/kevinpeters_) or visit my [personal site](https://www.kevinpeters.net/) to stay up-to-date with my blog articles and many more things.
-> Done in 1.34s.

@@ -1,12 +1,12 @@
 ---
 title: "Auto formatters for Python"
 cover: "https://unsplash.it/1152/300/?random?FaityWitch"
-category: "something"
-date: "02/06/2018"
+category: "python"
+date: "06/02/2018"
 tags:
   - programming
-  - stuff
-  - other
+  - python
+  - clean code
 ---
 
 # Auto formatters for Python 👨‍💻🤖

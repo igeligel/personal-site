@@ -1,0 +1,81 @@
+---
+title: "How to be a better software engineer? — Code Reviews"
+cover: "https://unsplash.it/1152/300/?random?FaityWitch"
+category: "python"
+date: "09/08/2019"
+tags:
+  - programming
+  - python
+  - clean code
+---
+
+# How to be a better software engineer? — Code Reviews
+
+There are good and bad developers in the engineering world. Everyone wants to hire the good ones. But what is a difference between a good software engineer and a bad software engineer? In this article, I will describe one of the biggest points: self-evaluation and code reviews.
+
+### What are code reviews?
+
+Code reviews in a business sense play an important role in feature development, bug fixes and much more. Basically, you can apply this stage to everything which is done in a team so that quality can be assured.
+
+![Classical Feature Development](https://cdn-images-1.medium.com/max/3612/1*_lb4cb70lvqEsUtKIhpSSg.png)_Classical Feature Development_
+
+The Code Review step in this process should be done by people who have not created the change. This will make sure the changes make sense. But more on this later why this is efficient.
+
+The review phase is also a critical step because it is more or less the last step a feature or bug fix goes into production. If it is not checked properly it will lead to more frustration, more bugs and/or more downtime. These things should be avoided by all costs in a team because they demoralize the team or even cost the business real money.
+
+In the code review there should be multiple steps:
+
+- Is the code change actually fulfilling the requirements given in the feature request?
+
+- Syntax control: Is everything fitting our current coding style?
+
+- Semantic control: Is everything written with patterns which are normally used in the application?
+
+- Are tests provided?
+
+Some steps in the code review process can be automated and within this change can use less time for the engineering team resulting in moving forward faster. For example, different code evaluation tools like a linter or a code formatter could be introduced to reduce the time of syntax control. An automated test pipeline could be introduced to execute the tests automatically.
+
+So, now that I explained how Code Reviews are structured. How do they work in practice? Normally, when you create a feature or something you work with gitflow. There is a good explanation by datasift which you can find [here](https://datasift.github.io/gitflow/IntroducingGitFlow.html). Basically, you create a branch with your changes and with this branch you create a Pull Request. This Pull Request is then reviewed by other people in your team. The amount of people depends on the rule you have set. I would recommend at least one person and up to two persons if the changes are larger. After those people approved the Pull Request it can be merged into the production code and is ready to take effect.
+
+### How to do actual reviews?
+
+Now that we have explained the structure on how to do code reviews we can follow up with some tricks to use so you will not end up as one of these nitpicky engineers in your team. There is a good quote on this one:
+
+> Be likeable or get fired
+
+This becomes really true when you write code reviews. Code reviews should not do any harm. They are there for the greater good. The problem is that engineers are morally attached to the things they are creating which can be positive and negative. In the sense of code review, this gets completely negative though. In long-term, the code the engineer is writing is supporting the product somehow. Since a product is there to grow in most cases, it will be also developed by multiple engineers and now the code needs to be maintained or extended by other engineers. This moral connection contradicts with sharing the code since everyone is connected to the code somehow and you need to change the art of different people. Just imagine you change the picture of an artist. He will be super demotivated in most cases because “his” work is getting changed. So with that in mind, we can start with the first tip:
+
+> Be respectful
+
+In every code review try to focus on the advantages and disadvantages of a solution. Make sure that you give examples and think ahead. For example, if you are not ok with how the code is written, start with what you think is the problem with the solution proposed. After you have given those arguments propose a solution which would eliminate the mentioned problems but also solve the original problem. Focus here on software engineering practices like Clean Code, scalability — teamwise and performance-wise, extensibility and so on. After proposing the solution try to find out if there is enough time to fix those problems in this Code Review lifecycle. If not, this comes down on how your company is structured, create a ticket in your ticket management system or write it down somewhere where you can find it and tackle this problem. Be communicative there with product owners and other people to explain why this is technical debt and how it is affecting the business in long-term.
+
+> Use the word we, work as a team
+
+The connection to the code of engineers is immense. To show other engineers that code is shared by other people we can use a simple trick to make this more clear. Just in all code reviews, use the word “We” instead of “I” or “You”. This will make engineers feel that you want to work together with them on this project. It is really important to keep this kind of bond between you and your teammates so you are liked and not the rockstar developer who wants to change everything.
+
+> Try to understand your team
+
+Every person in the world is different. Your teammates are different too. So try to analyze them on what kind of personality they have. This can be easily done with the [Five Factor Model](https://en.wikipedia.org/wiki/Big_Five_personality_traits). Basically, it deals with those five traits:
+
+- Openness to experience
+
+- Conscientiousness
+
+- Extraversion
+
+- Agreeableness
+
+- Neuroticism
+
+Try to gather data in the first weeks of this experiment in private and rate the people from 0 to 10 for each trait. Based on this you will get a good idea what is important for other people and how you should communicate with them.
+
+1. Be respectful, the creator of the Pull Request has thought about his solution
+
+1. Use the word “we”, work together as a team
+
+1. Try to analyze team members before and see how they react, try to get to know them
+
+After this, you will have a better feeling on how to approach code reviews with them.
+
+> Thanks for reading this. You rock* 🤘*
+> If you have any feedback or want to add something to this article just comment here. You can also follow me on [twitter](https://twitter.com/kevinpeters_) or visit my [personal site](https://www.kevinpeters.net/) to stay up-to-date with my blog articles and many more things.

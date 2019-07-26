@@ -109,6 +109,7 @@ export default class PostTemplate extends React.Component {
           </NavbarContainer>
           <Wrapper>
             {/* <h1>{post.title}</h1> */}
+            <div>{post.date}</div>
             <WrapperContent>
               <div
               className="blog-content"

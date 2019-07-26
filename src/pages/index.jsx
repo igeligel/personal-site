@@ -159,7 +159,7 @@ const getPostList = postEdges => {
       timeToRead: postEdge.node.timeToRead
     });
   });
-  return postList;
+  return postList.sort((a,b) => new Date(b.date) - new Date(a.date));
 };
 
 const WorkInProgress = styled.p`

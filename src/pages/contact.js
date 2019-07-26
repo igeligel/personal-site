@@ -208,7 +208,7 @@ export default Index;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query ArticlesQuery {
+  query ContactsQuery {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [fields___date], order: DESC }

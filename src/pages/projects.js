@@ -7,7 +7,7 @@ import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import {ProjectList} from '../components/ProjectList'
+import { ProjectList } from "../components/ProjectList";
 
 const NavbarContainer = styled.div`
   flex: 1;
@@ -140,11 +140,11 @@ const MainStyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-  const IconWrapper = styled.div`
-    width: 32px;
-    height: 32px;
-    align-self: center;
-  `;
+const IconWrapper = styled.div`
+  width: 32px;
+  height: 32px;
+  align-self: center;
+`;
 
 const getPostList = postEdges => {
   const postList = [];
@@ -163,14 +163,15 @@ const getPostList = postEdges => {
 };
 
 const WorkInProgress = styled.p`
-margin: 0;
-font-family: Lato;
-width: 100%;
-font-size: 22px;
-line-height: 35px;
-color: rgba(43,55,62,0.8);`
+  margin: 0;
+  font-family: Lato;
+  width: 100%;
+  font-size: 22px;
+  line-height: 35px;
+  color: rgba(43, 55, 62, 0.8);
+`;
 
-class Index extends React.Component {
+class Projects extends React.Component {
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
     const postList = getPostList(postEdges);
@@ -204,11 +205,11 @@ class Index extends React.Component {
   }
 }
 
-export default Index;
+export default Projects;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query ArticlesQuery {
+  query ProjectsQuery {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [fields___date], order: DESC }

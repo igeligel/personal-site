@@ -44,17 +44,16 @@ const LeadContainerHeading = styled.h2`
   font-size: 40px;
   font-family: Lato;
   margin-top: 1.6em;
-  margin-bottom: 0.618em;
 `;
 
 const LeadContainerParapraph = styled.p`
   margin: 0;
   font-family: Lato;
-  max-width: 567px;
   width: 100%;
-  font-size: 22px;
-  line-height: 35px;
+  font-size: 18px;
+  line-height: 28px;
   color: rgba(43, 55, 62, 0.8);
+  margin-top: 1.3em;
 `;
 
 const SectionContainerWrapper = styled.div`
@@ -70,7 +69,7 @@ const SectionContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
+  // padding-top: 40px;
 `;
 
 const SectionHeading = styled.h3`
@@ -198,6 +197,32 @@ class Index extends React.Component {
               </div>
             </Navbar>
           </NavbarContainer>
+          <SectionContainerWrapper>
+            <SectionContainer>
+              <LeadContainerHeading>Stay in touch with me</LeadContainerHeading>
+              <LeadContainerParapraph>
+                I am a Kevin Peters, a software developer and JavaScript
+                enthusiast from Berlin, Germany. I currently work as a Software
+                Engineer for the finance company Klarna, a unicorn in Europe. I
+                deeply care about developer experience and everything around
+                these topics.
+              </LeadContainerParapraph>
+              <LeadContainerParapraph>
+                This website was created a long time ago already with Nuxt.js
+                and similar tools but I found out it is quite limited so decided
+                to rearchitecture this website with Gatsby.js. Now it includes more content and
+                a better visual design. I like to share my thoughts and
+                learnings in form of blogs which I will present here mostly.
+              </LeadContainerParapraph>
+              <LeadContainerParapraph>
+                My goal is always to create high quality content and teach
+                people different technical things. I am grateful for the open
+                source scene and the several blogs existing because they got me
+                into programming and taught me a lot. That is why I want to give
+                something back.
+              </LeadContainerParapraph>
+            </SectionContainer>
+          </SectionContainerWrapper>
         </div>
       </Layout>
     );

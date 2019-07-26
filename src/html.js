@@ -11,6 +11,7 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

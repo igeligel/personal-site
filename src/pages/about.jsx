@@ -89,6 +89,37 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const UnorderedList = styled.ul`
+  li + li {
+    margin-top: 0.61em;
+  }
+`;
+
+const UnorderedListItem = styled.li`
+  margin: 0;
+  font-family: Lato;
+  width: 100%;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(43, 55, 62, 0.8);
+`;
+
+const HrefLink = styled.a`
+  text-decoration: none;
+  color: rgba(64, 150, 196, 0.8);
+  border-bottom: 2px solid rgba(64, 150, 196, 0.1);
+
+  :hover {
+    color: rgba(64, 150, 196, 0.9);
+    border-bottom: 2px solid rgba(64, 150, 196, 0.9);
+  }
+`;
+
+const LineItemYear = styled.span`
+  color: rgb(43, 55, 62);
+  font-weight: 600;
+`;
+
 class About extends React.Component {
   render() {
     return (
@@ -127,7 +158,7 @@ class About extends React.Component {
               <LeadContainerParapraph>
                 This website was created a long time ago already with Nuxt.js
                 and similar tools but I found out it is quite limited so decided
-                to rearchitecture this website. Now it includes more content and
+                to rearchitecture this website with Gatsby.js. Now it includes more content and
                 a better visual design. I like to share my thoughts and
                 learnings in form of blogs which I will present here mostly.
               </LeadContainerParapraph>
@@ -143,39 +174,199 @@ class About extends React.Component {
           <SectionContainerWrapper>
             <SectionContainer>
               <SectionHeading>Public presence</SectionHeading>
-              <ul>
-                <li>Email: </li>
-                <li>GitHub</li>
-                <li>Twitter: </li>
-                <li>LinkedIn: </li>
-                <li>Medium: </li>
-              </ul>
+              <UnorderedList>
+                <UnorderedListItem>
+                  Email:{" "}
+                  <HrefLink href="mailto:kevinigeligeligel@gmail.com">
+                    kevinigeligeligel@gmail.com
+                  </HrefLink>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  GitHub:{" "}
+                  <HrefLink
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://github.com/igeligel"
+                  >
+                    igeligel
+                  </HrefLink>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  Twitter:{" "}
+                  <HrefLink
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://twitter.com/kevinpeters_"
+                  >
+                    kevinpeters_
+                  </HrefLink>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  LinkedIn:{" "}
+                  <HrefLink
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://www.linkedin.com/in/kevinpetersde/"
+                  >
+                    kevinpetersde
+                  </HrefLink>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  Medium:{" "}
+                  <HrefLink
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://medium.com/@kevin_peters"
+                  >
+                    kevin_peters
+                  </HrefLink>
+                </UnorderedListItem>
+              </UnorderedList>
             </SectionContainer>
           </SectionContainerWrapper>
           <SectionContainerWrapper>
             <SectionContainer>
               <SectionHeading>Timeline</SectionHeading>
-              <ul>
-                <li>Email: </li>
-                <li>GitHub</li>
-                <li>Twitter: </li>
-                <li>LinkedIn: </li>
-                <li>Medium: </li>
-              </ul>
+              <UnorderedList>
+                <UnorderedListItem>
+                  <LineItemYear>2018</LineItemYear>
+                  <span>: </span>
+                  <span>Changed company, now @ Klarna as Software Engineer</span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2018</LineItemYear>
+                  <span>: </span>
+                  <span>Core maintainer of vue-realworld-example-app</span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2017</LineItemYear>
+                  <span>: </span>
+                  <span>
+                    Published article about large-scale Vuex application
+                    structures which went viral
+                  </span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2017</LineItemYear>
+                  <span>: </span>
+                  <span>
+                    Started Fulltime Position as Fullstack Developer @ 3YOURMIND
+                    GmbH - doing Vue.js + Django REST Framework
+                  </span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2017</LineItemYear>
+                  <span>: </span>
+                  <span>Finished computer science degree </span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2017</LineItemYear>
+                  <span>: </span>
+                  <span>
+                    Internship @ 3YOURMIND GmbH - doing Django and Knockout.js
+                  </span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2017</LineItemYear>
+                  <span>: </span>
+                  <span>Moved to Berlin 🐻</span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2017</LineItemYear>
+                  <span>: </span>
+                  <span>Started blogging on kevinpeters.net</span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2016</LineItemYear>
+                  <span>: </span>
+                  <span>Fiddled around with Vue.js first time</span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2015</LineItemYear>
+                  <span>: </span>
+                  <span>
+                    Started side-gig at a friend's business
+                  </span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2015</LineItemYear>
+                  <span>: </span>
+                  <span>
+                    Created a software development kit interfacing with the
+                    gaming platform Steam to enable botting
+                  </span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2014</LineItemYear>
+                  <span>: </span>
+                  <span>
+                    Started a computer science degree at Ostfalia Hochschule für
+                    angewandte Wissenschaften, Wolfenbüttel
+                  </span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2012</LineItemYear>
+                  <span>: </span>
+                  <span>
+                    Learned C# in my free time to write a bot for a game
+                  </span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>2009</LineItemYear>
+                  <span>: </span>
+                  <span>
+                    Started with programming/coding in School with Scratch,
+                    Pascal, HTML
+                  </span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>1996</LineItemYear>
+                  <span>: </span>
+                  <span>👶</span>
+                </UnorderedListItem>
+              </UnorderedList>
             </SectionContainer>
           </SectionContainerWrapper>
           <SectionContainerWrapper>
             <SectionContainer>
               <SectionHeading>Stuff I Use and Love</SectionHeading>
-              <ul>
-                <li>Computer: MacBook Pro 2018</li>
-                <li>Hosting: Netlify</li>
-                <li>Editor: Visual Studio Code</li>
-                <li>Database: PostgreSQL + JetBrains DataGrip</li>
-                <li>Static site generator like this blog: Gatsby</li>
-                <li>Syntax highlighting: PrismJS</li>
-                <li>Code syntax theme: Visual Studio Dark +</li>
-              </ul>
+              <UnorderedList>
+                <UnorderedListItem>
+                  <LineItemYear>Computer</LineItemYear>
+                  <span>: </span>
+                  <span>MacBook Pro 2018</span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>Hosting</LineItemYear>
+                  <span>: </span>
+                  <span>Netlify</span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>Editor</LineItemYear>
+                  <span>: </span>
+                  <span>Visual Studio Code</span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>Database</LineItemYear>
+                  <span>: </span>
+                  <span>PostgreSQL + JetBrains DataGrip</span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>Static site generator like this blog</LineItemYear>
+                  <span>: </span>
+                  <span>Gatsby</span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>Syntax highlighting</LineItemYear>
+                  <span>: </span>
+                  <span>PrismJS</span>
+                </UnorderedListItem>
+                <UnorderedListItem>
+                  <LineItemYear>Code syntax theme</LineItemYear>
+                  <span>: </span>
+                  <span>Visual Studio Dark +</span>
+                </UnorderedListItem>
+              </UnorderedList>
             </SectionContainer>
           </SectionContainerWrapper>
         </div>

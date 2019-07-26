@@ -162,6 +162,14 @@ const getPostList = postEdges => {
   return postList;
 };
 
+const WorkInProgress = styled.p`
+margin: 0;
+font-family: Lato;
+width: 100%;
+font-size: 22px;
+line-height: 35px;
+color: rgba(43,55,62,0.8);`
+
 class Index extends React.Component {
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
@@ -205,7 +213,7 @@ class Index extends React.Component {
               <SectionHeading>Top Articles</SectionHeading>
               <UnorderedList>
                 <ListItem>
-                  <ListItemL href="https://github.com/">
+                  <ListItemL href="https://github.com">
                     <div style={{ display: "flex" }}>
                       <IconWrapper>
                         <svg viewBox="0 0 128 128">
@@ -365,6 +373,7 @@ class Index extends React.Component {
           <SectionContainerWrapper>
             <SectionContainer>
               <SectionHeading>Books</SectionHeading>
+              <WorkInProgress>🔨 Work in Progress 🔨</WorkInProgress>
             </SectionContainer>
           </SectionContainerWrapper>
           <SectionContainerWrapper>
@@ -376,6 +385,7 @@ class Index extends React.Component {
           <SectionContainerWrapper>
             <SectionContainer>
               <SectionHeading>Speaking</SectionHeading>
+              <WorkInProgress>🔨 Work in Progress 🔨</WorkInProgress>
             </SectionContainer>
           </SectionContainerWrapper>
         </div>

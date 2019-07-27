@@ -243,3 +243,8 @@
   /* content: "\A";
   white-space: pre; */
 }
+
+
+.gatsby-highlight-code-line .gatsby-highlight-code-line {
+  background: none !important;
+}

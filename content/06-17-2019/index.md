@@ -17,21 +17,82 @@ Databases are just tools for storing data but the query language which comes wit
 
 In programming languages like JavaScript, Java or C# we use complex logical operations all the time. So it would be completely normal to do things like this:
 
-<iframe src="https://medium.com/media/c0231211ef41cfa8150cf683f4e90c86" frameborder=0></iframe>
+```js
+const vehicles = [
+  "Airbus A333-300",
+  "Volkswagen Golf",
+  "Porsche Cayenne",
+  "Airbus A380-800"
+];
+
+const vehiclesWithTypes = vehicles.map(vehicle => {
+  switch (vehicle) {
+    case "Airbus A380-800":
+    case "Airbus A333-300":
+      return {
+        name: vehicle,
+        type: "airplane"
+      };
+      break;
+    case "Volkswagen Golf":
+    case "Porsche Cayenne":
+      return {
+        name: vehicle,
+        type: "car"
+      };
+    default:
+      return {
+        name: vehicle,
+        type: null
+      };
+  }
+});
+
+console.log(vehiclesWithTypes);
+```
 
 Basically, it will take an array/list of strings which are the vehicle names in this example. What we want to have in the end is the single names with a property called type to work on more expensive operations later maybe.
 
-<iframe src="https://medium.com/media/07d9887e8ca1ee923ed21bc770ed6eaf" frameborder=0></iframe>
+```json
+{
+  "name": "Airbus A333-300",
+  "type": "airplane"
+}
+```
 
 The full result list will look like:
 
-<iframe src="https://medium.com/media/94f6d4c1a3dfd18d4770722ba3129a8e" frameborder=0></iframe>
+```json
+[
+  {
+    "name": "Airbus A333-300",
+    "type": "airplane"
+  },
+  {
+    "name": "Volkswagen Golf",
+    "type": "car"
+  },
+  {
+    "name": "Porsche Cayenne",
+    "type": "car"
+  },
+  {
+    "name": "Airbus A380-800",
+    "type": "airplane"
+  }
+]
+```
 
 For example, this could be done in the application code as you see above but in a lot of cases, the problem which arises here is that we are using the application’s server CPU. This is not ideal because these things can be done with SQL.
 
 But first, we need to show which data we have in the database. Let us look at an example table.
 
-![vehicles table](https://cdn-images-1.medium.com/max/2000/1*C01F-tsVLkwowoj-gBBWJg.png)_vehicles table_
+| Id  | Name            | Price      |
+| --- | --------------- | ---------- |
+| 1   | Airbus A330-300 | 1500000.00 |
+| 2   | Volkswagen Golf | 35000.00   |
+| 3   | Porsche Cayenne | 65000.00   |
+| 4   | Airbus A380-800 | 3000000.00 |
 
 It is quite simple data but what is missing here is the grouping of the vehicles. To do the grouping on application level might be too CPU-intensive but we have a grouping functionality there already. There is a possibility to translate the grouping function from our application code into the SQL statement.
 
@@ -41,7 +102,10 @@ The CASE statement can be used nearly everywhere in queries. The examples in thi
 
 For creating proper SQL queries I can recommend to visualize the result we want to achieve first. Our expected result would look like:
 
-![](https://cdn-images-1.medium.com/max/2000/1*yij10Kuj8pKYZV6zWPavvA.png)
+| Type     | Price      |
+| -------- | ---------- |
+| Airplane | 4500000.00 |
+| Car      | 100000.00  |
 
 This is a grouped table by vehicle type which is just existing in our application code and the sum of the amounts of each vehicle grouped by the type.
 
@@ -49,33 +113,72 @@ To see what is the first step in our current we need to see which data is missin
 
 Basically ANY is the same functionality as the includes in JavaScript or contains in Java. It is a functionality to check if an item is inside a list or iterable data type. In PostgreSQL, this is commonly used with Arrays. A list can be defined in two ways for our use cases:
 
-<iframe src="https://medium.com/media/f139754f0b4a078f818f1c5c38421491" frameborder=0></iframe>
+```sql
+VALUES ('Airbus A333-300'), ('Airbus A380-800')
+```
 
-<iframe src="https://medium.com/media/0590c7119eedaa7aa6400535b966f546" frameborder=0></iframe>
+```sql
+ARRAY['Airbus A333-300', 'Airbus A380-800']
+```
 
 The second approach seems to be more natural and similar to what we are used to in modern programming languages so I will follow this approach. It is what we will use throughout this blog post. So the first thing to use it is probably in a simple query to get all airplanes from our data set. The most simple query would look something like this:
 
-<iframe src="https://medium.com/media/96aa206506b4cc0eba055f079c8ff9b8" frameborder=0></iframe>
+```sql
+SELECT * FROM vehicles
+WHERE name = ANY (ARRAY['Airbus A333-300', 'Airbus A380-800']);
+```
 
 It will check all vehicles which have a name which is included in the list.
 
 The same query could be constructed for cars too. It would yield in just returning rows which will include cars. So let us inspect the CASE statement now in an easy way to append the type of vehicle to the data. The first common approach would be to use something like this:
 
-<iframe src="https://medium.com/media/cbf18ea785995b0658dcd2aba3c68572" frameborder=0></iframe>
+```sql
+SELECT *,
+       CASE
+           WHEN name = 'Airbus A333-300' THEN 'airplane'
+           WHEN name = 'Airbus A380-800' THEN 'airplane'
+           WHEN name = 'Volkswagen Golf' THEN 'car'
+           WHEN name = 'Porsche Cayenne' THEN 'car'
+           ELSE null
+           END AS type
+FROM vehicles;
+```
 
 This approach is working but really has one big disadvantage: with every new data element in this query we will have another line of code and it is repeating a lot of code WHEN name = '...' THEN vehicle_type. A specialty here is also that we need to call a CASE and END keyword to make the case statement work.
 
 But this could be improved by the ANY operator we have learned before:
 
-<iframe src="https://medium.com/media/b5bd54cce7dcc017c28698c96683d06f" frameborder=0></iframe>
+```sql
+SELECT *,
+       CASE
+           WHEN name = ANY(ARRAY['Airbus A333-300', 'Airbus A380-800']) THEN 'airplane'
+           WHEN name = ANY(ARRAY['Volkswagen Golf', 'Porsche Cayenne']) THEN 'car'
+           ELSE null
+           END AS type
+FROM vehicles;
+```
 
 This would result in the following data set:
 
-![](https://cdn-images-1.medium.com/max/2000/1*IKsljKblZXLVL-k7A9mGUA.png)
+| Id  | Name            | Price      | type     |
+| --- | --------------- | ---------- | -------- |
+| 1   | Airbus A330-300 | 1500000.00 | airplane |
+| 2   | Volkswagen Golf | 35000.00   | car      |
+| 3   | Porsche Cayenne | 65000.00   | car      |
+| 4   | Airbus A380-800 | 3000000.00 | airplane |
 
 This is really near to the end result which should be achieved. But for the last part, the query would need to aggregate the prices by the vehicle_type. This can be easily done by using the GROUP BY statement.
 
-<iframe src="https://medium.com/media/9c719a8f1cc97228554b42f80f9c84a6" frameborder=0></iframe>
+```sql
+SELECT SUM(price),
+       CASE
+           WHEN name = ANY (ARRAY ['Airbus A333-300', 'Airbus A380-800']) THEN 'airplane'
+           WHEN name = ANY (ARRAY ['Volkswagen Golf', 'Porsche Cayenne']) THEN 'car'
+           ELSE null
+           END AS type
+FROM vehicles
+GROUP BY vehicle_type;
+```
 
 This is what the query would look like. Maybe it could be optimized by filtering out the rows which have NULL as vehicle_type but in this example should have shown the main point which is the CASE keyword. The keyword could be used in a lot of other use-cases (ba dum tss) like in complex JOIN ‘s on multiple tables. Just experience with this keyword a bit and see if it could be applied somewhere in your queries.
 

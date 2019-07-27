@@ -15,29 +15,33 @@ The year 2017 was awesome for 3YOURMIND in terms of front-end. We started this y
 
 We were writing something like:
 
-    self.attachmentRequiredCheck = function() {
-      var nbLines = self.projectLines().length;
-      for (var i = 0; i < nbLines; i++) {
-        if (
-          self.projectLines()[i].is_manual_pricing_required() &&
-          !self.projectLines()[i].lineAttachment().length
-        )
-          return false;
-      }
-      return true;
-    };
+```js{3-10}
+self.attachmentRequiredCheck = function() {
+  var nbLines = self.projectLines().length;
+  for (var i = 0; i < nbLines; i++) {
+    if (
+      self.projectLines()[i].is_manual_pricing_required() &&
+      !self.projectLines()[i].lineAttachment().length
+    )
+      return false;
+  }
+  return true;
+};
+```
 
-This was just ugly and could be natively solved in a faster and more efficient way by calling the Array.prototype.some() function.
+This was just ugly and could be natively solved in a faster and more efficient way by calling the `Array.prototype.some()` function.
 
-    self.attachmentRequiredCheck = function() {
-      var projectLines = self.projectLines();
-      return projectLines.some(function(projectLine) {
-        return (
-          projectLine.is_manual_pricing_required &&
-          projectLine.lineAttachment().length === 0
-        );
-      });
-    };
+```js{3-8}
+self.attachmentRequiredCheck = function() {
+  var projectLines = self.projectLines();
+  return projectLines.some(function(projectLine) {
+    return (
+      projectLine.is_manual_pricing_required &&
+      projectLine.lineAttachment().length === 0
+    );
+  });
+};
+```
 
 This is still not perfect since the anonymous function should be refactored into an external function, but it was a lot better than before. But to make sure those changes work, we would need to ensure that the refactoring would not change the actual behavior of the code. The problem here was the mix of technologies we are using. We couldn’t really unit test them in a sensible way. Sometimes the JavaScript was inline inside the HTML or references to globally declared functions or variables were made which were also included inline in the HTML Django templates. This resulted in a huge mess for testing and only code which was extracted into its own JavaScript file got tested. Another problem was how Knockout was included. The initial design included it by an inline script via a local version. This resulted in global namespace disruption and that made tests even harder to create. In the end, we tried to validate the idea of writing unit tests for those Knockout view models, but the pain was not worth it at all since we had other plans in mind already. jQuery as global dependency was not helping either.
 
@@ -45,7 +49,7 @@ The long-term plan was to introduce a new front-end framework at the end of the 
 
 The first feature we implemented with Vue.js was the commenting system which is now open source ([3YOURMIND/vue-comments](https://github.com/3YOURMIND/vue-comments)). This component was written in a way so we can reuse it in different applications of our product stack. The hard part of this task was the webpack integration into the ancient Django build workflow. The gist of what we did is shown in this diagram:
 
-![Simplified build process of Vue-Django-integration](https://cdn-images-1.medium.com/max/2000/1*J3_E8Hk3MP-d8_tXE-DhhA.png)*Simplified build process of Vue-Django-integration*
+![Simplified build process of Vue-Django-integration](https://cdn-images-1.medium.com/max/2000/1*J3_E8Hk3MP-d8_tXE-DhhA.png)_Simplified build process of Vue-Django-integration_
 
 What is shown is that webpack is bundling the entry point and then inject those with the html-webpack-plugin into a file which is a Django file. This file is then a Django template component and can be used like any other Django template. Obviously, we could not really introduce features such as [hot module replacement](https://webpack.js.org/concepts/hot-module-replacement/), but this experience with [webpack](https://webpack.js.org/) gave us many insights on how we should build and bundle our application in the future.
 
@@ -57,16 +61,14 @@ After writing AMPI and the commenting system, the team decided to go all in with
 
 Like I mentioned the front-end team is also working on making a lot of components open-source since they do not provide business value on their own. You can visit [3YOURMIND’s organization panel at GitHub](https://github.com/3YOURMIND). As of the state right now we got a commenting system and a notification library for Vue.js open-source and many more things are planned to get to the open-source world.
 
-![Design system of 3YOURMIND](https://cdn-images-1.medium.com/max/6796/1*DLKIlRPjKVjFA2aYolg0fg.png)*Design system of 3YOURMIND*
+![Design system of 3YOURMIND](https://cdn-images-1.medium.com/max/6796/1*DLKIlRPjKVjFA2aYolg0fg.png)_Design system of 3YOURMIND_
 
 Another notable thing is that we finally got unit and integration tests on the front-end. Thanks to vue-test-utils ([GitHub](https://github.com/vuejs/vue-test-utils), [Documentation](https://vue-test-utils.vuejs.org/)) and Jest ([GitHub](https://github.com/facebook/jest), [Documentation](https://facebook.github.io/jest/)) we are able to easily test our Vue.js application. Following the documentation of those two frameworks is really easy and the setup is working seamlessly. vue-test-utils, in particular, has allowed us to thoroughly test our application by providing features such as vuex and vue-router mocking, enabling us to write more meaningful unit tests. The only problem we still have is measuring test coverage but we are working on fixing that in the coming weeks. Another thing which changed is the design of the platform.
 
 Thanks to our UX team we got a new design approach to get away from a custom bootstrap style. Those styles are now laid out in a design system which you can also find on our [GitHub page](https://github.com/3YOURMIND/kotti). This system defines our styles now and we plan to introduce this style to our whole platform at some point, but this might still take a while.
 
-We also have greater possibilities for translation in our code, using C[rowdin](https://crowdin.com/). This enables translators to get direct access to translations and see them live in our application. This is called in-context translations and is helping to reduce communication overhead between translators and front-end engineers (an introduction to this, and how we integrated it, will be its own blog article).
+We also have greater possibilities for translation in our code, using [Crowdin](https://crowdin.com/). This enables translators to get direct access to translations and see them live in our application. This is called in-context translations and is helping to reduce communication overhead between translators and front-end engineers (an introduction to this, and how we integrated it, will be its own blog article).
 
 Overall the year was really successful in terms of front-end. We are now using new technologies like ES6+, Vue.js, ESLint, webpack, Jest, Crowdin and many more. These technologies make it easy for us to write future ready code and will let us create faster iterations of our products.
 
 **Thanks for your time reading this article. You rock** **🤘**
-
-*Want to be part of the front-end team and influence the process on how we create applications for 3D printing businesses? [Apply here](https://www.3yourmind.com/career) or write me a message* 🚀

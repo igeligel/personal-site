@@ -39,6 +39,23 @@
   color: rgb(43, 55, 62);
 }
 
+.blog-content h2 {
+  margin: 0;
+  font-size: 30px;
+  font-family: Lato;
+  padding: 0;
+  margin-top: 1.3em;
+  margin-bottom: 0.618em;
+  color: rgb(43, 55, 62);
+}
+
+.blog-content h2 .anchor {
+  text-decoration: none;
+  padding-right: 10px;
+  border: 0;
+  margin-left: -26px;
+}
+
 .blog-content h3 a {
   color: rgba(64, 150, 196, 0.7);
   text-decoration: none;
@@ -183,6 +200,17 @@
   text-align: left;
   padding: 12px 20px;
   border-bottom: 1px solid rgba(218, 228, 233, 0.39);
+}
+
+.blog-content li a {
+  color: rgba(64, 150, 196, 0.7);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(64, 150, 196, 0.1);
+}
+
+.blog-content li a:hover {
+  color: rgba(64, 150, 196, 0.9);
+  border-bottom: 2px solid rgba(64, 150, 196, 0.9);
 }
 
 .line-numbers {

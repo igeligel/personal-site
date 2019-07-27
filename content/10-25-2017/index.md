@@ -157,9 +157,7 @@ The most positive argument is that the scope of the _Vuex_ module, the container
 Examples of the different structures:
 
 - [igeligel/vuex-simple-structure](https://github.com/igeligel/vuex-simple-structure)
-
 - [igeligel/vuex-namespaced-module-structure](https://github.com/igeligel/vuex-namespaced-module-structure)
-
 - [igeligel/vuex-feature-scoped-structure](https://github.com/igeligel/vuex-feature-scoped-structure)
 
 ## Still here?

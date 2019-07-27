@@ -22,7 +22,9 @@ Testing these things is quite hard because of the many abstractions and side eff
 
 Then it is nearly impossible that a new developer is writing a test because he/she might not understand the business case but even worse, he/she might not even understand what the code is doing. To understand this the developer will write a debugging statement. In JavaScript this normally looks like:
 
-<iframe src="https://medium.com/media/e31cf9dab0c06af7994702718d58a0f8" frameborder=0></iframe>
+```js
+console.log('I am finally here' + variable);
+```
 
 So what we get here is visual feedback in the command line. The command line is more or less the UI for the debugging code here. But actually, command lines were never made for debugging. Besides, this kind of debugging works for easy code snippets without a lot of side effects but when you get into complex if-else structures or into code with a lot of side effects and conditionals which you do not want to debug all the time (imagine if state x and y occurs then show me the result) then this kind of technique can be quite nasty.
 
@@ -42,7 +44,13 @@ To enable the debugger when running your Node.js application you just have to st
 
 Using ndb is quite easy. The only thing you have to do is to install it and then run your Node.js application with ndb yarn start . ndb is recommended to be installed globally. You can do this by:
 
-<iframe src="https://medium.com/media/b0d2c540258823712a97eca3fd734647" frameborder=0></iframe>
+```bash
+# global install with npm:
+npm install -g ndb
+
+# alternatively, with yarn:
+yarn global add ndb
+```
 
 Otherwise, you could also add ndb as devDependency and create a Node.js script command to start your application with ndb prefixed.
 
@@ -52,7 +60,18 @@ Till now we have just focussed on starting a full-blown Node.js application with
 
 This project just exposes a module in the index.js file and exports a function called add which takes two arguments and add them together. The functionality is also covered by a test in the __tests__ directory. What might look weird is that the debugger statements are still included in the JavaScript files. *Never do this in production-grade code*. It was just for showcasing. The package.json file in this project creates four scripts which a developer could run:
 
-<iframe src="https://medium.com/media/1021b43a8f5bb0c7af0c7bcca052bb48" frameborder=0></iframe>
+```json
+{
+  // ...
+  "scripts": {
+    "start": "node cli.js",
+    "start:debug": "ndb node cli.js",
+    "test": "jest",
+    "test:debug": "ndb jest"
+  }
+  // ...
+}
+```
 
 If you run start or start:debug it will run the “CLI” example and otherwise, you can use test or test:debug to run the tests. The only difference between a command and a command appended with the :debug suffix will run ndb with the normal command. When running these it will open a Chrome window of the Chrome Dev Tools. If you have breakpoints set with the debugger statement the application will actually stop at those statements. Examples can be seen in the following screenshots:
 

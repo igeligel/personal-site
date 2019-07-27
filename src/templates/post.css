@@ -160,6 +160,30 @@
   margin-left: 8px;
 }
 
+.blog-content table {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.08);
+  border: 0;
+  margin-top: 1.5em;
+}
+
+.blog-content thead {
+  background-color: #fafcfc;
+}
+
+.blog-content thead th {
+  font-family: Lato;
+  color: #70818a;
+  text-align: left;
+  padding: 12px 20px;
+}
+
+.blog-content tbody td {
+  font-family: Lato;
+  color: #454b4e;
+  text-align: left;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(218, 228, 233, 0.39);
+}
 
 .line-numbers {
   padding: 0 !important;

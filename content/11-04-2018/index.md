@@ -33,7 +33,28 @@ Firefox:
 
 After you have opened the console you need to paste the following script:
 
-<iframe src="https://medium.com/media/53166d73b6d957915e235e5b0b32831a" frameborder=0></iframe>
+```js{3}
+const totalTypes = {
+  VIEWS: 2,
+  READS: 3,
+  FANS: 5
+};
+
+const getTotal = tableColumn =>
+  [
+    ...document.querySelectorAll(
+      `td:nth-child(${tableColumn}) > span.sortableTable-number`
+    )
+  ]
+    .map(e => parseInt(e.getAttribute("title").replace(/,/g, ""), 10))
+    .reduce((a, b) => a + b, 0);
+
+console.log({
+  totalViews: getTotal(totalTypes.VIEWS),
+  totalReads: getTotal(totalTypes.READS),
+  totalFans: getTotal(totalTypes.FANS)
+});
+```
 
 You can find the source code of this script also here: [https://gist.github.com/igeligel/b2e1ab401ed3f96dcf1030045224fb2c](https://gist.github.com/igeligel/b2e1ab401ed3f96dcf1030045224fb2c)
 

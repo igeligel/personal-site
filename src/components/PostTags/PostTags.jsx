@@ -15,7 +15,7 @@ const PostTagButton = styled.button`
 `;
 
 const PostTagContainer = styled.div`
-  margin-top: 1em;
+  margin-top: 1.61em;
 `
 
 class PostTags extends Component {

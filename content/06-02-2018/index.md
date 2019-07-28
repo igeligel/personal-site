@@ -4,8 +4,8 @@ cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "python"
 date: "06/02/2018"
 tags:
-  - programming
   - python
+  - programming
   - clean code
 ---
 

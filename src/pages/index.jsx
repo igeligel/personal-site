@@ -8,6 +8,12 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { ProjectList } from "../components/ProjectList";
+import { VueIcon } from "../components/VueIcon";
+import { PythonIcon } from "../components/PythonIcon";
+import { JavaScriptIcon } from "../components/JavaScriptIcon";
+import { PostgresIcon } from '../components/PostgresqlIcon';
+import { ReactIcon } from '../components/ReactIcon';
+import {LaptopIcon} from '../components/LaptopIcon'
 
 const NavbarContainer = styled.div`
   flex: 1;
@@ -146,17 +152,45 @@ const IconWrapper = styled.div`
   align-self: center;
 `;
 
+const getPrimaryIcon = tags => {
+  if (tags[0] === "javascript") {
+    return "javascript";
+  }
+  if (tags[0] === "python") {
+    return "python";
+  }
+  if (tags[0] === "vue.js") {
+    return "vue.js";
+  }
+  if (tags[0] === 'postgresql') {
+    return 'postgresql';
+  }
+  if (tags[0] === 'react') {
+    return 'react';
+  }
+  if (tags[0] === 'software-engineering') {
+    return 'software-engineering'
+  }
+  return null;
+};
+
+const postEdgeConvert = postEdge => {
+  const primaryIcon = getPrimaryIcon(postEdge.node.frontmatter.tags);
+  return {
+    path: postEdge.node.fields.slug,
+    tags: postEdge.node.frontmatter.tags,
+    cover: postEdge.node.frontmatter.cover,
+    title: postEdge.node.frontmatter.title,
+    date: postEdge.node.fields.date,
+    excerpt: postEdge.node.excerpt,
+    timeToRead: postEdge.node.timeToRead,
+    primaryIcon
+  };
+};
+
 const getPostList = postEdges => {
   return postEdges
-    .map(postEdge => ({
-      path: postEdge.node.fields.slug,
-      tags: postEdge.node.frontmatter.tags,
-      cover: postEdge.node.frontmatter.cover,
-      title: postEdge.node.frontmatter.title,
-      date: postEdge.node.fields.date,
-      excerpt: postEdge.node.excerpt,
-      timeToRead: postEdge.node.timeToRead
-    }))
+    .map(postEdgeConvert)
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 10);
 };
@@ -171,15 +205,7 @@ const getPopularPosts = postEdges => {
     .filter(postEdge =>
       mostPopularBlogs.includes(postEdge.node.frontmatter.title)
     )
-    .map(postEdge => ({
-      path: postEdge.node.fields.slug,
-      tags: postEdge.node.frontmatter.tags,
-      cover: postEdge.node.frontmatter.cover,
-      title: postEdge.node.frontmatter.title,
-      date: postEdge.node.fields.date,
-      excerpt: postEdge.node.excerpt,
-      timeToRead: postEdge.node.timeToRead
-    }))
+    .map(postEdgeConvert)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 };
 
@@ -240,20 +266,12 @@ class Index extends React.Component {
                     <ListItemL to={post.path}>
                       <div style={{ display: "flex" }}>
                         <IconWrapper>
-                          <svg viewBox="0 0 128 128">
-                            <path
-                              d="m-2.3125e-8 8.9337 49.854 0.1586 14.167 24.47 14.432-24.47 49.547-0.1577-63.834 110.14zm126.98 0.6374-24.36 0.0207-38.476 66.052-38.453-66.052-24.749-0.0194 63.211 107.89zm-25.149-0.008-22.745 0.16758l-15.053 24.647-14.817-24.647-22.794-0.1679 37.731 64.476zM25.997 9.3929l23.002 0.0087M25.997 9.3929l23.002 0.0087"
-                              fill="none"
-                            ></path>
-                            <path
-                              d="m25.997 9.3929 23.002 0.0087l15.036 24.958 14.983-24.956 22.982-0.0057-37.85 65.655z"
-                              fill="#35495e"
-                            ></path>
-                            <path
-                              d="m0.91068 9.5686 25.066-0.1711 38.151 65.658 37.852-65.654 25.11 0.0263-62.966 108.06z"
-                              fill="#41b883"
-                            ></path>
-                          </svg>
+                          {post.primaryIcon === "javascript" && (
+                            <JavaScriptIcon />
+                          )}
+                          {post.primaryIcon === "python" && <PythonIcon />}
+                          {post.primaryIcon === "vue.js" && <VueIcon />}
+                          {post.primaryIcon === 'postgresql'&& <PostgresIcon />}
                         </IconWrapper>
                         <ListItemLink>{post.title}</ListItemLink>
                       </div>
@@ -269,28 +287,22 @@ class Index extends React.Component {
               <UnorderedList>
                 {postList.map(post => (
                   <ListItem key={post.title}>
-                    <ListItemL to={post.path}>
-                      <div style={{ display: "flex" }}>
-                        <IconWrapper>
-                          <svg viewBox="0 0 128 128">
-                            <path
-                              d="m-2.3125e-8 8.9337 49.854 0.1586 14.167 24.47 14.432-24.47 49.547-0.1577-63.834 110.14zm126.98 0.6374-24.36 0.0207-38.476 66.052-38.453-66.052-24.749-0.0194 63.211 107.89zm-25.149-0.008-22.745 0.16758l-15.053 24.647-14.817-24.647-22.794-0.1679 37.731 64.476zM25.997 9.3929l23.002 0.0087M25.997 9.3929l23.002 0.0087"
-                              fill="none"
-                            ></path>
-                            <path
-                              d="m25.997 9.3929 23.002 0.0087l15.036 24.958 14.983-24.956 22.982-0.0057-37.85 65.655z"
-                              fill="#35495e"
-                            ></path>
-                            <path
-                              d="m0.91068 9.5686 25.066-0.1711 38.151 65.658 37.852-65.654 25.11 0.0263-62.966 108.06z"
-                              fill="#41b883"
-                            ></path>
-                          </svg>
-                        </IconWrapper>
-                        <ListItemLink>{post.title}</ListItemLink>
-                      </div>
-                    </ListItemL>
-                  </ListItem>
+                  <ListItemL to={post.path}>
+                    <div style={{ display: "flex" }}>
+                      <IconWrapper>
+                        {post.primaryIcon === "javascript" && (
+                          <JavaScriptIcon />
+                        )}
+                        {post.primaryIcon === "python" && <PythonIcon />}
+                        {post.primaryIcon === "vue.js" && <VueIcon />}
+                        {post.primaryIcon === 'postgresql'&& <PostgresIcon />}
+                        {post.primaryIcon === 'react' && <ReactIcon />}
+                        {post.primaryIcon === 'software-engineering' && <LaptopIcon />}
+                      </IconWrapper>
+                      <ListItemLink>{post.title}</ListItemLink>
+                    </div>
+                  </ListItemL>
+                </ListItem>
                 ))}
               </UnorderedList>
             </SectionContainer>

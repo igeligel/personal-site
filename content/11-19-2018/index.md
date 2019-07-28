@@ -4,6 +4,7 @@ cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "python"
 date: "11/19/2018"
 tags:
+  - react
   - programming
   - python
   - clean code

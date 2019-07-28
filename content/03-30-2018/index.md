@@ -4,10 +4,11 @@ cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "vue.js"
 date: "03/30/2018"
 tags:
-  - programming
   - vue.js
+  - programming
   - javascript
-  - jest
+  - es6
+  - functional-programming
 ---
 
 # Composing computed properties in Vue.js
@@ -22,7 +23,7 @@ A problem which occurs for many Vue.js projects is that computed properties get 
 
 I just reduced the component to include the computed property. To explain a bit. Normally this function is inside the mapState function provided by Vuex ([docs](https://vuex.vuejs.org/en/state.html)). To explain the business logic here a bit is relatively easy. In the store, there is a list of comments. Those comments have a property which is called parentId. If this parentId is not null this means the comment is a sub comment. Just imagine a reply in the Facebook comments section:
 
-![The Facebook commenting system](https://cdn-images-1.medium.com/max/2000/1*1SJnn7EXyJW1eVCL9GN81A.png)*The Facebook commenting system*
+![The Facebook commenting system](https://cdn-images-1.medium.com/max/2000/1*1SJnn7EXyJW1eVCL9GN81A.png)_The Facebook commenting system_
 
 In this component, we would have two types of comments. One main comment and one sub comment or reply.
 
@@ -30,7 +31,7 @@ The problem with our code above though is not the business logic. This is easy t
 
 ![](https://cdn-images-1.medium.com/max/3372/1*UBNpZSiTeLrT6jTcvQHJIA.png)
 
-Even though this code, which was written by me (old code is always bad), was missing functional paradigms and many more cooll things, it worked. So now for the refactoring part. We decided already that we have three parts which are somehow influencing how the computed property is built. In the *User Check*, we iterate over every comment and see if the current user is the owner. If yes we assign the property to the object so we can see this later in the data structure which is important for editing or deleting a comment since this functionality should just be given by the user who created the comment. We could extract the first whole workflow into a different computed property named ownerAssignedComments . This computed property would look like the following snippet.
+Even though this code, which was written by me (old code is always bad), was missing functional paradigms and many more cooll things, it worked. So now for the refactoring part. We decided already that we have three parts which are somehow influencing how the computed property is built. In the _User Check_, we iterate over every comment and see if the current user is the owner. If yes we assign the property to the object so we can see this later in the data structure which is important for editing or deleting a comment since this functionality should just be given by the user who created the comment. We could extract the first whole workflow into a different computed property named ownerAssignedComments . This computed property would look like the following snippet.
 
 <iframe src="https://medium.com/media/d4c775a16478a2b57f5a052a508251a7" frameborder=0></iframe>
 
@@ -38,7 +39,7 @@ This does not look better. At least the inside but where it gets powerful is the
 
 <iframe src="https://medium.com/media/85902b3b0e165bb597835cfb27185ec1" frameborder=0></iframe>
 
-You can see that the commentsMapped computed property shrunk down in size already. It is more clear what it is doing also. The next two parts of the computed property which are *Create Parent Comments* and *Assign Parent-Child Comments* both rely on mappedComments. This means we cannot put them into a computed property since both would trigger at the same time and would interfere when we want to use them both. A refactor into a method would be ideal in this case. Better to say in two methods. The first method should be called getParentComments and takes one argument which is the mappedComments or ownerAssignedComments. The second method would be named assignSubComments and would take two arguments which are the newly created parentComments and the mappedComments or ownerAssignedComments . The component would look like the following snippet.
+You can see that the commentsMapped computed property shrunk down in size already. It is more clear what it is doing also. The next two parts of the computed property which are _Create Parent Comments_ and _Assign Parent-Child Comments_ both rely on mappedComments. This means we cannot put them into a computed property since both would trigger at the same time and would interfere when we want to use them both. A refactor into a method would be ideal in this case. Better to say in two methods. The first method should be called getParentComments and takes one argument which is the mappedComments or ownerAssignedComments. The second method would be named assignSubComments and would take two arguments which are the newly created parentComments and the mappedComments or ownerAssignedComments . The component would look like the following snippet.
 
 <iframe src="https://medium.com/media/4398cdec01adee33e9c2a9eeb72a98b8" frameborder=0></iframe>
 
@@ -53,5 +54,6 @@ The Pipeline Operator is a proposal of the community to include in JavaScript. W
 More functional, cleaner, still understandable and faster to read.
 
 After all composing computed properties by chaining different properties, methods and so on makes the computed properties more readable a lot. Also, it is somehow better to refactor and test applications. One disadvantage is that more getters and setters in the Vue.js instances are created. But after all readability of code is more important than performance in most cases.
+
 > Thanks for reading this. You rock* 🤘*
 > If you have any feedback or want to add something to this article just comment here. You can also follow me on [twitter](https://twitter.com/kevinpeters_) or visit my [personal site](https://www.kevinpeters.net/) to stay up-to-date with my blog articles and many more things.

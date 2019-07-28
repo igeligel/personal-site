@@ -4,6 +4,8 @@ cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "vue.js"
 date: "05/07/2019"
 tags:
+  - javascript
+  - chrome
   - programming
   - vue.js
   - javascript

@@ -4,6 +4,7 @@ cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "python"
 date: "06/17/2019"
 tags:
+  - postgresql
   - programming
   - python
   - clean code

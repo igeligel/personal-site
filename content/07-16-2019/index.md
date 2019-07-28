@@ -4,6 +4,7 @@ cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "python"
 date: "07/16/2019"
 tags:
+  - javascript
   - programming
   - python
   - clean code

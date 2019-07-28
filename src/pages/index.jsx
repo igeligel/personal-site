@@ -160,7 +160,6 @@ const getPostList = postEdges => {
     });
   });
   const sorted =  postList.sort((a,b) => new Date(b.date) - new Date(a.date));
-  debugger
   return sorted
 };
 

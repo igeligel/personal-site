@@ -11,7 +11,7 @@ const config = {
   googleAnalyticsID: "UA-104059616-1", // GA tracking ID.
   disqusShortname: "https-vagr9k-github-io-gatsby-advanced-starter", // Disqus shortname.
   postDefaultCategoryID: "Tech", // Default category for posts.
-  dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
+  dateFromFormat: "MM/DD/YYYY", // Date format used in the frontmatter.
   dateFormat: "MM/DD/YYYY", // Date format for display.
   userName: "Kevin Peters", // Username to display in the author segment.
   userEmail: "kevinigeligeligel@gmail.com", // Email used for RSS feed's author segment

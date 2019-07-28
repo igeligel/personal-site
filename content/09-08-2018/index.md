@@ -2,7 +2,7 @@
 title: "How to be a better software engineer? — Code Reviews"
 cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "python"
-date: "09/08/2019"
+date: "09/08/2018"
 tags:
   - programming
   - python

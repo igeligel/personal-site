@@ -25,10 +25,10 @@ module.exports = {
           {
             family: `Lato`,
             subsets: [`latin`],
-            variants: [`300`,`400`]
+            variants: [`300`, `400`]
           }
-        ],
-      },
+        ]
+      }
     },
     `gatsby-plugin-styled-components`,
     "gatsby-plugin-react-helmet",

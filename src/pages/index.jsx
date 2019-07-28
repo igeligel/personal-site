@@ -147,9 +147,8 @@ const IconWrapper = styled.div`
 `;
 
 const getPostList = postEdges => {
-  const postList = [];
-  postEdges.forEach(postEdge => {
-    postList.push({
+  return postEdges
+    .map(postEdge => ({
       path: postEdge.node.fields.slug,
       tags: postEdge.node.frontmatter.tags,
       cover: postEdge.node.frontmatter.cover,
@@ -157,10 +156,9 @@ const getPostList = postEdges => {
       date: postEdge.node.fields.date,
       excerpt: postEdge.node.excerpt,
       timeToRead: postEdge.node.timeToRead
-    });
-  });
-  const sorted = postList.sort((a, b) => new Date(b.date) - new Date(a.date));
-  return sorted.slice(0,10)
+    }))
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 10);
 };
 
 const getPopularPosts = postEdges => {

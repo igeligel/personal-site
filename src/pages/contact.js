@@ -7,7 +7,18 @@ import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import {ProjectList} from '../components/ProjectList'
+import { ProjectList } from "../components/ProjectList";
+
+const HrefLink = styled.a`
+  text-decoration: none;
+  color: rgba(64, 150, 196, 0.8);
+  border-bottom: 2px solid rgba(64, 150, 196, 0.1);
+
+  :hover {
+    color: rgba(64, 150, 196, 0.9);
+    border-bottom: 2px solid rgba(64, 150, 196, 0.9);
+  }
+`;
 
 const NavbarContainer = styled.div`
   flex: 1;
@@ -139,11 +150,11 @@ const MainStyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-  const IconWrapper = styled.div`
-    width: 32px;
-    height: 32px;
-    align-self: center;
-  `;
+const IconWrapper = styled.div`
+  width: 32px;
+  height: 32px;
+  align-self: center;
+`;
 
 const getPostList = postEdges => {
   const postList = [];
@@ -162,12 +173,84 @@ const getPostList = postEdges => {
 };
 
 const WorkInProgress = styled.p`
-margin: 0;
-font-family: Lato;
-width: 100%;
-font-size: 22px;
-line-height: 35px;
-color: rgba(43,55,62,0.8);`
+  margin: 0;
+  font-family: Lato;
+  width: 100%;
+  font-size: 22px;
+  line-height: 35px;
+  color: rgba(43, 55, 62, 0.8);
+`;
+
+const FormLabel = styled.label`
+  margin: 0;
+  font-family: Lato;
+  width: 100%;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(43, 55, 62, 0.8);
+  margin-top: 0.61em;
+`;
+
+const FormInput = styled.input`
+  border: 2px solid rgba(43, 55, 62, 0.4);
+  padding: 8px 9px;
+  border-radius: 6px;
+  max-width: 500px;
+  color: rgba(43, 55, 62, 0.8);
+
+  :focus {
+    outline: none;
+    border-color: rgba(64, 150, 196, 0.8);
+  }
+`;
+
+const FormTextarea = styled.textarea`
+  border: 2px solid rgba(43, 55, 62, 0.4);
+  padding: 8px 9px;
+  border-radius: 6px;
+  color: rgba(43, 55, 62, 0.8);
+
+  :focus {
+    outline: none;
+    border-color: rgba(64, 150, 196, 0.8);
+  }
+`;
+
+const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
+
+const FormContainerGutted = styled(FormContainer)`
+  margin-right: 15px;
+`;
+
+const FormDoubleContainer = styled.div`
+  display: flex;
+`;
+
+const SubmitButton = styled.button`
+  -webkit-appearance: none;
+  display: inline-block;
+  // border: 2px solid rgba(64,150,196,0.8);
+  border: 0;
+  border-radius: 4px;
+  background: rgba(64, 150, 196, 0.8);
+  color: #fff;
+  font-weight: 600;
+  font-family: Lato;
+  font-size: 1.1rem;
+  text-transform: none;
+  padding: 0.6rem 0.9rem;
+  margin: 0 0 0.5rem;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  margin-top: 1em;
+`;
 
 class Index extends React.Component {
   render() {
@@ -201,26 +284,50 @@ class Index extends React.Component {
             <SectionContainer>
               <LeadContainerHeading>Stay in touch with me</LeadContainerHeading>
               <LeadContainerParapraph>
-                I am a Kevin Peters, a software developer and JavaScript
-                enthusiast from Berlin, Germany. I currently work as a Software
-                Engineer for the finance company Klarna, a unicorn in Europe. I
-                deeply care about developer experience and everything around
-                these topics.
+                It seems like you want to stay in contact with me. You can reach
+                me in different ways over the internet. The easiest is to write
+                a personal message on twitter:
+                <ul>
+                  <li>
+                    <HrefLink
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href="https://twitter.com/kevinpeters_"
+                    >
+                      twitter.com/kevinpeters_
+                    </HrefLink>
+                  </li>
+                </ul>
               </LeadContainerParapraph>
               <LeadContainerParapraph>
-                This website was created a long time ago already with Nuxt.js
-                and similar tools but I found out it is quite limited so decided
-                to rearchitecture this website with Gatsby.js. Now it includes more content and
-                a better visual design. I like to share my thoughts and
-                learnings in form of blogs which I will present here mostly.
+                You can also contact me via Email.
               </LeadContainerParapraph>
-              <LeadContainerParapraph>
-                My goal is always to create high quality content and teach
-                people different technical things. I am grateful for the open
-                source scene and the several blogs existing because they got me
-                into programming and taught me a lot. That is why I want to give
-                something back.
-              </LeadContainerParapraph>
+              <form
+                action="https://formcarry.com/s/DUvjYVD8FR_"
+                method="POST"
+                accept-charset="UTF-8"
+              >
+                <FormContainer>
+                  <FormLabel for="email">Your Email</FormLabel>
+                  <FormInput type="email" name="email" />
+                </FormContainer>
+                <FormDoubleContainer>
+                  <FormContainerGutted>
+                    <FormLabel for="email">First Name</FormLabel>
+                    <FormInput type="text" name="firstName" />
+                  </FormContainerGutted>
+                  <FormContainer>
+                    <FormLabel for="email">Last Name</FormLabel>
+                    <FormInput type="text" name="lastName" />
+                  </FormContainer>
+                </FormDoubleContainer>
+                <FormContainer>
+                  <FormLabel for="content">Message</FormLabel>
+                  <FormTextarea rows="9" type="text" name="content" />
+                </FormContainer>
+                <input type="hidden" name="_gotcha" />
+                <SubmitButton type="submit">Submit</SubmitButton>
+              </form>
             </SectionContainer>
           </SectionContainerWrapper>
         </div>

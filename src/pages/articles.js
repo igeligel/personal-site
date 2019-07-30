@@ -7,7 +7,7 @@ import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import {ProjectList} from '../components/ProjectList'
+import { ProjectList } from "../components/ProjectList";
 
 const NavbarContainer = styled.div`
   flex: 1;
@@ -140,11 +140,11 @@ const MainStyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-  const IconWrapper = styled.div`
-    width: 32px;
-    height: 32px;
-    align-self: center;
-  `;
+const IconWrapper = styled.div`
+  width: 32px;
+  height: 32px;
+  align-self: center;
+`;
 
 const getPostList = postEdges => {
   const postList = [];
@@ -163,12 +163,25 @@ const getPostList = postEdges => {
 };
 
 const WorkInProgress = styled.p`
-margin: 0;
-font-family: Lato;
-width: 100%;
-font-size: 22px;
-line-height: 35px;
-color: rgba(43,55,62,0.8);`
+  margin: 0;
+  font-family: Lato;
+  width: 100%;
+  font-size: 22px;
+  line-height: 35px;
+  color: rgba(43, 55, 62, 0.8);
+`;
+
+const IndexContainer = styled.div`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+`;
+
+const SiteContent = styled.div`
+  flex: 1;
+`;
+
+const Footer = styled.div``;
 
 class Index extends React.Component {
   render() {
@@ -177,28 +190,31 @@ class Index extends React.Component {
 
     return (
       <Layout>
-        <div className="index-container">
-          <Helmet title={config.siteTitle}>
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1"
-            />
-          </Helmet>
-          <SEO />
-          <NavbarContainer>
-            <Navbar>
-              <div>
-                <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
-              </div>
-              <div>
-                <StyledLink to={"/about"}>About</StyledLink>
-                <StyledLink to={"/articles"}>Articles</StyledLink>
-                <StyledLink to={"/projects"}>Projects</StyledLink>
-                <StyledLink to={"/contact"}>Contact</StyledLink>
-              </div>
-            </Navbar>
-          </NavbarContainer>
-        </div>
+        <SiteContent>
+          <IndexContainer>
+            <Helmet title={config.siteTitle}>
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1"
+              />
+            </Helmet>
+            <SEO />
+            <NavbarContainer>
+              <Navbar>
+                <div>
+                  <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
+                </div>
+                <div>
+                  <StyledLink to={"/about"}>About</StyledLink>
+                  <StyledLink to={"/articles"}>Articles</StyledLink>
+                  <StyledLink to={"/projects"}>Projects</StyledLink>
+                  <StyledLink to={"/contact"}>Contact</StyledLink>
+                </div>
+              </Navbar>
+            </NavbarContainer>
+            <Footer>Footer</Footer>
+          </IndexContainer>
+        </SiteContent>
       </Layout>
     );
   }

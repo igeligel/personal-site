@@ -178,7 +178,6 @@ class Projects extends React.Component {
 
     return (
       <Layout>
-        <div className="index-container">
           <Helmet title={config.siteTitle}>
             <meta
               name="viewport"
@@ -199,7 +198,6 @@ class Projects extends React.Component {
               </div>
             </Navbar>
           </NavbarContainer>
-        </div>
       </Layout>
     );
   }

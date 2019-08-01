@@ -8,6 +8,7 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { ProjectList } from "../components/ProjectList";
+import { Footer } from '../components/Footer'
 
 const NavbarContainer = styled.div`
   flex: 1;
@@ -171,18 +172,6 @@ const WorkInProgress = styled.p`
   color: rgba(43, 55, 62, 0.8);
 `;
 
-const IndexContainer = styled.div`
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-`;
-
-const SiteContent = styled.div`
-  flex: 1;
-`;
-
-const Footer = styled.div``;
-
 class Index extends React.Component {
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
@@ -190,8 +179,6 @@ class Index extends React.Component {
 
     return (
       <Layout>
-        <SiteContent>
-          <IndexContainer>
             <Helmet title={config.siteTitle}>
               <meta
                 name="viewport"
@@ -212,9 +199,6 @@ class Index extends React.Component {
                 </div>
               </Navbar>
             </NavbarContainer>
-            <Footer>Footer</Footer>
-          </IndexContainer>
-        </SiteContent>
       </Layout>
     );
   }

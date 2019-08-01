@@ -11,9 +11,10 @@ import { ProjectList } from "../components/ProjectList";
 import { VueIcon } from "../components/VueIcon";
 import { PythonIcon } from "../components/PythonIcon";
 import { JavaScriptIcon } from "../components/JavaScriptIcon";
-import { PostgresIcon } from '../components/PostgresqlIcon';
-import { ReactIcon } from '../components/ReactIcon';
-import {LaptopIcon} from '../components/LaptopIcon'
+import { PostgresIcon } from "../components/PostgresqlIcon";
+import { ReactIcon } from "../components/ReactIcon";
+import { LaptopIcon } from "../components/LaptopIcon";
+import { Footer } from "../components/Footer";
 
 const NavbarContainer = styled.div`
   flex: 1;
@@ -162,14 +163,14 @@ const getPrimaryIcon = tags => {
   if (tags[0] === "vue.js") {
     return "vue.js";
   }
-  if (tags[0] === 'postgresql') {
-    return 'postgresql';
+  if (tags[0] === "postgresql") {
+    return "postgresql";
   }
-  if (tags[0] === 'react') {
-    return 'react';
+  if (tags[0] === "react") {
+    return "react";
   }
-  if (tags[0] === 'software-engineering') {
-    return 'software-engineering'
+  if (tags[0] === "software-engineering") {
+    return "software-engineering";
   }
   return null;
 };
@@ -226,67 +227,39 @@ class Index extends React.Component {
 
     return (
       <Layout>
-        <div className="index-container">
-          <Helmet title={config.siteTitle}>
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1"
-            />
-          </Helmet>
-          <SEO />
-          <NavbarContainer>
-            <Navbar>
-              <div>
-                <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
-              </div>
-              <div>
-                <StyledLink to={"/about"}>About</StyledLink>
-                <StyledLink to={"/articles"}>Articles</StyledLink>
-                <StyledLink to={"/projects"}>Projects</StyledLink>
-                <StyledLink to={"/contact"}>Contact</StyledLink>
-              </div>
-            </Navbar>
-          </NavbarContainer>
-          <LeadCenterContainer>
-            <LeadContainer>
-              <LeadContainerHeading>Hey, I am Kevin</LeadContainerHeading>
-              <LeadContainerParapraph>
-                I am a software engineer working with different technologies
-                like Node.js, React, Vue.js and .NET. I love to work in open
-                source and write clean code, think twice - write once.
-              </LeadContainerParapraph>
-            </LeadContainer>
-          </LeadCenterContainer>
-          <SectionContainerWrapper>
-            <SectionContainer>
-              <SectionHeading>Top Articles</SectionHeading>
-              <UnorderedList>
-                {popularPosts.map(post => (
-                  <ListItem key={post.title}>
-                    <ListItemL to={post.path}>
-                      <div style={{ display: "flex" }}>
-                        <IconWrapper>
-                          {post.primaryIcon === "javascript" && (
-                            <JavaScriptIcon />
-                          )}
-                          {post.primaryIcon === "python" && <PythonIcon />}
-                          {post.primaryIcon === "vue.js" && <VueIcon />}
-                          {post.primaryIcon === 'postgresql'&& <PostgresIcon />}
-                        </IconWrapper>
-                        <ListItemLink>{post.title}</ListItemLink>
-                      </div>
-                    </ListItemL>
-                  </ListItem>
-                ))}
-              </UnorderedList>
-            </SectionContainer>
-          </SectionContainerWrapper>
-          <SectionContainerWrapper>
-            <SectionContainer>
-              <SectionHeading>Latest Articles</SectionHeading>
-              <UnorderedList>
-                {postList.map(post => (
-                  <ListItem key={post.title}>
+        <Helmet title={"awddwaaw"}>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Helmet>
+        <SEO />
+        <NavbarContainer>
+          <Navbar>
+            <div>
+              <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
+            </div>
+            <div>
+              <StyledLink to={"/about"}>About</StyledLink>
+              <StyledLink to={"/articles"}>Articles</StyledLink>
+              <StyledLink to={"/projects"}>Projects</StyledLink>
+              <StyledLink to={"/contact"}>Contact</StyledLink>
+            </div>
+          </Navbar>
+        </NavbarContainer>
+        <LeadCenterContainer>
+          <LeadContainer>
+            <LeadContainerHeading>Hey, I am Kevin</LeadContainerHeading>
+            <LeadContainerParapraph>
+              I am a software engineer working with different technologies like
+              Node.js, React, Vue.js and .NET. I love to work in open source and
+              write clean code, think twice - write once.
+            </LeadContainerParapraph>
+          </LeadContainer>
+        </LeadCenterContainer>
+        <SectionContainerWrapper>
+          <SectionContainer>
+            <SectionHeading>Top Articles</SectionHeading>
+            <UnorderedList>
+              {popularPosts.map(post => (
+                <ListItem key={post.title}>
                   <ListItemL to={post.path}>
                     <div style={{ display: "flex" }}>
                       <IconWrapper>
@@ -295,37 +268,62 @@ class Index extends React.Component {
                         )}
                         {post.primaryIcon === "python" && <PythonIcon />}
                         {post.primaryIcon === "vue.js" && <VueIcon />}
-                        {post.primaryIcon === 'postgresql'&& <PostgresIcon />}
-                        {post.primaryIcon === 'react' && <ReactIcon />}
-                        {post.primaryIcon === 'software-engineering' && <LaptopIcon />}
+                        {post.primaryIcon === "postgresql" && <PostgresIcon />}
                       </IconWrapper>
                       <ListItemLink>{post.title}</ListItemLink>
                     </div>
                   </ListItemL>
                 </ListItem>
-                ))}
-              </UnorderedList>
-            </SectionContainer>
-          </SectionContainerWrapper>
-          <SectionContainerWrapper>
-            <SectionContainer>
-              <SectionHeading>Books</SectionHeading>
-              <WorkInProgress>🔨 Work in Progress 🔨</WorkInProgress>
-            </SectionContainer>
-          </SectionContainerWrapper>
-          <SectionContainerWrapper>
-            <SectionContainer>
-              <SectionHeading>Projects</SectionHeading>
-              <ProjectList />
-            </SectionContainer>
-          </SectionContainerWrapper>
-          <SectionContainerWrapper>
-            <SectionContainer>
-              <SectionHeading>Speaking</SectionHeading>
-              <WorkInProgress>🔨 Work in Progress 🔨</WorkInProgress>
-            </SectionContainer>
-          </SectionContainerWrapper>
-        </div>
+              ))}
+            </UnorderedList>
+          </SectionContainer>
+        </SectionContainerWrapper>
+        <SectionContainerWrapper>
+          <SectionContainer>
+            <SectionHeading>Latest Articles</SectionHeading>
+            <UnorderedList>
+              {postList.map(post => (
+                <ListItem key={post.title}>
+                  <ListItemL to={post.path}>
+                    <div style={{ display: "flex" }}>
+                      <IconWrapper>
+                        {post.primaryIcon === "javascript" && (
+                          <JavaScriptIcon />
+                        )}
+                        {post.primaryIcon === "python" && <PythonIcon />}
+                        {post.primaryIcon === "vue.js" && <VueIcon />}
+                        {post.primaryIcon === "postgresql" && <PostgresIcon />}
+                        {post.primaryIcon === "react" && <ReactIcon />}
+                        {post.primaryIcon === "software-engineering" && (
+                          <LaptopIcon />
+                        )}
+                      </IconWrapper>
+                      <ListItemLink>{post.title}</ListItemLink>
+                    </div>
+                  </ListItemL>
+                </ListItem>
+              ))}
+            </UnorderedList>
+          </SectionContainer>
+        </SectionContainerWrapper>
+        <SectionContainerWrapper>
+          <SectionContainer>
+            <SectionHeading>Books</SectionHeading>
+            <WorkInProgress>🔨 Work in Progress 🔨</WorkInProgress>
+          </SectionContainer>
+        </SectionContainerWrapper>
+        <SectionContainerWrapper>
+          <SectionContainer>
+            <SectionHeading>Projects</SectionHeading>
+            <ProjectList />
+          </SectionContainer>
+        </SectionContainerWrapper>
+        <SectionContainerWrapper>
+          <SectionContainer>
+            <SectionHeading>Speaking</SectionHeading>
+            <WorkInProgress>🔨 Work in Progress 🔨</WorkInProgress>
+          </SectionContainer>
+        </SectionContainerWrapper>
       </Layout>
     );
   }

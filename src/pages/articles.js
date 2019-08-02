@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import { ProjectList } from "../components/ProjectList";
 import { Footer } from "../components/Footer";
+import PostTagButton from "../components/PostTagButton";
 
 const NavbarContainer = styled.div`
   flex: 1;
@@ -171,6 +172,20 @@ const WorkInProgress = styled.p`
   color: rgba(43, 55, 62, 0.8);
 `;
 
+const FormInput = styled.input`
+  border: 2px solid rgba(43, 55, 62, 0.4);
+  padding: 8px 9px;
+  border-radius: 6px;
+  max-width: 100%;
+  color: rgba(43, 55, 62, 0.8);
+  margin-top: 1em;
+
+  :focus {
+    outline: none;
+    border-color: rgba(64, 150, 196, 0.8);
+  }
+`;
+
 class Index extends React.Component {
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
@@ -178,31 +193,36 @@ class Index extends React.Component {
 
     return (
       <Layout>
-          <Helmet title={config.siteTitle}>
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1"
-            />
-          </Helmet>
-          <SEO />
-          <NavbarContainer>
-            <Navbar>
-              <div>
-                <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
-              </div>
-              <div>
-                <StyledLink to={"/about"}>About</StyledLink>
-                <StyledLink to={"/articles"}>Articles</StyledLink>
-                <StyledLink to={"/projects"}>Projects</StyledLink>
-                <StyledLink to={"/contact"}>Contact</StyledLink>
-              </div>
-            </Navbar>
-          </NavbarContainer>
-          <SectionContainerWrapper>
-            <SectionContainer>
-              <LeadContainerHeading>Articles</LeadContainerHeading>
-            </SectionContainer>
-          </SectionContainerWrapper>
+        <Helmet title={config.siteTitle}>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Helmet>
+        <SEO />
+        <NavbarContainer>
+          <Navbar>
+            <div>
+              <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
+            </div>
+            <div>
+              <StyledLink to={"/about"}>About</StyledLink>
+              <StyledLink to={"/articles"}>Articles</StyledLink>
+              <StyledLink to={"/projects"}>Projects</StyledLink>
+              <StyledLink to={"/contact"}>Contact</StyledLink>
+            </div>
+          </Navbar>
+        </NavbarContainer>
+        <SectionContainerWrapper>
+          <SectionContainer>
+            <LeadContainerHeading>Articles</LeadContainerHeading>
+            <div>
+              <PostTagButton tag={"adwawdaw"} marginRight={'7px'} />
+              <PostTagButton tag={"adwawdaw"} marginRight={'7px'} />
+              <PostTagButton tag={"adwawdaw"} marginRight={'7px'}/>
+              <PostTagButton tag={"adwawdaw"} marginRight={'7px'}/>
+              <PostTagButton tag={"adwawdaw"} marginRight={'7px'}/>
+            </div>
+            <FormInput type="email" name="email" />
+          </SectionContainer>
+        </SectionContainerWrapper>
       </Layout>
     );
   }

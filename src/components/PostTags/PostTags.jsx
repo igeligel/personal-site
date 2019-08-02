@@ -2,17 +2,7 @@ import React, { Component } from "react";
 import _ from "lodash";
 import { Link } from "gatsby";
 import styled from "styled-components";
-
-const PostTagButton = styled.button`
-  border: 0;
-  color: rgba(64, 150, 196, 1);
-  background-color: rgba(64, 150, 196, 0.1);
-  padding: 7px 9px;
-  text-transform: lowercase;
-  border-radius: 7px;
-  margin-right: 12px;
-  cursor: pointer;
-`;
+import {PostTagButton} from '../PostTagButton'
 
 const PostTagContainer = styled.div`
   margin-top: 1.61em;
@@ -30,7 +20,7 @@ class PostTags extends Component {
               style={{ textDecoration: "none" }}
               to={`/tags/${_.kebabCase(tag)}`}
             >
-              <PostTagButton>{tag}</PostTagButton>
+              <PostTagButton tag={tag} marginRight={'7px'} />
             </Link>
           ))}
       </PostTagContainer>

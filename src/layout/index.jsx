@@ -8,13 +8,13 @@ import { Footer } from "../components/Footer";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 const IndexContainer = styled.div`
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+display: flex;
+min-height: 100vh;
+flex-direction: column;
 `;
 
 const SiteContent = styled.div`
-  flex: 1;
+  flex:1;
 `;
 
 export default class MainLayout extends React.Component {
@@ -25,12 +25,10 @@ export default class MainLayout extends React.Component {
         <Helmet>
           <meta name="description" content={config.siteDescription} />
         </Helmet>
-        <SiteContent>
-          <IndexContainer>
-            {children}
+        <IndexContainer>
+            <SiteContent>{children}</SiteContent>
             <Footer />
-          </IndexContainer>
-        </SiteContent>
+        </IndexContainer>
       </div>
     );
   }

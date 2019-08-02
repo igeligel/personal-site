@@ -8,7 +8,7 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { ProjectList } from "../components/ProjectList";
-import { Footer } from '../components/Footer'
+import { Footer } from "../components/Footer";
 
 const NavbarContainer = styled.div`
   flex: 1;
@@ -71,7 +71,6 @@ const SectionContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
 `;
 
 const SectionHeading = styled.h3`
@@ -179,26 +178,31 @@ class Index extends React.Component {
 
     return (
       <Layout>
-            <Helmet title={config.siteTitle}>
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1"
-              />
-            </Helmet>
-            <SEO />
-            <NavbarContainer>
-              <Navbar>
-                <div>
-                  <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
-                </div>
-                <div>
-                  <StyledLink to={"/about"}>About</StyledLink>
-                  <StyledLink to={"/articles"}>Articles</StyledLink>
-                  <StyledLink to={"/projects"}>Projects</StyledLink>
-                  <StyledLink to={"/contact"}>Contact</StyledLink>
-                </div>
-              </Navbar>
-            </NavbarContainer>
+          <Helmet title={config.siteTitle}>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+          </Helmet>
+          <SEO />
+          <NavbarContainer>
+            <Navbar>
+              <div>
+                <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
+              </div>
+              <div>
+                <StyledLink to={"/about"}>About</StyledLink>
+                <StyledLink to={"/articles"}>Articles</StyledLink>
+                <StyledLink to={"/projects"}>Projects</StyledLink>
+                <StyledLink to={"/contact"}>Contact</StyledLink>
+              </div>
+            </Navbar>
+          </NavbarContainer>
+          <SectionContainerWrapper>
+            <SectionContainer>
+              <LeadContainerHeading>Articles</LeadContainerHeading>
+            </SectionContainer>
+          </SectionContainerWrapper>
       </Layout>
     );
   }

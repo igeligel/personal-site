@@ -15,13 +15,13 @@ class PostTags extends Component {
       <PostTagContainer>
         {tags &&
           tags.map(tag => (
-            <Link
-              key={tag}
+            <span
+              // key={tag}
               style={{ textDecoration: "none" }}
-              to={`/tags/${_.kebabCase(tag)}`}
+              // to={`/tags/${_.kebabCase(tag)}`}
             >
               <PostTagButton tag={tag} marginRight={'7px'} />
-            </Link>
+            </span>
           ))}
       </PostTagContainer>
     );

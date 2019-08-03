@@ -48,7 +48,6 @@ const Navbar = styled.div`
   justify-content: space-between;
 `;
 
-
 const MainStyledLink = styled(Link)`
   margin: 0;
   padding: 0;
@@ -73,6 +72,16 @@ const StyledLink = styled(Link)`
   :hover {
     color: rgba(64, 150, 196, 1);
   }
+`;
+
+const LeadContainerParapraph = styled.p`
+  margin: 0;
+  font-family: Lato;
+  width: 100%;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(43, 55, 62, 0.8);
+  margin-top: 3em;
 `;
 
 export default class PostTemplate extends React.Component {
@@ -109,10 +118,10 @@ export default class PostTemplate extends React.Component {
           </NavbarContainer>
           <Wrapper>
             {/* <h1>{post.title}</h1> */}
-            <div>{post.date}</div>
             <WrapperContent>
+              <LeadContainerParapraph><i>written on {post.date}</i></LeadContainerParapraph>
               <div
-              className="blog-content"
+                className="blog-content"
                 style={{
                   fontFamily: `'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif`
                 }}

@@ -1,3 +1,5 @@
 User-agent: *
-Disallow:
-Sitemap: https://www.kevinpeters.net/sitemap.xml
+Disallow: */tags/
+Disallow: */categories/
+
+sitemap: https://vagr9k.github.io/gatsby-advanced-starter/sitemap.xml

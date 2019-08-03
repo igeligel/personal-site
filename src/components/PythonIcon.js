@@ -12,8 +12,8 @@ export const PythonIcon = () => {
         y2="1151.089"
         gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
       >
-        <stop offset="0" stop-color="#5A9FD4" />
-        <stop offset="1" stop-color="#306998" />
+        <stop offset="0" stopColor="#5A9FD4" />
+        <stop offset="1" stopColor="#306998" />
       </linearGradient>
       <path
         fill="url(#a)"
@@ -28,8 +28,8 @@ export const PythonIcon = () => {
         y2="1149.537"
         gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
       >
-        <stop offset="0" stop-color="#FFD43B" />
-        <stop offset="1" stop-color="#FFE873" />
+        <stop offset="0" stopColor="#FFD43B" />
+        <stop offset="1" stopColor="#FFE873" />
       </linearGradient>
       <path
         fill="url(#b)"
@@ -43,13 +43,13 @@ export const PythonIcon = () => {
         gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#B8B8B8" stop-opacity=".498" />
-        <stop offset="1" stop-color="#7F7F7F" stop-opacity="0" />
+        <stop offset="0" stopColor="#B8B8B8" stopOpacity=".498" />
+        <stop offset="1" stopColor="#7F7F7F" stopOpacity="0" />
       </radialGradient>
       <path
         opacity=".444"
         fill="url(#c)"
-        enable-background="new"
+        enableBackground="new"
         d="M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416-18.276 0-33.092-2.873-33.092-6.416 0-3.544 14.815-6.417 33.092-6.417 18.275 0 33.091 2.872 33.091 6.417z"
       />
     </svg>

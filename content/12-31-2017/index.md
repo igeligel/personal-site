@@ -4,6 +4,7 @@ cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "python"
 date: "12/31/2017"
 tags:
+  - vue.js
   - programming
   - python
   - clean code

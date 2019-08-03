@@ -4,8 +4,8 @@ cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "vue.js"
 date: "07/15/2017"
 tags:
-  - programming
   - vue.js
+  - programming
   - javascript
   - jest
 ---

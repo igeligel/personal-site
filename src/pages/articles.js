@@ -2,7 +2,6 @@ import React from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
-import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
@@ -10,6 +9,12 @@ import { Link } from "gatsby";
 import { ProjectList } from "../components/ProjectList";
 import { Footer } from "../components/Footer";
 import PostTagButton from "../components/PostTagButton";
+import { VueIcon } from "../components/VueIcon";
+import { PythonIcon } from "../components/PythonIcon";
+import { JavaScriptIcon } from "../components/JavaScriptIcon";
+import { PostgresIcon } from "../components/PostgresqlIcon";
+import { ReactIcon } from "../components/ReactIcon";
+import { LaptopIcon } from "../components/LaptopIcon";
 
 const NavbarContainer = styled.div`
   flex: 1;
@@ -88,6 +93,7 @@ const UnorderedList = styled.ul`
   list-style-type: none;
   padding: 0;
   margin: 0;
+  margin-top: 1.61em;
 `;
 
 const ListItemL = styled(Link)`
@@ -147,22 +153,6 @@ const IconWrapper = styled.div`
   align-self: center;
 `;
 
-const getPostList = postEdges => {
-  const postList = [];
-  postEdges.forEach(postEdge => {
-    postList.push({
-      path: postEdge.node.fields.slug,
-      tags: postEdge.node.frontmatter.tags,
-      cover: postEdge.node.frontmatter.cover,
-      title: postEdge.node.frontmatter.title,
-      date: postEdge.node.fields.date,
-      excerpt: postEdge.node.excerpt,
-      timeToRead: postEdge.node.timeToRead
-    });
-  });
-  return postList;
-};
-
 const WorkInProgress = styled.p`
   margin: 0;
   font-family: Lato;
@@ -186,10 +176,67 @@ const FormInput = styled.input`
   }
 `;
 
+const getPrimaryIcon = tags => {
+  if (tags[0] === "javascript") {
+    return "javascript";
+  }
+  if (tags[0] === "python") {
+    return "python";
+  }
+  if (tags[0] === "vue.js") {
+    return "vue.js";
+  }
+  if (tags[0] === "postgresql") {
+    return "postgresql";
+  }
+  if (tags[0] === "react") {
+    return "react";
+  }
+  if (tags[0] === "software-engineering") {
+    return "software-engineering";
+  }
+  return null;
+};
+
+const getPostList = (postEdges, state) => {
+  return postEdges
+    .filter(postEdge => {
+      if (state.value === "") return postEdge;
+      return postEdge.node.frontmatter.title
+        .toLowerCase()
+        .includes(state.value.toLowerCase());
+    })
+    .map(postEdge => {
+      return {
+        primaryIcon: getPrimaryIcon(postEdge.node.frontmatter.tags),
+        path: postEdge.node.fields.slug,
+        tags: postEdge.node.frontmatter.tags,
+        cover: postEdge.node.frontmatter.cover,
+        title: postEdge.node.frontmatter.title,
+        date: postEdge.node.fields.date,
+        excerpt: postEdge.node.excerpt,
+        timeToRead: postEdge.node.timeToRead
+      };
+    })
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
+};
+
 class Index extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
-    const postList = getPostList(postEdges);
+    const postList = getPostList(postEdges, this.state);
 
     return (
       <Layout>
@@ -213,14 +260,41 @@ class Index extends React.Component {
         <SectionContainerWrapper>
           <SectionContainer>
             <LeadContainerHeading>Articles</LeadContainerHeading>
-            <div>
-              <PostTagButton tag={"adwawdaw"} marginRight={'7px'} />
-              <PostTagButton tag={"adwawdaw"} marginRight={'7px'} />
-              <PostTagButton tag={"adwawdaw"} marginRight={'7px'}/>
-              <PostTagButton tag={"adwawdaw"} marginRight={'7px'}/>
-              <PostTagButton tag={"adwawdaw"} marginRight={'7px'}/>
-            </div>
-            <FormInput type="email" name="email" />
+            {/* <div>
+              <PostTagButton tag={"adwawdaw"} marginRight={"7px"} />
+              <PostTagButton tag={"adwawdaw"} marginRight={"7px"} />
+              <PostTagButton tag={"adwawdaw"} marginRight={"7px"} />
+              <PostTagButton tag={"adwawdaw"} marginRight={"7px"} />
+              <PostTagButton tag={"adwawdaw"} marginRight={"7px"} />
+            </div> */}
+            <FormInput
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
+            <UnorderedList>
+              {postList.map(post => (
+                <ListItem key={post.title}>
+                  <ListItemL to={post.path}>
+                    <div style={{ display: "flex" }}>
+                      <IconWrapper>
+                        {post.primaryIcon === "javascript" && (
+                          <JavaScriptIcon />
+                        )}
+                        {post.primaryIcon === "python" && <PythonIcon />}
+                        {post.primaryIcon === "vue.js" && <VueIcon />}
+                        {post.primaryIcon === "postgresql" && <PostgresIcon />}
+                        {post.primaryIcon === "react" && <ReactIcon />}
+                        {post.primaryIcon === "software-engineering" && (
+                          <LaptopIcon />
+                        )}
+                      </IconWrapper>
+                      <ListItemLink>{post.title}</ListItemLink>
+                    </div>
+                  </ListItemL>
+                </ListItem>
+              ))}
+            </UnorderedList>
           </SectionContainer>
         </SectionContainerWrapper>
       </Layout>

@@ -7,7 +7,6 @@ export const LaptopIcon = () => {
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       width="32"
-      height="auto"
       viewBox="0 0 752 613.12089"
     >
       <title>preservation</title>

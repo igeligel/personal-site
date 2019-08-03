@@ -102,7 +102,7 @@ export default class PostTemplate extends React.Component {
               <div>
                 <StyledLink to={"/about"}>About</StyledLink>
                 <StyledLink to={"/articles"}>Articles</StyledLink>
-                <StyledLink to={"/projects"}>Projects</StyledLink>
+                {/* <StyledLink to={"/projects"}>Projects</StyledLink> */}
                 <StyledLink to={"/contact"}>Contact</StyledLink>
               </div>
             </Navbar>

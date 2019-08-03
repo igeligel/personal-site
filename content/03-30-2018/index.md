@@ -19,7 +19,37 @@ So basically the computed properties rely on your data and props of the componen
 
 A problem which occurs for many Vue.js projects is that computed properties get large. This is a big problem for readability. [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882), for example, states that functions should be small. This also applies to computed properties since those are just functions at the end which are called. Let us inspect this component:
 
-<iframe src="https://medium.com/media/8aa562bb8d4c86a78ae234a5685901c6" frameborder=0></iframe>
+```js
+export default {
+  name: "CommentContainer",
+  computed: {
+    commentsMapped(state) {
+      const parentComments = [];
+      const mappedComments = state.comments.comments.map(comment => {
+        const copy = Object.assign({}, comment);
+        copy.isOwner = comment.user.id === state.comments.userData.userId;
+        return copy;
+      });
+      mappedComments.forEach(comment => {
+        if (comment.parent === null) {
+          const copy = Object.assign({}, comment);
+          copy.textarea.showCommentButton = comment.textarea.text.length > 0;
+          parentComments.push(copy);
+        }
+      });
+      const result = [];
+      parentComments.forEach(parentComment => {
+        const copy = Object.assign({}, parentComment);
+        copy.subComments = mappedComments.filter(
+          x => x.parent === parentComment.id
+        );
+        result.push(copy);
+      });
+      return result;
+    }
+  }
+};
+```
 
 I just reduced the component to include the computed property. To explain a bit. Normally this function is inside the mapState function provided by Vuex ([docs](https://vuex.vuejs.org/en/state.html)). To explain the business logic here a bit is relatively easy. In the store, there is a list of comments. Those comments have a property which is called parentId. If this parentId is not null this means the comment is a sub comment. Just imagine a reply in the Facebook comments section:
 
@@ -33,15 +63,108 @@ The problem with our code above though is not the business logic. This is easy t
 
 Even though this code, which was written by me (old code is always bad), was missing functional paradigms and many more cooll things, it worked. So now for the refactoring part. We decided already that we have three parts which are somehow influencing how the computed property is built. In the _User Check_, we iterate over every comment and see if the current user is the owner. If yes we assign the property to the object so we can see this later in the data structure which is important for editing or deleting a comment since this functionality should just be given by the user who created the comment. We could extract the first whole workflow into a different computed property named ownerAssignedComments . This computed property would look like the following snippet.
 
-<iframe src="https://medium.com/media/d4c775a16478a2b57f5a052a508251a7" frameborder=0></iframe>
+```js
+export default {
+  name: "CommentContainer",
+  computed: {
+    ownerAssignedComments(state) {
+      const mappedComments = state.comments.comments.map(comment => {
+        const copy = Object.assign({}, comment);
+        copy.isOwner = comment.user.id === state.comments.userData.userId;
+        return copy;
+      });
+    }
+  }
+};
+```
 
 This does not look better. At least the inside but where it gets powerful is the bigger computed property.
 
-<iframe src="https://medium.com/media/85902b3b0e165bb597835cfb27185ec1" frameborder=0></iframe>
+```js
+export default {
+  name: "CommentContainer",
+  computed: {
+    commentsMapped(state) {
+      const mappedComments = this.ownerAssignedComments;
+
+      const parentComments = [];
+      mappedComments.forEach(comment => {
+        if (comment.parent === null) {
+          const copy = Object.assign({}, comment);
+          copy.textarea.showCommentButton = comment.textarea.text.length > 0;
+          parentComments.push(copy);
+        }
+      });
+      const result = [];
+      parentComments.forEach(parentComment => {
+        const copy = Object.assign({}, parentComment);
+        copy.subComments = mappedComments.filter(
+          x => x.parent === parentComment.id
+        );
+        result.push(copy);
+      });
+      return result;
+    },
+    ownerAssignedComments(state) {
+      const mappedComments = state.comments.comments.map(comment => {
+        const copy = Object.assign({}, comment);
+        copy.isOwner = comment.user.id === state.comments.userData.userId;
+        return copy;
+      });
+    }
+  }
+};
+```
 
 You can see that the commentsMapped computed property shrunk down in size already. It is more clear what it is doing also. The next two parts of the computed property which are _Create Parent Comments_ and _Assign Parent-Child Comments_ both rely on mappedComments. This means we cannot put them into a computed property since both would trigger at the same time and would interfere when we want to use them both. A refactor into a method would be ideal in this case. Better to say in two methods. The first method should be called getParentComments and takes one argument which is the mappedComments or ownerAssignedComments. The second method would be named assignSubComments and would take two arguments which are the newly created parentComments and the mappedComments or ownerAssignedComments . The component would look like the following snippet.
 
-<iframe src="https://medium.com/media/4398cdec01adee33e9c2a9eeb72a98b8" frameborder=0></iframe>
+```js
+export default {
+  name: "CommentContainer",
+  computed: {
+    commentsMapped(state) {
+      const ownerAssignedComments = this.ownerAssignedComments;
+      const parentComments = this.getParentComments(ownerAssignedComments);
+      const childParentComments = this.assignSubComments(
+        parentComments,
+        ownerAssignedComments
+      );
+      return childParentComments;
+    },
+    ownerAssignedComments(state) {
+      const mappedComments = state.comments.comments.map(comment => {
+        const copy = Object.assign({}, comment);
+        copy.isOwner = comment.user.id === state.comments.userData.userId;
+        return copy;
+      });
+    }
+  },
+  methods: {
+    getParentComments(ownerAssignedComments) {
+      const parentComments = [];
+      ownerAssignedComments.forEach(comment => {
+        if (comment.parent === null) {
+          const copy = Object.assign({}, comment);
+          copy.textarea.showCommentButton = comment.textarea.text.length > 0;
+          parentComments.push(copy);
+        }
+      });
+      return parentComments;
+    },
+    assignSubComments(parentComments, ownerAssignedComments) {
+      const childParentComments = [];
+      parentComments.forEach(parentComment => {
+        const copy = Object.assign({}, parentComment);
+        copy.subComments = ownerAssignedComments.filter(
+          x => x.parent === parentComment.id
+        );
+        childParentComments.push(copy);
+      });
+      return childParentComments;
+    }
+  }
+};
+```
 
 Now the computed property is constructed out of another computed property and two method invocations which return another data structure. These functions are pure functions btw. which is recommended to use for those type of functions. They are easy to test and extend. I definitely know this code could use some functional sugar but for the example, it is not required. All in all the code of the commentsMapped computed property is a lot more readable now than before since it is shorter and more explicit.
 
@@ -49,7 +172,19 @@ Now we can have a look into the future: [The Pipeline Operator](https://github.c
 
 The Pipeline Operator is a proposal of the community to include in JavaScript. Who is familiar with functional paradigms or languages will know this kind of pattern. For all others I recommend you to read the proposal. It is awesome 🚀. Basically, it is an easier way to chain methods and the results. This would make our example even easier to read in the computed property commentsMapped.
 
-<iframe src="https://medium.com/media/39c9df19d13e69629bbb6f6a11dd8136" frameborder=0></iframe>
+```js
+export default {
+  name: 'CommentContainer',
+  computed: {
+    commentsMapped(state) {
+      const ownerAssignedComments = this.ownerAssignedComments;
+      return ownerAssignedComments
+        |> this.getParentComments
+        |> (_ => this.assignSubComments(_, ownerAssignedComments);
+    }
+  }
+};
+```
 
 More functional, cleaner, still understandable and faster to read.
 

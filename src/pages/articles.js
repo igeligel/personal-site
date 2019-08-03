@@ -240,7 +240,8 @@ class Index extends React.Component {
 
     return (
       <Layout>
-        <Helmet title={config.siteTitle}>
+        <Helmet>
+        <title>{`Blog articles about Technology | ${config.siteTitle}`}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
         <SEO />

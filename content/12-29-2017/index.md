@@ -7,7 +7,7 @@ tags:
   - software-engineering
   - programming
   - python
-  - clean code
+  - javascript
 ---
 
 # 2017 at 3YOURMIND — Front-end Review

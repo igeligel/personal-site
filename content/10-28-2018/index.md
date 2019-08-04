@@ -5,9 +5,6 @@ category: "python"
 date: "10/28/2018"
 tags:
   - software-engineering
-  - programming
-  - python
-  - clean code
 ---
 
 # What makes a nice development project?

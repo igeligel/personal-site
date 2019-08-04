@@ -6,8 +6,6 @@ date: "09/08/2018"
 tags:
   - software-engineering
   - programming
-  - python
-  - clean code
 ---
 
 # How to be a better software engineer? — Code Reviews

@@ -7,8 +7,7 @@ tags:
   - javascript
   - chrome
   - programming
-  - vue.js
-  - javascript
+  - ndb
   - jest
 ---
 

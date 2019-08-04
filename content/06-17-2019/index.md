@@ -5,9 +5,8 @@ category: "python"
 date: "06/17/2019"
 tags:
   - postgresql
-  - programming
-  - python
-  - clean code
+  - databases
+  - software-engineering
 ---
 
 # SQL — The Case statement

@@ -6,7 +6,6 @@ date: "07/08/2019"
 tags:
   - javascript
   - programming
-  - python
   - clean code
 ---
 

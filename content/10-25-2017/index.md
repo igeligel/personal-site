@@ -6,8 +6,8 @@ date: "10/25/2017"
 tags:
   - vue.js
   - vuex
+  - javascript
   - programming
-  - python
   - clean code
 ---
 

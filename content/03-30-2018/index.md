@@ -7,7 +7,6 @@ tags:
   - vue.js
   - programming
   - javascript
-  - es6
   - functional-programming
 ---
 

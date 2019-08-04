@@ -5,9 +5,8 @@ category: "python"
 date: "11/19/2018"
 tags:
   - react
+  - javascript
   - programming
-  - python
-  - clean code
 ---
 
 # Learn to visualize React components by parsing JSX with Babel

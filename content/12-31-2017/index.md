@@ -5,9 +5,8 @@ category: "python"
 date: "12/31/2017"
 tags:
   - vue.js
+  - javascript
   - programming
-  - python
-  - clean code
 ---
 
 # Vue.js review of 2017

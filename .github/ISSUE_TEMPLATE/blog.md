@@ -8,9 +8,14 @@ assignees: igeligel
 
 ---
 
-Proposed Blog Title: ``
-Title-slug: ``
+**Proposed Blog Title**
 
-Description:
+``
+
+*Title slug**
+
+``
+
+**Description**
 
 -/-

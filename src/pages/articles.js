@@ -15,6 +15,7 @@ import { JavaScriptIcon } from "../components/JavaScriptIcon";
 import { PostgresIcon } from "../components/PostgresqlIcon";
 import { ReactIcon } from "../components/ReactIcon";
 import { LaptopIcon } from "../components/LaptopIcon";
+import { IconSecurity } from "../components/IconSecurity";
 
 const NavbarContainer = styled.div`
   flex: 1;
@@ -208,6 +209,9 @@ const getPrimaryIcon = tags => {
   if (tags[0] === "software-engineering") {
     return "software-engineering";
   }
+  if (tags[0] === 'security') {
+    return 'security';
+  }
   return null;
 };
 
@@ -357,6 +361,7 @@ class Index extends React.Component {
                         {post.primaryIcon === "software-engineering" && (
                           <LaptopIcon />
                         )}
+                        {post.primaryIcon === "security" && <IconSecurity />}
                       </IconWrapper>
                       <ListItemLink>{post.title}</ListItemLink>
                     </div>

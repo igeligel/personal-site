@@ -213,6 +213,10 @@
   border-bottom: 2px solid rgba(64, 150, 196, 0.9);
 }
 
+.blog-content .gatsby-resp-image-background-image {
+  background-image: none !important;
+}
+
 .line-numbers {
   padding: 0 !important;
   padding-left: 20px !important;

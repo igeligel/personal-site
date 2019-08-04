@@ -15,6 +15,7 @@ import { PostgresIcon } from "../components/PostgresqlIcon";
 import { ReactIcon } from "../components/ReactIcon";
 import { LaptopIcon } from "../components/LaptopIcon";
 import { Footer } from "../components/Footer";
+import { IconSecurity } from "../components/IconSecurity";
 
 const NavbarContainer = styled.div`
   flex: 1;
@@ -172,6 +173,9 @@ const getPrimaryIcon = tags => {
   if (tags[0] === "software-engineering") {
     return "software-engineering";
   }
+  if (tags[0] === "security") {
+    return "security";
+  }
   return null;
 };
 
@@ -228,7 +232,7 @@ class Index extends React.Component {
     return (
       <Layout>
         <Helmet>
-        <title>{`Home | ${config.siteTitle}`}</title>
+          <title>{`Home | ${config.siteTitle}`}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
         <SEO />
@@ -298,6 +302,7 @@ class Index extends React.Component {
                         {post.primaryIcon === "software-engineering" && (
                           <LaptopIcon />
                         )}
+                        {post.primaryIcon === "security" && <IconSecurity />}
                       </IconWrapper>
                       <ListItemLink>{post.title}</ListItemLink>
                     </div>
@@ -316,7 +321,7 @@ class Index extends React.Component {
         <SectionContainerWrapper>
           <SectionContainer>
             <SectionHeading>Projects</SectionHeading>
-          <WorkInProgress>🔨 Work in Progress 🔨</WorkInProgress>
+            <WorkInProgress>🔨 Work in Progress 🔨</WorkInProgress>
             {/* <ProjectList /> */}
           </SectionContainer>
         </SectionContainerWrapper>

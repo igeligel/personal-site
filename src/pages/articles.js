@@ -176,6 +176,19 @@ const FormInput = styled.input`
   }
 `;
 
+const TagHandler = styled.div`
+  display: flex;
+`;
+
+const ClearText = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  color: rgba(64, 150, 196, 1);
+  margin-left: 0.61em;
+`;
+
 const getPrimaryIcon = tags => {
   if (tags[0] === "javascript") {
     return "javascript";
@@ -206,6 +219,10 @@ const getPostList = (postEdges, state) => {
         .toLowerCase()
         .includes(state.value.toLowerCase());
     })
+    .filter(postEdge => {
+      if (!state.selectedTag) return postEdge;
+      return postEdge.node.frontmatter.tags.includes(state.selectedTag);
+    })
     .map(postEdge => {
       return {
         primaryIcon: getPrimaryIcon(postEdge.node.frontmatter.tags),
@@ -221,13 +238,45 @@ const getPostList = (postEdges, state) => {
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 };
 
+const getMostPopularTags = postEdges => {
+  const allTags = postEdges
+    .map(postEdge => postEdge.node.frontmatter.tags)
+    .reduce((a, b) => [...a, ...b], []);
+  const cnts = allTags.reduce((obj, val) => {
+    obj[val] = (obj[val] || 0) + 1;
+    return obj;
+  }, {});
+  const sorted = Object.keys(cnts).sort((a, b) => cnts[b] - cnts[a]);
+  return sorted;
+};
+
 class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
+      value: "",
+      selectedTag: null
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleTagChange = this.handleTagChange.bind(this);
+  }
+
+  componentDidMount() {
+    const tag =
+      this.props.location &&
+      this.props.location.state &&
+      this.props.location.state.tag;
+    if (tag) {
+      this.setState({
+        selectedTag: tag
+      });
+    }
+  }
+
+  handleTagChange(newTag) {
+    this.setState({
+      selectedTag: newTag
+    });
   }
 
   handleChange(event) {
@@ -237,11 +286,14 @@ class Index extends React.Component {
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
     const postList = getPostList(postEdges, this.state);
+    const tags = getMostPopularTags(postEdges).slice(0, 5);
+    const selectedTagInPopularTags =
+      this.state.selectedTag === null || tags.includes(this.state.selectedTag);
 
     return (
       <Layout>
         <Helmet>
-        <title>{`Blog articles about Technology | ${config.siteTitle}`}</title>
+          <title>{`Blog articles about Technology | ${config.siteTitle}`}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
         <SEO />
@@ -261,13 +313,29 @@ class Index extends React.Component {
         <SectionContainerWrapper>
           <SectionContainer>
             <LeadContainerHeading>Articles</LeadContainerHeading>
-            {/* <div>
-              <PostTagButton tag={"adwawdaw"} marginRight={"7px"} />
-              <PostTagButton tag={"adwawdaw"} marginRight={"7px"} />
-              <PostTagButton tag={"adwawdaw"} marginRight={"7px"} />
-              <PostTagButton tag={"adwawdaw"} marginRight={"7px"} />
-              <PostTagButton tag={"adwawdaw"} marginRight={"7px"} />
-            </div> */}
+            <TagHandler>
+              {tags.map((tag, index) => (
+                <PostTagButton
+                  active={tag === this.state.selectedTag}
+                  onClick={() => {
+                    this.handleTagChange(tag);
+                  }}
+                  key={index}
+                  tag={tag}
+                  marginRight={"7px"}
+                />
+              ))}
+              {!selectedTagInPopularTags && (
+                <PostTagButton active disabled tag={"Another topic"} />
+              )}
+              <ClearText
+                onClick={() => {
+                  this.handleTagChange(null);
+                }}
+              >
+                Clear
+              </ClearText>
+            </TagHandler>
             <FormInput
               type="text"
               value={this.state.value}

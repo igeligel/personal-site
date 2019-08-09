@@ -30,6 +30,16 @@ const WrapperContent = styled.div`
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+
+  @media (max-width: 875px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (max-width: 450px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 `;
 
 const NavbarContainer = styled.div`
@@ -133,7 +143,6 @@ export default class PostTemplate extends React.Component {
               </div>
               <UserInfo config={config} />
             </WrapperContent>
-            {/* <Disqus postNode={postNode} /> */}
           </Wrapper>
         </div>
       </Layout>

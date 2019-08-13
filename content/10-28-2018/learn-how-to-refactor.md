@@ -1,5 +1,5 @@
 ---
-title: "Learn how to refactor Vue.js Single File Components on a real world example"
+title: "Learn to refactor Vue.js SFCs in a real-world example"
 cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "python"
 date: "10/28/2018"

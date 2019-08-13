@@ -1,5 +1,5 @@
 ---
-title: "Adding object properties conditionally with EcmaScript 6 (ES6)"
+title: "Adding object properties conditionally with ES6"
 cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "python"
 date: "07/16/2019"

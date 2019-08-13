@@ -1,5 +1,5 @@
 ---
-title: "Learn to visualize React components by parsing JSX with Babel"
+title: "Visualizing React components by parsing JSX with Babel"
 cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "python"
 date: "11/19/2018"

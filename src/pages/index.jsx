@@ -232,7 +232,7 @@ class Index extends React.Component {
     return (
       <Layout>
         <Helmet>
-          <title>{`Home | ${config.siteTitle}`}</title>
+          <title>{`The Home Page of the Software Engineer Kevin Peters`}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
         <SEO />

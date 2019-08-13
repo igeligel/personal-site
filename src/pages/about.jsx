@@ -126,7 +126,7 @@ class About extends React.Component {
       <Layout>
         <div className="index-container">
           <Helmet>
-          <title>{`About Kevin Peters | ${config.siteTitle}`}</title>
+          <title>{'Information about Kevin Peters'}</title>
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1"

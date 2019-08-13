@@ -110,7 +110,7 @@ export default class PostTemplate extends React.Component {
       <Layout>
         <div>
           <Helmet>
-            <title>{`${post.title} | ${config.siteTitle}`}</title>
+            <title>{post.title}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
           <NavbarContainer>

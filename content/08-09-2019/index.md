@@ -1,5 +1,5 @@
 ---
-title: "Find rows from a list that do not exist in a PostgreSQL table"
+title: "Find rows not existing in a PostgreSQL table"
 cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "databases"
 date: "08/09/2019"

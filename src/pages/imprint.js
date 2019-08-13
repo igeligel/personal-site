@@ -50,7 +50,7 @@ const LeadContainer = styled.div`
   flex-direction: column;
 `;
 
-const LeadContainerHeading = styled.h2`
+const LeadContainerHeading = styled.h1`
   margin: 0;
   font-size: 40px;
   font-family: Lato;
@@ -279,7 +279,7 @@ class Index extends React.Component {
         </NavbarContainer>
         <SectionContainerWrapper>
           <SectionContainer>
-            <LeadContainerHeading>Impressum</LeadContainerHeading>
+            <LeadContainerHeading>Impressum von Kevin Peters</LeadContainerHeading>
             <LeadContainerParapraph>
               Angaben gemäß § 5 TMG
             </LeadContainerParapraph>

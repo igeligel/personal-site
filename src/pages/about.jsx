@@ -23,7 +23,7 @@ const Navbar = styled.div`
   justify-content: space-between;
 `;
 
-const LeadContainerHeading = styled.h2`
+const LeadContainerHeading = styled.h1`
   margin: 0;
   font-size: 40px;
   font-family: Lato;
@@ -148,7 +148,7 @@ class About extends React.Component {
           </NavbarContainer>
           <SectionContainerWrapper>
             <SectionContainer>
-              <LeadContainerHeading>About me</LeadContainerHeading>
+              <LeadContainerHeading>About me, a software engineer from Berlin</LeadContainerHeading>
               <LeadContainerParapraph>
                 I am a Kevin Peters, a software developer and JavaScript
                 enthusiast from Berlin, Germany. I currently work as a Software

@@ -10,7 +10,7 @@ tags:
   - clean code
 ---
 
-# Learn how to refactor Vue.js Single File Components on a real world example
+# Learn how to refactor Vue.js SFC in a real-world example
 
 In every large Vue.js project there lies some technical debt. There are no development projects without technical debt after all. It will be there, no matter what you do.
 

@@ -15,6 +15,11 @@ export default function HTML(props) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.5.0/modern-normalize.min.css"
         />
+        <script
+          data-ad-client="ca-pub-6098077505348522"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

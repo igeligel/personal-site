@@ -40,3 +40,8 @@ _personal-site_ is realeased under the MIT License.
 ## This readme is powered by vue-readme
 
 Check out vue-readme [[Website](https://igeligel.github.io/vue-readme) | [GitHub](https://github.com/igeligel/vue-readme)]
+
+## Resources
+
+- https://capitalizemytitle.com/blog-title-generator/
+- https://capitalizemytitle.com/headline-analyzer/

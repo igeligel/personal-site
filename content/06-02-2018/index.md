@@ -45,21 +45,74 @@ In all examples, I will run the default configuration for each tool. For yapf, t
 
 In our first example, we will just show a function call inside a model which is normally too long for a line and see how the auto formatters are restructuring the code here.
 
-![](https://cdn-images-1.medium.com/max/2224/1*uABHr_EiEtIIavZeUo6A0g.png)
+```python
+class Basket():
+    reference = models.CharField(
+        _('Project reference'), max_length=100, null=True)
+```
 
-![](https://cdn-images-1.medium.com/max/2192/1*VVL1O8Qyk1dZpGgcvXv76w.png)
+```python
+class Basket():
+    reference = models.CharField(
+        _("Project reference"), max_length=100, null=True
+    )
+```
 
-![Left is the base code, yapf (Google, pep8) did not make any changes, the code in the middle is formatted by black and the right one is formatted by yapf (Facebook)](https://cdn-images-1.medium.com/max/2192/1*MHG0gdm8t9s3kNL3wyCWJw.png)_Left is the base code, yapf (Google, pep8) did not make any changes, the code in the middle is formatted by black and the right one is formatted by yapf (Facebook)_
+```python
+class Basket():
+    reference = models.CharField(
+        _('Project reference'), max_length=100, null=True
+    )
+```
+
+_Left is the base code, yapf (Google, pep8) did not make any changes, the code in the middle is formatted by black and the right one is formatted by yapf (Facebook)_
 
 You can see that yapf (Facebook) and black are trying to convert the code to multi-line brackets while the rest do not do this. A difference between black and yapf (Facebook) is that strings also get formatted in black which you will see later too. Black uses double quotes for every string except for strings where double quotes are included.
 
 The next example is again a real-world example. Here we have a tuple which includes a nested tuple. It works more or less like an enumeration. Also, the \_ is used to translate the strings in the application.
 
-![Base code, autopep8 and yapf (Google, pep8)](https://cdn-images-1.medium.com/max/2632/1*XYxBW-TzxfIbV7srMCGiOw.png)_Base code, autopep8 and yapf (Google, pep8)_
+```python
+class Basket():
+    PRICING_STATUS_CHOICES = (
+        (NO_REQUEST,
+         _("No Request - there was no manual pricing requested yet")),
+        (WAITING_FOR_MANUAL_PRICING,
+         _(("Waiting For Pricing - the basket needs someone to"
+            "set a manual price for one or multiple lines"))),
+        (MANUALLY_PRICED,
+         _("Manually Priced - the basket has been priced manually")),
+    )
+```
+
+_Base code, autopep8 and yapf (Google, pep8)_
 
 You can see that this was the input for the auto formatters but autopep8, yapf (Google) and yapf (pep8) did not change anything in the code.
 
-![black and yapf (Facebook)](https://cdn-images-1.medium.com/max/2696/1*HOqnXrUY-Zu-OxzitzBGcQ.png)_black and yapf (Facebook)_
+```python
+class Basket:
+    PRICING_STATUS_CHOICES = (
+        (
+            NO_REQUEST,
+            _("No Request - there was no manual pricing requested yet"),
+        ),
+        (
+            WAITING_FOR_MANUAL_PRICING,
+            _(
+                (
+                    "Waiting For Pricing - the basket needs someone to"
+                    "set a manual price for one or multiple lines"
+                )
+            ),
+        ),
+        (
+            MANUALLY_PRICED,
+            _("Manually Priced - the basket has been priced manually"),
+        ),
+    )
+
+```
+
+_black and yapf (Facebook)_
 
 Black and yapf (Facebook) gave the same result in the end since the input was formatted with double quotes already. Also, both of the formatters split up the lines a bit.
 
@@ -67,43 +120,256 @@ The next example is testing a function with a lot of parameters. In reality, you
 
 This time we get mostly different results. If you are trying to decide on an auto formatter, look at the next two examples. They will show you the real differences between the tools.
 
-![Base code](https://cdn-images-1.medium.com/max/5800/1*3XSv6rZl36r6ImLkqBzkPw.png)_Base code_
+```python
+def function_with_really_long_name(normal_variable, another_normal_variable, configuration=None, test_number=1, test_text='dwadawa', test_tuple=('Lorem Ipsum', 21)):
+    return None
+```
 
-![autopep8](https://cdn-images-1.medium.com/max/2000/1*VrtiVkSjgBWcucXNjETdNQ.png)_autopep8_
+_Base code_
+
+```python
+def function_with_really_long_name(
+    normal_variable,
+    another_normal_variable,
+    configuration=None,
+    test_number=1,
+    test_text='dwadawa',
+    test_tuple=(
+        'Lorem Ipsum',
+        21)):
+    return None
+```
+
+_autopep8_
 
 Autopep8 is formatting the parameters below each other and also starting a new line since it analyzed that there are too many parameters to fit. With the default value for test_tuple it got some problems. The code is completely pep8-compliant but the tuple definition looks quite odd. We can also see again that closing brackets are not moved to a new line but instead it will do the minimum work to make the code pep8-compliant.
 
-![black](https://cdn-images-1.medium.com/max/2000/1*o8Jxo5F35mdwo5BeSqovHQ.png)_black_
+```python
+def function_with_really_long_name(
+    normal_variable,
+    another_normal_variable,
+    configuration=None,
+    test_number=1,
+    test_text="dwadawa",
+    test_tuple=("Lorem Ipsum", 21),
+):
+    return None
+
+```
+
+_black_
 
 Black is formatting the code similar to autopep8 but is moving the closing brackets to a new line and also does not format the tuple in an unnecessary way.
 
-![yapf (Facebook)](https://cdn-images-1.medium.com/max/2000/1*IruvVd4Ez6adohQvpln3YQ.png)_yapf (Facebook)_
+```python
+def function_with_really_long_name(
+    normal_variable,
+    another_normal_variable,
+    configuration=None,
+    test_number=1,
+    test_text='dwadawa',
+    test_tuple=('Lorem Ipsum', 21),
+):
+    return None
+```
+
+_yapf (Facebook)_
 
 Yapf with the Facebook setting is formatting very similar to black here but is not changing the quotes here again. The only difference which happened.
 
-![yapf (Google), yapf (pep8)](https://cdn-images-1.medium.com/max/2496/1*qRTfHrPyu8_NPC5FMK-9NQ.png)_yapf (Google), yapf (pep8)_
+```python
+def function_with_really_long_name(normal_variable,
+                                   another_normal_variable,
+                                   configuration=None,
+                                   test_number=1,
+                                   test_text='dwadawa',
+                                   test_tuple=('Lorem Ipsum', 21)):
+    return None
+
+```
+
+_yapf (Google), yapf (pep8)_
 
 Yapf with the Google and pep8 setting will put the parameters below each other but will try to put the first parameter on the same line where the function begins.
 
 The last example which I will list in this article is quite an edge-case. First of all, we will create a namedtuple and then try to put tuples of this type into a list. This list will then work as parameters for a generator expression with specific filtering.
 
-![Base code](https://cdn-images-1.medium.com/max/7148/1*v_NTouLPVecC_9sD29KjEQ.png)_Base code_
+```python
+def generator_expression():
+    Fruit = collections.namedtuple('Fruit', ('name', 'size', 'price', 'super_long_property_in_tuple'))
+    fruits = [
+      Fruit(name='apple', size=5, price=10.50, super_long_property_in_tuple='super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.'),
+      Fruit(name='banana', size=7, price=10.50, super_long_property_in_tuple='super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.'),
+      Fruit(name='orange', size=6, price=10.50, super_long_property_in_tuple='super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.'),
+      Fruit(name='kiwi', size=1, price=10.50, super_long_property_in_tuple='super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.')]
+    complicated_fruits_filtered = [fruit for fruit in fruits if fruit.price >= 10 and size <= 5]
+```
 
-![autopep8](https://cdn-images-1.medium.com/max/5832/1*J-ORc_SJySGMdSn89FroSA.png)_autopep8_
+_Base code_
+
+```python
+def generator_expression():
+    Fruit = collections.namedtuple(
+        'Fruit', ('name', 'size', 'price',
+                  'super_long_property_in_tuple')
+    )
+    fruits = [
+        Fruit(
+            name='apple',
+            size=5,
+            price=10.50,
+            super_long_property_in_tuple='super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.'),
+        Fruit(
+            name='banana',
+            size=7,
+            price=10.50,
+            super_long_property_in_tuple='super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.'),
+        Fruit(
+            name='orange',
+            size=6,
+            price=10.50,
+            super_long_property_in_tuple='super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.'),
+        Fruit(
+            name='kiwi',
+            size=1,
+            price=10.50,
+            super_long_property_in_tuple='super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.')]
+    complicated_fruits_filtered = [
+        fruit for fruit in fruits if fruit.price >= 10 and size <= 5]
+```
+
+_autopep8_
 
 Autopep8 also tries here to do the minimal work. The namedtuple will be split into multiple lines. The arguments for the names are also split into two lines. Other than that it will also try to leave the text on the same line in the super_long_property_in_tuple definition. The generator expression just gets put onto the next line.
 
-![black](https://cdn-images-1.medium.com/max/5796/1*G_0eqhmAf2NBSOJ8jaHlNw.png)_black_
+```python
+def generator_expression():
+    Fruit = collections.namedtuple(
+        "Fruit", ("name", "size", "price", "super_long_property_in_tuple")
+    )
+    fruits = [
+        Fruit(
+            name="apple",
+            size=5,
+            price=10.50,
+            super_long_property_in_tuple="super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.",
+        ),
+        Fruit(
+            name="banana",
+            size=7,
+            price=10.50,
+            super_long_property_in_tuple="super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.",
+        ),
+        Fruit(
+            name="orange",
+            size=6,
+            price=10.50,
+            super_long_property_in_tuple="super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.",
+        ),
+        Fruit(
+            name="kiwi",
+            size=1,
+            price=10.50,
+            super_long_property_in_tuple="super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.",
+        ),
+    ]
+    complicated_fruits_filtered = [
+        fruit for fruit in fruits if fruit.price >= 10 and size <= 5
+    ]
+```
+
+_black_
 
 Black is formatting strings to double quotes. The namedtuple is split up into three lines where the second line is just the important data. The array splitting happens as usual and brackets are moved a lot and not put behind the last elements. What is really interesting is that the string on line 10, for example, is not moved to the next line.
 
 The generator expression is also split up similar to autopep8 but the closing bracket was also moved to the next line.
 
-![yapf (Facebook)](https://cdn-images-1.medium.com/max/4788/1*_dgK1Bxm9SeAlzV70tPd3Q.png)_yapf (Facebook)_
+
+```python
+def generator_expression():
+    Fruit = collections.namedtuple(
+        'Fruit', ('name', 'size', 'price', 'super_long_property_in_tuple')
+    )
+    fruits = [
+        Fruit(
+            name='apple',
+            size=5,
+            price=10.50,
+            super_long_property_in_tuple=
+            'super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.',
+        ),
+        Fruit(
+            name='banana',
+            size=7,
+            price=10.50,
+            super_long_property_in_tuple=
+            'super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.',
+        ),
+        Fruit(
+            name='orange',
+            size=6,
+            price=10.50,
+            super_long_property_in_tuple=
+            'super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.',
+        ),
+        Fruit(
+            name='kiwi',
+            size=1,
+            price=10.50,
+            super_long_property_in_tuple=
+            'super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.',
+        ),
+    ]
+    complicated_fruits_filtered = [
+        fruit for fruit in fruits if fruit.price >= 10 and size <= 5
+    ]
+```
+
+_yapf (Facebook)_
 
 Yapf with the Facebook configuration also formats the tuples similarly to black but places the long parameter onto a new line. The super_long_property_in_tuple is also broken up into a new line. The generator expression looks exactly like the one which was generated by black.
 
-![yapf (Google), yapf (pep8)](https://cdn-images-1.medium.com/max/4788/1*rS9PZxJvn9hXLndKSPn70A.png)_yapf (Google), yapf (pep8)_
+```python
+def generator_expression():
+    Fruit = collections.namedtuple('Fruit',
+                                   ('name', 'size', 'price',
+                                    'super_long_property_in_tuple'))
+    fruits = [
+        Fruit(
+            name='apple',
+            size=5,
+            price=10.50,
+            super_long_property_in_tuple=
+            'super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.',
+        ),
+        Fruit(
+            name='banana',
+            size=7,
+            price=10.50,
+            super_long_property_in_tuple=
+            'super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.',
+        ),
+        Fruit(
+            name='orange',
+            size=6,
+            price=10.50,
+            super_long_property_in_tuple=
+            'super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.',
+        ),
+        Fruit(
+            name='kiwi',
+            size=1,
+            price=10.50,
+            super_long_property_in_tuple=
+            'super long string here also, lorem ipsum, maybe longer than 80 characters to look for pep8 violations here. lorem ipsum.',
+        )
+    ]
+    complicated_fruits_filtered = [
+        fruit for fruit in fruits if fruit.price >= 10 and size <= 5
+    ]
+```
+
+_yapf (Google), yapf (pep8)_
 
 Yapf with the Google and pep8 setting will format the code the same in this case. The main difference to the Facebook setting is that the namedtuple is formatted differently, as we saw in previous examples like the parameter splitting.
 
@@ -116,8 +382,6 @@ Black and yapf both have their own advantages and disadvantages. Yapf is highly 
 For me, personally, I will choose black for future projects since it is close to prettier in its approach. Yapf might have the bigger backing but I think this will change over time.
 
 Also, another note: Use one of the auto formatters presented in this article. Your development team will save so much time. It will be incredible. Also, your personal code will look the same throughout different projects and repositories and everyone will be much happier. And remember to not nitpick so much about code style. People are opinionated, but here efficiency and less communication are far more important than opinions.
-
-This blog post was written in cooperation with the company [3YOURMIND](https://www.3yourmind.com/). We are looking for developers in Berlin. You can find openings [here](https://www.3yourmind.com/career). We are a 3D Printing startup with a lot of cool developers using _Vue.js_, _Django REST_, _Java_, _Docker_ and many more cutting-edge frameworks and libraries to change the enterprise 3D printing world.
 
 > Thanks for reading this. You rock* 🤘*
 > If you have any feedback or want to add something to this article just comment here. You can also follow me on [twitter](https://twitter.com/kevinpeters_) or visit my [personal site](https://www.kevinpeters.net/) to stay up-to-date with my blog articles and many more things.

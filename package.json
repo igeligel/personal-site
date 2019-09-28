@@ -34,6 +34,7 @@
     "prismjs": "^1.17.1",
     "react": "^16.8.6",
     "react-accessible-accordion": "^3.0.0",
+    "react-adsense": "^0.1.0",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",

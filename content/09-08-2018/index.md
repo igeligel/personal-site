@@ -12,6 +12,15 @@ tags:
 
 There are good and bad developers in the engineering world. Everyone wants to hire the good ones. But what is a difference between a good software engineer and a bad software engineer? In this article, I will describe one of the biggest points: self-evaluation and code reviews.
 
+<ins
+  class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-6098077505348522"
+  data-ad-slot="7143193931"
+  data-ad-format="auto"
+  data-full-width-responsive="true">
+</ins>
+
 ### What are code reviews?
 
 Code reviews in a business sense play an important role in feature development, bug fixes and much more. Basically, you can apply this stage to everything which is done in a team so that quality can be assured.

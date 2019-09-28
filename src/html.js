@@ -20,6 +20,14 @@ export default function HTML(props) {
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         />
+        {/* <script>
+          {`
+            (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-1540853335472527",
+              enable_page_level_ads: true
+            });
+          `}
+        </script> */}
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

@@ -96,7 +96,10 @@ const LeadContainerParapraph = styled.p`
 
 export default class PostTemplate extends React.Component {
   componentDidMount() {
-    if(window) (window.adsbygoogle = window.adsbygoogle || []).push({});
+    try {
+      if(window) (window.adsbygoogle = window.adsbygoogle || []).push({});
+
+    } catch (err) {}
   };
 
   render() {

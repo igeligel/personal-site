@@ -13,6 +13,15 @@ tags:
 
 As you can see in the recent [Stack Overflow developer survey](https://insights.stackoverflow.com/survey/2018/#most-popular-technologies), Python is one of the most popular programming languages available. With the recent rise of good auto formatters for Code like [gofmt](https://golang.org/cmd/gofmt/) for Golang or [prettier](https://prettier.io/) for JavaScript, there is a good question to ask: Which auto formatter to use with Python Code? An auto formatter is a tool which will format your code in a way it complies to the tool or any other standard it set.
 
+<ins
+  class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-6098077505348522"
+  data-ad-slot="8492289843"
+  data-ad-format="auto"
+  data-full-width-responsive="true">
+</ins>
+
 First of all, we need to make sure that we know the reason automatic formatting tools exist. Prettier is an auto formatter for JavaScript code. It is used by many big companies like [Facebook](https://prettier.io/blog/#facebook-is-prettier), Paypal, Algolia, Yelp, Discord and many others which you can find [here](https://prettier.io/en/users/). Reasons for this are:
 
 - You do not need a style guide for low-level problems since the auto formatter deals with those problems
@@ -40,6 +49,15 @@ _Yet another Python formatter_ is another tool which is produced and maintained 
 The last popular auto formatter which is considered in this blog article. It is an initiative of [Łukasz Langa](http://lukasz.langa.pl/) who is a Python Core Developer. The tool is used by different open source libraries like [Fabric 2 and pytest](https://twitter.com/llanga/status/1001411218987302912). It has around 3800 stars on GitHub (June 2018) and the main incentive is to not have that many options so you do not even have to discuss the options. This mindset is also followed by prettier, a big JavaScript auto formatter.
 
 All of these tools can be found on [PyPi](https://pypi.org/) and be installed via pip or similar Python package managers and can be used on the command line which makes them cross-environment friendly. You should also consider a tool like pre-commit or [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged) for an automatic pre-commit hook which works in every environment and which is easy to install. With this pre-commit hook, unformatted code will never be pushed from the development machine to the remote repository. For the comparison of yapf, I will use the Facebook, Google and pep8 setting since the Chromium setting does not get that much usage (2 spaces indent is a reason for this).
+
+<ins
+  class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-6098077505348522"
+  data-ad-slot="8492289843"
+  data-ad-format="auto"
+  data-full-width-responsive="true">
+</ins>
 
 In all examples, I will run the default configuration for each tool. For yapf, this is not possible that easy since there are different base configurations which I wanted to try. Those are pep8, Google and Facebook.
 
@@ -372,6 +390,15 @@ def generator_expression():
 _yapf (Google), yapf (pep8)_
 
 Yapf with the Google and pep8 setting will format the code the same in this case. The main difference to the Facebook setting is that the namedtuple is formatted differently, as we saw in previous examples like the parameter splitting.
+
+<ins
+  class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-6098077505348522"
+  data-ad-slot="8492289843"
+  data-ad-format="auto"
+  data-full-width-responsive="true">
+</ins>
 
 ### Conclusion
 

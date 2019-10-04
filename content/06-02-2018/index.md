@@ -1,6 +1,6 @@
 ---
 title: "Auto formatters for Python"
-cover: "https://unsplash.it/1152/300/?random?FaityWitch"
+cover: "/thumbnails/auto-formatters-for-python-opengraph.png"
 category: "python"
 date: "06/02/2018"
 tags:

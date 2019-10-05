@@ -175,10 +175,23 @@ const FormInput = styled.input`
     outline: none;
     border-color: rgba(64, 150, 196, 0.8);
   }
+
+  @media (max-width: 450px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 `;
 
 const TagHandler = styled.div`
   display: flex;
+
+  @media (max-width: 450px) {
+    max-width: 100vw;
+    overflow: scroll;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+  }
 `;
 
 const ClearText = styled.div`
@@ -209,8 +222,8 @@ const getPrimaryIcon = tags => {
   if (tags[0] === "software-engineering") {
     return "software-engineering";
   }
-  if (tags[0] === 'security') {
-    return 'security';
+  if (tags[0] === "security") {
+    return "security";
   }
   return null;
 };
@@ -297,7 +310,7 @@ class Index extends React.Component {
     return (
       <Layout>
         <Helmet>
-          <title>{'Blogs about technologies by Kevin Peters'}</title>
+          <title>{"Blogs about technologies by Kevin Peters"}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
         <SEO />

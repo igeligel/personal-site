@@ -15,6 +15,7 @@ const PostTagButtonContainer = styled.button`
     props.active
       ? "2px solid rgba(64,150,196,1)"
       : "2px solid rgba(64,150,196,0)"};
+  white-space: nowrap;
 `;
 
 export const PostTagButton = props => (

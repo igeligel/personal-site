@@ -16,22 +16,7 @@ import { ReactIcon } from "../components/ReactIcon";
 import { LaptopIcon } from "../components/LaptopIcon";
 import { Footer } from "../components/Footer";
 import { IconSecurity } from "../components/IconSecurity";
-
-const NavbarContainer = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
-const Navbar = styled.div`
-  max-width: 800px;
-  width: 100%;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  display: flex;
-  justify-content: space-between;
-`;
+import {NavbarContainer} from '../components/navbar-container'
 
 const LeadCenterContainer = styled.div`
   flex: 1;
@@ -122,32 +107,6 @@ const ListItemLink = styled.span`
   width: 100%;
 `;
 
-const StyledLink = styled(Link)`
-  // color: palevioletred;
-  // font-weight: bold;
-  color: rgba(64, 150, 196, 0.5);
-  font-weight: 300;
-  font-family: Lato, sans-serif;
-  margin-left: 1em;
-  line-height: 2em;
-  text-decoration: none;
-
-  :hover {
-    color: rgba(64, 150, 196, 1);
-  }
-`;
-
-const MainStyledLink = styled(Link)`
-  margin: 0;
-  padding: 0;
-  color: #4096c4;
-  text-transform: uppercase;
-  font-family: Lato, sans-serif;
-  font-weight: 300;
-  font-size: 24px;
-  text-decoration: none;
-`;
-
 const IconWrapper = styled.div`
   width: 32px;
   height: 32px;
@@ -236,19 +195,7 @@ class Index extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
         <SEO />
-        <NavbarContainer>
-          <Navbar>
-            <div>
-              <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
-            </div>
-            <div>
-              <StyledLink to={"/about"}>About</StyledLink>
-              <StyledLink to={"/articles"}>Articles</StyledLink>
-              {/* <StyledLink to={"/projects"}>Projects</StyledLink> */}
-              <StyledLink to={"/contact"}>Contact</StyledLink>
-            </div>
-          </Navbar>
-        </NavbarContainer>
+        <NavbarContainer />
         <LeadCenterContainer>
           <LeadContainer>
             <LeadContainerHeading>Hey, I am Kevin</LeadContainerHeading>

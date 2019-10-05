@@ -8,6 +8,7 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { ProjectList } from "../components/ProjectList";
+import { NavbarContainer } from "../components/navbar-container";
 
 const HrefLink = styled.a`
   text-decoration: none;
@@ -18,13 +19,6 @@ const HrefLink = styled.a`
     color: rgba(64, 150, 196, 0.9);
     border-bottom: 2px solid rgba(64, 150, 196, 0.9);
   }
-`;
-
-const NavbarContainer = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
 `;
 
 const Navbar = styled.div`
@@ -261,26 +255,14 @@ class Index extends React.Component {
       <Layout>
         <div className="index-container">
           <Helmet>
-          <title>{'Contact Kevin Peters via Twitter or Email'}</title>
+            <title>{"Contact Kevin Peters via Twitter or Email"}</title>
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
           </Helmet>
           <SEO />
-          <NavbarContainer>
-            <Navbar>
-              <div>
-                <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
-              </div>
-              <div>
-                <StyledLink to={"/about"}>About</StyledLink>
-                <StyledLink to={"/articles"}>Articles</StyledLink>
-                {/* <StyledLink to={"/projects"}>Projects</StyledLink> */}
-                <StyledLink to={"/contact"}>Contact</StyledLink>
-              </div>
-            </Navbar>
-          </NavbarContainer>
+          <NavbarContainer />
           <SectionContainerWrapper>
             <SectionContainer>
               <LeadContainerHeading>Stay in touch with me</LeadContainerHeading>

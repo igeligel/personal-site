@@ -12,6 +12,7 @@ import "./prismjs-vscode-dark.css";
 import "./post.css";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import {NavbarContainer} from '../components/navbar-container'
 // 'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif
 
 const Wrapper = styled.div`
@@ -40,13 +41,6 @@ const WrapperContent = styled.div`
     padding-left: 14px;
     padding-right: 14px;
   }
-`;
-
-const NavbarContainer = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
 `;
 
 const Navbar = styled.div`
@@ -120,19 +114,7 @@ export default class PostTemplate extends React.Component {
             <title>{post.title}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
-          <NavbarContainer>
-            <Navbar>
-              <div>
-                <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
-              </div>
-              <div>
-                <StyledLink to={"/about"}>About</StyledLink>
-                <StyledLink to={"/articles"}>Articles</StyledLink>
-                {/* <StyledLink to={"/projects"}>Projects</StyledLink> */}
-                <StyledLink to={"/contact"}>Contact</StyledLink>
-              </div>
-            </Navbar>
-          </NavbarContainer>
+          <NavbarContainer />
           <Wrapper>
             {/* <h1>{post.title}</h1> */}
             <WrapperContent>

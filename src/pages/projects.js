@@ -8,13 +8,7 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { ProjectList } from "../components/ProjectList";
-
-const NavbarContainer = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
+import {NavbarContainer} from '../components/navbar-container'
 
 const Navbar = styled.div`
   max-width: 800px;
@@ -185,19 +179,7 @@ class Projects extends React.Component {
             />
           </Helmet>
           <SEO />
-          <NavbarContainer>
-            <Navbar>
-              <div>
-                <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
-              </div>
-              <div>
-                <StyledLink to={"/about"}>About</StyledLink>
-                <StyledLink to={"/articles"}>Articles</StyledLink>
-                <StyledLink to={"/projects"}>Projects</StyledLink>
-                <StyledLink to={"/contact"}>Contact</StyledLink>
-              </div>
-            </Navbar>
-          </NavbarContainer>
+          <NavbarContainer />
       </Layout>
     );
   }

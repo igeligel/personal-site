@@ -6,22 +6,7 @@ import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { Link } from "gatsby";
-
-const NavbarContainer = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
-const Navbar = styled.div`
-  max-width: 800px;
-  width: 100%;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  display: flex;
-  justify-content: space-between;
-`;
+import {NavbarContainer} from '../components/navbar-container'
 
 const LeadContainerHeading = styled.h1`
   margin: 0;
@@ -133,19 +118,7 @@ class About extends React.Component {
             />
           </Helmet>
           <SEO />
-          <NavbarContainer>
-            <Navbar>
-              <div>
-                <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
-              </div>
-              <div>
-                <StyledLink to={"/about"}>About</StyledLink>
-                <StyledLink to={"/articles"}>Articles</StyledLink>
-                {/* <StyledLink to={"/projects"}>Projects</StyledLink> */}
-                <StyledLink to={"/contact"}>Contact</StyledLink>
-              </div>
-            </Navbar>
-          </NavbarContainer>
+          <NavbarContainer />
           <SectionContainerWrapper>
             <SectionContainer>
               <LeadContainerHeading>About me, a software engineer from Berlin</LeadContainerHeading>

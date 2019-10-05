@@ -16,13 +16,7 @@ import { PostgresIcon } from "../components/PostgresqlIcon";
 import { ReactIcon } from "../components/ReactIcon";
 import { LaptopIcon } from "../components/LaptopIcon";
 import { IconSecurity } from "../components/IconSecurity";
-
-const NavbarContainer = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
+import {NavbarContainer} from '../components/navbar-container'
 
 const Navbar = styled.div`
   max-width: 800px;
@@ -314,19 +308,7 @@ class Index extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
         <SEO />
-        <NavbarContainer>
-          <Navbar>
-            <div>
-              <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
-            </div>
-            <div>
-              <StyledLink to={"/about"}>About</StyledLink>
-              <StyledLink to={"/articles"}>Articles</StyledLink>
-              {/* <StyledLink to={"/projects"}>Projects</StyledLink> */}
-              <StyledLink to={"/contact"}>Contact</StyledLink>
-            </div>
-          </Navbar>
-        </NavbarContainer>
+        <NavbarContainer />
         <SectionContainerWrapper>
           <SectionContainer>
             <LeadContainerHeading>Blog Articles</LeadContainerHeading>

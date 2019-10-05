@@ -37,8 +37,8 @@ const WrapperContent = styled.div`
   }
 
   @media (max-width: 450px) {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 `;
 

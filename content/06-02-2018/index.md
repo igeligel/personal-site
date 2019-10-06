@@ -1,5 +1,6 @@
 ---
 title: "Auto formatters for Python"
+seoTitle: "The 3 best auto formatters for Python"
 cover: "/thumbnails/auto-formatters-for-python-opengraph.png"
 category: "python"
 date: "06/02/2018"

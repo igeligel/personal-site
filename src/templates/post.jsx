@@ -156,6 +156,7 @@ export const pageQuery = graphql`
         date
         category
         tags
+        seoTitle
       }
       fields {
         slug

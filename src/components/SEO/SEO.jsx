@@ -12,12 +12,14 @@ class SEO extends Component {
     let postURL;
     if (postSEO) {
       const postMeta = postNode.frontmatter;
-      ({ title } = postMeta);
       description = postMeta.description
-        ? postMeta.description
-        : postNode.excerpt;
+      ? postMeta.description
+      : postNode.excerpt;
       image = postMeta.cover;
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
+
+      const { title: parsedTitle } = postMeta;
+      title = postMeta.seoTitle ? postMeta.seoTitle : parsedTitle
     } else {
       title = config.siteTitle;
       description = config.siteDescription;

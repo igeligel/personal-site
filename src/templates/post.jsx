@@ -86,6 +86,10 @@ const LeadContainerParapraph = styled.p`
   line-height: 28px;
   color: rgba(43, 55, 62, 0.8);
   margin-top: 3em;
+
+  @media (max-width: 768px) {
+    margin-top: 0.3em;
+  }
 `;
 
 export default class PostTemplate extends React.Component {

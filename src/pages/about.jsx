@@ -8,13 +8,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import { NavbarContainer } from "../components/navbar-container";
 import { SectionContainerWrapper } from "../components/section-container-wrapper";
-
-const LeadContainerHeading = styled.h1`
-  margin: 0;
-  font-size: 40px;
-  font-family: Lato;
-  margin-top: 1.6em;
-`;
+import { LeadContainerHeading } from "../components/lead-container-heading";
 
 const SectionHeading = styled.h2`
   margin: 0;

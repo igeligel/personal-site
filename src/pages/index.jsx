@@ -19,25 +19,13 @@ import { IconSecurity } from "../components/IconSecurity";
 import { NavbarContainer } from "../components/navbar-container";
 import { LeadCenterContainer } from "../components/lead-center-container";
 import { SectionContainerWrapper } from "../components/section-container-wrapper";
+import { LeadContainerHeading } from "../components/lead-container-heading";
 
 const LeadContainer = styled.div`
   max-width: 800px;
   width: 100%;
   display: flex;
   flex-direction: column;
-`;
-
-const LeadContainerHeading = styled.h1`
-  margin: 0;
-  font-size: 40px;
-  font-family: Lato;
-  margin-top: 1.6em;
-  margin-bottom: 0.618em;
-
-  @media (max-width: 768px) {
-    // margin-top: 0.3em;
-    // margin-bottom: 0.1em;
-  }
 `;
 
 const LeadContainerParapraph = styled.p`

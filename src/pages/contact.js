@@ -10,6 +10,7 @@ import { Link } from "gatsby";
 import { ProjectList } from "../components/ProjectList";
 import { NavbarContainer } from "../components/navbar-container";
 import { SectionContainerWrapper } from "../components/section-container-wrapper";
+import { LeadContainerHeading } from "../components/lead-container-heading";
 
 const HrefLink = styled.a`
   text-decoration: none;
@@ -36,13 +37,6 @@ const LeadContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-`;
-
-const LeadContainerHeading = styled.h1`
-  margin: 0;
-  font-size: 40px;
-  font-family: Lato;
-  margin-top: 1.6em;
 `;
 
 const LeadContainerParapraph = styled.p`

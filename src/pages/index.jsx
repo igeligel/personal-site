@@ -18,6 +18,7 @@ import { Footer } from "../components/Footer";
 import { IconSecurity } from "../components/IconSecurity";
 import { NavbarContainer } from "../components/navbar-container";
 import { LeadCenterContainer } from "../components/lead-center-container";
+import { SectionContainerWrapper } from "../components/section-container-wrapper";
 
 const LeadContainer = styled.div`
   max-width: 800px;
@@ -47,18 +48,6 @@ const LeadContainerParapraph = styled.p`
   font-size: 22px;
   line-height: 35px;
   color: rgba(43, 55, 62, 0.8);
-`;
-
-const SectionContainerWrapper = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-family: Lato;
-
-  @media (max-width: 768px) {
-    padding: 0px 12px;
-  }
 `;
 
 const SectionContainer = styled.div`

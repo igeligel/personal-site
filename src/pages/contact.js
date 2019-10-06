@@ -9,6 +9,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import { ProjectList } from "../components/ProjectList";
 import { NavbarContainer } from "../components/navbar-container";
+import { SectionContainerWrapper } from "../components/section-container-wrapper";
 
 const HrefLink = styled.a`
   text-decoration: none;
@@ -52,14 +53,6 @@ const LeadContainerParapraph = styled.p`
   line-height: 28px;
   color: rgba(43, 55, 62, 0.8);
   margin-top: 1.3em;
-`;
-
-const SectionContainerWrapper = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-family: Lato;
 `;
 
 const SectionContainer = styled.div`

@@ -6,7 +6,8 @@ import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import {NavbarContainer} from '../components/navbar-container'
+import { NavbarContainer } from "../components/navbar-container";
+import { SectionContainerWrapper } from "../components/section-container-wrapper";
 
 const LeadContainerHeading = styled.h1`
   margin: 0;
@@ -30,14 +31,6 @@ const LeadContainerParapraph = styled.p`
   line-height: 28px;
   color: rgba(43, 55, 62, 0.8);
   margin-top: 1.3em;
-`;
-
-const SectionContainerWrapper = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-family: Lato;
 `;
 
 const SectionContainer = styled.div`
@@ -111,7 +104,7 @@ class About extends React.Component {
       <Layout>
         <div className="index-container">
           <Helmet>
-          <title>{'Information about Kevin Peters'}</title>
+            <title>{"Information about Kevin Peters"}</title>
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1"
@@ -121,7 +114,9 @@ class About extends React.Component {
           <NavbarContainer />
           <SectionContainerWrapper>
             <SectionContainer>
-              <LeadContainerHeading>About me, a software engineer from Berlin</LeadContainerHeading>
+              <LeadContainerHeading>
+                About me, a software engineer from Berlin
+              </LeadContainerHeading>
               <LeadContainerParapraph>
                 I am a Kevin Peters, a software developer and JavaScript
                 enthusiast from Berlin, Germany. I currently work as a Software
@@ -132,9 +127,10 @@ class About extends React.Component {
               <LeadContainerParapraph>
                 This website was created a long time ago already with Nuxt.js
                 and similar tools but I found out it is quite limited so decided
-                to rearchitecture this website with Gatsby.js. Now it includes more content and
-                a better visual design. I like to share my thoughts and
-                learnings in form of blogs which I will present here mostly.
+                to rearchitecture this website with Gatsby.js. Now it includes
+                more content and a better visual design. I like to share my
+                thoughts and learnings in form of blogs which I will present
+                here mostly.
               </LeadContainerParapraph>
               <LeadContainerParapraph>
                 My goal is always to create high quality content and teach
@@ -205,7 +201,9 @@ class About extends React.Component {
                 <UnorderedListItem>
                   <LineItemYear>2018</LineItemYear>
                   <span>: </span>
-                  <span>Changed company, now @ Klarna as Software Engineer</span>
+                  <span>
+                    Changed company, now @ Klarna as Software Engineer
+                  </span>
                 </UnorderedListItem>
                 <UnorderedListItem>
                   <LineItemYear>2018</LineItemYear>
@@ -258,9 +256,7 @@ class About extends React.Component {
                 <UnorderedListItem>
                   <LineItemYear>2015</LineItemYear>
                   <span>: </span>
-                  <span>
-                    Started side-gig at a friend's business
-                  </span>
+                  <span>Started side-gig at a friend's business</span>
                 </UnorderedListItem>
                 <UnorderedListItem>
                   <LineItemYear>2015</LineItemYear>
@@ -326,7 +322,9 @@ class About extends React.Component {
                   <span>PostgreSQL + JetBrains DataGrip</span>
                 </UnorderedListItem>
                 <UnorderedListItem>
-                  <LineItemYear>Static site generator like this blog</LineItemYear>
+                  <LineItemYear>
+                    Static site generator like this blog
+                  </LineItemYear>
                   <span>: </span>
                   <span>Gatsby</span>
                 </UnorderedListItem>

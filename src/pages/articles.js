@@ -16,7 +16,8 @@ import { PostgresIcon } from "../components/PostgresqlIcon";
 import { ReactIcon } from "../components/ReactIcon";
 import { LaptopIcon } from "../components/LaptopIcon";
 import { IconSecurity } from "../components/IconSecurity";
-import {NavbarContainer} from '../components/navbar-container'
+import { NavbarContainer } from "../components/navbar-container";
+import { SectionContainerWrapper } from "../components/section-container-wrapper";
 
 const Navbar = styled.div`
   max-width: 800px;
@@ -50,14 +51,6 @@ const LeadContainerParapraph = styled.p`
   font-size: 22px;
   line-height: 35px;
   color: rgba(43, 55, 62, 0.8);
-`;
-
-const SectionContainerWrapper = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-family: Lato;
 `;
 
 const SectionContainer = styled.div`
@@ -162,22 +155,14 @@ const FormInput = styled.input`
     outline: none;
     border-color: rgba(64, 150, 196, 0.8);
   }
-
-  @media (max-width: 450px) {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
 `;
 
 const TagHandler = styled.div`
   display: flex;
 
-  @media (max-width: 450px) {
+  @media (max-width: 768px) {
     max-width: 100vw;
     overflow: scroll;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-right: 10px;
   }
 `;
 

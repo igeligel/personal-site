@@ -8,7 +8,8 @@ import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { ProjectList } from "../components/ProjectList";
-import {NavbarContainer} from '../components/navbar-container'
+import { NavbarContainer } from "../components/navbar-container";
+import { SectionContainerWrapper } from "../components/section-container-wrapper";
 
 const HrefLink = styled.a`
   text-decoration: none;
@@ -52,14 +53,6 @@ const LeadContainerParapraph = styled.p`
   line-height: 28px;
   color: rgba(43, 55, 62, 0.8);
   margin-top: ${props => (props.noMarginTop ? "0px" : "1.3em")};
-`;
-
-const SectionContainerWrapper = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-family: Lato;
 `;
 
 const SectionContainer = styled.div`
@@ -247,14 +240,16 @@ class Index extends React.Component {
     return (
       <Layout>
         <Helmet>
-        <title>{`Imprint of Kevin Peter's homepage`}</title>
+          <title>{`Imprint of Kevin Peter's homepage`}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
         <SEO />
         <NavbarContainer />
         <SectionContainerWrapper>
           <SectionContainer>
-            <LeadContainerHeading>Impressum von Kevin Peters</LeadContainerHeading>
+            <LeadContainerHeading>
+              Impressum von Kevin Peters
+            </LeadContainerHeading>
             <LeadContainerParapraph>
               Angaben gemäß § 5 TMG
             </LeadContainerParapraph>

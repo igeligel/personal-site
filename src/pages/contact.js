@@ -30,13 +30,6 @@ const Navbar = styled.div`
   justify-content: space-between;
 `;
 
-const LeadCenterContainer = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
 const LeadContainer = styled.div`
   max-width: 800px;
   width: 100%;

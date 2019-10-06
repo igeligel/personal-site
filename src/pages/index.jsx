@@ -16,14 +16,8 @@ import { ReactIcon } from "../components/ReactIcon";
 import { LaptopIcon } from "../components/LaptopIcon";
 import { Footer } from "../components/Footer";
 import { IconSecurity } from "../components/IconSecurity";
-import {NavbarContainer} from '../components/navbar-container'
-
-const LeadCenterContainer = styled.div`
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
+import { NavbarContainer } from "../components/navbar-container";
+import { LeadCenterContainer } from "../components/lead-center-container";
 
 const LeadContainer = styled.div`
   max-width: 800px;
@@ -38,6 +32,11 @@ const LeadContainerHeading = styled.h1`
   font-family: Lato;
   margin-top: 1.6em;
   margin-bottom: 0.618em;
+
+  @media (max-width: 768px) {
+    // margin-top: 0.3em;
+    // margin-bottom: 0.1em;
+  }
 `;
 
 const LeadContainerParapraph = styled.p`
@@ -56,6 +55,10 @@ const SectionContainerWrapper = styled.div`
   display: flex;
   justify-content: center;
   font-family: Lato;
+
+  @media (max-width: 768px) {
+    padding: 0px 12px;
+  }
 `;
 
 const SectionContainer = styled.div`

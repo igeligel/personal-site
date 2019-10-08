@@ -12,7 +12,7 @@ tags:
 
 # Auto formatters for Python 👨‍💻🤖
 
-As you can see in the recent [Stack Overflow developer survey](https://insights.stackoverflow.com/survey/2018/#most-popular-technologies), Python is one of the most popular programming languages available. With the recent rise of good auto formatters for Code like [gofmt](https://golang.org/cmd/gofmt/) for Golang or [prettier](https://prettier.io/) for JavaScript, there is a good question to ask: Which auto formatter to use with Python Code? An auto formatter is a tool which will format your code in a way it complies to the tool or any other standard it set.
+As you can see in the recent [Stack Overflow developer survey](https://insights.stackoverflow.com/survey/2018/#most-popular-technologies), Python is one of the most popular programming languages available. With the recent rise of good auto formatters for Code like [gofmt](https://golang.org/cmd/gofmt/) for Golang or [prettier](https://prettier.io/) for JavaScript, there is a good question to ask: Which auto formatter to use with Python Code? An auto formatter is a tool that will format your code in a way it complies with the tool or any other standard it set.
 
 <ins
   class="adsbygoogle"
@@ -29,9 +29,9 @@ First of all, we need to make sure that we know the reason automatic formatting 
 
 - This directly reduces the number of discussions about unnecessary things and let the developers focus on writing actual code
 
-- It will also help with onboarding developers on the code base because the style of the code is consistent
+- It will also help with onboarding developers on the codebase because the style of the code is consistent
 
-- Less merge conflicts since the style will almost always be the same
+- Fewer merge conflicts since the style will almost always be the same
 
 Those reasons are really good arguments for using auto formatters. It will save engineers time and company time because developers will be more productive.
 
@@ -43,13 +43,13 @@ autopep8 is an auto formatter built and open-sourced and made [by several develo
 
 ### yapf — [GitHub](https://github.com/google/yapf#knobs)
 
-_Yet another Python formatter_ is another tool which is produced and maintained by none other than [Google](https://github.com/google). It has ~7200 stars (June 2018) on GitHub and follows a different mindset in comparison to autopep8. It will not make code compliant with pep guidelines or try to fix linting issues. It will just format the code. This requires manual work then to make the code look nice which wastes developer time. Other than that yapf is really configurable. It includes defaults for pep8, Google, Facebook and Chromium styling. You can also change a lot of style rules. More information can be found in the [Knobs section](https://github.com/google/yapf#knobs) of the README. The tool also offers an online version where you can try out the formatting. It can be found [here](https://yapf.now.sh/).
+_Yet another Python formatter_ is another tool that is produced and maintained by none other than [Google](https://github.com/google). It has ~7200 stars (June 2018) on GitHub and follows a different mindset in comparison to autopep8. It will not make code compliant with pep guidelines or try to fix linting issues. It will just format the code. This requires manual work then to make the code look nice which wastes developer time. Other than that yapf is configurable in a lot of ways. It includes defaults for pep8, Google, Facebook, and Chromium styling. You can also change a lot of style rules. More information can be found in the [Knobs section](https://github.com/google/yapf#knobs) of the README. The tool also offers an online version where you can try out the formatting. It can be found [here](https://yapf.now.sh/).
 
 ### black — [GitHub](https://github.com/ambv/black)
 
 The last popular auto formatter which is considered in this blog article. It is an initiative of [Łukasz Langa](http://lukasz.langa.pl/) who is a Python Core Developer. The tool is used by different open source libraries like [Fabric 2 and pytest](https://twitter.com/llanga/status/1001411218987302912). It has around 3800 stars on GitHub (June 2018) and the main incentive is to not have that many options so you do not even have to discuss the options. This mindset is also followed by prettier, a big JavaScript auto formatter.
 
-All of these tools can be found on [PyPi](https://pypi.org/) and be installed via pip or similar Python package managers and can be used on the command line which makes them cross-environment friendly. You should also consider a tool like pre-commit or [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged) for an automatic pre-commit hook which works in every environment and which is easy to install. With this pre-commit hook, unformatted code will never be pushed from the development machine to the remote repository. For the comparison of yapf, I will use the Facebook, Google and pep8 setting since the Chromium setting does not get that much usage (2 spaces indent is a reason for this).
+All of these tools can be found on [PyPi](https://pypi.org/) and be installed via pip or similar Python package managers and can be used on the command line which makes them cross-environment friendly. You should also consider a tool like pre-commit or [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged) for an automatic pre-commit hook which works in every environment and which is easy to install. With this pre-commit hook, unformatted code will never be pushed from the development machine to the remote repository. For the comparison of yapf, I will use the Facebook, Google and pep8 settings since the Chromium setting does not get that much usage (2 spaces indent is a reason for this).
 
 <ins
   class="adsbygoogle"
@@ -60,7 +60,7 @@ All of these tools can be found on [PyPi](https://pypi.org/) and be installed vi
   data-full-width-responsive="true">
 </ins>
 
-In all examples, I will run the default configuration for each tool. For yapf, this is not possible that easy since there are different base configurations which I wanted to try. Those are pep8, Google and Facebook.
+In all examples, I will run the default configuration for each tool. For yapf, this is not possible that easy since there are different base configurations that I wanted to try. Those are pep8, Google and Facebook.
 
 In our first example, we will just show a function call inside a model which is normally too long for a line and see how the auto formatters are restructuring the code here.
 
@@ -88,7 +88,7 @@ _Left is the base code, yapf (Google, pep8) did not make any changes, the code i
 
 You can see that yapf (Facebook) and black are trying to convert the code to multi-line brackets while the rest do not do this. A difference between black and yapf (Facebook) is that strings also get formatted in black which you will see later too. Black uses double quotes for every string except for strings where double quotes are included.
 
-The next example is again a real-world example. Here we have a tuple which includes a nested tuple. It works more or less like an enumeration. Also, the \_ is used to translate the strings in the application.
+The next example is again a real-world example. Here we have a tuple that includes a nested tuple. It works more or less like an enumeration. Also, the \_ is used to translate the strings in the application.
 
 ```python
 class Basket():
@@ -103,7 +103,7 @@ class Basket():
     )
 ```
 
-_Base code, autopep8 and yapf (Google, pep8)_
+_Base code, autopep8, and yapf (Google, pep8)_
 
 You can see that this was the input for the auto formatters but autopep8, yapf (Google) and yapf (pep8) did not change anything in the code.
 
@@ -135,7 +135,7 @@ _black and yapf (Facebook)_
 
 Black and yapf (Facebook) gave the same result in the end since the input was formatted with double quotes already. Also, both of the formatters split up the lines a bit.
 
-The next example is testing a function with a lot of parameters. In reality, you should never do this, and instead pass an object as a parameter if you have more than three parameters. However, this is a great example for testing the auto formatters.
+The next example is testing a function with a lot of parameters. In reality, you should never do this, and instead, pass an object as a parameter if you have more than three parameters. However, this is a great example of testing the auto formatters.
 
 This time we get mostly different results. If you are trying to decide on an auto formatter, look at the next two examples. They will show you the real differences between the tools.
 
@@ -161,7 +161,7 @@ def function_with_really_long_name(
 
 _autopep8_
 
-Autopep8 is formatting the parameters below each other and also starting a new line since it analyzed that there are too many parameters to fit. With the default value for test_tuple it got some problems. The code is completely pep8-compliant but the tuple definition looks quite odd. We can also see again that closing brackets are not moved to a new line but instead it will do the minimum work to make the code pep8-compliant.
+Autopep8 is formatting the parameters below each other and also starting a new line since it analyzed that there are too many parameters to fit. With the default value for test_tuple, it got some problems. The code is completely pep8-compliant but the tuple definition looks quite odd. We can also see again that closing brackets are not moved to a new line but instead it will do the minimum work to make the code pep8-compliant.
 
 ```python
 def function_with_really_long_name(
@@ -178,7 +178,7 @@ def function_with_really_long_name(
 
 _black_
 
-Black is formatting the code similar to autopep8 but is moving the closing brackets to a new line and also does not format the tuple in an unnecessary way.
+Black is formatting the code similar to autopep8 but is moving the closing brackets to a new line and also does not unnecessarily format the tuple.
 
 ```python
 def function_with_really_long_name(
@@ -259,7 +259,7 @@ def generator_expression():
 
 _autopep8_
 
-Autopep8 also tries here to do the minimal work. The namedtuple will be split into multiple lines. The arguments for the names are also split into two lines. Other than that it will also try to leave the text on the same line in the super_long_property_in_tuple definition. The generator expression just gets put onto the next line.
+Autopep8 also tries here to do minimal work. The namedtuple will be split into multiple lines. The arguments for the names are also split into two lines. Other than that it will also try to leave the text on the same line in the super_long_property_in_tuple definition. The generator expression just gets put onto the next line.
 
 ```python
 def generator_expression():
@@ -299,7 +299,7 @@ def generator_expression():
 
 _black_
 
-Black is formatting strings to double quotes. The namedtuple is split up into three lines where the second line is just the important data. The array splitting happens as usual and brackets are moved a lot and not put behind the last elements. What is really interesting is that the string on line 10, for example, is not moved to the next line.
+Black is formatting strings to double-quotes. The namedtuple is split up into three lines where the second line is just the important data. The array splitting happens as usual and brackets are moved a lot and not put behind the last elements. What is interesting is that the string on line 10, for example, is not moved to the next line.
 
 The generator expression is also split up similar to autopep8 but the closing bracket was also moved to the next line.
 
@@ -403,13 +403,13 @@ Yapf with the Google and pep8 setting will format the code the same in this case
 
 ### Conclusion
 
-All of the formatters are doing a good job at formatting the code. But in my opinion, autopep8 is not really formatting but more or less just trying make your code compliant to pep8. Still, the code might look bad and does not fulfill the requirement of being an auto formatter.
+All of the formatters are doing a good job of formatting the code. But in my opinion, autopep8 is not formatting but more or less just trying to make your code compliant to pep8. Still, the code might look bad and does not fulfill the requirement of being an auto formatter.
 
-Black and yapf both have their own advantages and disadvantages. Yapf is highly configurable but I would recommend keeping the settings as little as possible. For yapf, the Facebook setting is quite similar to black’s but I think it is really weird that, for example, with the default configuration quotes are not formatted by default. Otherwise, it is just personal preference on which configuration to take or which formatter to choose.
+Black and yapf both have their advantages and disadvantages. Yapf is highly configurable but I would recommend keeping the settings as little as possible. For yapf, the Facebook setting is quite similar to black’s but I think it is really weird that, for example, with the default configuration quotes are not formatted by default. Otherwise, it is just a personal preference on which configuration to take or which formatter to choose.
 
-For me, personally, I will choose black for future projects since it is close to prettier in its approach. Yapf might have the bigger backing but I think this will change over time.
+I will choose black personally for future projects since it is close to prettier in its approach. Yapf might have the bigger backing but I think this will change over time.
 
-Also, another note: Use one of the auto formatters presented in this article. Your development team will save so much time. It will be incredible. Also, your personal code will look the same throughout different projects and repositories and everyone will be much happier. And remember to not nitpick so much about code style. People are opinionated, but here efficiency and less communication are far more important than opinions.
+Also, another note: Use one of the auto formatters presented in this article. Your development team will save so much time. It will be incredible. Also, your code will look the same throughout different projects and repositories and everyone will be much happier. And remember to not nitpick so much about code style. People are opinionated, but here efficiency and less communication are far more important than opinions.
 
 > Thanks for reading this. You rock* 🤘*
 > If you have any feedback or want to add something to this article just comment here. You can also follow me on [twitter](https://twitter.com/kevinpeters_) or visit my [personal site](https://www.kevinpeters.net/) to stay up-to-date with my blog articles and many more things.

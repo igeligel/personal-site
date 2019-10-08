@@ -27,7 +27,7 @@ class SEO extends Component {
       const { openGraphDescription: parsedOpenGraphDescription } = postMeta;
       openGraphDescription = parsedOpenGraphDescription || description;
 
-      const {twitterDescription: parsedTwitterDescription} = postMeta;
+      const { twitterDescription: parsedTwitterDescription } = postMeta;
       twitterDescription = parsedTwitterDescription || description;
     } else {
       title = config.siteTitle;

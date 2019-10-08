@@ -157,6 +157,8 @@ export const pageQuery = graphql`
         category
         tags
         seoTitle
+        openGraphDescription
+        twitterDescription
       }
       fields {
         slug

@@ -1,6 +1,8 @@
 ---
 title: "Auto formatters for Python"
 seoTitle: "The 3 best auto formatters for Python"
+openGraphDescription: "🔥Save time by using the best auto formatters for python - a comparison to find the best. The auto formatters in this blog article can be used online or in editors like vscode and feature Python 2 and Python 3."
+twitterDescription: "🔥Save time by using the best auto formatters for python - a comparison to find the best for Python 2 and Python 3"
 cover: "/thumbnails/auto-formatters-for-python-opengraph.png"
 category: "python"
 date: "06/02/2018"

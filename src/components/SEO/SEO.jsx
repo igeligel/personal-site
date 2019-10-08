@@ -8,18 +8,27 @@ class SEO extends Component {
     const { postNode, postPath, postSEO } = this.props;
     let title;
     let description;
+    let openGraphDescription;
+    let twitterDescription;
     let image;
     let postURL;
     if (postSEO) {
       const postMeta = postNode.frontmatter;
-      description = postMeta.description
-      ? postMeta.description
-      : postNode.excerpt;
       image = postMeta.cover;
       postURL = urljoin(config.siteUrl, config.pathPrefix, postPath);
 
       const { title: parsedTitle } = postMeta;
-      title = postMeta.seoTitle ? postMeta.seoTitle : parsedTitle
+      title = postMeta.seoTitle ? postMeta.seoTitle : parsedTitle;
+
+      description = postMeta.description
+        ? postMeta.description
+        : postNode.excerpt;
+
+      const { openGraphDescription: parsedOpenGraphDescription } = postMeta;
+      openGraphDescription = parsedOpenGraphDescription || description;
+
+      const {twitterDescription: parsedTwitterDescription} = postMeta;
+      twitterDescription = parsedTwitterDescription || description;
     } else {
       title = config.siteTitle;
       description = config.siteDescription;
@@ -84,7 +93,7 @@ class SEO extends Component {
         <meta property="og:url" content={postSEO ? postURL : blogURL} />
         {postSEO ? <meta property="og:type" content="article" /> : null}
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={openGraphDescription} />
         <meta property="og:image" content={image} />
         <meta
           property="fb:app_id"
@@ -98,7 +107,7 @@ class SEO extends Component {
           content={config.userTwitter ? config.userTwitter : ""}
         />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
+        <meta name="twitter:description" content={twitterDescription} />
         <meta name="twitter:image" content={image} />
       </Helmet>
     );

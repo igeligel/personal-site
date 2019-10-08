@@ -86,7 +86,7 @@ class Basket():
     )
 ```
 
-_Left is the base code, yapf (Google, pep8) did not make any changes, the code in the middle is formatted by black and the right one is formatted by yapf (Facebook)_
+On top is the base code, yapf (Google, pep8) did not make any changes, the code in the middle is formatted by black and the lower one is formatted by yapf (Facebook)_
 
 You can see that yapf (Facebook) and black are trying to convert the code to multi-line brackets while the rest do not do this. A difference between black and yapf (Facebook) is that strings also get formatted in black which you will see later too. Black uses double quotes for every string except for strings where double quotes are included.
 

@@ -32,15 +32,15 @@ SELECT * FROM example_table WHERE LOWER(example_column) LIKE '%mel%';
 
 ## Explanation
 
-PostgreSQL wildcards are an important tool for searching in SQL databases. Most of the time text in PostgreSQL databases is saved in columns as `TEXT` or `VARCHAR` type. The general recommendation is to use `TEXT` though.
+PostgreSQL wildcards are an important tool for searching in SQL databases. Most of the time text in PostgreSQLnd databases is saved in columns as `TEXT` or `VARCHAR` type. The general recommeation is to use `TEXT` though. It is no problem though if something like the `VARCHAR` type is used. All the solutions work the same here in PostgreSQL.
 
-So searching for an exact text in a column is quite easy with a statement like:
+Searching for an exact text in a column is quite easy with a statement like:
 
 ```sql
 SELECT * FROM example_table WHERE example_column='Mel';
 ```
 
-From a table with a lot of entries it will filter all rows which have the column `example_column` with the value `Mel`.
+From a table with a lot of entries of fictional person data, it will filter all rows which have the column `example_column` with the value `Mel`.
 
 <table>
   <thead>
@@ -244,6 +244,8 @@ And it would result in the following table as SQL query result.
   </tbody>
 </table>
 
+The `%` sign in the query acts as a match for any character. But not even just a match. It is a match for zero to infinite characters. That is why this operator is matching `Mel` and `Melissa`.
+
 ---
 
 To match all three characters starting with `M`.
@@ -251,3 +253,13 @@ To match all three characters starting with `M`.
 ```sql
 SELECT * FROM example_table WHERE example_column LIKE 'M__';
 ```
+
+- like
+- PostgreSQL wildcards
+- postgres wildcard
+- query
+- search
+- index
+- string
+- match
+- operator

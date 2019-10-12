@@ -1,5 +1,9 @@
 ---
 title: "How to query with PostgreSQL wildcards like a Pro"
+seoTitle: "How to query with PostgreSQL wildcards like a Pro"
+description: ""
+openGraphDescription: ""
+twitterDescription: ""
 cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "postgresql"
 date: "09/27/2019"

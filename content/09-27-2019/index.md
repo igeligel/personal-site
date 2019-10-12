@@ -37,8 +37,8 @@ SELECT * FROM example_table WHERE LOWER(example_column) LIKE '%mel%';
 ## Quicklinks
 
 1. [Basic filtering in PostgreSQL or SQL](#basic-filtering-in-postgresql-or-sql)
-1. [The `%` wildcard operator in a nutshell](#the-%-wildcard-operator-in-a-nutshell)
-1. [The `_` wildcard operator in a nutshell]()
+1. [The `%` wildcard operator in a nutshell](#the-code-classlanguage-textcode-wildcard-operator-in-a-nutshell)
+1. [The `_` wildcard operator in a nutshell](#the-code-classlanguage-text_code-wildcard-operator-in-a-nutshell)
 1. [Search with dynamic cases or full text search](#search-with-dynamic-cases-or-full-text-search)
 1. [Conclusion](#conclusion)
 

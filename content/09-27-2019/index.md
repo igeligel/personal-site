@@ -1,9 +1,9 @@
 ---
 title: "How to query with PostgreSQL wildcards like a Pro"
 seoTitle: "How to query with PostgreSQL wildcards like a Pro"
-description: ""
-openGraphDescription: ""
-twitterDescription: ""
+description: "Learn how to master PostgreSQL wildcards like % (percentage) or _ (underscore) in SQL queries to enable rich filtering of data."
+openGraphDescription: "Learn how to master PostgreSQL wildcards like % (percentage) or _ (underscore) in SQL queries to enable rich filtering of data."
+twitterDescription: "Learn how to master PostgreSQL wildcards like % (percentage) or _ (underscore) in SQL queries to enable rich filtering of data."
 cover: "https://unsplash.it/1152/300/?random?FaityWitch"
 category: "postgresql"
 date: "09/27/2019"

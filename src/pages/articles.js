@@ -277,6 +277,7 @@ class Index extends React.Component {
         <Helmet>
           <title>{"Blogs about technologies by Kevin Peters"}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="description" content="Find the most recent stories about web development here to advance in your career and learn new skills in the software engineering world." />
         </Helmet>
         <SEO />
         <NavbarContainer />

@@ -240,6 +240,7 @@ class Index extends React.Component {
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
+            <meta name="description" content="Contact information like email or twitter of Kevin Peters." />
           </Helmet>
           <SEO />
           <NavbarContainer />

@@ -103,6 +103,7 @@ class About extends React.Component {
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
+            <meta name="description" content="Basic information about Kevin Peters, a software developer currently in Berlin, thriving in the Software Engineering world." />
           </Helmet>
           <SEO />
           <NavbarContainer />

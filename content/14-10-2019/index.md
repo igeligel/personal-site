@@ -53,7 +53,7 @@ SELECT * FROM example_table WHERE LOWER(example_column) LIKE '%mel%';
 
 ## Basic filtering in PostgreSQL or SQL
 
-PostgreSQL wildcards are an important tool for searching in SQL databases. Most of the time text in PostgreSQLnd databases is saved in columns as `TEXT` or `VARCHAR` type. The general recommeation is to use `TEXT` though. It is no problem though if something like the `VARCHAR` type is used. All the solutions work the same here in PostgreSQL.
+PostgreSQL wildcards are an important tool for searching in SQL databases. Most of the time text in PostgreSQL databases is saved in columns as `TEXT` or `VARCHAR` type. The general recommendation is to use `TEXT` though. It is no problem though if something like the `VARCHAR` type is used. All the solutions work the same here in PostgreSQL.
 
 Searching for an exact text in a column is quite easy with a statement like:
 
@@ -161,7 +161,7 @@ Exactly what we wanted to achieve. But for more advanced use cases like filterin
 
 ## The `%` wildcard operator in a nutshell
 
-In our previous dataset we filtered all values which start with `Mel` in the exact casing. Now we filter all rows which have the value **like** Mel out of our original dataset. This can be achieved with a wildcard character. In this case here it is not important how many characters are wildcarded. This basically means it could be anything like `Melissa`, `Melloremipsum` or `Mel`. For getting this to work, PostgreSQL offers the character `%`. With this we can build a query in theory which can match all of the words above. There is one nuance though, instead of using the `WHERE ... = '...'` filter, we need to use a statement called `LIKE`. The statement will look like `SELECT * FROM ... WHERE ... LIKE '...'`.
+In our previous dataset, we filtered all values which start with `Mel` in the exact casing. Now we filter all rows which have the value **like** Mel out of our original dataset. This can be achieved with a wildcard character. In this case, here it is not important how many characters are wildcarded. This basically means it could be anything like `Melissa`, `Melloremipsum` or `Mel`. For getting this to work, PostgreSQL offers the character `%`. With this, we can build a query in theory which can match all of the words above. There is one nuance though, instead of using the `WHERE ... = '...'` filter, we need to use a statement called `LIKE`. The statement will look like `SELECT * FROM ... WHERE ... LIKE '...'`.
 
 <table>
   <thead>
@@ -236,7 +236,7 @@ To get these results the query could look like:
 SELECT * FROM example_table WHERE example_column LIKE 'Mel%';
 ```
 
-And it would result in the following table as SQL query result.
+And it would result in the following table as the SQL query result.
 
 <table>
   <thead>
@@ -273,9 +273,9 @@ The `%` sign in the query acts as a match for any character. But not even just a
 
 ## The `_` wildcard operator in a nutshell
 
-In the last search, we have defined on infinite wildcards with the `%` which match strings with zero to an infinite amount of characters and other filters. Sometimes we have use-cases to just wildcard a specific character in some text. For example there could be types with or without a single number attached. These types could be `SALE` but also `SALE1` or `SALE8`. In this example our matches look really similar, but if we know that there is just on number in the matching string, we could use the wildcard operator `_` to match exactly the cases we want. For our sale types we could use `SALE_`.
+In the last search, we have defined infinite wildcards with the `%` which match strings with zero to an infinite amount of characters and other filters. Sometimes we have use-cases to just wildcard a specific character in some text. For example, there could be types with or without a single number attached. These types could be `SALE` but also `SALE1` or `SALE8`. In this example, our matches look really similar, but if we know that there is just one number in the matching string, we could use the wildcard operator `_` to match exactly the cases we want. For our sale types, we could use `SALE_`.
 
-In our example table, we could have different results based on this. To make a good search though, we could find all names in the table which have three characters but must start with `M`. In the example table there are three entries which will match the condition.
+In our example table, we could have different results based on this. To make a good search though, we could find all the names in the table which have three characters but must start with `M`. In the example table, there are three entries that will match the condition.
 
 <table>
   <thead>
@@ -387,9 +387,9 @@ After executing the query with the PostgreSQL wildcard, it will output the follo
 
 This result is not a surprise and resulted in our expected output. It includes the rows for the `example_column`s `Max` and `Mel`, where for `Mel` there exist two rows.
 
-## Search with dynamic cases or full text search
+## Search with dynamic cases or full-text search
 
-Another problem most people are facing is to search in different cases with PostgreSQL wildcards. This functionality in most programming languages is called `include` or similar. In JavaScript the `includes` prototype function is existing for arrays. This can be used to check if an array includes a specific value. This works relatively well for primitive data types.
+Another problem most people are facing is to search in different cases with PostgreSQL wildcards. This functionality in most programming languages is called `include` or similar. In JavaScript, the `includes` prototype function is existing for arrays. This can be used to check if an array includes a specific value. This works relatively well for primitive data types.
 
 ```js
 const numbers = [1, 4, 9];
@@ -427,7 +427,7 @@ console.log(includesPattern);
 // Outputs true
 ```
 
-The `includes` functionality is not existing in PostgreSQL or SQL in general. But for these cases the PostgreSQL wildcards exist. As in the section earlier mentioned, there is an operator `%` which matches zero to infinite amount of random characters in a word. We can use this operator for matching our desired rows.
+The `includes` functionality is not existing in PostgreSQL or SQL in general. But for these cases, the PostgreSQL wildcards exist. As in the section earlier mentioned, there is an operator `%` which matches zero to an infinite amount of random characters in a word. We can use this operator to match our desired rows.
 
 <table>
   <thead>
@@ -588,7 +588,7 @@ It would result in the exact same table output as before but the query looks far
 
 ## Conclusion
 
-PostgreSQL wildcards are an amazing tool to extend queries. Queries are adjusted to include a wide range of dyanmic filtering which is important for systems with big data. Most of the time this data is unstructured on the value-base. A good example are the sale types mentioned in an earlier example which could be `SALE1` or `SALE2`. For some sub-systems this difference might be important but for some systems it is not important. Also the data should rather be structured to include `detailed_...` column for these cases to achieve SQL normalization. With the wildcards, we can search for these "unnormalized" values in an easy way.
+PostgreSQL wildcards are an amazing tool to extend queries. Queries are adjusted to include a wide range of dynamic filtering which is important for systems with big data. Most of the time this data is unstructured on the value-base. A good example is the sale types mentioned in an earlier example which could be `SALE1` or `SALE2`. For some sub-systems, this difference might be important but for some systems, it is not important. Also, the data should rather be structured to include `detailed_...` column for these cases to achieve SQL normalization. With the wildcards, we can search for these "unnormalized" values in an easy way.
 
 <!--
 - like

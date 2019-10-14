@@ -4,9 +4,9 @@ seoTitle: "How to query with PostgreSQL wildcards like a Pro"
 description: "Learn how to master PostgreSQL wildcards like % (percentage) or _ (underscore) in SQL queries to enable rich filtering of data."
 openGraphDescription: "Learn how to master PostgreSQL wildcards like % (percentage) or _ (underscore) in SQL queries to enable rich filtering of data."
 twitterDescription: "Learn how to master PostgreSQL wildcards like % (percentage) or _ (underscore) in SQL queries to enable rich filtering of data."
-cover: "https://unsplash.it/1152/300/?random?FaityWitch"
+cover: "/thumbnails/how-to-query-with-postgre-sql-wildcards-like-a-pro.png"
 category: "postgresql"
-date: "09/27/2019"
+date: "10/14/2019"
 tags:
   - postgresql
   - databases
@@ -33,6 +33,15 @@ SELECT * FROM example_table WHERE example_column LIKE 'Mel__';
 # To match: Melissa, Emelio, Mel
 SELECT * FROM example_table WHERE LOWER(example_column) LIKE '%mel%';
 ```
+
+<ins
+  class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-6098077505348522"
+  data-ad-slot="2380157110"
+  data-ad-format="auto"
+  data-full-width-responsive="true">
+</ins>
 
 ## Quicklinks
 

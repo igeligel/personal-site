@@ -234,15 +234,18 @@ class Index extends React.Component {
     return (
       <Layout>
         <div className="index-container">
+          <SEO />
           <Helmet>
             <title>{"Contact Kevin Peters via Twitter or Email"}</title>
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
-            <meta name="description" content="Contact information like email or twitter of Kevin Peters." />
+            <meta
+              name="description"
+              content="Contact information like email or twitter of Kevin Peters."
+            />
           </Helmet>
-          <SEO />
           <NavbarContainer />
           <SectionContainerWrapper>
             <SectionContainer>

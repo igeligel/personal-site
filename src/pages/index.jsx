@@ -170,12 +170,12 @@ class Index extends React.Component {
 
     return (
       <Layout>
+        <SEO />
         <Helmet>
           <title>{`The Home Page of the Software Engineer Kevin Peters`}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="description" content="Find engaging stories about the web development world. A blog and site by Kevin Peters featuring topics like JavaScript, SQL, Software Engineering, Python, Vue.js, React and many more." />
         </Helmet>
-        <SEO />
         <NavbarContainer />
         <LeadCenterContainer>
           <LeadContainer>

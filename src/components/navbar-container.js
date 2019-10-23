@@ -74,9 +74,9 @@ export const NavbarContainer = () => {
           <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
         </NavbarHeader>
         <NavbarMenuContainer>
-          <StyledLink to={"/about"}>About</StyledLink>
-          <StyledLink to={"/articles"}>Articles</StyledLink>
-          <StyledLink to={"/contact"}>Contact</StyledLink>
+          <StyledLink to={"/about/"}>About</StyledLink>
+          <StyledLink to={"/articles/"}>Articles</StyledLink>
+          <StyledLink to={"/contact/"}>Contact</StyledLink>
         </NavbarMenuContainer>
       </Navbar>
     </StyledNavbarContainer>

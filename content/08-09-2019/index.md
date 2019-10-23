@@ -15,7 +15,7 @@ A lot of web applications have to deal with a lot of data. This data has to be s
 
 To understand the main problem we are looking here at, let us look at the architecture of a system which could save a lot of data into the database.
 
-![](./basic-architecture.png)
+![An event queue emits a message to the event consumer which is processing the message and saves it to the database and this data is then transmitted to the web application](./basic-architecture.png)
 
 This is a basic initial architecture without fallbacks on what happens during large data processing. The web application might or not have the data already when the request is sent from the consumer of the web application. Normally this happens in the frontend of the web application. But if the data is not available after it has been on the event queue it might leave two pieces of infrastructure in an error state. The event consumer could have failed to process the event but also the database could have failed to save the data. This scenario is quite common and could be fixed in a lot of ways but more importantly, when it happens, is to figure out when it occurs and which events are affected. The normal workflow to do this is:
 
@@ -70,7 +70,7 @@ One disadvantage of this query is that we do not query the additional data, unfo
 
 Under the hood, the query is working so fast because of how indexing is working in databases. The table is normally split into a tree. Quite confusing but let us have a look at the following diagram.
 
-![](./how-sql-requests.png)
+![Basic example of database partioning by showcasing that a table is separated into chunks to make SQL queries go directly to the chunk which was requested](./how-sql-requests.png)
 
 What PostgreSQL is doing, is that it will split the table internally in small tables which can be accessed fast. This is not the actual approach PostgreSQL will do but for simplification, we visualize it like this. So basically we have the following tables now:
 

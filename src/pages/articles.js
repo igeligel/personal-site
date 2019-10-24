@@ -315,7 +315,7 @@ class Index extends React.Component {
             <UnorderedList>
               {postList.map(post => (
                 <ListItem key={post.title}>
-                  <ListItemL to={post.path}>
+                  <ListItemL to={`${post.path}/`}>
                     <div style={{ display: "flex" }}>
                       <IconWrapper>
                         {post.primaryIcon === "javascript" && (

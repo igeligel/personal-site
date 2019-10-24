@@ -14,7 +14,7 @@ tags:
 
 If you have ever written a Vue.js application you surely used computed properties. Computed properties are existing to have some kind of opportunity to reduce the amount of logic in templates. A Vue.js component consists of three parts: The template, the script and the style. Those three parts can also be described as representation, logic, and style. If you fully live this standard you will not have any logic in your template. Just variables, methods calls, and other Vue.js bindings. Everything is in your `<script>` tag. Those can become really large but that is a sign for refactoring. But anyway let us concentrate on computed properties.
 
-So basically the computed properties rely on your data and props of the component but can also react (what a good pun) on other elements like [Vuex](https://vuex.vuejs.org/en/intro.html) store properties. If you want to know more how the reactivity is working the Vue.js docs got you covered [here](https://vuejs.org/v2/guide/reactivity.html).
+So basically the computed properties rely on your data and props of the component but can also react (what a good pun) on other elements like [Vuex](https://vuex.vuejs.org/) store properties. If you want to know more how the reactivity is working the Vue.js docs got you covered [here](https://vuejs.org/v2/guide/reactivity.html).
 
 A problem which occurs for many Vue.js projects is that computed properties get large. This is a big problem for readability. [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882), for example, states that functions should be small. This also applies to computed properties since those are just functions at the end which are called. Let us inspect this component:
 

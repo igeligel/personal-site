@@ -238,6 +238,4 @@ In the default state the HelloComponent will has one class called ‘blue’. Af
 
 I hope I could give you a nice start into testing Vue.js with Jest. Definitely look into the [Options/Data section of the Vue.js documentation](https://vuejs.org/v2/api/#Options-Data) to find more about mocking up data. And probably instead of the custom build with vue-server-renderer and jsdom you should look into [eddyerburgh/avoriaz](https://github.com/eddyerburgh/avoriaz) or the upcoming [vue-test-utils](https://github.com/vuejs/vue-test-utils).
 
-You also can find this blog post at my [personal blog](https://www.kevinpeters.net/blog/unit-testing-vue-js-components-with-jest).
-
 You can find the full code in the repository: [igeligel/vue-jest-example](https://github.com/igeligel/vue-jest-example)

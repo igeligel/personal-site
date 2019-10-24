@@ -53,7 +53,7 @@ export const Footer = () => {
         <div></div>
         <FooterColumn>
           <FooterText>© Kevin Peters 2019</FooterText>
-          <StyledLink to={"/imprint"}>Imprint</StyledLink>
+          <StyledLink to={"/imprint/"}>Imprint</StyledLink>
         </FooterColumn>
       </FooterContainer>
     </FooterMaster>

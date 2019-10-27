@@ -598,20 +598,20 @@ Another approach would be to use the `ILIKE` keyword. This keyword is supported 
 SELECT * FROM example_table WHERE example_column ILIKE '%mel%';
 ```
 
-This looks a bit cleaner, but it is good to mention that this is a bit slower than the `LOWER` conversion which we have done before. But it is a good alternative for case-unsensitive SQL queries.
+This looks a bit cleaner, but it is good to mention that this is a bit slower than the `LOWER` conversion which we have done before. But it is a good alternative for case-insensitive SQL queries.
 
-Another alternaative would be to use a Regular expression (also called Regex).
+Another alternative would be to use a Regular expression (also called Regex).
 
-This could be realized with a SQL query like the following.
+This could be realized with an SQL query like the following.
 
 ```sql
 SELECT * FROM example_table WHERE example_column ~* 'mel';
 ```
 
-This query is even slower, but I would not reocmmend to use Regular Expressions in these cases because they are hard to understand for a lot of people, even though the expressions are much more flexible. Sometimes you need to have the flexibilities and then regular expressions are exactly what you want to use.
+This query is even slower, but I would not recommend using Regular Expressions in these cases because they are hard to understand for a lot of people, even though the expressions are much more flexible. Sometimes you need to have the flexibilities and then regular expressions are exactly what you want to use.
 
-All of these approaches here work in simple solutions for full-text searches. But when performance is important for your project it might be worth it to look into `to_tsvector` and `to_tsquery` and proper indexing of your PostgreSQL tables. You can find more information about the textsearch in tables in the PostgreSQL documentation here: https://www.postgresql.org/docs/current/textsearch-tables.html.
+All of these approaches here work in simple solutions for full-text searches. But when performance is important for your project it might be worth it to look into `to_tsvector` and `to_tsquery` and proper indexing of your PostgreSQL tables. You can find more information about the text search in tables in the PostgreSQL documentation here: https://www.postgresql.org/docs/current/textsearch-tables.html.
 
 ## Conclusion
 
-PostgreSQL wildcards are an amazing tool to extend queries. Queries are adjusted to include a wide range of dynamic filtering which is important for systems with big data. Most of the time this data is unstructured on the value-base. A good example is the sale types mentioned in an earlier example which could be `SALE1` or `SALE2`. For some sub-systems, this difference might be important but for some systems, it is not important. Also, the data should rather be structured to include `detailed_...` column for these cases to achieve SQL normalization. With the wildcards, we can search for these "unnormalized" values in an easy way.
+PostgreSQL wildcards are an amazing tool to extend queries. Queries are adjusted to include a wide range of dynamic filtering which is important for systems with big data. Most of the time this data is unstructured on the value-base. A good example is the sale types mentioned in an earlier example which could be `SALE1` or `SALE2`. For some sub-systems, this difference might be important but for some systems, it is not important. Also, the data should rather be structured to include a `detailed_...` column for these cases to achieve SQL normalization. With the wildcards, we can search for these "unnormalized" values in an easy way.

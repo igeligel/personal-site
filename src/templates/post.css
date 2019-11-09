@@ -2,6 +2,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  max-width: 680px;
+  min-width: 680px;
+  align-self: center;
+}
+
+.blog-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-content * {
@@ -19,8 +28,11 @@
   font-family: Lato;
   padding: 0;
   /* margin-top: 1.6em; */
-  margin-bottom: 0.618em;
   color: rgb(43, 55, 62);
+
+  max-width: 680px;
+  min-width: 680px;
+  align-self: center;
 }
 
 .blog-content h1 .anchor {
@@ -37,6 +49,10 @@
   margin-top: 1.6em;
   margin-bottom: 0.618em;
   color: rgb(43, 55, 62);
+
+  max-width: 680px;
+  min-width: 680px;
+  align-self: center;
 }
 
 .blog-content h2 {
@@ -47,6 +63,10 @@
   margin-top: 1.3em;
   margin-bottom: 0.618em;
   color: rgb(43, 55, 62);
+
+  max-width: 680px;
+  min-width: 680px;
+  align-self: center;
 }
 
 .blog-content h2 .anchor {
@@ -92,6 +112,10 @@
   margin-inline-end: 0px;
   margin-top: 1.3em;
   line-height: 32px;
+
+  max-width: 680px;
+  min-width: 680px;
+  align-self: center;
 }
 
 .blog-content p a {
@@ -118,6 +142,10 @@
 .blog-content ul {
   margin-left: 24px;
   margin-top: 1.3em;
+
+  max-width: 680px;
+  min-width: 680px;
+  align-self: center;
 }
 
 .blog-content ul li + li {
@@ -136,6 +164,10 @@
 .blog-content ol {
   margin-left: 24px;
   margin-top: 1.3em;
+
+  max-width: 680px;
+  min-width: 680px;
+  align-self: center;
 }
 
 .blog-content ol li + li {
@@ -175,6 +207,17 @@
   border-left: 3px solid rgba(43, 55, 62, 0.39);
   padding-left: 13px;
   margin-left: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+
+  max-width: 680px;
+  min-width: 680px;
+  align-self: center;
+}
+
+.blog-content blockquote p {
+  margin: 0;
+  padding: 0;
 }
 
 .blog-content table {

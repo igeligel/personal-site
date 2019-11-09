@@ -87,6 +87,10 @@ const LeadContainerParapraph = styled.p`
   color: rgba(43, 55, 62, 0.8);
   margin-top: 3em;
 
+  max-width: 680px;
+  min-width: 680px;
+  align-self: center;
+
   @media (max-width: 768px) {
     margin-top: 0.3em;
   }
@@ -133,8 +137,8 @@ export default class PostTemplate extends React.Component {
               <div className="post-meta">
                 <PostTags tags={post.tags} />
                 <SocialLinks postPath={slug} postNode={postNode} />
+                <UserInfo config={config} />
               </div>
-              <UserInfo config={config} />
             </WrapperContent>
           </Wrapper>
         </div>

@@ -132,7 +132,7 @@ const GeneralDescriptionContainer = styled.div`
 
 const IndiehackersCardContainer = styled.div`
   margin-top: 20px;
-`
+`;
 
 class Index extends React.Component {
   render() {
@@ -192,10 +192,10 @@ class Index extends React.Component {
               <ProjectDescriptionContainer>
                 <LeadContainerParapraph>
                   caseconverter.pro is a web application focusing on making case
-                  conversions easy. I was unsatisfied with quality of
-                  applications which were available. Common problems were a bad
+                  conversions easy. I was unsatisfied with the quality of
+                  applications that were available. Common problems were a bad
                   user experience. An easy example for this is that original
-                  texts which I wanted to convert was never persisted, so I
+                  texts which I wanted to convert were never persisted, so I
                   could not convert the original text to another case again. The
                   same problem is solved similar in the Google Translator
                   application and I got inspired by it. Based on this I
@@ -203,11 +203,11 @@ class Index extends React.Component {
                   which case should be converted to another case. For example,
                   if the user only used case conversions from PascalCase to
                   camelCase and did these conversions for hundreds of times, it
-                  is highly when he types or pastes a text in PascalCase again,
+                  is high when he types or pastes a text in PascalCase again,
                   that he wants to receive the camelCase version of the text.
                   The artificial intelligence is programmed to predict this and
-                  converts the text accordingly but preserves the old text, so
-                  it can be also converted to another case style.
+                  convert the text accordingly but preserves the old text, so it
+                  can be also converted to another case style.
                 </LeadContainerParapraph>
               </ProjectDescriptionContainer>
             </ProjectContainer>
@@ -227,8 +227,8 @@ class Index extends React.Component {
                 </LeadContainerParapraph>
                 <LeadContainerParapraph>
                   On another note, you can also find me on Indiehackers. I would
-                  appreciate if you could follow me. There I share updates about
-                  this blog and my projects and try to contribute to the
+                  appreciate it if you could follow me. There I share updates
+                  about this blog and my projects and try to contribute to the
                   Indiehackers community.
                 </LeadContainerParapraph>
               </GeneralDescriptionContainer>

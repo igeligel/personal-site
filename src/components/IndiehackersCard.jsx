@@ -105,7 +105,7 @@ export const IndiehackersCard = () => {
   return (
     <StyledIndiehackersCard>
       <ProfileContent>
-        <AvatarImage src="/profile.png"></AvatarImage>
+        <AvatarImage src="/profile.png" alt="image of kevin peters"/>
         <NotAvatarContent>
           <ProfileInformationContainer>
             <Name>Kevin Peters</Name>

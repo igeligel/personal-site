@@ -110,7 +110,7 @@ export const IndiehackersCard = () => {
           <ProfileInformationContainer>
             <Name>Kevin Peters</Name>
             <OtherInformation>
-              23 · Berlin, Germany · joined 2 months ago
+              23 · Berlin, Germany · joined September 2019
             </OtherInformation>
           </ProfileInformationContainer>
           <FollowContainer>

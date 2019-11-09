@@ -76,6 +76,7 @@ export const NavbarContainer = () => {
         <NavbarMenuContainer>
           <StyledLink to={"/about/"}>About</StyledLink>
           <StyledLink to={"/articles/"}>Articles</StyledLink>
+          <StyledLink to={"/projects/"}>Projects</StyledLink>
           <StyledLink to={"/contact/"}>Contact</StyledLink>
         </NavbarMenuContainer>
       </Navbar>

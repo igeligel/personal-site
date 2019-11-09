@@ -144,7 +144,7 @@ class Index extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta
             name="description"
-            content="The imprint of Kevin Peters including basic information about the person."
+            content="Projects bootstrapped by Kevin Peters including a case converter built on top of artifical intelligence."
           />
         </Helmet>
         <NavbarContainer />

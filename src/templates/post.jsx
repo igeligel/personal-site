@@ -88,7 +88,6 @@ const LeadContainerParapraph = styled.p`
   margin-top: 3em;
 
   max-width: 680px;
-  min-width: 680px;
   align-self: center;
 
   @media (max-width: 768px) {

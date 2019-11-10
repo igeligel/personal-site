@@ -4,7 +4,7 @@
   justify-content: center;
 
   max-width: 680px;
-  min-width: 680px;
+  width: 100%;
   align-self: center;
 }
 
@@ -31,7 +31,7 @@
   color: rgb(43, 55, 62);
 
   max-width: 680px;
-  min-width: 680px;
+  width: 100%;
   align-self: center;
 }
 
@@ -51,7 +51,7 @@
   color: rgb(43, 55, 62);
 
   max-width: 680px;
-  min-width: 680px;
+  width: 100%;
   align-self: center;
 }
 
@@ -65,7 +65,7 @@
   color: rgb(43, 55, 62);
 
   max-width: 680px;
-  min-width: 680px;
+  width: 100%;
   align-self: center;
 }
 
@@ -114,7 +114,7 @@
   line-height: 32px;
 
   max-width: 680px;
-  min-width: 680px;
+  width: 100%;
   align-self: center;
 }
 
@@ -144,7 +144,7 @@
   margin-top: 1.3em;
 
   max-width: 680px;
-  min-width: 680px;
+  width: 100%;
   align-self: center;
 }
 
@@ -166,7 +166,7 @@
   margin-top: 1.3em;
 
   max-width: 680px;
-  min-width: 680px;
+  width: 100%;
   align-self: center;
 }
 
@@ -211,7 +211,7 @@
   margin-bottom: 8px;
 
   max-width: 680px;
-  min-width: 680px;
+  width: 100%;
   align-self: center;
 }
 

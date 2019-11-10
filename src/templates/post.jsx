@@ -12,7 +12,7 @@ import "./prismjs-vscode-dark.css";
 import "./post.css";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import {NavbarContainer} from '../components/navbar-container'
+import { NavbarContainer } from "../components/navbar-container";
 // 'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif
 
 const Wrapper = styled.div`
@@ -98,10 +98,15 @@ const LeadContainerParapraph = styled.p`
 export default class PostTemplate extends React.Component {
   componentDidMount() {
     try {
-      if(window) (window.adsbygoogle = window.adsbygoogle || []).push({});
-
+      if (window) (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {}
-  };
+
+    try {
+      var script = document.createElement("script");
+      script.src = "https://platform.twitter.com/widgets.js";
+      //do stuff with the script
+    } catch (ignore) {}
+  }
 
   render() {
     const { data, pageContext } = this.props;
@@ -125,11 +130,13 @@ export default class PostTemplate extends React.Component {
           <Wrapper>
             {/* <h1>{post.title}</h1> */}
             <WrapperContent>
-              <LeadContainerParapraph><i>written on {post.date}</i></LeadContainerParapraph>
+              <LeadContainerParapraph>
+                <i>written on {post.date}</i>
+              </LeadContainerParapraph>
               <div
                 className="blog-content"
                 style={{
-                  fontFamily: `'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif`
+                  fontFamily: `'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif`,
                 }}
                 dangerouslySetInnerHTML={{ __html: postNode.html }}
               />

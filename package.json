@@ -17,7 +17,7 @@
     "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-sharp": "^2.2.8",
-    "gatsby-plugin-sitemap": "^2.2.3",
+    "gatsby-plugin-sitemap": "^2.2.20",
     "gatsby-plugin-styled-components": "^3.1.2",
     "gatsby-plugin-twitter": "^2.1.2",
     "gatsby-remark-autolink-headers": "^2.1.3",

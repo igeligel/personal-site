@@ -5,8 +5,8 @@ category: "software-engineering"
 date: "12/06/2019"
 tags:
   - software-engineering
-  - javascript
-  - programming
+  - resume
+  - career
 ---
 
 # The ultimate guide writing a software engineer resume
@@ -17,7 +17,7 @@ After reviewing dozens of resumes in the past years, I decided to write this ser
 
 ## Blog posts
 
-1. WIP: The general structure of your resume
+1. [The general structure of a resume](/the-general-structure-of-a-resume/)
 1. WIP: The 10 Second Rule for resumes
 1. WIP: The header of your resume
 1. WIP: Showcasing your education perfectly

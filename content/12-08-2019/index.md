@@ -48,6 +48,42 @@ Technical skills I would always list as last skill and do not put a lot of empha
 
 ## Consistency in structure
 
+An important factor in your resume is consistency in structure. Consistency should be seen throughout your resume actually. It is important for fonts, font-sizes colors, indentation and many more factors. The human likes to see the same thing over an over again. When it comes to resumes the first impression normally counts. When this first impression is good the hiring manager or recruiter will look for similar trends in other topics of the same quality. If the quality will be less the person will have a worse image of you which will affect you negative. So you should thrive for the same high quality throughout the complete resume.
+
+Consistency begins in design first. What helped me as a non-designer with creating resumes in first place is to really design the resume without colors first. Just different types of grey. You should create a simple color palette of the maximum of three different grey tones first. The same goes for fonts. The first important part about font headings is that you should have two different fonts in general. Usually fonts are designed for a specific use case. Just some are designed for legibility. In general the rule is that fonts designed for headlines have a shorter height of lowercase letters and fonts for legibility have bigger height. For font pairings I can recommend the sites listed in the font chapters later. One important part here is to choose the right font for the company you apply to. Fonts can trigger different emotions in people. Modern playful fonts might attract startups more but established old companies might be looking for a classical font. This will be elobarated in detail in the chapter WIP - Target your resume to the role. The different sizes of fonts are also important. In general, I recommend to choose three sizes for fonts. All of them are defined in px and should not change a lot. Keep it consistent. This is also true for fonts, lists and other small parts like indentation. Another small design tip is to start out early with the least whitespace as possible between elements. Whitespace can always be increased later but at a later stage of the resume creation process it is harder to remove whitespace than adding more whitespace.
+
+One thing to remember is that your resume's content is more important than the design of the resume in first place as long as you stay below one site.
+
+Another part which should stay consistent is the tone of your achievements. Do not change sentence structures a lot and try to keep the sentences short but precise. As mentioned earlier, a resume should follow the STAR methodology to achieve the highest success rates. But once you are applying the STAR methodology, the resume should continue with it.
+
+Different parts of the resume should also look similar because design and content should be structured the same way. The work experience and project section is mostly the same. As a work experience you might have:
+
+- Title of position
+- Tenure length
+- Company
+- A list of achievements during this job
+
+In the project section you will also have a list of projects. They are similar to the Work Experience section and should be similar in form of design and content. The content could consist of:
+
+- Title of project
+- Time spent on the project as timeline or similar
+- Subtitle of short sub headline describing the project
+- Technical details of the project as a list
+
+As we see, the project items and work experience items have more or less the same structure and could use the same design as the same kind of tone during the list descriptions.
+
+### Fonts: colorsandfonts
+
+Probably the best web page to discover good font pairings. You can find it [here](https://www.colorsandfonts.com/fonts.html). It provides also a lot of other design resources like color schemas, color gradients and a lot of other resources. Their font pairings are really good though.
+
+### Fonts: fontpairings.bypeople
+
+This tool also provides a lot of resources for good font pairings. You can find the tool [here](https://fontpairings.bypeople.com). It is more extensive when it comes to font pairing offers but in general it seems less impressive.
+
 ## Vertically splitting resumes
 
+In my career, I saw a lot of resumes where the layout is split vertically. Most of these resumes have two columns. Normally these resumes are structured in a way that there are two columns, one main column where the content like work experience, projects and so on go and one smaller column where meta information like your name and skills are listed. This is in particular bad if a hiring manager is really interested in your work experience. Most hiring managers or recruiters will look at your work experience and definitely want to know if you have worked at a big company. If so, make it apparent and clear that you worked at some bigger company but taking space with another column might be not ideal because space will be wasted for not wanted information. The hiring manager or recruiter will first look at your work experience rather than your skills or personal information because they want to know if you have experience and can contribute to reach the company's goals. These goals are mostly focused on revenue or profit and personal information or skills listed in a skill section do not really show how you can contribute to this. They are an indicator but no convincing argument.
+
 ## No photo
+
+A lot of resumes have a photo attached. Especially in Europe it is common to attach photos to the resume. In most of the cases this is unnecessary and is actually an disadvantage. Discrimination of applicants is officially illegal but rejecting someone because of a bad feeling caused by looks can happen without being seen publically. A resume should not include a picture because of this reason in most cases.

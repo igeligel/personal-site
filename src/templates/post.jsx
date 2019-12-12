@@ -112,6 +112,13 @@ export default class PostTemplate extends React.Component {
     const { data, pageContext } = this.props;
     const { slug } = pageContext;
     const postNode = data.markdownRemark;
+
+    const sortedEdges = data.allMarkdownRemark.edges.sort(
+      (a, b) =>
+        new Date(b.node.frontmatter.date) - new Date(b.node.frontmatter.date),
+    );
+    // allMarkdownRemark.edges[""0""].node.frontmatter.date
+    debugger;
     const post = postNode.frontmatter;
     if (!post.id) {
       post.id = slug;
@@ -173,6 +180,27 @@ export const pageQuery = graphql`
       fields {
         slug
         date
+      }
+    }
+    allMarkdownRemark(
+      limit: 2000
+      sort: { fields: [fields___date], order: DESC }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            tags
+            cover
+            date
+          }
+        }
       }
     }
   }

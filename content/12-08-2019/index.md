@@ -1,6 +1,6 @@
 ---
 title: "The general structure of a resume"
-cover: "https://unsplash.it/1152/300/?random?FaityWitch"
+cover: "/thumbnails/the-general-structure-of-a-resume.png"
 category: "software-engineering"
 date: "12/08/2019"
 tags:

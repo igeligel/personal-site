@@ -1,6 +1,6 @@
 ---
 title: "The ultimate guide writing a software engineer resume"
-cover: "https://unsplash.it/1152/300/?random?FaityWitch"
+cover: "/thumbnails/the-ultimate-guide-writing-a-software-engineer-resume.png"
 category: "software-engineering"
 date: "12/06/2019"
 tags:

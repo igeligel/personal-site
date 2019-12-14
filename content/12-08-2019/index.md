@@ -1,5 +1,9 @@
 ---
-title: "The general structure of a resume"
+title: "The General Structure of a Resume"
+seoTitle: "The General Structure of a Resume"
+description: "Structuring a resume to land offers at bit technology companies is hard. Follow this guide on how to structure the resume to make it appealing."
+openGraphDescription: "Structuring a resume to land offers at bit technology companies is hard. Follow this guide on how to structure the resume to make it appealing."
+twitterDescription: "Structuring a resume to land offers at bit technology companies is hard. Follow this guide on how to structure the resume to make it appealing."
 cover: "/thumbnails/the-general-structure-of-a-resume.png"
 category: "software-engineering"
 date: "12/08/2019"
@@ -9,7 +13,7 @@ tags:
   - career
 ---
 
-# The general structure of a resume
+# The General Structure of a Resume
 
 Resumes consist of different sections. These sections can include different topics but the most common are Personal Information, Education, Experience and Projects, Volunteering, Skills, and Interests. In most of the cases, Skills and Interests are put together in the same category. Listing interests is quite a controversial topic and I would not recommend to include the interests when the company does not seem too interested in them.
 

@@ -1,5 +1,9 @@
 ---
-title: "The ultimate guide writing a software engineer resume"
+title: "The ultimate guide writing a Software Engineer Resume"
+seoTitle: "The ultimate guide writing a Software Engineer Resume"
+description: "Writing a resume is hard? Right? Learn how to write a good resume that will give you offers by Apple, Microsoft, Amazon or Google. This guide will lead you through the pain points of writing a resume."
+openGraphDescription: "Writing a resume is hard? Right? Learn how to write a good resume that will give you offers by Apple, Microsoft, Amazon or Google."
+twitterDescription: "Writing a resume is hard? Right? Learn how to write a good resume that will give you offers by Apple, Microsoft, Amazon or Google."
 cover: "/thumbnails/the-ultimate-guide-writing-a-software-engineer-resume.png"
 category: "software-engineering"
 date: "12/06/2019"
@@ -9,7 +13,7 @@ tags:
   - career
 ---
 
-# The ultimate guide writing a software engineer resume
+# The ultimate guide writing a Software Engineer Resume
 
 Applying to companies is hard. The first step to get a new job is to have a nice resume which you will use to apply to the specific company. Normally, this is the first step where the applicant is getting into contact with the company. It is someone's first impression and is really important to have an overall smooth interview process.
 

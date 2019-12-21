@@ -12,7 +12,7 @@ import "./prismjs-vscode-dark.css";
 import "./post.css";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import {NavbarContainer} from '../components/navbar-container'
+import { NavbarContainer } from "../components/navbar-container";
 // 'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif
 
 const Wrapper = styled.div`
@@ -52,32 +52,6 @@ const Navbar = styled.div`
   justify-content: space-between;
 `;
 
-const MainStyledLink = styled(Link)`
-  margin: 0;
-  padding: 0;
-  color: #4096c4;
-  text-transform: uppercase;
-  font-family: Lato, sans-serif;
-  font-weight: 300;
-  font-size: 24px;
-  text-decoration: none;
-`;
-
-const StyledLink = styled(Link)`
-  // color: palevioletred;
-  // font-weight: bold;
-  color: rgba(64, 150, 196, 0.5);
-  font-weight: 300;
-  font-family: Lato, sans-serif;
-  margin-left: 1em;
-  line-height: 2em;
-  text-decoration: none;
-
-  :hover {
-    color: rgba(64, 150, 196, 1);
-  }
-`;
-
 const LeadContainerParapraph = styled.p`
   margin: 0;
   font-family: Lato;
@@ -87,23 +61,133 @@ const LeadContainerParapraph = styled.p`
   color: rgba(43, 55, 62, 0.8);
   margin-top: 3em;
 
+  max-width: 680px;
+  align-self: center;
+
   @media (max-width: 768px) {
     margin-top: 0.3em;
   }
 `;
 
+const PreviewContainer = styled.div`
+  max-width: 680px;
+  display: flex;
+  align-self: center;
+  width: 100%;
+  padding-top: 32px;
+  flex-direction: column;
+  padding-bottom: 10px;
+`;
+
+const PreviewCardContainer = styled.div`
+  display: flex;
+`;
+
+const PreviewCard = styled.div`
+  flex: 0 0 50%;
+  padding-left: 10px;
+  padding-right: 10px;
+`;
+
+const PreviewImage = styled.img`
+  width: 100%;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: inherit;
+  }
+
+  &:active {
+    color: inherit;
+  }
+`;
+
+const PreviewCardHeading = styled.h3`
+  margin: 0;
+  padding: 6px 0px;
+  color: hsl(202, 18%, 21%);
+`;
+
+const PreviewCardParagraph = styled.p`
+  margin: 0;
+  padding: 0;
+  color: rgba(43, 55, 62, 0.8);
+`;
+
+const PreviewHeading = styled.h2`
+  margin: 0;
+  font-size: 30px;
+  font-family: Lato;
+  padding: 0;
+  margin-bottom: 0.618em;
+  color: hsl(202, 9%, 35%);
+  max-width: 680px;
+  width: 100%;
+  align-self: center;
+`;
+
 export default class PostTemplate extends React.Component {
   componentDidMount() {
     try {
-      if(window) (window.adsbygoogle = window.adsbygoogle || []).push({});
-
+      if (window) (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {}
-  };
+
+    try {
+      var script = document.createElement("script");
+      script.src = "https://platform.twitter.com/widgets.js";
+      //do stuff with the script
+    } catch (ignore) {}
+  }
 
   render() {
+    const previews = [];
     const { data, pageContext } = this.props;
     const { slug } = pageContext;
     const postNode = data.markdownRemark;
+
+    const sortedEdges = data.allMarkdownRemark.edges.sort(
+      (a, b) =>
+        new Date(b.node.frontmatter.date) - new Date(b.node.frontmatter.date),
+    );
+    if (
+      postNode.fields.slug ===
+      "/the-ultimate-guide-writing-a-software-engineer-resume"
+    ) {
+      // sortedEdges
+      const index = sortedEdges.findIndex(
+        e => e.node.fields.slug === postNode.fields.slug,
+      );
+
+      const clonedSortedEdges = [...sortedEdges];
+
+      if (index > 0) {
+        previews.push(clonedSortedEdges[index - 1]);
+        delete clonedSortedEdges[index - 1];
+      }
+
+      const restEdges = clonedSortedEdges.filter(
+        e => e.node.fields.slug !== postNode.fields.slug,
+      );
+
+      const relatedEdgesByTag = restEdges.filter(e =>
+        e.node.frontmatter.tags.includes(postNode.frontmatter.tags[0]),
+      );
+
+      if (previews.length === 0) {
+        previews.push(relatedEdgesByTag[0]);
+        previews.push(relatedEdgesByTag[1]);
+      } else {
+        previews.push(relatedEdgesByTag[0]);
+      }
+    }
     const post = postNode.frontmatter;
     if (!post.id) {
       post.id = slug;
@@ -122,19 +206,46 @@ export default class PostTemplate extends React.Component {
           <Wrapper>
             {/* <h1>{post.title}</h1> */}
             <WrapperContent>
-              <LeadContainerParapraph><i>written on {post.date}</i></LeadContainerParapraph>
+              <LeadContainerParapraph>
+                <i>written on {post.date}</i>
+              </LeadContainerParapraph>
               <div
                 className="blog-content"
                 style={{
-                  fontFamily: `'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif`
+                  fontFamily: `'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif`,
                 }}
                 dangerouslySetInnerHTML={{ __html: postNode.html }}
               />
+              {previews.length > 0 && (
+                <PreviewContainer>
+                  <PreviewHeading>More From Web Dev Stories</PreviewHeading>
+                  <PreviewCardContainer>
+                    {previews.map(e => (
+                      <PreviewCard>
+                        <StyledLink to={`${e.node.fields.slug}/`}>
+                          <PreviewImage src={e.node.frontmatter.cover} />
+                          <PreviewCardHeading>
+                            {e.node.frontmatter.title}
+                          </PreviewCardHeading>
+                          <PreviewCardParagraph>
+                            by Kevin Peters
+                          </PreviewCardParagraph>
+                          <PreviewCardParagraph>
+                            {new Date(e.node.fields.date).toLocaleDateString()}{" "}
+                            - {e.node.timeToRead} min read
+                          </PreviewCardParagraph>
+                        </StyledLink>
+                      </PreviewCard>
+                    ))}
+                  </PreviewCardContainer>
+                </PreviewContainer>
+              )}
+
               <div className="post-meta">
                 <PostTags tags={post.tags} />
                 <SocialLinks postPath={slug} postNode={postNode} />
+                <UserInfo config={config} />
               </div>
-              <UserInfo config={config} />
             </WrapperContent>
           </Wrapper>
         </div>
@@ -163,6 +274,27 @@ export const pageQuery = graphql`
       fields {
         slug
         date
+      }
+    }
+    allMarkdownRemark(
+      limit: 2000
+      sort: { fields: [fields___date], order: DESC }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            date
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            tags
+            cover
+            date
+          }
+        }
       }
     }
   }

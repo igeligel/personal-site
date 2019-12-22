@@ -57,6 +57,13 @@ Otherwise, you should fill out all of the other sections like Experience, Educat
 
 ### Personal Web Page
 
+If you have a personal web page, you should also link it on your resume. The hiring manager or recruiter will look at it. As designer or frontend engineer you should definitely have a personal web page with some content. The content could be a variety from showcasing your projects to blogging or anything else. Just link the website though, if you are happy with showcasing it. It is quite easy to create a website though. With services like [netlify](https://www.netlify.com/) hosting a web site got super easy and cheap. This whole website is hosted via this service and if you do not need a backend netlify will work for most sites out of the box. In combination with frameworks like gatsby or next.js it will be super easy to create a personal page. For both frameworks a lot of templates are available where you can start of.
+
+- https://www.gatsbyjs.org/starters
+- https://github.com/unicodeveloper/awesome-nextjs
+
+In general your personal web page should showcase your professionalism and creativity. So keep this in mind when designing your site and setting the tone of your text.
+
 ### City
 
 ### Visa Status

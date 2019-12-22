@@ -41,7 +41,19 @@ All of them really depends on the status around your person. The conditions are 
 
 ### GitHub
 
+The GitHub link should be included if you have a strong GitHub profile. This includes several different things. An overall score can be checked at [codersrank.io](https://codersrank.io). It is a good side as overview.
+
+In detail you should have at least two projects. These two projects could be whatever you want to do. It could range from npm libraries to complete full stack web applications. The important thing is that you are solving a problem. These problems can be wide-ranged and problems exist everywhere. Think about the last week of yourself and what kind of specific problem might be solved or supported by using an application. If you cannot find these ideas, write them down the next time you have some problem. You need to be creative and do not block yourself on creating something just because it exists. There are a lot of specializations you can apply to make your application unique.
+
+Another neccesity is that you write a good readme for all of the projects. It is important for marketing reasons that your readme just rocks. It should be clear and concise and filled with a lot of good examples. The best readmes are probably with a short headline and a summary text on what your software is doing. It should catch other developers or users of the readme. Adding a logo also looks professional and kind of slick. There are free logo creators all over the internet you could try but I will summarize how to write a good GitHub README at some point. You can find the related issue in my blog's board [here](https://github.com/igeligel/personal-site/issues/88).
+
 ### LinkedIn
+
+Another social profile is the LinkedIn profile. A good LinkedIn profile has a good personal image first. Your face should be seen and your name on the profile should be nationalized to the country you are in. For example, an arabic name might scare people off.
+
+The next section of the LinkedIn profile is the about section which should hold one or two sentences on what you want to actually get. It should include key target words so recruiters and hiring managers can find you easily on the platform. In the about section you can link also external resources like your GitHub or your resume. These give recruiters another resource for you.
+
+Otherwise, you should fill out all of the other sections like Experience, Education, Skills & Endorsments, ask friends for recommendations, put on some accomplishments, describe your projects in there and add some interests.
 
 ### Personal Web Page
 

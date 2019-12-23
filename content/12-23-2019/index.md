@@ -1,12 +1,12 @@
 ---
 title: "The Header of your Resume"
 seoTitle: "The Header of your Resume"
-description: "Structuring a resume to land offers at bit technology companies is hard. Follow this guide on how to structure the resume to make it appealing."
-openGraphDescription: "Structuring a resume to land offers at bit technology companies is hard. Follow this guide on how to structure the resume to make it appealing."
-twitterDescription: "Structuring a resume to land offers at bit technology companies is hard. Follow this guide on how to structure the resume to make it appealing."
+description: "The header of the resume is the first part a hiring manager or recruiter will look at. Do you want to check how to write the best header for resumes? It includes a lot of techniques but most important: Sometimes less is more."
+openGraphDescription: "The header of a resume is an integral part of the resume. It is the first section hiring managers or recruiters will see and evaluate. It is the first impression that can give you the advantage to get hired."
+twitterDescription: "The header of a resume is an integral part of the resume. It is the first section hiring managers or recruiters will see and evaluate. It is the first impression that can give you the advantage to get hired."
 cover: "/thumbnails/the-general-structure-of-a-resume.png"
 category: "software-engineering"
-date: "12/08/2019"
+date: "12/23/2019"
 tags:
   - software-engineering
   - resume

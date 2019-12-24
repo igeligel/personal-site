@@ -5,7 +5,7 @@
   "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.13.32",
+    "gatsby": "^2.18.17",
     "gatsby-image": "^2.2.37",
     "gatsby-plugin-catch-links": "^2.1.21",
     "gatsby-plugin-feed": "^2.3.25",
@@ -52,8 +52,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "gh-pages": "^2.0.1",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.4.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "mediumexporter": "^0.1.6",
     "prettier": "^1.19.1",
     "remark-cli": "^6.0.1",
@@ -61,7 +61,7 @@
     "stylefmt": "^6.0.3",
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
-    "write-good": "^1.0.1"
+    "write-good": "^1.0.2"
   },
   "keywords": [
     "gatsby"

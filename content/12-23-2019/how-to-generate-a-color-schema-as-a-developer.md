@@ -1,7 +1,7 @@
 ---
 title: "Generating color schemas as developer: A simple guide"
 seoTitle: "Generating color schemas as developer: A simple guide"
-description: "..."
+description: "Full-Stack Developers and Software Engineers are struggling with designing interfacing. One of the basic problems is choosing colors. This guide will explain to you how to find colors for the next web application."
 openGraphDescription: "..."
 twitterDescription: "..."
 cover: "/thumbnails/the-general-structure-of-a-resume.png"

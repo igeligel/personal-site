@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "cli-glob": "^0.1.0",
-    "gh-pages": "^2.0.1",
+    "gh-pages": "^2.1.1",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "mediumexporter": "^0.1.6",

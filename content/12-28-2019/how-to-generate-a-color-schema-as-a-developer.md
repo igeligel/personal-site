@@ -4,15 +4,15 @@ seoTitle: "Generating color schemas as developer: A simple guide"
 description: "Full-Stack Developers and Software Engineers are struggling with designing interfacing. One of the basic problems is choosing colors. This guide will explain to you how to find colors for the next web application."
 openGraphDescription: "Generating a color schema as a developer is hard, read this guide to learn how to create a perfect color schema as software engineer."
 twitterDescription: "Generating a color schema as a developer is hard, read this guide to learn how to create a perfect color schema as software engineer."
-cover: "/thumbnails/the-general-structure-of-a-resume.png"
+cover: "/thumbnails/generating-color-schemas-as-developer.png"
 category: "software-engineering"
-date: "12/26/2019"
+date: "12/28/2019"
 tags:
   - design
   - ui
 ---
 
-# Generating color schemas as developer: A simple guide
+# Generating color schemas as a developer: A simple guide
 
 As a full-stack software engineer or frontend engineer, someone might be exposed to design decisions from time to time. Ranging from small design decisions in early-stage startups to creating own projects, it might be needed at some point to choose colors for different user interface (UI) elements. This guide should help you choose the optimal colors for a project if no colors have been defined or given to you.
 

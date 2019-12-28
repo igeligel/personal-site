@@ -34,6 +34,14 @@ You can see in the middle and on the right how the base color differs from the l
 
 [colorsandfonts](https://www.colorsandfonts.com/) is quite a newcomer when it comes to design resources. But it shines with detail in design and nice showcases. The color palettes you will find on the website are quite well-differentiated and look nice. The palettes can be found [here](https://www.colorsandfonts.com/palettes.html).
 
+<ins class="adsbygoogle"
+  style="display:block; text-align:center;"
+  data-ad-layout="in-article"
+  data-ad-format="fluid"
+  data-ad-client="ca-pub-6098077505348522"
+  data-ad-slot="3270549418">
+</ins>
+
 ## The problem with the color palettes
 
 Most often the color palettes provide a good base for colors but just five colors might be limited most often for elements. A button border which should have mostly the same color but just a bit different when it is focused. The following picture shows the problem if we would use opacity.

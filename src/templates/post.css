@@ -131,6 +131,8 @@
   line-height: 32px;
   margin-left: 3px;
   margin-right: 3px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .blog-content p a:hover {
@@ -260,6 +262,9 @@
   color: rgba(64, 150, 196, 0.7);
   text-decoration: none;
   border-bottom: 2px solid rgba(64, 150, 196, 0.1);
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .blog-content li a:hover {

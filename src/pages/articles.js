@@ -19,6 +19,7 @@ import { IconSecurity } from "../components/IconSecurity";
 import { NavbarContainer } from "../components/navbar-container";
 import { SectionContainerWrapper } from "../components/section-container-wrapper";
 import { LeadContainerHeading } from "../components/lead-container-heading";
+import { DesignIcon } from "../components/DesignIcon";
 
 const Navbar = styled.div`
   max-width: 800px;
@@ -190,6 +191,9 @@ const getPrimaryIcon = tags => {
   if (tags[0] === "security") {
     return "security";
   }
+  if (tags[0] === "design") {
+    return "design";
+  }
   return null;
 };
 
@@ -214,7 +218,7 @@ const getPostList = (postEdges, state) => {
         title: postEdge.node.frontmatter.title,
         date: postEdge.node.fields.date,
         excerpt: postEdge.node.excerpt,
-        timeToRead: postEdge.node.timeToRead
+        timeToRead: postEdge.node.timeToRead,
       };
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -237,7 +241,7 @@ class Index extends React.Component {
     super(props);
     this.state = {
       value: "",
-      selectedTag: null
+      selectedTag: null,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleTagChange = this.handleTagChange.bind(this);
@@ -250,14 +254,14 @@ class Index extends React.Component {
       this.props.location.state.tag;
     if (tag) {
       this.setState({
-        selectedTag: tag
+        selectedTag: tag,
       });
     }
   }
 
   handleTagChange(newTag) {
     this.setState({
-      selectedTag: newTag
+      selectedTag: newTag,
     });
   }
 
@@ -278,7 +282,10 @@ class Index extends React.Component {
         <Helmet>
           <title>{"Blogs about technologies by Kevin Peters"}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="description" content="Find the most recent stories about web development here to advance in your career and learn new skills in the software engineering world." />
+          <meta
+            name="description"
+            content="Find the most recent stories about web development here to advance in your career and learn new skills in the software engineering world."
+          />
         </Helmet>
         <NavbarContainer />
         <SectionContainerWrapper>
@@ -329,6 +336,7 @@ class Index extends React.Component {
                           <LaptopIcon />
                         )}
                         {post.primaryIcon === "security" && <IconSecurity />}
+                        {post.primaryIcon === "design" && <DesignIcon />}
                       </IconWrapper>
                       <ListItemLink>{post.title}</ListItemLink>
                     </div>

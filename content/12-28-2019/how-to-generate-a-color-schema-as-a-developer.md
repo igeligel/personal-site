@@ -20,11 +20,11 @@ First of all, most base colors can be copied from a lot of popular sites or take
 
 ## Popular Color Schema Sites
 
-On the internet, a lot of color schema sites popped up in the recent years. Most of them are curated and can be taken as a good base for your own needs. A bad thing about the sites is that most of them are showcasing just five colors and for most applications, this is not enough. Engineers normally use opacity for different color shades but working with different background colors might result in different results. A yellow with an opacity of `0.8` might look different on a black and white background.
+On the internet, a lot of color schema sites popped up in recent years. Most of them are curated and can be taken as a good base for your own needs. A bad thing about the sites is that most of them are showcasing just five colors and for most applications, this is not enough. Engineers normally use opacity for different color shades but working with different background colors might result in different results. A yellow with an opacity of `0.8` might look different on a black and white background.
 
 ![three colors show on different backgrounds, first rectangle color without background, then with white background where the color appears brighter and on a dark background where the color appears darker](./yellow-on-white-black.png)
 
-You can see in the middle and on the right how the base color differs from the left. The middle one has a white background and thre right color has a black background. The colors are just completely different and it shows you should not use this pattern to create color shades. To discover the base color we can use one of the following color schema sites.
+You can see in the middle and on the right how the base color differs from the left. The middle one has a white background and the right color has a black background. The colors are just completely different and it shows you should not use this pattern to create color shades. To discover the base color we can use one of the following color schema sites.
 
 ### coolors.co
 
@@ -46,7 +46,7 @@ You can see in the middle and on the right how the base color differs from the l
 
 Most often the color palettes provide a good base for colors but just five colors might be limited most often for elements. A button border which should have mostly the same color but just a bit different when it is focused. The following picture shows the problem if we would use opacity.
 
-![a button with a border shown on a white and black background, because opactiy is reduced the border looks different on both sides](./button-with-opacity.png)
+![a button with a border shown on a white and black background, because opacity is reduced the border looks different on both sides](./button-with-opacity.png)
 
 The button works great on a white background but on a dark background, it loses its touch.
 

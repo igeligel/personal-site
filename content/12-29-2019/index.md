@@ -4,9 +4,9 @@ seoTitle: "The Header of your Resume"
 description: "The header of the resume is the first part a hiring manager or recruiter will look at. Do you want to check how to write the best header for resumes? It includes a lot of techniques but most important: Sometimes less is more."
 openGraphDescription: "The header of a resume is an integral part of the resume. It is the first section hiring managers or recruiters will see and evaluate. It is the first impression that can give you the advantage to get hired."
 twitterDescription: "The header of a resume is an integral part of the resume. It is the first section hiring managers or recruiters will see and evaluate. It is the first impression that can give you the advantage to get hired."
-cover: "/thumbnails/the-general-structure-of-a-resume.png"
+cover: "/thumbnails/the-header-of-your-resume.png"
 category: "software-engineering"
-date: "12/23/2019"
+date: "12/29/2019"
 tags:
   - software-engineering
   - resume
@@ -19,7 +19,7 @@ The header of your resume is most probably the first part the hiring manager or 
 
 As learned in the last chapter the first impression is really important. But the content for the header should not be too catchy. The focus of the hiring manager should be probably pointed to your name and the rest of the information should be ignored for the first look. The resume should point to the next section which should be the work experience.
 
-## Information to give in the header of a resume
+## Information to give in the Header of a Resume
 
 The information in the header can be split into two sections. One is the required information and one is the optional information. The necessary information should be listed in every resume and every design, no matter how much space you have left. The optional parameters can be left out if you do not have enough space because these details are not needed and could distract more than they are worth it. The required information includes:
 
@@ -27,7 +27,7 @@ The information in the header can be split into two sections. One is the require
 - Phone Number
 - Email
 
-These are quite obvious. In general, your name should be the main part of the header. The phone number and email are more important to find fast when the recruiter wants to contact the applicant to introduce them to the continuation of the resume process. Email and phone number should be also easy to parse. A secret tip is also to hyperlink the email and phone number in the resume. The phone number might be not required to hyperlink, but the email should be clickable. This is because most of the recruiters and hiring managers do not print your resume out anymore. It is a PDF on their computer or in the applicant tracking system (ATS).
+These are quite obvious. In general, the name should be the main part of the header. The phone number and email are more important to find fast when the recruiter wants to contact the applicant to introduce them to the continuation of the resume process. Email and phone number should be also easy to parse. A secret tip is also to hyperlink the email and phone number in the resume. The phone number might be not required to hyperlink, but the email should be clickable. This is because most of the recruiters and hiring managers do not print your resume out anymore. It is a PDF on their computer or in the applicant tracking system (ATS).
 
 The non-required information is listed below:
 
@@ -85,3 +85,19 @@ Another thing most people are not interested in anymore is the complete address 
 As mentioned in the last paragraph, your resume should focus on your professional achievements contributing to the company. In the header of your resume, all of the information just contribute indirectly to this goal. It is good but nothing your overall resume design should focus on. Normally it is important to put your name in a big font and the rest of the informational material in a smaller font and in a color which is not so much in the foreground.
 
 Most of the good designs I have seen are just plain simple. Nothing too complicated and every resume should be following the same here.
+
+## Conclusion and Examples
+
+Keep your Header short and information. It is probably the least important part to impress recruiters and hiring managers. Below, some examples are included with good header sections.
+
+### Example 1
+
+![first example of a good resume header](./1.png)
+
+### Example 2
+
+![second example of a good resume header](./2.png)
+
+### Example 3
+
+![third example of a good resume header](./3.png)

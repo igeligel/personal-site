@@ -64,7 +64,7 @@ Web developers are mostly using hex codes for colors. But the hex color codes ar
 - **S**aturation: Goes from 0% to 100%. 0% is the color just grayed out.
 - **L**ightness: Goes from 0% to 100%. If you set it to 100% the color will be white. If the value is set to 0% the color will be black.
 
-You can observe the HSL colors quite good in your browser's dev tools. On Mac on Chrome just open the dev tools with CMD+Option+J. Afterward, adding `color: hsl(0, 100%, 50%);` to some element will probably set you up to use the color picker in Chrome or Firefox.
+You can observe the HSL colors quite good in your browser's dev tools. On Mac on Chrome just open the dev tools with CMD+Option+J. Afterward, adding <code class="language-text">color: hsl(0, 100%, 50%);</code> to some element will probably set you up to use the color picker in Chrome or Firefox.
 
 ![screenshot of the color picker in the chrome dev tools](./chrome-color-picker.png)
 
@@ -77,11 +77,11 @@ After learning how HSL is working, different color shades can be created. It is 
 - hsl(207, 95%, 8%)
 - hsl(35, 100%, 55%)
 
-Now, opening another tool called [Color Shade Generator](https://superdevresources.com/tools/color-shades#011628), we can see that different color shades have been generated already. Since the base color which was chosen is so dark already we go with a lot lighter color. I chose the color `hsl(207, 95%, 45%)` now which fits our needs somehow. Now we have two colors, a dark one which is `hsl(207, 95%, 8%)` and a bright one which is `hsl(207, 95%, 45%)`.
+Now, opening another tool called [Color Shade Generator](https://superdevresources.com/tools/color-shades#011628), we can see that different color shades have been generated already. Since the base color which was chosen is so dark already we go with a lot lighter color. I chose the color <code class="language-text">hsl(207, 95%, 45%)</code> now which fits our needs somehow. Now we have two colors, a dark one which is <code class="language-text">hsl(207, 95%, 8%)</code> and a bright one which is <code class="language-text">hsl(207, 95%, 45%)</code>.
 
 ![Initial color palette of 5 colors where just the first and last color are filled](./color-schema-1.png)
 
-We can see that just the last number in the HSL code changed which is the lightness. From now we can either build 5, 7 or 9 colors between those shades to get to different colors which can be used as a base color schema. In general, it is good to plan with nine colors. In this example, 5 colors will be used though. Starting this is quite easy. Taking the darkest color `hsl(207, 95%, 8%)` and the brightest `hsl(207, 95%, 45%)`, we try to select the middle color for both colors. It is quite easy since the calculation is just `(45% + 8%) / 2` which is `26.5%`. Inserting this now into the HSL we receive the color `hsl(207, 95%, 26.5%)` which is kind of fitting into the color shade for now.
+We can see that just the last number in the HSL code changed which is the lightness. From now we can either build 5, 7 or 9 colors between those shades to get to different colors which can be used as a base color schema. In general, it is good to plan with nine colors. In this example, 5 colors will be used though. Starting this is quite easy. Taking the darkest color <code class="language-text">hsl(207, 95%, 8%)</code> and the brightest <code class="language-text">hsl(207, 95%, 45%)</code>, we try to select the middle color for both colors. It is quite easy since the calculation is just `(45% + 8%) / 2` which is `26.5%`. Inserting this now into the HSL we receive the color <code class="language-text">hsl(207, 95%, 26.5%)</code> which is kind of fitting into the color shade for now.
 
 ![Color palette where the first, last and middle color are filled, second and fourth are not filled](./color-schema-2.png)
 

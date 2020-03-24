@@ -20,6 +20,7 @@ import { NavbarContainer } from "../components/navbar-container";
 import { LeadCenterContainer } from "../components/lead-center-container";
 import { SectionContainerWrapper } from "../components/section-container-wrapper";
 import { LeadContainerHeading } from "../components/lead-container-heading";
+import { DesignIcon } from "../components/DesignIcon";
 
 const LeadContainer = styled.div`
   max-width: 800px;
@@ -114,6 +115,9 @@ const getPrimaryIcon = tags => {
   }
   if (tags[0] === "security") {
     return "security";
+  }
+  if (tags[0] === "design") {
+    return "design";
   }
   return null;
 };
@@ -231,6 +235,7 @@ class Index extends React.Component {
                           <LaptopIcon />
                         )}
                         {post.primaryIcon === "security" && <IconSecurity />}
+                        {post.primaryIcon === "design" && <DesignIcon />}
                       </IconWrapper>
                       <ListItemLink>{post.title}</ListItemLink>
                     </div>

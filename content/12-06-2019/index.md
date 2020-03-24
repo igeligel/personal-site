@@ -23,7 +23,7 @@ After reviewing dozens of resumes in the past years, I decided to write this ser
 
 1. [The general structure of a resume](/the-general-structure-of-a-resume/)
 1. WIP: The 10 Second Rule for resumes
-1. WIP: The header of your resume
+1. [The header of your resume](/the-header-of-your-resume/)
 1. WIP: Showcasing your education perfectly
 1. WIP: Let the Work Experience speak for itself
 1. WIP: Let your Projects section shine

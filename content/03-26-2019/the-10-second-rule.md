@@ -22,14 +22,13 @@ In the application process for software engineering positions, the resume is a v
 The one-page design is a mentality to have throughout the whole one-page document actually. In general, the resume should be one page, [as we learned in the last article](/the-general-structure-of-a-resume/), except you have a lot of experience which most of us do not have. Maybe if you have worked in more than five different companies throughout ten years you might be able to fill your resume with valuable content which will exceed one page but otherwise, it is not really applicable.
 
 <ins
-class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-6098077505348522"
-data-ad-slot="3155546458"
-data-ad-format="auto"
-data-full-width-responsive="true"
-
-> </ins>
+  class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-6098077505348522"
+  data-ad-slot="3155546458"
+  data-ad-format="auto"
+  data-full-width-responsive="true">
+</ins>
 
 The one-page design will also teach you to keep the sections short and concise, just describing what the reader needs to know. This also applies to simple sentences. An example where you can see what I mean with this:
 

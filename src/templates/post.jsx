@@ -161,7 +161,9 @@ export default class PostTemplate extends React.Component {
       postNode.fields.slug ===
         "/the-ultimate-guide-writing-a-software-engineer-resume" ||
       postNode.fields.slug === "/the-general-structure-of-a-resume" ||
-      postNode.fields.slug === "/the-header-of-your-resume"
+      postNode.fields.slug === "/the-header-of-your-resume" ||
+      postNode.fields.slug ===
+        "/showcasing-your-education-perfectly-in-a-resume"
     ) {
       // sortedEdges
       const index = sortedEdges.findIndex(

@@ -29,7 +29,7 @@ Problems occurred with the Hacktoberfest this time though. People started to cal
 
 I asked myself how I can provide value for other people. Now that I am working in Software Engineering for multiple years I wanted to give back. Giving new and aspiring Software Engineers a possibility to contribute to a project that has real-life value. Over the past year, I have built two side projects:
 
-- [caseconverter.pro](https://caseconverter.pro/app) - An online case converter, PascalCase → cameCase, and so on
+- [caseconverter.pro](https://caseconverter.pro/app) - An online case converter, PascalCase → camelCase, and so on
 - [getworkrecognized](https://getworkrecognized.com/) - A platform to track your work achievements and create Self-Reviews
 
 I explained in a recent blog article how I went about creating them. And now I thought, why am I not open-sourcing parts of the applications that might be useful to other people as well? This will allow more inexperienced developers to contribute to a project that is used in real-life. Perfect!

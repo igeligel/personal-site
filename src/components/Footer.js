@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components'
-import { Link } from "gatsby";
+import React from "react";
+import styled from "styled-components";
+import Link from "next/Link";
 
 const FooterMaster = styled.div`
   display: flex;
@@ -21,15 +21,15 @@ const FooterContainer = styled.div`
 const FooterColumn = styled.div`
   display: flex;
   flex-direction: row;
-`
+`;
 
 const FooterText = styled.span`
-color: rgba(64, 150, 196, 0.5);
+  color: rgba(64, 150, 196, 0.5);
   font-weight: 300;
   font-family: Lato, sans-serif;
   margin-left: 1em;
   line-height: 2em;
-`
+`;
 
 const StyledLink = styled(Link)`
   // color: palevioletred;
@@ -53,7 +53,7 @@ export const Footer = () => {
         <div></div>
         <FooterColumn>
           <FooterText>© Kevin Peters 2019</FooterText>
-          <StyledLink to={"/imprint/"}>Imprint</StyledLink>
+          <StyledLink href={"/imprint/"}>Imprint</StyledLink>
         </FooterColumn>
       </FooterContainer>
     </FooterMaster>

@@ -1,10 +1,9 @@
 import React from "react";
 import Helmet from "react-helmet";
 import config from "../../data/SiteConfig";
-import "./index.css";
+// import "./index.css";
 import styled from "styled-components";
 import { Footer } from "../components/Footer";
-import Favicon from '../../static/logos/logo-192x192.png'
 
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
@@ -28,7 +27,7 @@ export default class MainLayout extends React.Component {
             {
               rel: "shortcut icon",
               type: "image/png",
-              href: `${Favicon}`
+              href: `/logo-192x192.png`
             }
           ]}
         >

@@ -47,6 +47,11 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap"
             rel="stylesheet"
           />
+          <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <Main />

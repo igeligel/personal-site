@@ -27,8 +27,17 @@ export default class MainLayout extends React.Component {
             {
               rel: "shortcut icon",
               type: "image/png",
-              href: `/logo-192x192.png`
-            }
+              href: `/logo-192x192.png`,
+            },
+            {
+              rel: "preconnect",
+              href: "https://fonts.gstatic.com",
+            },
+            {
+              rel: "stylesheet",
+              href:
+                "https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;500;600;700&display=swap",
+            },
           ]}
         >
           <meta name="description" content={config.siteDescription} />

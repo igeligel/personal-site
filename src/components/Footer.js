@@ -31,7 +31,7 @@ const FooterText = styled.span`
   line-height: 2em;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   // color: palevioletred;
   // font-weight: bold;
   color: rgba(64, 150, 196, 0.5);
@@ -53,7 +53,9 @@ export const Footer = () => {
         <div></div>
         <FooterColumn>
           <FooterText>© Kevin Peters 2019</FooterText>
-          <StyledLink href={"/imprint/"}>Imprint</StyledLink>
+          <Link href="/imprint" passHref>
+            <StyledLink>Imprint</StyledLink>
+          </Link>
         </FooterColumn>
       </FooterContainer>
     </FooterMaster>

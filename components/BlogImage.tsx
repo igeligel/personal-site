@@ -8,8 +8,14 @@ type BlogImageProps = {
 
 export const BlogImage: React.FC<BlogImageProps> = (props) => {
   return (
-    <Box as="figure" marginTop="1.3rem">
-      <Image rounded="lg" {...props} loading="lazy" />
+    <Box
+      as="figure"
+      marginTop="1.3rem"
+      display="flex"
+      alignItems="center"
+      flexDirection="column"
+    >
+      <Image rounded="lg" {...props} loading="lazy" width="fit-content" />
       <Text
         as="figcaption"
         textAlign="center"

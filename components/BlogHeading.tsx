@@ -3,21 +3,24 @@ import { Heading } from "@chakra-ui/react";
 import slugify from "slugify";
 
 type BlogHeadingProps = {
-  as: "h1" | "h2";
+  as: "h1" | "h2" | "h3";
 };
 
 const SIZES = {
   h1: "xl",
   h2: "lg",
+  h3: "md",
 };
 
 const MARGIN_TOPS = {
   h1: "0",
   h2: "0.7rem",
+  h3: "0.5rem",
 };
 
 export const BlogHeading: React.FC<BlogHeadingProps> = (props) => {
-  const slug = slugify(props.children.toString()).toLowerCase();
+  const content = (props.children || "").toString();
+  const slug = slugify(content).toLowerCase();
 
   return (
     <Heading
@@ -32,7 +35,7 @@ export const BlogHeading: React.FC<BlogHeadingProps> = (props) => {
     >
       <a
         href={`#${slug}`}
-        aria-label={props.children.toString()}
+        aria-label={content}
         className="anchor"
         style={{ marginTop: "4px", marginRight: "8px", marginLeft: "-24px" }}
       >

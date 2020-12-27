@@ -14,6 +14,8 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import SEO from "../src/components/SEO/SEO";
 import { BlogLink } from "../components/BlogLink";
+import { BlogTwitterEmbed } from "../components/BlogTwitterEmbed";
+import { BlogCodeBlock } from "../components/BlogCodeBlock";
 
 const Wrapper = styled.div`
   display: flex;
@@ -69,13 +71,22 @@ const components = {
   p: BlogParagraph,
   h1: (props) => <BlogHeading as="h1">{props.children}</BlogHeading>,
   h2: (props) => <BlogHeading as="h2">{props.children}</BlogHeading>,
+  h3: (props) => <BlogHeading as="h3">{props.children}</BlogHeading>,
   blockquote: BlogBlockquote,
   img: BlogImage,
+  pre: (props) => (
+    <Box width="100%" marginTop="1rem">
+      {props.children}
+    </Box>
+  ),
+  code: BlogCodeBlock,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   // TestComponent: dynamic(() => import("../../components/TestComponent")),
   Head,
+  BlogTwitterEmbed: BlogTwitterEmbed,
+  BlogImage,
 };
 
 export default function PostPage({ source, frontMatter, slug }) {
@@ -98,10 +109,21 @@ export default function PostPage({ source, frontMatter, slug }) {
         )}
       </div> */}
       <Wrapper>
-        <WrapperContent>
+        <WrapperContent className="blog-post">
           <LeadContainerParapraph>
             <i>written on {frontMatter.date}</i>
           </LeadContainerParapraph>
+          <style jsx global>
+            {`
+              .blog-post p code {
+                color: #9cdcfe;
+                background: #364354;
+                border-radius: 2px;
+                padding: 3px 5px;
+                font-size: 16px;
+              }
+            `}
+          </style>
           <Box display="flex" flexDirection="column" alignItems="center">
             {content}
           </Box>

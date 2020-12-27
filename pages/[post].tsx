@@ -16,6 +16,7 @@ import SEO from "../src/components/SEO/SEO";
 import { BlogLink } from "../components/BlogLink";
 import { BlogTwitterEmbed } from "../components/BlogTwitterEmbed";
 import { BlogCodeBlock } from "../components/BlogCodeBlock";
+import { GetStaticProps } from "next";
 
 const Wrapper = styled.div`
   display: flex;
@@ -133,9 +134,9 @@ export default function PostPage({ source, frontMatter, slug }) {
   );
 }
 
-export const getStaticProps = async (props) => {
+export const getStaticProps: GetStaticProps = async (props) => {
   const { params } = props;
-  const postFilePath = path.join(POSTS_PATH, `${params.post}.mdx`);
+  const postFilePath = path.join(POSTS_PATH, `${params?.post}.mdx`);
   const source = fs.readFileSync(postFilePath);
 
   const { content, data } = matter(source);
@@ -154,7 +155,7 @@ export const getStaticProps = async (props) => {
     props: {
       source: mdxSource,
       frontMatter: data,
-      slug: params.post,
+      slug: params?.post,
     },
   };
 };

@@ -1,24 +1,16 @@
-import React, { useEffect, useState } from "react";
-import Helmet from "react-helmet";
+import React, { useState } from "react";
 import SEO from "../src/components/SEO/SEO";
 import styled from "styled-components";
-import Link from "next/link";
 import PostTagButton from "../src/components/PostTagButton";
-import { VueIcon } from "../src/components/VueIcon";
-import { PythonIcon } from "../src/components/PythonIcon";
-import { JavaScriptIcon } from "../src/components/JavaScriptIcon";
-import { PostgresIcon } from "../src/components/PostgresqlIcon";
-import { ReactIcon } from "../src/components/ReactIcon";
-import { LaptopIcon } from "../src/components/LaptopIcon";
-import { IconSecurity } from "../src/components/IconSecurity";
 import { SectionContainerWrapper } from "../src/components/section-container-wrapper";
 import { LeadContainerHeading } from "../src/components/lead-container-heading";
-import { DesignIcon } from "../src/components/DesignIcon";
 import { GetStaticProps } from "next";
 import { postFilePaths, POSTS_PATH } from "../utils/mdxUtils";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Head from "next/head";
+import { ListOfArticles } from "../components/ListOfArticles";
 
 type PostEdge = {
   path: string;
@@ -29,120 +21,11 @@ type PostEdge = {
   slug: string;
 };
 
-const Navbar = styled.div`
-  max-width: 800px;
-  width: 100%;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  display: flex;
-  justify-content: space-between;
-`;
-
-const LeadContainer = styled.div`
-  max-width: 800px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-
-const LeadContainerParapraph = styled.p`
-  margin: 0;
-  font-family: Lato;
-  max-width: 567px;
-  width: 100%;
-  font-size: 22px;
-  line-height: 35px;
-  color: rgba(43, 55, 62, 0.8);
-`;
-
 const SectionContainer = styled.div`
   max-width: 800px;
   width: 100%;
   display: flex;
   flex-direction: column;
-`;
-
-const SectionHeading = styled.h3`
-  margin: 0;
-  padding: 0;
-  margin: 0;
-  padding: 0;
-  font-size: 32px;
-  color: rgb(43, 55, 62);
-  margin-bottom: 32px;
-`;
-
-const UnorderedList = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  margin-top: 1.61em;
-`;
-
-const ListItemL = styled.a`
-  display: block;
-  text-decoration: none;
-  width: 100%;
-  padding: 15px 12px;
-`;
-
-const ListItem = styled.li`
-  display: flex;
-  border-radius: 3px;
-
-  &:hover {
-    background-color: rgba(78, 158, 200, 0.07);
-  }
-`;
-
-const ListItemLink = styled.span`
-  color: rgba(43, 55, 62, 0.8);
-  align-self: center;
-  padding-left: 0.618em;
-
-  font-size: 22px;
-  width: 100%;
-`;
-
-const StyledLink = styled(Link)`
-  // color: palevioletred;
-  // font-weight: bold;
-  color: rgba(64, 150, 196, 0.5);
-  font-weight: 300;
-  font-family: Lato, sans-serif;
-  margin-left: 1em;
-  line-height: 2em;
-  text-decoration: none;
-
-  :hover {
-    color: rgba(64, 150, 196, 1);
-  }
-`;
-
-const MainStyledLink = styled(Link)`
-  margin: 0;
-  padding: 0;
-  color: #4096c4;
-  text-transform: uppercase;
-  font-family: Lato, sans-serif;
-  font-weight: 300;
-  font-size: 24px;
-  text-decoration: none;
-`;
-
-const IconWrapper = styled.div`
-  width: 32px;
-  height: 32px;
-  align-self: center;
-`;
-
-const WorkInProgress = styled.p`
-  margin: 0;
-  font-family: Lato;
-  width: 100%;
-  font-size: 22px;
-  line-height: 35px;
-  color: rgba(43, 55, 62, 0.8);
 `;
 
 const FormInput = styled.input`
@@ -272,14 +155,14 @@ const Articles: React.FC<ArticleProps> = (props) => {
   return (
     <div>
       <SEO />
-      <Helmet>
+      <Head>
         <title>{"Blogs about technologies by Kevin Peters"}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Find the most recent stories about web development here to advance in your career and learn new skills in the software engineering world."
         />
-      </Helmet>
+      </Head>
       <SectionContainerWrapper>
         <SectionContainer>
           <LeadContainerHeading>Blog Articles</LeadContainerHeading>
@@ -308,33 +191,7 @@ const Articles: React.FC<ArticleProps> = (props) => {
             </ClearText>
           </TagHandler>
           <FormInput type="text" value={value} onChange={handleChange} />
-          <UnorderedList>
-            {postList.map((post: any) => (
-              <ListItem key={post.title}>
-                <Link href={post.path} passHref>
-                  <ListItemL>
-                    <div style={{ display: "flex" }}>
-                      <IconWrapper>
-                        {post.primaryIcon === "javascript" && (
-                          <JavaScriptIcon />
-                        )}
-                        {post.primaryIcon === "python" && <PythonIcon />}
-                        {post.primaryIcon === "vue.js" && <VueIcon />}
-                        {post.primaryIcon === "postgresql" && <PostgresIcon />}
-                        {post.primaryIcon === "react" && <ReactIcon />}
-                        {post.primaryIcon === "software-engineering" && (
-                          <LaptopIcon />
-                        )}
-                        {post.primaryIcon === "security" && <IconSecurity />}
-                        {post.primaryIcon === "design" && <DesignIcon />}
-                      </IconWrapper>
-                      <ListItemLink>{post.title}</ListItemLink>
-                    </div>
-                  </ListItemL>
-                </Link>
-              </ListItem>
-            ))}
-          </UnorderedList>
+          <ListOfArticles postList={postList}></ListOfArticles>
         </SectionContainer>
       </SectionContainerWrapper>
     </div>
@@ -342,14 +199,13 @@ const Articles: React.FC<ArticleProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const paths = postFilePaths
-    // Remove file extensions for page paths
-    .map((path) => path.replace(/\.mdx?$/, ""));
+  const paths = postFilePaths.map((path) => path.replace(/\.mdx?$/, ""));
 
   const postEdges = paths.map((element) => {
     const postFilePath = path.join(POSTS_PATH, `${element}.mdx`);
     const source = fs.readFileSync(postFilePath);
-    const { content, data } = matter(source);
+    // can destructure content as well
+    const { data } = matter(source);
 
     return {
       path: element,

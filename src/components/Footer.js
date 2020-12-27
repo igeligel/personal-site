@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Link from "next/Link";
+import Link from "next/link";
 
 const FooterMaster = styled.div`
   display: flex;

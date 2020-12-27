@@ -1,70 +1,30 @@
-import Link from "next/link";
+import { ChakraProvider, theme, CSSReset, Box } from "@chakra-ui/react";
 import React from "react";
-import { Helmet } from "react-helmet";
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import Head from "next/head";
 import { Footer } from "../src/components/Footer";
 import { NavbarContainer } from "../src/components/navbar-container";
 import config from "../data/SiteConfig";
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`;
-
-const theme = {
-  colors: {
-    primary: "#0070f3",
-  },
-};
-
-const Body = styled.div`
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-`;
-
-const IndexContainer = styled.div`
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-`;
-
-const SiteContent = styled.main`
-  flex: 1;
-`;
-
 const App = ({ Component, pageProps }) => {
   return (
-    <>
-      <Helmet
-        link={[
-          {
-            rel: "shortcut icon",
-            type: "image/png",
-            href: `/logo-192x192.png`,
-          },
-        ]}
-      >
+    <ChakraProvider theme={theme}>
+      <CSSReset />
+      <Head>
+        <link rel="shortcut icon" type="image/png" href="/logo-192x192.png" />
         <meta name="description" content={config.siteDescription} />
-      </Helmet>
-      <Body>
-        <IndexContainer>
-          <main style={{ flex: 1 }} id="page-wrap">
-            <GlobalStyle />
-            <ThemeProvider theme={theme}>
-              <div>
-                <NavbarContainer />
-                <Component {...pageProps} />
-              </div>
-            </ThemeProvider>
-          </main>
+      </Head>
+
+      <Box display="flex" minHeight="100vh" flexDirection="column">
+        <Box display="flex" minHeight="100vh" flexDirection="column">
+          <Box as="main" flex={1} id="page-wrap">
+            <NavbarContainer />
+            <Component {...pageProps} />
+          </Box>
           <Footer />
-        </IndexContainer>
-      </Body>
-    </>
+        </Box>
+      </Box>
+    </ChakraProvider>
   );
 };
+
 export default App;

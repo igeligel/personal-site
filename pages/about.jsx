@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import SEO from "../src/components/SEO/SEO";
 import config from "../data/SiteConfig";
 import styled from "styled-components";
-import Link from "next/Link"
+import Link from "next/link"
 import { NavbarContainer } from "../src/components/navbar-container";
 import { SectionContainerWrapper } from "../src/components/section-container-wrapper";
 import { LeadContainerHeading } from "../src/components/lead-container-heading";

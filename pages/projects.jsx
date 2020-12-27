@@ -92,7 +92,7 @@ const FirstHeading = styled.h1`
   align-self: center;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   color: rgba(64, 150, 196, 0.5);
   font-weight: 400;
   font-family: Lato, sans-serif;

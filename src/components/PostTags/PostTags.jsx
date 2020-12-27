@@ -1,32 +1,25 @@
-import React, { Component } from "react";
-import _ from "lodash";
-import { Link } from "gatsby";
-import styled from "styled-components";
-import {PostTagButton} from '../PostTagButton'
+import React from "react";
+import Link from "next/link";
+import { PostTagButton } from "../PostTagButton";
+import { Box } from "@chakra-ui/react";
 
-const PostTagContainer = styled.div`
-  margin-top: 1.61em;
-`
-
-class PostTags extends Component {
-  render() {
-    const { tags } = this.props;
-    return (
-      <PostTagContainer>
-        {tags &&
-          tags.map(tag => (
-            <Link
-              key={tag}
-              style={{ textDecoration: "none" }}
-              state={{ tag }}
-              to={`/articles`}
-            >
-              <PostTagButton tag={tag} marginRight={'7px'} />
-            </Link>
-          ))}
-      </PostTagContainer>
-    );
-  }
-}
+const PostTags = (props) => {
+  const { tags } = props;
+  return (
+    <Box marginTop="1.61em" width="680px">
+      {tags &&
+        tags.map((tag) => (
+          <Link
+            key={tag}
+            style={{ textDecoration: "none" }}
+            state={{ tag }}
+            href={`/articles`}
+          >
+            <PostTagButton tag={tag} marginRight={"7px"} />
+          </Link>
+        ))}
+    </Box>
+  );
+};
 
 export default PostTags;

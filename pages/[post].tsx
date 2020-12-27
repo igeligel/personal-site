@@ -17,6 +17,11 @@ import { BlogLink } from "../components/BlogLink";
 import { BlogTwitterEmbed } from "../components/BlogTwitterEmbed";
 import { BlogCodeBlock } from "../components/BlogCodeBlock";
 import { GetStaticProps } from "next";
+import config from "../data/SiteConfig";
+
+import PostTags from "../src/components/PostTags/PostTags";
+import SocialLinks from "../src/components/SocialLinks/SocialLinks";
+import UserInfo from "../src/components/UserInfo/UserInfo";
 
 const Wrapper = styled.div`
   display: flex;
@@ -127,6 +132,43 @@ export default function PostPage({ source, frontMatter, slug }) {
           </style>
           <Box display="flex" flexDirection="column" alignItems="center">
             {content}
+          </Box>
+          {/* {previews.length > 0 && (
+                <PreviewContainer>
+                  <PreviewHeading>More From Web Dev Stories</PreviewHeading>
+                  <PreviewCardContainer>
+                    {previews.map(e => (
+                      <PreviewCard>
+                        <StyledLink to={`${e.node.fields.slug}/`}>
+                          <PreviewImage src={e.node.frontmatter.cover} />
+                          <PreviewCardHeading>
+                            {e.node.frontmatter.title}
+                          </PreviewCardHeading>
+                          <PreviewCardParagraph>
+                            by Kevin Peters
+                          </PreviewCardParagraph>
+                          <PreviewCardParagraph>
+                            {new Date(e.node.fields.date).toLocaleDateString()}{" "}
+                            - {e.node.timeToRead} min read
+                          </PreviewCardParagraph>
+                        </StyledLink>
+                      </PreviewCard>
+                    ))}
+                  </PreviewCardContainer>
+                </PreviewContainer>
+              )}*/}
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <PostTags tags={frontMatter.tags} />
+            <SocialLinks
+              postPath={slug}
+              postNode={{ frontmatter: frontMatter, excerpt: "" }}
+            />
+            <UserInfo config={config} />
           </Box>
         </WrapperContent>
       </Wrapper>

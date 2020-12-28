@@ -11,7 +11,19 @@ import { BlogHeading } from "../components/BlogHeading";
 import { BlogBlockquote } from "../components/BlogBlockquote";
 import { BlogImage } from "../components/BlogImage";
 import React from "react";
-import { Box, List, ListItem, UnorderedList } from "@chakra-ui/react";
+import {
+  Box,
+  List,
+  ListItem,
+  UnorderedList,
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+} from "@chakra-ui/react";
 import SEO from "../src/components/SEO/SEO";
 import { BlogLink } from "../components/BlogLink";
 import { BlogTwitterEmbed } from "../components/BlogTwitterEmbed";
@@ -105,6 +117,16 @@ const components = {
   BlogTwitterEmbed: BlogTwitterEmbed,
   BlogImage,
   BlogCodeDescription,
+  table: (props) => (
+    <Table marginTop="1.5rem" marginBottom="1.5rem">
+      {props.children}
+    </Table>
+  ),
+  thead: Thead,
+  tbody: Tbody,
+  tr: Tr,
+  th: Th,
+  td: Td,
 };
 
 export default function PostPage({ source, frontMatter, slug }) {

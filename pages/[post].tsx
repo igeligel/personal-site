@@ -22,6 +22,7 @@ import config from "../data/SiteConfig";
 import PostTags from "../src/components/PostTags/PostTags";
 import SocialLinks from "../src/components/SocialLinks/SocialLinks";
 import UserInfo from "../src/components/UserInfo/UserInfo";
+import { BlogCodeDescription } from "../components/BlogCodeDescription";
 
 const Wrapper = styled.div`
   display: flex;
@@ -86,7 +87,11 @@ const components = {
     </Box>
   ),
   ul: (props) => (
-    <UnorderedList width={["100%", "100%", "100%", "680px"]} marginTop="0.75rem" marginLeft="3rem">
+    <UnorderedList
+      width={["100%", "100%", "100%", "680px"]}
+      marginTop="0.75rem"
+      marginLeft="3rem"
+    >
       {props.children}
     </UnorderedList>
   ),
@@ -99,6 +104,7 @@ const components = {
   Head,
   BlogTwitterEmbed: BlogTwitterEmbed,
   BlogImage,
+  BlogCodeDescription,
 };
 
 export default function PostPage({ source, frontMatter, slug }) {
@@ -165,19 +171,21 @@ export default function PostPage({ source, frontMatter, slug }) {
                   </PreviewCardContainer>
                 </PreviewContainer>
               )}*/}
-          <Box
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="center"
-            width={["100%", "100%", "100%", "680px"]}
-          >
-            <PostTags tags={frontMatter.tags} />
-            <SocialLinks
-              postPath={slug}
-              postNode={{ frontmatter: frontMatter, excerpt: "" }}
-            />
-            <UserInfo config={config} />
+          <Box display="flex" justifyContent="center">
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              width={["100%", "100%", "100%", "680px"]}
+            >
+              <PostTags tags={frontMatter.tags} />
+              <SocialLinks
+                postPath={slug}
+                postNode={{ frontmatter: frontMatter, excerpt: "" }}
+              />
+              <UserInfo config={config} />
+            </Box>
           </Box>
         </WrapperContent>
       </Wrapper>

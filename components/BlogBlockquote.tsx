@@ -12,6 +12,7 @@ export const BlogBlockquote: React.FC = (props) => {
       alignSelf="self"
       width={["100%", "100%", "100%", "680px"]}
       marginTop="1rem"
+      wordBreak="break-word"
     >
       {props.children}
     </Box>

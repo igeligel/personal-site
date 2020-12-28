@@ -60,7 +60,7 @@ export const BlogCodeBlock: React.FC<BlogCodeBlockProps> = (props) => {
           className={className}
           style={{ ...style }}
           textAlign="left"
-          margin="1em 0"
+          margin="0"
           padding="0.5em"
           overflow="auto"
         >

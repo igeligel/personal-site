@@ -7,25 +7,10 @@ import Head from "next/head";
 import path from "path";
 import { postFilePaths, POSTS_PATH } from "../utils/mdxUtils";
 import { BlogParagraph } from "../components/BlogParagraph";
-import { BlogHeading } from "../components/BlogHeading";
 import { BlogBlockquote } from "../components/BlogBlockquote";
 import { BlogImage } from "../components/BlogImage";
 import React from "react";
-import {
-  Box,
-  List,
-  ListItem,
-  UnorderedList,
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-  TableCaption,
-  OrderedList,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
 import SEO from "../src/components/SEO/SEO";
 import { BlogLink } from "../components/BlogLink";
 import { BlogTwitterEmbed } from "../components/BlogTwitterEmbed";
@@ -259,3 +244,5 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
+
+export default PostPage;

@@ -37,6 +37,12 @@ import PostTags from "../src/components/PostTags/PostTags";
 import SocialLinks from "../src/components/SocialLinks/SocialLinks";
 import UserInfo from "../src/components/UserInfo/UserInfo";
 import { BlogCodeDescription } from "../components/BlogCodeDescription";
+import { BlogHeadingPrimary } from "../components/BlogHeadingPrimary";
+import { BlogHeadingSecondary } from "../components/BlogHeadingSecondary";
+import { BlogPre } from "../components/BlogPre";
+import { BlogOrderedList } from "../components/BlogOrderedList";
+import { BlogListItem } from "../components/BlogListItem";
+import { BlogTable } from "../components/BlogTable";
 
 const Wrapper = styled.div`
   display: flex;
@@ -90,48 +96,15 @@ const LeadContainerParapraph = styled.p`
 const components = {
   a: BlogLink,
   p: BlogParagraph,
-  h1: (props) => <BlogHeading as="h1">{props.children}</BlogHeading>,
-  h2: (props) => <BlogHeading as="h2">{props.children}</BlogHeading>,
-  h3: (props) => <BlogHeading as="h3">{props.children}</BlogHeading>,
+  h1: BlogHeadingPrimary,
+  h2: BlogHeadingSecondary,
+  h3: BlogHeadingPrimary,
   blockquote: BlogBlockquote,
   img: BlogImage,
-  pre: (props) => (
-    <Box width="100%" marginTop="1rem">
-      {props.children}
-    </Box>
-  ),
-  ol: (props) => {
-    return (
-      <OrderedList
-        width={["100%", "100%", "100%", "680px"]}
-        marginTop="0.75rem"
-        marginLeft="3rem"
-      >
-        {props.children}
-      </OrderedList>
-    );
-  },
-  ul: (props) => (
-    <UnorderedList
-      width={["100%", "100%", "100%", "680px"]}
-      marginTop="0.75rem"
-      marginLeft="3rem"
-    >
-      {props.children}
-    </UnorderedList>
-  ),
-  li: (props) => (
-    <ListItem>
-      <Text
-        fontSize="xl"
-        marginTop="0.75rem"
-        width={["100%", "100%", "100%", "680px"]}
-        as="span"
-      >
-        {props.children}
-      </Text>
-    </ListItem>
-  ),
+  pre: BlogPre,
+  ol: BlogOrderedList,
+  ul: BlogOrderedList,
+  li: BlogListItem,
   code: BlogCodeBlock,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
@@ -141,11 +114,7 @@ const components = {
   BlogTwitterEmbed: BlogTwitterEmbed,
   BlogImage,
   BlogCodeDescription,
-  table: (props) => (
-    <Table marginTop="1.5rem" marginBottom="1.5rem">
-      {props.children}
-    </Table>
-  ),
+  table: BlogTable,
   thead: Thead,
   tbody: Tbody,
   tr: Tr,
@@ -153,7 +122,10 @@ const components = {
   td: Td,
 };
 
-export default function PostPage({ source, frontMatter, slug }) {
+type PostPageProps = { source: any; frontMatter: any; slug: string };
+
+export const PostPage: React.FC<PostPageProps> = (props) => {
+  const { source, frontMatter, slug } = props;
   const content = hydrate(source, { components });
 
   return (
@@ -237,7 +209,7 @@ export default function PostPage({ source, frontMatter, slug }) {
       </Wrapper>
     </>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps = async (props) => {
   const { params } = props;

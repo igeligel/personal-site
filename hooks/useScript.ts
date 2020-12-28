@@ -20,19 +20,20 @@ export function useScript(src: string) {
 
       if (!script) {
         // Create script
-        script = document.createElement("script");
-        script.src = src;
-        script.async = true;
+        script = <HTMLElement>document.createElement("script");
+        script.setAttribute("src", src);
+        script.setAttribute("async", "true");
         script.setAttribute("data-status", "loading");
         // Add script to document body
         document.body.appendChild(script);
 
         // Store status in attribute on script
         // This can be read by other instances of this hook
-        const setAttributeFromEvent = (event) => {
+        const setAttributeFromEvent = (event: any) => {
+          if (!script) return;
           script.setAttribute(
             "data-status",
-            event.type === "load" ? "ready" : "error"
+            event.type === "load" ? "ready" : "error",
           );
         };
 
@@ -40,13 +41,16 @@ export function useScript(src: string) {
         script.addEventListener("error", setAttributeFromEvent);
       } else {
         // Grab existing script status from attribute and set to state.
-        setStatus(script.getAttribute("data-status"));
+        const dataStatus = script.getAttribute("data-status");
+        if (dataStatus) {
+          setStatus(dataStatus);
+        }
       }
 
       // Script event handler to update status in state
       // Note: Even if the script already exists we still need to add
       // event handlers to update the state for *this* hook instance.
-      const setStateFromEvent = (event) => {
+      const setStateFromEvent = (event: any) => {
         setStatus(event.type === "load" ? "ready" : "error");
       };
 
@@ -62,7 +66,7 @@ export function useScript(src: string) {
         }
       };
     },
-    [src] // Only re-run effect if script src changes
+    [src], // Only re-run effect if script src changes
   );
 
   return status;

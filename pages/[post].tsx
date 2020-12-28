@@ -23,6 +23,8 @@ import {
   Th,
   Td,
   TableCaption,
+  OrderedList,
+  Text,
 } from "@chakra-ui/react";
 import SEO from "../src/components/SEO/SEO";
 import { BlogLink } from "../components/BlogLink";
@@ -98,6 +100,17 @@ const components = {
       {props.children}
     </Box>
   ),
+  ol: (props) => {
+    return (
+      <OrderedList
+        width={["100%", "100%", "100%", "680px"]}
+        marginTop="0.75rem"
+        marginLeft="3rem"
+      >
+        {props.children}
+      </OrderedList>
+    );
+  },
   ul: (props) => (
     <UnorderedList
       width={["100%", "100%", "100%", "680px"]}
@@ -107,7 +120,18 @@ const components = {
       {props.children}
     </UnorderedList>
   ),
-  li: ListItem,
+  li: (props) => (
+    <ListItem>
+      <Text
+        fontSize="xl"
+        marginTop="0.75rem"
+        width={["100%", "100%", "100%", "680px"]}
+        as="span"
+      >
+        {props.children}
+      </Text>
+    </ListItem>
+  ),
   code: BlogCodeBlock,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.

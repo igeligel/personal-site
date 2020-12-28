@@ -10,7 +10,7 @@ export const BlogBlockquote: React.FC = (props) => {
       paddingRight="13px"
       margin="8px"
       alignSelf="self"
-      width="680px"
+      width={["100%", "100%", "100%", "680px"]}
     >
       {props.children}
     </Box>

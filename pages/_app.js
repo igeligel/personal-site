@@ -12,6 +12,11 @@ const App = ({ Component, pageProps }) => {
       <Head>
         <link rel="shortcut icon" type="image/png" href="/logo-192x192.png" />
         <meta name="description" content={config.siteDescription} />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <Box display="flex" minHeight="100vh" flexDirection="column">

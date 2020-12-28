@@ -6,7 +6,7 @@ import { Box } from "@chakra-ui/react";
 const PostTags = (props) => {
   const { tags } = props;
   return (
-    <Box marginTop="1.61em" width="680px">
+    <Box marginTop="1.61em" width={["100%", "100%", "100%", "680px"]}>
       {tags &&
         tags.map((tag) => (
           <Link

@@ -108,12 +108,6 @@ export default function PostPage({ source, frontMatter, slug }) {
         postNode={{ frontmatter: frontMatter, excerpt: "" }}
         postSEO
       />
-      {/* <div className="post-header">
-        <h1>{frontMatter.title}</h1>
-        {frontMatter.description && (
-          <p className="description">{frontMatter.description}</p>
-        )}
-      </div> */}
       <Wrapper>
         <WrapperContent className="blog-post">
           <LeadContainerParapraph>
@@ -162,6 +156,7 @@ export default function PostPage({ source, frontMatter, slug }) {
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
+            width={["100%", "100%", "100%", "680px"]}
           >
             <PostTags tags={frontMatter.tags} />
             <SocialLinks

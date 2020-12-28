@@ -31,7 +31,7 @@ export const BlogHeading: React.FC<BlogHeadingProps> = (props) => {
       alignContent="center"
       alignItems="center"
       marginTop={MARGIN_TOPS[props.as]}
-      width="680px"
+      width={["100%", "100%", "100%", "680px"]}
     >
       <a
         href={`#${slug}`}

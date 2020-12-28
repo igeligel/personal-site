@@ -72,7 +72,7 @@ The design of the resume plays an important role. In the [overview of the series
 
 A simple website to actually check what users might focus on your resume is [visualeyes](https://www.visualeyes.design/). It is working with artificial intelligence and provides a heatmap of what users will look at in your resume.
 
-![heatmap of eye contact to the resume](./heatmap.png)
+![Heatmap of eye contact to the resume](./heatmap.png)
 
 You can, for example, see that hiring managers or recruiters might still focus on education a lot even though they should rather focus on the startup experience. By making the text bigger or focusing more on bold keywords you can attract the eye more to the important parts of the resume.
 

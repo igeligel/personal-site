@@ -25,7 +25,7 @@ export const BlogCodeBlock: React.FC<BlogCodeBlockProps> = (props) => {
         );
         return [...acc, ...stuff];
       } else {
-        return [...acc, currentValue];
+        return [...acc, parseInt(currentValue, 10)];
       }
     }, []);
   } else {

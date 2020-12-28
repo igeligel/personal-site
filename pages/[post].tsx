@@ -11,7 +11,7 @@ import { BlogHeading } from "../components/BlogHeading";
 import { BlogBlockquote } from "../components/BlogBlockquote";
 import { BlogImage } from "../components/BlogImage";
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, List, ListItem, UnorderedList } from "@chakra-ui/react";
 import SEO from "../src/components/SEO/SEO";
 import { BlogLink } from "../components/BlogLink";
 import { BlogTwitterEmbed } from "../components/BlogTwitterEmbed";
@@ -85,6 +85,12 @@ const components = {
       {props.children}
     </Box>
   ),
+  ul: (props) => (
+    <UnorderedList width={["100%", "100%", "100%", "680px"]} marginTop="0.75rem" marginLeft="3rem">
+      {props.children}
+    </UnorderedList>
+  ),
+  li: ListItem,
   code: BlogCodeBlock,
   // It also works with dynamically-imported components, which is especially
   // useful for conditionally loading components for certain routes.
@@ -121,6 +127,14 @@ export default function PostPage({ source, frontMatter, slug }) {
                 border-radius: 2px;
                 padding: 3px 5px;
                 font-size: 16px;
+              }
+
+              .blog-post blockquote p {
+                margin-top: 0;
+              }
+
+              .blog-post li p {
+                margin-top: 0;
               }
             `}
           </style>

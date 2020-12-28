@@ -8,9 +8,10 @@ export const BlogBlockquote: React.FC = (props) => {
       borderLeft="3px solid rgba(43,55,62,.39)"
       paddingLeft="13px"
       paddingRight="13px"
-      margin="8px"
+      margin="0.6rem"
       alignSelf="self"
       width={["100%", "100%", "100%", "680px"]}
+      marginTop="1rem"
     >
       {props.children}
     </Box>

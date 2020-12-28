@@ -58,7 +58,7 @@ In this component, we would have two types of comments. One main comment and one
 
 The problem with our code above though is not the business logic. This is easy to understand if you know it. But by just looking at the code this is not clear. The first step would be to rename a lot of things. But about this, I will blog in the future since I have planned a blog series about Clean Code in Vue.js. In this blog, we will concentrate on what the code above is doing.
 
-![](https://cdn-images-1.medium.com/max/3372/1*UBNpZSiTeLrT6jTcvQHJIA.png)
+![Picture showing all code compositions in one function](https://cdn-images-1.medium.com/max/3372/1*UBNpZSiTeLrT6jTcvQHJIA.png)
 
 Even though this code, which was written by me (old code is always bad), was missing functional paradigms and many more cooll things, it worked. So now for the refactoring part. We decided already that we have three parts which are somehow influencing how the computed property is built. In the _User Check_, we iterate over every comment and see if the current user is the owner. If yes we assign the property to the object so we can see this later in the data structure which is important for editing or deleting a comment since this functionality should just be given by the user who created the comment. We could extract the first whole workflow into a different computed property named ownerAssignedComments . This computed property would look like the following snippet.
 

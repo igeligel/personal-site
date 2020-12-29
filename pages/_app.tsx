@@ -1,11 +1,13 @@
 import { ChakraProvider, theme, CSSReset, Box } from "@chakra-ui/react";
 import React from "react";
 import Head from "next/head";
+import type { AppProps } from 'next/app'
 import { Footer } from "../src/components/Footer";
 import { NavbarContainer } from "../src/components/navbar-container";
 import config from "../data/SiteConfig";
+import 'react-medium-image-zoom/dist/styles.css'
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>

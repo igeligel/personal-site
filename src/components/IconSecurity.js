@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const IconSecurity = () => {
   return (
@@ -20,9 +20,9 @@ export const IconSecurity = () => {
           y2="107.75"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="gray" stop-opacity="0.25" />
-          <stop offset="0.54" stop-color="gray" stop-opacity="0.12" />
-          <stop offset="1" stop-color="gray" stop-opacity="0.1" />
+          <stop offset="0" stopColor="gray" stopOpacity="0.25" />
+          <stop offset="0.54" stopColor="gray" stopOpacity="0.12" />
+          <stop offset="1" stopColor="gray" stopOpacity="0.1" />
         </linearGradient>
         <linearGradient
           id="2563b911-9cd4-457d-b636-acc38b40f33a"
@@ -279,21 +279,21 @@ export const IconSecurity = () => {
         d="M992.47,804.34s18.84,1.46,20.71,2.92S992.47,804.34,992.47,804.34Z"
         transform="translate(-26.97 -40.04)"
         stroke="#6c63ff"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         opacity="0.1"
       />
       <path
         d="M880.3,789.53s4,5,2.3,7.3S880.3,789.53,880.3,789.53Z"
         transform="translate(-26.97 -40.04)"
         stroke="#6c63ff"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         opacity="0.1"
       />
       <path
         d="M885.1,807.56s7.3-4.8,10.22-1.61S885.1,807.56,885.1,807.56Z"
         transform="translate(-26.97 -40.04)"
         stroke="#6c63ff"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         opacity="0.1"
       />
       <path
@@ -394,8 +394,8 @@ export const IconSecurity = () => {
         transform="translate(-26.97 -40.04)"
         fill="none"
         stroke="#535461"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <path
         d="M121.76,497c18,13,25.51,33.4,25.51,33.4s-21.7-.74-39.71-13.77-25.5-33.4-25.5-33.4S103.76,483.92,121.76,497Z"
@@ -407,8 +407,8 @@ export const IconSecurity = () => {
         transform="translate(-26.97 -40.04)"
         fill="none"
         stroke="#535461"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
       <path
         d="M173.44,529.32c-20.69,22.73-25.06,52.43-25.06,52.43s29.16-7.15,49.84-29.88,25.06-52.44,25.06-52.44S194.12,506.58,173.44,529.32Z"
@@ -420,8 +420,8 @@ export const IconSecurity = () => {
         transform="translate(-26.97 -40.04)"
         fill="none"
         stroke="#535461"
-        stroke-miterlimit="10"
-        stroke-width="2"
+        strokeMiterlimit="10"
+        strokeWidth="2"
       />
     </svg>
   );

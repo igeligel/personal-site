@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, Box, Text } from "@chakra-ui/react";
+import Zoom from "react-medium-image-zoom";
 
 type BlogImageProps = {
   src: string;
@@ -16,13 +17,15 @@ export const BlogImage: React.FC<BlogImageProps> = (props) => {
       alignItems="center"
       flexDirection="column"
     >
-      <Image
-        rounded="lg"
-        {...props}
-        loading="lazy"
-        width="fit-content"
-        maxWidth={props.maxWidth || "auto"}
-      />
+      <Zoom>
+        <Image
+          rounded="lg"
+          {...props}
+          loading="lazy"
+          width="fit-content"
+          maxWidth={props.maxWidth || "auto"}
+        />
+      </Zoom>
       <Text
         as="figcaption"
         textAlign="center"

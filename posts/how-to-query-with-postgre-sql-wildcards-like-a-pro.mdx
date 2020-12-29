@@ -15,7 +15,9 @@ tags:
 
 # How to query with PostgreSQL wildcards like a Pro
 
-## How to filter with any characters or wildcards in PostgreSQL
+Querying in SQL often requires wildcard queries. Below you can find a cheat sheet with all common operations. And even more below an explanation on how it works.
+
+## A cheat sheet for all PostgreSQL wildcard/like operations
 
 ```sql
 # Get all entries like Melissa, Melli.
@@ -40,20 +42,13 @@ SELECT * FROM example_table WHERE example_column ILIKE '%mel%';
 SELECT * FROM example_table WHERE example_column ~* 'mel';
 ```
 
-<ins
-  class="adsbygoogle"
-  style="display:block"
-  data-ad-client="ca-pub-6098077505348522"
-  data-ad-slot="2380157110"
-  data-ad-format="auto"
-  data-full-width-responsive="true">
-</ins>
+<AdBanner adSlot="2380157110" />
 
 ## Quicklinks
 
 1. [Basic filtering in PostgreSQL or SQL](#basic-filtering-in-postgresql-or-sql)
-1. [The `%` wildcard operator in a nutshell](#the-code-classlanguage-textcode-wildcard-operator-in-a-nutshell)
-1. [The `_` wildcard operator in a nutshell](#the-code-classlanguage-text_code-wildcard-operator-in-a-nutshell)
+1. [The % wildcard operator in a nutshell](#the-percent-wildcard-operator-in-a-nutshell)
+1. [The _ wildcard operator in a nutshell](#the-_-wildcard-operator-in-a-nutshell)
 1. [Search with dynamic cases or full text search](#search-with-dynamic-cases-or-full-text-search)
 1. [Conclusion](#conclusion)
 
@@ -79,55 +74,55 @@ From a table with a lot of entries of fictional person data, it will filter all 
     </tr>
   </thead>
   <tbody>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>203</td>
       <td>...</td>
       <td>Max</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>204</td>
       <td>...</td>
       <td>Michael</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>205</td>
       <td>...</td>
       <td>Mel</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>206</td>
       <td>...</td>
       <td>Melissa</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>207</td>
       <td>...</td>
       <td>Mel</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>208</td>
       <td>...</td>
       <td>Taylor</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>209</td>
       <td>...</td>
       <td>Emelio</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -165,7 +160,7 @@ After executing the query it would filter out all non-highlighted rows above, re
 
 Exactly what we wanted to achieve. But for more advanced use cases like filtering all names which start with `Mel`, we would need to use wildcards.
 
-## The `%` wildcard operator in a nutshell
+## The % wildcard operator in a nutshell
 
 In our previous dataset, we filtered all values which start with `Mel` in the exact casing. Now we filter all rows which have the value **like** Mel out of our original dataset. This can be achieved with a wildcard character. In this case, here it is not important how many characters are wildcarded. This basically means it could be anything like `Melissa`, `Melloremipsum` or `Mel`. For getting this to work, PostgreSQL offers the character `%`. With this, we can build a query in theory which can match all of the words above. There is one nuance though, instead of using the `WHERE ... = '...'` filter, we need to use a statement called `LIKE`. The statement will look like `SELECT * FROM ... WHERE ... LIKE '...'`.
 
@@ -179,55 +174,55 @@ In our previous dataset, we filtered all values which start with `Mel` in the ex
     </tr>
   </thead>
   <tbody>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>203</td>
       <td>...</td>
       <td>Max</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>204</td>
       <td>...</td>
       <td>Michael</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>205</td>
       <td>...</td>
       <td>Mel</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>206</td>
       <td>...</td>
       <td>Melissa</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>207</td>
       <td>...</td>
       <td>Mel</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>208</td>
       <td>...</td>
       <td>Taylor</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>209</td>
       <td>...</td>
       <td>Emelio</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -277,7 +272,7 @@ And it would result in the following table as the SQL query result.
 
 The `%` sign in the query acts as a match for any character. But not even just a match. It is a match for zero to infinite characters. That is why this operator is matching `Mel` and `Melissa`. A lot of use cases result out of this and that is why this is the most used wildcard in SQL or PostgreSQL overall.
 
-## The `_` wildcard operator in a nutshell
+## The _ wildcard operator in a nutshell
 
 In the last search, we have defined infinite wildcards with the `%` which match strings with zero to an infinite amount of characters and other filters. Sometimes we have use-cases to just wildcard a specific character in some text. For example, there could be types with or without a single number attached. These types could be `SALE` but also `SALE1` or `SALE8`. In this example, our matches look really similar, but if we know that there is just one number in the matching string, we could use the wildcard operator `_` to match exactly the cases we want. For our sale types, we could use `SALE_`.
 
@@ -293,55 +288,55 @@ In our example table, we could have different results based on this. To make a g
     </tr>
   </thead>
   <tbody>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>203</td>
       <td>...</td>
       <td>Max</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>204</td>
       <td>...</td>
       <td>Michael</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>205</td>
       <td>...</td>
       <td>Mel</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>206</td>
       <td>...</td>
       <td>Melissa</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>207</td>
       <td>...</td>
       <td>Mel</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>208</td>
       <td>...</td>
       <td>Taylor</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>209</td>
       <td>...</td>
       <td>Emelio</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>...</td>
       <td>...</td>
       <td>...</td>
@@ -445,55 +440,55 @@ The `includes` functionality is not existing in PostgreSQL or SQL in general. Bu
     </tr>
   </thead>
   <tbody>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>203</td>
       <td>...</td>
       <td>Max</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>204</td>
       <td>...</td>
       <td>Michael</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>205</td>
       <td>...</td>
       <td>Mel</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>206</td>
       <td>...</td>
       <td>Melissa</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>207</td>
       <td>...</td>
       <td>Mel</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>208</td>
       <td>...</td>
       <td>Taylor</td>
       <td>...</td>
     </tr>
-    <tr style="background-color: #f0ffff;">
+    <tr style={{ "backgroundColor":"#f0ffff" }}>
       <td>209</td>
       <td>...</td>
       <td>Emelio</td>
       <td>...</td>
     </tr>
-    <tr style="opacity: 0.2;">
+    <tr style={{ opacity: "0.2" }}>
       <td>...</td>
       <td>...</td>
       <td>...</td>

@@ -30,6 +30,7 @@ import { BlogListItem } from "../components/BlogListItem";
 import { BlogTable } from "../components/BlogTable";
 import { BlogHeadingTertiary } from "../components/BlogHeadingTertiary";
 import { BlogUnorderedList } from "../components/BlogUnorderedList";
+import { AdBanner } from "../components/BlogAdBanner";
 
 const Wrapper = styled.div`
   display: flex;
@@ -107,6 +108,7 @@ const components = {
   tr: Tr,
   th: Th,
   td: Td,
+  AdBanner: AdBanner,
 };
 
 type PostPageProps = { source: any; frontMatter: any; slug: string };

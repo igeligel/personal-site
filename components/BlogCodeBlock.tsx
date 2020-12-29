@@ -8,6 +8,10 @@ type BlogCodeBlockProps = {
 
 export const BlogCodeBlock: React.FC<BlogCodeBlockProps> = (props) => {
   const { children, className } = props;
+
+  if (!className) {
+    console.log({ props });
+  }
   const languagePart = className.replace(/language-/, "");
   let language = null;
   let finalHighlightedLines = [] as Array<number>;

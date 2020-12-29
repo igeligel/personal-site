@@ -50,7 +50,7 @@ The long-term plan was to introduce a new front-end framework at the end of the 
 
 The first feature we implemented with Vue.js was the commenting system which is now open source ([3YOURMIND/vue-comments](https://github.com/3YOURMIND/vue-comments)). This component was written in a way so we can reuse it in different applications of our product stack. The hard part of this task was the webpack integration into the ancient Django build workflow. The gist of what we did is shown in this diagram:
 
-![Simplified build process of Vue-Django-integration](https://cdn-images-1.medium.com/max/2000/1*J3_E8Hk3MP-d8_tXE-DhhA.png)_Simplified build process of Vue-Django-integration_
+![Simplified build process of Vue-Django-integration](https://cdn-images-1.medium.com/max/2000/1*J3_E8Hk3MP-d8_tXE-DhhA.png)
 
 What is shown is that webpack is bundling the entry point and then inject those with the html-webpack-plugin into a file which is a Django file. This file is then a Django template component and can be used like any other Django template. Obviously, we could not really introduce features such as [hot module replacement](https://webpack.js.org/concepts/hot-module-replacement/), but this experience with [webpack](https://webpack.js.org/) gave us many insights on how we should build and bundle our application in the future.
 
@@ -62,7 +62,7 @@ After writing AMPI and the commenting system, the team decided to go all in with
 
 Like I mentioned the front-end team is also working on making a lot of components open-source since they do not provide business value on their own. You can visit [3YOURMIND’s organization panel at GitHub](https://github.com/3YOURMIND). As of the state right now we got a commenting system and a notification library for Vue.js open-source and many more things are planned to get to the open-source world.
 
-![Design system of 3YOURMIND](https://cdn-images-1.medium.com/max/6796/1*DLKIlRPjKVjFA2aYolg0fg.png)_Design system of 3YOURMIND_
+![Design system of 3YOURMIND](https://cdn-images-1.medium.com/max/6796/1*DLKIlRPjKVjFA2aYolg0fg.png)
 
 Another notable thing is that we finally got unit and integration tests on the front-end. Thanks to vue-test-utils ([GitHub](https://github.com/vuejs/vue-test-utils), [Documentation](https://vue-test-utils.vuejs.org/)) and Jest ([GitHub](https://github.com/facebook/jest), [Documentation](https://facebook.github.io/jest/)) we are able to easily test our Vue.js application. Following the documentation of those two frameworks is really easy and the setup is working seamlessly. vue-test-utils, in particular, has allowed us to thoroughly test our application by providing features such as vuex and vue-router mocking, enabling us to write more meaningful unit tests. The only problem we still have is measuring test coverage but we are working on fixing that in the coming weeks. Another thing which changed is the design of the platform.
 

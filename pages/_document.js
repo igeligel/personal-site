@@ -1,6 +1,6 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 import React from "react";
-import styled, { ServerStyleSheet } from "styled-components";
+import { ServerStyleSheet } from "styled-components";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -27,6 +27,23 @@ class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render() {
+    return (
+      <Html lang="en-US">
+        <Head>
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }
 

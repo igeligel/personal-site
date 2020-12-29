@@ -21,7 +21,7 @@ It is natural that big data structures or components exist in large JavaScript a
 
 ### The structure of programming languages
 
-Every programming language is a construct of logical operations. In the end, every language is somehow compiled to some sort of code the computer or the running system can understand. Enabling the language to be transformed requires a specific format. This is where abstract syntax trees come into play. A tree in this sense here is just a root node with multiple children nodes which can also have children nodes. The important part is that there is just one root node. Each node in the abstract syntax tree defines some structure of the source code. For example, in HTML the a-tag with a text inside <a>Hello World</a> would be two nodes. The first node is the HTML tag with the type a and it would have a children node which might be a Text node with the value Hello World inside. The root node is the HTML node in this case. I need to mention here that HTML is per se no programming language but is parsable like other languages.
+Every programming language is a construct of logical operations. In the end, every language is somehow compiled to some sort of code the computer or the running system can understand. Enabling the language to be transformed requires a specific format. This is where abstract syntax trees come into play. A tree in this sense here is just a root node with multiple children nodes which can also have children nodes. The important part is that there is just one root node. Each node in the abstract syntax tree defines some structure of the source code. For example, in HTML the a-tag with a text inside `<a>Hello World</a>` would be two nodes. The first node is the HTML tag with the type a and it would have a children node which might be a Text node with the value Hello World inside. The root node is the HTML node in this case. I need to mention here that HTML is per se no programming language but is parsable like other languages.
 
 <BlogImage
   maxWidth="150px"
@@ -76,7 +76,7 @@ Babel has a lot of utilities but the first utility which is used is the Babel pa
 
 The package provides two functionalities but we will focus just focus on the parse functionality. It is a single function with two parameters. The first parameter is the code to be parsed and the second optional parameter are options given to the function. The output of this function will be an abstract syntax tree. To get an idea of how this abstract syntax tree could look like we are going to use the tool AST explorer. It is a web application where you can paste some code and it will give you an abstract syntax tree to visualize how this code is getting parsed. You can find the application here: [https://astexplorer.net/](https://astexplorer.net/)
 
-```
+```js
 const a = 5;
 ```
 
@@ -116,7 +116,7 @@ This is the basic structure of how every compiler works. A language is parsable 
 ### Create an abstract syntax tree (AST) of a React component
 
 ```js
-export const Welcome = props => {
+export const Welcome = (props) => {
   return (
     <div>
       <div>
@@ -153,7 +153,7 @@ const fs = require("fs");
 const content = fs.readFileSync(__dirname + "/Welcome/index.js", "utf8");
 const ast = babelParser.parse(content, {
   sourceType: "module",
-  plugins: ["jsx"]
+  plugins: ["jsx"],
 });
 console.log(JSON.stringify(ast));
 ```
@@ -232,11 +232,11 @@ This is a completely reduced version of the abstract syntax tree with just the s
 ```js
 const rawAst = babelParser.parse(content, {
   sourceType: "module",
-  plugins: ["jsx"]
+  plugins: ["jsx"],
 });
 
 const initialAst = rawAst.program.body.find(
-  astNode => astNode.type === "ExportNamedDeclaration"
+  (astNode) => astNode.type === "ExportNamedDeclaration",
 ).declaration.declarations[0].init.body.body[0].argument;
 ```
 
@@ -248,7 +248,7 @@ The first part for us is to find the body of the file. I called this initialAst 
   alt="..."
 />
 
-Traversing the tree is normally a recursive function. This is because we work here node for node and just scan if a node is of some type and then check if it has children. So the first step would be to go through every node and check if the type is JSXElement . If not, we just skip the node more or less and do not do anything with it. This is because we cannot delete the node directly because then we will not have a structure anymore because the parent-child relation will get lost. Imagine a ... node in the image next to the text will just get deleted. The reference to the children nodes would also be lost and we would not know anymore that the JSXElement node on bottom is actually referenced to the root node. What we do instead is to give a reference of the parent's children properties to the current node so we can assign the proper children there. If we discover a new node of the type JSXElement we assign a new array of children to this node and pass the children again to the real AST children nodes. So basically we do this for every node and this is why a recursive function is the best we can do here now. You can see this functionality in the following code snippet:
+Traversing the tree is normally a recursive function. This is because we work here node for node and just scan if a node is of some type and then check if it has children. So the first step would be to go through every node and check if the type is JSXElement. If not, we just skip the node more or less and do not do anything with it. This is because we cannot delete the node directly because then we will not have a structure anymore because the parent-child relation will get lost. Imagine a ... node in the image next to the text will just get deleted. The reference to the children nodes would also be lost and we would not know anymore that the JSXElement node on bottom is actually referenced to the root node. What we do instead is to give a reference of the parent's children properties to the current node so we can assign the proper children there. If we discover a new node of the type JSXElement we assign a new array of children to this node and pass the children again to the real AST children nodes. So basically we do this for every node and this is why a recursive function is the best we can do here now. You can see this functionality in the following code snippet:
 
 ```js
 const reduceAstNode = (oldNode, currentNode) => {
@@ -256,18 +256,18 @@ const reduceAstNode = (oldNode, currentNode) => {
   if (currentNode.type === "JSXElement") {
     element = {
       name: currentNode.openingElement.name.name,
-      children: []
+      children: [],
     };
     oldNode.push(element);
   }
   if ("children" in currentNode) {
-    currentNode.children.forEach(node =>
+    currentNode.children.forEach((node) =>
       oldNode.length > 0
         ? reduceAstNode(element.children, node)
-        : reduceAstNode(oldNode, node)
+        : reduceAstNode(oldNode, node),
     );
   }
-  return oldNode
+  return oldNode;
 };
 ```
 
@@ -305,7 +305,20 @@ The possibilities are endless here. It is up to your task on what to do with it.
 
 Visualizing is the last step what I wanted to achieve with this project. After some research, I have not found a plug-and-play solution for this problem but I have found a great example on codepen of a D3.js tree layout solution [zhulinpinyu](https://codepen.io/zhulinpinyu/) and ported it into a codesandbox.
 
-<iframe src="https://codesandbox.io/embed/yj00m69qo1?fontsize=14" title="yj00m69qo1" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<iframe
+  src="https://codesandbox.io/embed/yj00m69qo1?fontsize=14"
+  title="yj00m69qo1"
+  allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media"
+  style={{
+    marginTop: "1rem",
+    width: "100%",
+    height: "500px",
+    border: "0",
+    borderRadius: "4px",
+    overflow: "hidden",
+  }}
+  sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+/>
 
 To change the structure of the tree we need to go to the index.js file of the src folder. In there we can find the exact configuration of the tree generated by our Node.js program. If you changed the React component structure inside this Node.js project and let the project run again you will see the changed output. Just paste it into the codesandbox and let your tree get rendered.
 
@@ -314,7 +327,6 @@ There are many more possibilites to visualize things with JavaScript. If you are
 - [codesandbox.io](https://codesandbox.io) — an awesome online editor for JavaScript applications
 - [d3.js](https://d3js.org/) — A library for creating diagrams
 - [jsx-to-simple-ast](https://github.com/igeligel/jsx-to-simple-ast) — The repository of the tree generator
-
 
 > Thanks for reading this. You rock 🤘
 > Also check my other blog articles like [Function parameters in JavaScript](https://medium.com/@kevin_peters/function-parameters-in-javascript-clean-code-4caac109159b), [Learn how to refactor Vue.js Single File Components with a real-world example](https://medium.com/@kevin_peters/learn-how-to-refactor-vue-js-single-file-components-on-a-real-world-example-501b3952ae49) or [Auto formatters for Python](https://medium.com/3yourmind/auto-formatters-for-python-8925065f9505).

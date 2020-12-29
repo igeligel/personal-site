@@ -2,7 +2,7 @@ import React from "react";
 import { ListItem, Text } from "@chakra-ui/react";
 
 export const BlogListItem: React.FC = (props) => (
-  <ListItem>
+  <ListItem fontSize="xl">
     <Text
       fontSize="xl"
       marginTop="0.75rem"

@@ -28,6 +28,8 @@ import { BlogPre } from "../components/BlogPre";
 import { BlogOrderedList } from "../components/BlogOrderedList";
 import { BlogListItem } from "../components/BlogListItem";
 import { BlogTable } from "../components/BlogTable";
+import { BlogHeadingTertiary } from "../components/BlogHeadingTertiary";
+import { BlogUnorderedList } from "../components/BlogUnorderedList";
 
 const Wrapper = styled.div`
   display: flex;
@@ -83,12 +85,12 @@ const components = {
   p: BlogParagraph,
   h1: BlogHeadingPrimary,
   h2: BlogHeadingSecondary,
-  h3: BlogHeadingPrimary,
+  h3: BlogHeadingTertiary,
   blockquote: BlogBlockquote,
   img: BlogImage,
   pre: BlogPre,
   ol: BlogOrderedList,
-  ul: BlogOrderedList,
+  ul: BlogUnorderedList,
   li: BlogListItem,
   code: BlogCodeBlock,
   // It also works with dynamically-imported components, which is especially

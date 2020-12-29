@@ -4,6 +4,7 @@ import { Image, Box, Text } from "@chakra-ui/react";
 type BlogImageProps = {
   src: string;
   alt: string;
+  maxWidth?: string;
 };
 
 export const BlogImage: React.FC<BlogImageProps> = (props) => {
@@ -15,7 +16,13 @@ export const BlogImage: React.FC<BlogImageProps> = (props) => {
       alignItems="center"
       flexDirection="column"
     >
-      <Image rounded="lg" {...props} loading="lazy" width="fit-content" />
+      <Image
+        rounded="lg"
+        {...props}
+        loading="lazy"
+        width="fit-content"
+        maxWidth={props.maxWidth || "auto"}
+      />
       <Text
         as="figcaption"
         textAlign="center"

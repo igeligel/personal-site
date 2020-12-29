@@ -6,6 +6,17 @@ type BlogLinkProps = {
 };
 
 export const BlogLink: React.FC<BlogLinkProps> = (props) => {
+  const isInternalReferenceLink = props.href[0] === "#";
+  if (isInternalReferenceLink) {
+    return (
+      <Text as="span" fontSize="xl">
+        <Link color="teal.500" href={props.href}>
+          {props.children}
+        </Link>
+      </Text>
+    );
+  }
+
   const isExternal = props.href[0] !== "/";
   if (isExternal) {
     return (

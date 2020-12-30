@@ -36,9 +36,14 @@ export const BlogUnorderedList: React.FC = (props) => {
     >
       {children &&
         Array.isArray(children) &&
-        children.map((child) => {
+        children.map((child, index) => {
           return (
-            <ListItem fontSize="xl" display="flex" marginLeft="-0.75rem">
+            <ListItem
+              fontSize="xl"
+              display="flex"
+              marginLeft="-0.75rem"
+              key={index}
+            >
               <ListIcon as={ListIconBox} color="green.500" />
               <Box marginRight="0.75rem">{child}</Box>
             </ListItem>

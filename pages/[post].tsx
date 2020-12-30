@@ -10,7 +10,16 @@ import { BlogParagraph } from "../components/BlogParagraph";
 import { BlogBlockquote } from "../components/BlogBlockquote";
 import { BlogImage } from "../components/BlogImage";
 import React from "react";
-import { Box, Thead, Tbody, Tr, Th, Td } from "@chakra-ui/react";
+import {
+  Box,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Heading,
+  Image,
+} from "@chakra-ui/react";
 import SEO from "../src/components/SEO/SEO";
 import { BlogLink } from "../components/BlogLink";
 import { BlogTwitterEmbed } from "../components/BlogTwitterEmbed";
@@ -32,6 +41,7 @@ import { BlogHeadingTertiary } from "../components/BlogHeadingTertiary";
 import { BlogUnorderedList } from "../components/BlogUnorderedList";
 import { AdBanner } from "../components/BlogAdBanner";
 import readingTime from "reading-time";
+import { BlogRecommendationItem } from "../components/BlogRecommendationItem";
 
 const Wrapper = styled.div`
   display: flex;
@@ -112,7 +122,12 @@ const components = {
   AdBanner: AdBanner,
 };
 
-type PostPageProps = { source: any; frontMatter: any; slug: string };
+type PostPageProps = {
+  source: any;
+  frontMatter: any;
+  slug: string;
+  recommendations: Array<any>;
+};
 
 export const PostPage: React.FC<PostPageProps> = (props) => {
   const { source, frontMatter, slug } = props;
@@ -155,30 +170,20 @@ export const PostPage: React.FC<PostPageProps> = (props) => {
           <Box display="flex" flexDirection="column" alignItems="center">
             {content}
           </Box>
-          {/* {previews.length > 0 && (
-                <PreviewContainer>
-                  <PreviewHeading>More From Web Dev Stories</PreviewHeading>
-                  <PreviewCardContainer>
-                    {previews.map(e => (
-                      <PreviewCard>
-                        <StyledLink to={`${e.node.fields.slug}/`}>
-                          <PreviewImage src={e.node.frontmatter.cover} />
-                          <PreviewCardHeading>
-                            {e.node.frontmatter.title}
-                          </PreviewCardHeading>
-                          <PreviewCardParagraph>
-                            by Kevin Peters
-                          </PreviewCardParagraph>
-                          <PreviewCardParagraph>
-                            {new Date(e.node.fields.date).toLocaleDateString()}{" "}
-                            - {e.node.timeToRead} min read
-                          </PreviewCardParagraph>
-                        </StyledLink>
-                      </PreviewCard>
-                    ))}
-                  </PreviewCardContainer>
-                </PreviewContainer>
-              )}*/}
+          {props.recommendations?.length > 0 && (
+            <Box marginTop="1rem">
+              <Heading as="h3">You might also like</Heading>
+              <Box
+                marginTop="0.75rem"
+                display="flex"
+                justifyContent="space-around"
+              >
+                {props.recommendations.map((blogRecommendation) => {
+                  return <BlogRecommendationItem item={blogRecommendation} />;
+                })}
+              </Box>
+            </Box>
+          )}
           <Box display="flex" justifyContent="center">
             <Box
               display="flex"
@@ -209,7 +214,7 @@ export const getStaticProps: GetStaticProps = async (props) => {
     .map((_path) => {
       const postFilePath = path.join(POSTS_PATH, `${_path}.mdx`);
       const source = fs.readFileSync(postFilePath);
-      return matter(source);
+      return { ...matter(source), href: _path };
     });
   const postFilePath = path.join(POSTS_PATH, `${params?.post}.mdx`);
   const source = fs.readFileSync(postFilePath);
@@ -218,30 +223,38 @@ export const getStaticProps: GetStaticProps = async (props) => {
 
   const storyDate = new Date(data.date);
 
-  // const awdwadaw = result[0].excerpt
-  // const minutesReadingTime = readingTime(result[0].content)
-  console.log(result[0].data.tags);
-  const allTaggedStories = result
-    .filter((story) => {
-      return story.data.tags.includes(data.tags[0]);
-    })
-    .map((story) => {
-      return {
-        ...story,
-        data: {
-          title: story.data.title,
-          date: new Date(story.data.date),
-        },
-      };
-    });
+  const allTaggedStories = result.filter((story) => {
+    return (
+      story.data.tags.find((e: any) => data.tags.includes(e)) &&
+      !story.data.cover.includes("unsplash.it") &&
+      story.data.cover !== null
+    );
+  });
+
   const sortedStories = allTaggedStories.sort((storyA, storyB) => {
-    var distancea = Math.abs(storyDate.getTime() - storyA.data.date.getTime());
-    var distanceb = Math.abs(storyDate.getTime() - storyB.data.date.getTime());
+    var distancea = Math.abs(
+      storyDate.getTime() - new Date(storyA.data.date).getTime(),
+    );
+    var distanceb = Math.abs(
+      storyDate.getTime() - new Date(storyB.data.date).getTime(),
+    );
     return distancea - distanceb;
   });
 
-  console.log(sortedStories[0].data.title);
-  console.log(sortedStories[1].data.title);
+  const twoSimilarStories =
+    sortedStories.length > 1 ? [sortedStories[0], sortedStories[1]] : [];
+
+  const recommendations = twoSimilarStories.map((story) => {
+    const readingTimeInMinutes = readingTime(story.content);
+    return {
+      title: story.data.title,
+      date: story.data.date,
+      cover: story.data.cover,
+      description: story.data.description || null,
+      readingTime: readingTimeInMinutes.text,
+      href: story.href,
+    };
+  });
 
   const mdxSource = await renderToString(content, {
     components,
@@ -258,6 +271,7 @@ export const getStaticProps: GetStaticProps = async (props) => {
       source: mdxSource,
       frontMatter: data,
       slug: params?.post,
+      recommendations: recommendations,
     },
   };
 };

@@ -12,7 +12,7 @@ const ListIconBox = () => {
       alignItems="center"
       padding="2px"
       borderRadius="100%"
-      marginTop="8px"
+      marginTop="0.6rem"
       marginRight="6px"
     >
       <Box

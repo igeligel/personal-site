@@ -36,7 +36,7 @@
     "gatsby-transformer-remark": "^2.6.45",
     "gatsby-transformer-sharp": "^2.3.9",
     "gray-matter": "^4.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "next": "^10.0.4",
     "next-mdx-remote": "^2.0.0",

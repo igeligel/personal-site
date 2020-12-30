@@ -9,30 +9,31 @@ export const BlogLink: React.FC<BlogLinkProps> = (props) => {
   const isInternalReferenceLink = props.href[0] === "#";
   if (isInternalReferenceLink) {
     return (
-      <Text as="span" fontSize="xl">
-        <Link color="teal.500" href={props.href}>
-          {props.children}
-        </Link>
-      </Text>
+      <Link color="blue.500" href={props.href} fontSize="xl">
+        {props.children}
+      </Link>
     );
   }
 
   const isExternal = props.href[0] !== "/";
   if (isExternal) {
     return (
-      <Text as="span" fontSize="xl">
-        <Link color="teal.500" href={props.href} isExternal={isExternal}>
-          {props.children}
-        </Link>
-      </Text>
+      <Link
+        color="blue.500"
+        href={props.href}
+        isExternal={isExternal}
+        fontSize="xl"
+      >
+        {props.children}
+      </Link>
     );
   }
 
   return (
-    <Text as="span" fontSize="xl">
-      <NextLink {...props} passHref>
-        <Link color="teal.500">{props.children}</Link>
-      </NextLink>
-    </Text>
+    <NextLink {...props} passHref>
+      <Link color="blue.500" fontSize="xl">
+        {props.children}
+      </Link>
+    </NextLink>
   );
 };

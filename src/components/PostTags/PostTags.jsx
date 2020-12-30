@@ -12,8 +12,10 @@ const PostTags = (props) => {
           <Link
             key={tag}
             style={{ textDecoration: "none" }}
-            state={{ tag }}
-            href={`/articles`}
+            href={{
+              pathname: "/articles",
+              query: { tag },
+            }}
           >
             <PostTagButton tag={tag} marginRight={"7px"} />
           </Link>

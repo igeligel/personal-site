@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SEO from "../src/components/SEO/SEO";
 import styled from "styled-components";
 import PostTagButton from "../src/components/PostTagButton";
@@ -10,6 +10,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Head from "next/head";
+import { useRouter } from 'next/router'
 import { ListOfArticles } from "../components/ListOfArticles";
 
 type PostEdge = {
@@ -133,6 +134,7 @@ type ArticleProps = {
 };
 
 const Articles: React.FC<ArticleProps> = (props) => {
+  const router = useRouter()
   const [value, setValue] = useState<string>("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
@@ -151,6 +153,13 @@ const Articles: React.FC<ArticleProps> = (props) => {
 
   const selectedTagInPopularTags =
     selectedTag !== null ? tags.includes(selectedTag) : null;
+
+  useEffect(() => {
+    if (router.query.tag) {
+      const urlParamTag = router.query.tag as string
+      setSelectedTag(urlParamTag);
+    }
+  }, [router])
 
   return (
     <div>
@@ -191,7 +200,7 @@ const Articles: React.FC<ArticleProps> = (props) => {
             </ClearText>
           </TagHandler>
           <FormInput type="text" value={value} onChange={handleChange} />
-          <ListOfArticles postList={postList}></ListOfArticles>
+          <ListOfArticles postList={postList} marginTop="1rem" />
         </SectionContainer>
       </SectionContainerWrapper>
     </div>

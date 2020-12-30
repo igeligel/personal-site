@@ -10,11 +10,14 @@ import { LaptopIcon } from "../src/components/LaptopIcon";
 import { IconSecurity } from "../src/components/IconSecurity";
 import { DesignIcon } from "../src/components/DesignIcon";
 
-const UnorderedList = styled.ul`
+type UnorderedListProps = {
+  marginTop?: string;
+};
+
+const UnorderedList = styled.ul<UnorderedListProps>`
   list-style-type: none;
   padding: 0;
-  margin: 0;
-  margin-top: 1.61em;
+  margin-top: ${(props) => props.marginTop || 0};
 `;
 
 const ListItemL = styled.a`
@@ -50,13 +53,14 @@ const IconWrapper = styled.div`
 
 type ListOfArticlesProps = {
   postList: Array<any>;
+  marginTop?: string;
 };
 
 export const ListOfArticles: React.FC<ListOfArticlesProps> = (props) => {
-  const { postList } = props;
+  const { postList, marginTop } = props;
 
   return (
-    <UnorderedList>
+    <UnorderedList marginTop={marginTop}>
       {postList.map((post: any) => (
         <ListItem key={post.title}>
           <Link href={post.path} passHref>

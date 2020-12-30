@@ -52,12 +52,7 @@ const Wrapper = styled.div`
 const WrapperContent = styled.div`
   max-width: 800px;
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 
   @media (max-width: 875px) {

@@ -28,6 +28,22 @@ const App = ({ Component, pageProps }: AppProps) => {
           href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap"
           rel="stylesheet"
         />
+        <>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-104059616-1"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments)}
+                gtag("js", new Date());
+                gtag("config", "UA-104059616-1");
+              `,
+            }}
+          />
+        </>
       </Head>
       <ChakraProvider theme={theme}>
         <CSSReset />

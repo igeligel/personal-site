@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Helmet from "react-helmet";
+import Head from "next/head";
 import urljoin from "url-join";
 import config from "../../../data/SiteConfig";
 
@@ -43,8 +43,8 @@ class SEO extends Component {
         "@type": "WebSite",
         url: blogURL,
         name: title,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
-      }
+        alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+      },
     ];
     if (postSEO) {
       schemaOrgJSONLD.push(
@@ -58,10 +58,10 @@ class SEO extends Component {
               item: {
                 "@id": postURL,
                 name: title,
-                image
-              }
-            }
-          ]
+                image,
+              },
+            },
+          ],
         },
         {
           "@context": "http://schema.org",
@@ -72,14 +72,14 @@ class SEO extends Component {
           headline: title,
           image: {
             "@type": "ImageObject",
-            url: image
+            url: image,
           },
-          description
-        }
+          description,
+        },
       );
     }
     return (
-      <Helmet>
+      <Head>
         {/* General tags */}
         <meta name="description" content={description} />
         <meta name="image" content={image} />
@@ -109,7 +109,7 @@ class SEO extends Component {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={twitterDescription} />
         <meta name="twitter:image" content={image} />
-      </Helmet>
+      </Head>
     );
   }
 }

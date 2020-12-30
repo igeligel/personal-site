@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
+import Link from "next/link";
 
 const StyledNavbarContainer = styled.div`
   flex: 1;
@@ -22,7 +22,7 @@ const Navbar = styled.div`
   }
 `;
 
-const MainStyledLink = styled(Link)`
+const MainStyledLink = styled.a`
   margin: 0;
   padding: 0;
   color: #4096c4;
@@ -33,7 +33,7 @@ const MainStyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a`
   // color: palevioletred;
   // font-weight: bold;
   color: rgba(64, 150, 196, 0.5);
@@ -71,13 +71,23 @@ export const NavbarContainer = () => {
     <StyledNavbarContainer>
       <Navbar>
         <NavbarHeader>
-          <MainStyledLink to={"/"}>Web Dev Stories</MainStyledLink>
+          <Link href="/" passHref>
+            <MainStyledLink>Web Dev Stories</MainStyledLink>
+          </Link>
         </NavbarHeader>
         <NavbarMenuContainer>
-          <StyledLink to={"/about/"}>About</StyledLink>
-          <StyledLink to={"/articles/"}>Articles</StyledLink>
-          <StyledLink to={"/projects/"}>Projects</StyledLink>
-          <StyledLink to={"/contact/"}>Contact</StyledLink>
+          <Link href="/about" passHref>
+            <StyledLink>About</StyledLink>
+          </Link>
+          <Link href="/articles" passHref>
+            <StyledLink>Articles</StyledLink>
+          </Link>
+          <Link href="/projects" passHref>
+            <StyledLink>Projects</StyledLink>
+          </Link>
+          <Link href="/contact" passHref>
+            <StyledLink>Contact</StyledLink>
+          </Link>
         </NavbarMenuContainer>
       </Navbar>
     </StyledNavbarContainer>

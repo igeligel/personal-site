@@ -1,0 +1,80 @@
+---
+title: "Hacktoberfest and Open Sourcing a React.js Component"
+seoTitle: "Hacktoberfest and Open Sourcing a React.js Component"
+description: "The Hacktoberfest 2020 got a lot of bad publicity. Wondering how you can make it a good experience? Read this article to get some tips and tricks how I got over 500 clicks on my repository and why Hacktoberfest is good for the community."
+openGraphDescription: "The Hacktoberfest 2020 got a lot of bad publicity. Wondering how you can make it a good experience? Read this article to get some tips and tricks how I got over 500 clicks on my repository and why Hacktoberfest is good for the community."
+twitterDescription: "The Hacktoberfest 2020 got a lot of bad publicity. Wondering how you can make it a good experience? Read this article to get some tips and tricks how I got over 500 clicks on my repository and why Hacktoberfest is good for the community."
+cover: "/thumbnails/hacktoberfest-and-open-sourcing-reactjs-components.png"
+category: "software-engineering"
+date: "10/13/2020"
+tags:
+  - software-engineering
+  - github
+  - open-source
+---
+
+# Hacktoberfest and Open Sourcing a React.js Component
+
+I am writing this post because of the negativity around [Hacktoberfest](https://hacktoberfest.digitalocean.com/) for the past two weeks. I always loved that time of the year, where I could go to [GitHub](https://github.com/) and check repositories that were kind of unmaintained to update some things or try out a new technology that I always wanted to try. That is how I got into Node.js and React, and I thank every maintainer for this. I am always having an awesome time, and this time I wanted to give back.
+
+## The Problem with Open Source
+
+Open Source is an ambivalent topic. On one hand, it is a blessing, free software you know, on the other hand, it is turning quite bad: Maintainers do not get paid or appreciation for their work. And the biggest problem of all: Big Corporations using that free software without giving back. But is it that bad?
+
+I try to look at the positive sides of Open Source. Without Open Source, we probably would not be where we are in the software world. Bugs get exposed by open source contributors, and libraries get improved over and over again. A nice thing, that bugs are getting fixed for free because someone else experienced it as well. I had several occasions where I had an error showing up on my command line and checking on GitHub if someone else had this issue as well. And of course, I find an answer in 99% of the cases, with workarounds provided as well. That is really nice, it makes us all more efficient.
+
+But another great positive effect, that I always enjoyed, was the learning part. Open Source software provides so many examples of great work that you can look at. GitHub launched in 2008 and since then source code gets published for free and is open to the developer community. A powerful tool to learn how software is getting created. Everyone has the opportunity to look at it. From South America or Asia. Humans are the same in both places. The code is the same, compiled, or executed in both regions. That makes GitHub a great tool. It stands for easy access to Source Code not caring what your background is ([except countries affected by U.S. trade restrictions](https://techcrunch.com/2019/07/29/github-ban-sanctioned-countries/)).
+
+Problems occurred with the Hacktoberfest this time though. People started to call it "shitoberfest" because they received a lot of low-value contributions. And, understandably, it is annoying as a maintainer to receive worthless contributions. Overall, contributors are quite interested in submitting valuable code. Especially now, that [DigitalOcean](https://m.do.co/c/d9bbbb0a22f9) changed the rule that maintainers can mark Pull Requests with the spam label to disqualify participants of the Hacktoberfest, the number of Spam reduced from my feelings. Anyway, we should not look at all the bad parts. Spam will always exist in our world, unfortunately. Let us focus on the positive parts of this event and enable everyone to work together to create a better developer world.
+
+I asked myself how I can provide value for other people. Now that I am working in Software Engineering for multiple years I wanted to give back. Giving new and aspiring Software Engineers a possibility to contribute to a project that has real-life value. Over the past year, I have built two side projects:
+
+- [caseconverter.pro](https://caseconverter.pro/app) - An online case converter, PascalCase → camelCase, and so on
+- [getworkrecognized](https://getworkrecognized.com/) - A platform to track your work achievements and create Self-Reviews
+
+I explained in a recent blog article how I went about creating them. And now I thought, why am I not open-sourcing parts of the applications that might be useful to other people as well? This will allow more inexperienced developers to contribute to a project that is used in real-life. Perfect!
+
+## Open Sourcing a Component
+
+Firstly, I looked at my projects on which parts might be open-sourceable. After all, I wanted to charge for the usage of my apps. caseconverter.pro is based on a freemium model, but getworkrecognized is not, so I simply decided to look at caseconverter.pro to check which parts could be open-sourced. Frontend components might be found in the open for 99% of the use cases, so I checked what I could open source. I remember one struggle I had at building the application:
+
+[![picture of the case converter react ui component, looks similar to google translate](/caseconverter.png)](https://github.com/igeligel/react-in-out-textarea)
+
+That is a component that includes two text boxes. One on the left and one that is the output on the right. With a selection bar on top for the left side and right side. One popular tool is using almost the same layout: Google Translate. I could not find a component that is open-sourced and had similar functionality. Every time you google "react google translate UI" or "react google translate component" you will receive multiple solutions for i18n of your application but you cannot find the Google Translate component easily. So I build it myself back then for the application. And as usual, the code was not the greatest. Classic side project syndrome, but would the customer care? Probably not. So to give back to the community I wanted to publish this component so it can be used by other developers as well and do not struggle like me to find such a component.
+
+## Creating the Project
+
+The project where the component was created was originally written in JavaScript. Since then I have developed a love for [TypeScript](https://www.typescriptlang.org/). So it was clear that I will write the library in TypeScript. The TypeScript ecosystem has a nice tool called [TSDX](https://github.com/formium/tsdx):
+
+> Zero-config CLI for TypeScript package development
+
+[TSDX](https://github.com/formium/tsdx) is the perfect tool to create React.js components and publish them, hands down. It provides a storybook preview for components, so it is super easy to work with.
+
+Now, that I have created the base of the project, I copied over most of the base styles and components and started from there. Types needed to be added and mobile support was not given back at the time and still is not (Issue). After I had the base figured out, also with direct publishing to npm, it was time to make the project public on GitHub.
+
+## Making your Repository Ready and Getting Contributions
+
+I wanted to attract students or new developers to my repository that [you can find here](https://github.com/igeligel/react-in-out-textarea). The main target group is probably people that never contributed to Open Source but want to learn React.js, [Storybook](https://storybook.js.org/), or TypeScript. As a student I was in the same situation: I was eager to learn C# and found many nice projects that taught me how to structure applications and gave me good ideas about programming concepts. How mono repositories worked or how to build applications. These are parts that are normally not discussed during a computer science degree and just taught through experience. The earlier someone is exposed to these ideas the faster they can learn the concepts and think about what is the right choice in the future. Keep in mind though, just because someone is doing something in a certain way it can be also completely valid to do something different.
+
+With all of this in mind, I wanted to structure the project so it can teach new contributors something. The first thing that comes to my mind is to write issues that are even easy for people that are not used to the tools. The simplest of these tasks is probably a refactoring task of the code and since the project was "hacked" together this made it quite easy. The project was structured to just have one file in the beginning. That is quite unusable and even I lost the overview. The component was 430 lines long. With the refactorings done by the community and me, we are already down 100 lines of code and I am sure that this component can be split into more parts. That is the cool thing, but how did I get there?
+
+The important thing here is to write a detailed description. And when I mean detailed, I mean really detailed. Lining out all of the code that has to be touched but also what is expected. This gives contributors some security that they are doing the right thing. You can see many issue descriptions in [this example ticket](https://github.com/igeligel/react-in-out-textarea/issues?q=is%3Aissue+is%3Aclosed).
+
+Another important part is the onboarding of the contributors. Many of them might not know how Node.js versioning works or what yarn is. Give the README.md of the repository and especially the installation section a lot of love. Link to external documentation on how to install the tools and especially the version used in the project. Just make things easy. Ideally add a `CONTRIBUTING.md` file to the repository that explains everything in detail. It will also popup in the GitHub workflow when opening the issues the first time. Another routine that needs to be simplified is running the project. If you need more than one command to start the project, people are less likely to contribute because of all the management of the application. Make it simple and one command ideally. The project I have been open-sourced can be started as the following script shows:
+
+```bash
+yarn
+yarn storybook
+```
+
+That is simple enough and provides a full UI overview of the component with most of the state and props. Easy to play around with controls to check different use cases.
+
+![storybook environment showing the component](/storybook-showcase.png)
+
+Now after people can finally issue to play around with and have an environment that is easy to set up, they will start contributing. Especially during Hacktoberfest, this is true because issues will be tagged with the required label and will appear in a lot of trackers. This gives you, as maintainer, an incredible input of willing contributors. If you describe issues well, you will receive good Pull Requests mostly. This is especially true for smaller libraries that are in an outdated or not "finished" state. When the Pull Request has been created try to answer as fast as possible. I normally set the goal to answer Code Reviews within two hours. Everyone wants to do work quickly and see it going live so the more work you have done during the issue descriptions, the faster this review will go on. Point out secret tips or documentation in issues to guide contributors to the right patterns. If not used in the Pull Request, remind them that there might be a better way and give an example. Be welcoming in the Pull Request and respect the background of the person. There has never been a master for everything. And maybe they will get hooked into the library and will turn into a maintainer. That would be great, right?
+
+After a Pull Request has been successfully merged, go celebrate with the people. Write them a nice message in the Pull Request. Put them [into the README of the project](https://github.com/igeligel/react-in-out-textarea#contributors-). This can be automated with the [allcontributors bot](https://allcontributors.org/). Ask to connect on [Twitter](https://twitter.com/kevinpeters_) or similar. This is basic networking and can go a long way. They will remember you for sure. I still remember that I was contributing to a repository called [AccountGo](https://github.com/AccountGo/accountgo). It seems that the project is not live anymore but I am super thankful for this project. It taught me a lot about .NET and C# back in the days.
+
+## Review of Hacktoberfest 2020
+
+I will probably write a detailed review with some stats on what happened, how many contributions I got, and what I learned because there are many things. Be happy for such events that drive people to your repository. Just checking it out might be worth enough for your project to be used by some of the developers coming by your project. And yes, there will be spammers. Flag them and that is about it. GitHub and [DigitalOcean](https://m.do.co/c/d9bbbb0a22f9) are worked on solutions. Let us celebrate Open Source together 🎉

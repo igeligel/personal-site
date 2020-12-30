@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const LeadContainerHeading = styled.h1`
+  font-family: Lato, sans-serif;
   margin: 0;
   font-size: 40px;
   font-family: Lato;

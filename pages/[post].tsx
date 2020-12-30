@@ -31,6 +31,7 @@ import { BlogTable } from "../components/BlogTable";
 import { BlogHeadingTertiary } from "../components/BlogHeadingTertiary";
 import { BlogUnorderedList } from "../components/BlogUnorderedList";
 import { AdBanner } from "../components/BlogAdBanner";
+import readingTime from "reading-time";
 
 const Wrapper = styled.div`
   display: flex;
@@ -202,10 +203,45 @@ export const PostPage: React.FC<PostPageProps> = (props) => {
 
 export const getStaticProps: GetStaticProps = async (props) => {
   const { params } = props;
+  const allpaths = postFilePaths.map((path) => path.replace(/\.mdx?$/, ""));
+  const result = allpaths
+    .filter((e) => e !== params?.post)
+    .map((_path) => {
+      const postFilePath = path.join(POSTS_PATH, `${_path}.mdx`);
+      const source = fs.readFileSync(postFilePath);
+      return matter(source);
+    });
   const postFilePath = path.join(POSTS_PATH, `${params?.post}.mdx`);
   const source = fs.readFileSync(postFilePath);
 
   const { content, data } = matter(source);
+
+  const storyDate = new Date(data.date);
+
+  // const awdwadaw = result[0].excerpt
+  // const minutesReadingTime = readingTime(result[0].content)
+  console.log(result[0].data.tags);
+  const allTaggedStories = result
+    .filter((story) => {
+      return story.data.tags.includes(data.tags[0]);
+    })
+    .map((story) => {
+      return {
+        ...story,
+        data: {
+          title: story.data.title,
+          date: new Date(story.data.date),
+        },
+      };
+    });
+  const sortedStories = allTaggedStories.sort((storyA, storyB) => {
+    var distancea = Math.abs(storyDate.getTime() - storyA.data.date.getTime());
+    var distanceb = Math.abs(storyDate.getTime() - storyB.data.date.getTime());
+    return distancea - distanceb;
+  });
+
+  console.log(sortedStories[0].data.title);
+  console.log(sortedStories[1].data.title);
 
   const mdxSource = await renderToString(content, {
     components,

@@ -42,7 +42,9 @@ import { BlogUnorderedList } from "../components/BlogUnorderedList";
 import { AdBanner } from "../components/BlogAdBanner";
 import readingTime from "reading-time";
 import { BlogRecommendationItem } from "../components/BlogRecommendationItem";
+// @ts-ignore
 import { MDXProvider } from "@mdx-js/react";
+// @ts-ignore
 import MDX from "@mdx-js/runtime";
 
 const LeadContainerParapraph = styled.p`

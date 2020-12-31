@@ -242,7 +242,7 @@ export const getStaticProps: GetStaticProps = async (props) => {
   });
 
   const mdxSource = await renderToString(content, {
-    components,
+    components: {},
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],

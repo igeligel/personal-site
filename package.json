@@ -4,7 +4,7 @@
   "version": "1.1.0",
   "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
   "dependencies": {
-    "@chakra-ui/react": "^1.0.4",
+    "@chakra-ui/react": "^1.1.0",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "@mdx-js/loader": "^1.6.22",
@@ -57,6 +57,7 @@
     "url-join": "^4.0.1"
   },
   "devDependencies": {
+    "@emotion/babel-preset-css-prop": "^11.0.0",
     "@prettier/plugin-xml": "^0.12.0",
     "@types/react-helmet": "^6.1.0",
     "@types/styled-components": "^5.1.7",

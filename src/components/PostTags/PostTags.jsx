@@ -16,8 +16,11 @@ const PostTags = (props) => {
               pathname: "/articles",
               query: { tag },
             }}
+            passHref
           >
-            <PostTagButton tag={tag} marginRight={"7px"} />
+            <a>
+              <PostTagButton tag={tag} marginRight={"7px"} />
+            </a>
           </Link>
         ))}
     </Box>

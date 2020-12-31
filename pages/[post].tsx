@@ -43,29 +43,6 @@ import { AdBanner } from "../components/BlogAdBanner";
 import readingTime from "reading-time";
 import { BlogRecommendationItem } from "../components/BlogRecommendationItem";
 
-const Wrapper = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-`;
-
-const WrapperContent = styled.div`
-  max-width: 800px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: 875px) {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  @media (max-width: 450px) {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-`;
-
 const LeadContainerParapraph = styled.p`
   margin: 0;
   font-family: Lato;
@@ -138,8 +115,16 @@ export const PostPage: React.FC<PostPageProps> = (props) => {
         postNode={{ frontmatter: frontMatter, excerpt: "" }}
         postSEO
       />
-      <Wrapper>
-        <WrapperContent className="blog-post">
+      <Box display="flex" width="100%" justifyContent="center">
+        <Box
+          className="blog-post"
+          maxWidth="800px"
+          width="100%"
+          display="flex"
+          flexDirection="column"
+          paddingLeft={["14px", "14px", "40px", "0"]}
+          paddingRight={["14px", "14px", "40px", "0"]}
+        >
           <LeadContainerParapraph>
             <i>written on {frontMatter.date}</i>
           </LeadContainerParapraph>
@@ -173,8 +158,13 @@ export const PostPage: React.FC<PostPageProps> = (props) => {
                 display="flex"
                 justifyContent="space-around"
               >
-                {props.recommendations.map((blogRecommendation) => {
-                  return <BlogRecommendationItem item={blogRecommendation} />;
+                {props.recommendations.map((blogRecommendation, index) => {
+                  return (
+                    <BlogRecommendationItem
+                      key={index}
+                      item={blogRecommendation}
+                    />
+                  );
                 })}
               </Box>
             </Box>
@@ -195,8 +185,8 @@ export const PostPage: React.FC<PostPageProps> = (props) => {
               <UserInfo config={config} />
             </Box>
           </Box>
-        </WrapperContent>
-      </Wrapper>
+        </Box>
+      </Box>
     </>
   );
 };

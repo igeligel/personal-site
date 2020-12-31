@@ -10,7 +10,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Head from "next/head";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { ListOfArticles } from "../components/ListOfArticles";
 
 type PostEdge = {
@@ -86,6 +86,7 @@ const getPrimaryIcon = (tags: Array<string>) => {
   if (tags[0] === "design") {
     return "design";
   }
+  if (tags[0] === "personal-development") return "personal-development";
   return null;
 };
 
@@ -134,7 +135,7 @@ type ArticleProps = {
 };
 
 const Articles: React.FC<ArticleProps> = (props) => {
-  const router = useRouter()
+  const router = useRouter();
   const [value, setValue] = useState<string>("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
@@ -156,10 +157,10 @@ const Articles: React.FC<ArticleProps> = (props) => {
 
   useEffect(() => {
     if (router.query.tag) {
-      const urlParamTag = router.query.tag as string
+      const urlParamTag = router.query.tag as string;
       setSelectedTag(urlParamTag);
     }
-  }, [router])
+  }, [router]);
 
   return (
     <div>

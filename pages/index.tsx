@@ -81,6 +81,7 @@ const getPrimaryIcon = (tags: Array<string>) => {
   if (tags[0] === "design") {
     return "design";
   }
+  if (tags[0] === "personal-development") return "personal-development";
   return null;
 };
 

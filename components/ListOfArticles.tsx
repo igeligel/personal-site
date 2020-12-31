@@ -9,6 +9,7 @@ import { ReactIcon } from "../src/components/ReactIcon";
 import { LaptopIcon } from "../src/components/LaptopIcon";
 import { IconSecurity } from "../src/components/IconSecurity";
 import { DesignIcon } from "../src/components/DesignIcon";
+import { IconInstantInformation } from "./IconInstantInformation";
 
 type UnorderedListProps = {
   marginTop?: string;
@@ -77,6 +78,9 @@ export const ListOfArticles: React.FC<ListOfArticlesProps> = (props) => {
                   )}
                   {post.primaryIcon === "security" && <IconSecurity />}
                   {post.primaryIcon === "design" && <DesignIcon />}
+                  {post.primaryIcon === "personal-development" && (
+                    <IconInstantInformation />
+                  )}
                 </IconWrapper>
                 <ListItemLink>{post.title}</ListItemLink>
               </div>

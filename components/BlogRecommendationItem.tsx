@@ -10,7 +10,7 @@ export const BlogRecommendationItem: React.FC<BlogRecommendationItemProps> = (
   props,
 ) => {
   return (
-    <NextLink href={props.item.href} passHref>
+    <NextLink href={`/${props.item.href}`} passHref>
       <Link
         width="40%"
         borderRadius="1rem"

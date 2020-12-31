@@ -42,6 +42,8 @@ import { BlogUnorderedList } from "../components/BlogUnorderedList";
 import { AdBanner } from "../components/BlogAdBanner";
 import readingTime from "reading-time";
 import { BlogRecommendationItem } from "../components/BlogRecommendationItem";
+import { MDXProvider } from "@mdx-js/react";
+import MDX from "@mdx-js/runtime";
 
 const LeadContainerParapraph = styled.p`
   margin: 0;
@@ -98,12 +100,12 @@ type PostPageProps = {
   source: any;
   frontMatter: any;
   slug: string;
+  content: string;
   recommendations: Array<any>;
 };
 
 export const PostPage: React.FC<PostPageProps> = (props) => {
-  const { source, frontMatter, slug } = props;
-  const content = hydrate(source, { components });
+  const { source, frontMatter, slug, content } = props;
 
   return (
     <>
@@ -148,8 +150,13 @@ export const PostPage: React.FC<PostPageProps> = (props) => {
             `}
           </style>
           <Box display="flex" flexDirection="column" alignItems="center">
-            {content}
+            <MDXProvider>
+              <MDX components={components}>{source}</MDX>
+            </MDXProvider>
           </Box>
+          {/*
+            {content}
+           */}
           {props.recommendations?.length > 0 && (
             <Box marginTop="1rem">
               <Heading as="h3">You might also like</Heading>
@@ -241,19 +248,9 @@ export const getStaticProps: GetStaticProps = async (props) => {
     };
   });
 
-  const mdxSource = await renderToString(content, {
-    components,
-    // Optionally pass remark/rehype plugins
-    mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [],
-    },
-    scope: data,
-  });
-
   return {
     props: {
-      source: mdxSource,
+      source: content,
       frontMatter: data,
       slug: params?.post,
       recommendations: recommendations,

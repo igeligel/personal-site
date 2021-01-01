@@ -1,5 +1,5 @@
 import React from "react";
-import Helmet from "react-helmet";
+import Head from "next/helmet";
 import SEO from "../src/components/SEO/SEO";
 import styled from "styled-components";
 import { NavbarContainer } from "../src/components/navbar-container";
@@ -24,7 +24,7 @@ const LeadContainerParapraph = styled.p`
   font-size: 18px;
   line-height: 28px;
   color: rgba(43, 55, 62, 0.8);
-  margin-top: ${props => (props.noMarginTop ? "0px" : "1.3em")};
+  margin-top: ${(props) => (props.noMarginTop ? "0px" : "1.3em")};
 `;
 
 const SectionContainer = styled.div`
@@ -38,14 +38,14 @@ const Imprint = () => {
   return (
     <div>
       <SEO />
-      <Helmet>
-        <title>{`Imprint of Kevin Peter's homepage`}</title>
+      <Head>
+        <title>Imprint of Kevin Peter's homepage</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="The imprint of Kevin Peters including basic information about the person."
         />
-      </Helmet>
+      </Head>
       <SectionContainerWrapper>
         <SectionContainer>
           <LeadContainerHeading>

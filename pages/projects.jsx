@@ -1,6 +1,6 @@
 import React from "react";
-import Helmet from "react-helmet";
 import styled from "styled-components";
+import Head from "next/head";
 import Link from "next/link";
 
 import SEO from "../src/components/SEO/SEO";
@@ -137,14 +137,14 @@ const Projects = () => {
   return (
     <>
       <SEO />
-      <Helmet>
-        <title>{`Projects of Kevin Peters`}</title>
+      <Head>
+        <title>Projects of Kevin Peters</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Projects bootstrapped by Kevin Peters including a case converter built on top of artifical intelligence."
         />
-      </Helmet>
+      </Head>
       <SectionContainerWrapper>
         <SectionContainer>
           <FirstHeading>Projects, brought to you by Kevin</FirstHeading>

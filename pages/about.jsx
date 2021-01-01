@@ -1,12 +1,9 @@
 import React from "react";
-import Helmet from "react-helmet";
 import SEO from "../src/components/SEO/SEO";
-import config from "../data/SiteConfig";
 import styled from "styled-components";
-import Link from "next/link"
-import { NavbarContainer } from "../src/components/navbar-container";
 import { SectionContainerWrapper } from "../src/components/section-container-wrapper";
 import { LeadContainerHeading } from "../src/components/lead-container-heading";
+import Head from "next/head";
 
 const SectionHeading = styled.h2`
   margin: 0;
@@ -30,33 +27,6 @@ const SectionContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  // padding-top: 40px;
-`;
-
-const MainStyledLink = styled(Link)`
-  margin: 0;
-  padding: 0;
-  color: #4096c4;
-  text-transform: uppercase;
-  font-family: Lato, sans-serif;
-  font-weight: 300;
-  font-size: 24px;
-  text-decoration: none;
-`;
-
-const StyledLink = styled(Link)`
-  // color: palevioletred;
-  // font-weight: bold;
-  color: rgba(64, 150, 196, 0.5);
-  font-weight: 300;
-  font-family: Lato, sans-serif;
-  margin-left: 1em;
-  line-height: 2em;
-  text-decoration: none;
-
-  :hover {
-    color: rgba(64, 150, 196, 1);
-  }
 `;
 
 const UnorderedList = styled.ul`
@@ -94,14 +64,14 @@ const About = () => {
   return (
     <div className="index-container">
       <SEO />
-      <Helmet>
-        <title>{"Information about Kevin Peters"}</title>
+      <Head>
+        <title>Information about Kevin Peters</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Basic information about Kevin Peters, a software developer currently in Berlin, thriving in the Software Engineering world."
         />
-      </Helmet>
+      </Head>
       <SectionContainerWrapper>
         <SectionContainer>
           <LeadContainerHeading>

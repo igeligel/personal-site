@@ -1,5 +1,5 @@
 import React from "react";
-import Helmet from "react-helmet";
+import Head from "next/head";
 import SEO from "../src/components/SEO/SEO";
 import styled from "styled-components";
 import { NavbarContainer } from "../src/components/navbar-container";
@@ -110,14 +110,14 @@ const Contact = () => {
     <div>
       <div className="index-container">
         <SEO />
-        <Helmet>
+        <Head>
           <title>{"Contact Kevin Peters via Twitter or Email"}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta
             name="description"
             content="Contact information like email or twitter of Kevin Peters."
           />
-        </Helmet>
+        </Head>
         <SectionContainerWrapper>
           <SectionContainer>
             <LeadContainerHeading>Stay in touch with me</LeadContainerHeading>

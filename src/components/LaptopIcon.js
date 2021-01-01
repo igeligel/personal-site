@@ -3,7 +3,6 @@ import React from "react";
 export const LaptopIcon = () => {
   return (
     <svg
-      id="fb137f74-5dac-4b98-b1c7-12f1e4e536de"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       width="32"

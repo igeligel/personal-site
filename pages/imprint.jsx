@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "next/helmet";
+import Head from "next/head";
 import SEO from "../src/components/SEO/SEO";
 import styled from "styled-components";
 import { NavbarContainer } from "../src/components/navbar-container";

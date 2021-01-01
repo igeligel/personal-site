@@ -172,6 +172,7 @@ const Articles: React.FC<ArticleProps> = (props) => {
           name="description"
           content="Find the most recent stories about web development here to advance in your career and learn new skills in the software engineering world."
         />
+        <link rel="canonical" href="https://www.kevinpeters.net/articles" />
       </Head>
       <SectionContainerWrapper>
         <SectionContainer>

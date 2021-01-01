@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import SEO from "../src/components/SEO/SEO";
 import styled from "styled-components";
-import { NavbarContainer } from "../src/components/navbar-container";
 import { SectionContainerWrapper } from "../src/components/section-container-wrapper";
 import { LeadContainerHeading } from "../src/components/lead-container-heading";
 
@@ -146,22 +145,22 @@ const Contact = () => {
               accept-charset="UTF-8"
             >
               <FormContainer>
-                <FormLabel for="email">Your Email</FormLabel>
+                <FormLabel htmlFor="email">Your Email</FormLabel>
                 <FormInput type="email" name="email" />
               </FormContainer>
               <FormDoubleContainer>
                 <FormContainerGutted>
-                  <FormLabel for="email">First Name</FormLabel>
+                  <FormLabel htmlFor="email">First Name</FormLabel>
                   <FormInput type="text" name="firstName" />
                 </FormContainerGutted>
                 <FormContainer>
-                  <FormLabel for="email">Last Name</FormLabel>
+                  <FormLabel htmlFor="email">Last Name</FormLabel>
                   <FormInput type="text" name="lastName" />
                 </FormContainer>
               </FormDoubleContainer>
               <FormContainer>
-                <FormLabel for="content">Message</FormLabel>
-                <FormTextarea rows="9" type="text" name="content" />
+                <FormLabel htmlFor="content">Message</FormLabel>
+                <FormTextarea rows={9} name="content" />
               </FormContainer>
               <input type="hidden" name="_gotcha" />
               <SubmitButton type="submit">Submit</SubmitButton>

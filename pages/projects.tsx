@@ -4,7 +4,6 @@ import Head from "next/head";
 import Link from "next/link";
 
 import SEO from "../src/components/SEO/SEO";
-import { NavbarContainer } from "../src/components/navbar-container";
 import { SectionContainerWrapper } from "../src/components/section-container-wrapper";
 import { IndiehackersCard } from "../src/components/IndiehackersCard";
 

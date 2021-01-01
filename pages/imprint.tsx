@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import SEO from "../src/components/SEO/SEO";
 import styled from "styled-components";
-import { NavbarContainer } from "../src/components/navbar-container";
 import { SectionContainerWrapper } from "../src/components/section-container-wrapper";
 import { LeadContainerHeading } from "../src/components/lead-container-heading";
 
@@ -17,7 +16,11 @@ const HrefLink = styled.a`
   }
 `;
 
-const LeadContainerParapraph = styled.p`
+type LeadContainerParapraphProps = {
+  noMarginTop?: boolean;
+};
+
+const LeadContainerParapraph = styled.p<LeadContainerParapraphProps>`
   margin: 0;
   font-family: Lato;
   width: 100%;
@@ -229,10 +232,12 @@ const Imprint = () => {
             Verbindung bringen. Das Speichern von Cookies auf Ihrer Festplatte
             und die Anzeige von Web Beacons können Sie verhindern, indem Sie in
             Ihren Browser-Einstellungen ''keine Cookies akzeptieren'' wählen (Im
-            MS Internet-Explorer unter ''Extras > Internetoptionen > Datenschutz
-            > Einstellung''; im Firefox unter ''Extras > Einstellungen >
-            Datenschutz > Cookies''); wir weisen Sie jedoch darauf hin, dass Sie
-            in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser
+            MS Internet-Explorer unter ''Extras {">"} Internetoptionen {">"}{" "}
+            Datenschutz
+            {">"} Einstellung''; im Firefox unter ''Extras {">"} Einstellungen{" "}
+            {">"}
+            Datenschutz {">"} Cookies''); wir weisen Sie jedoch darauf hin, dass
+            Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser
             Website voll umfänglich nutzen können. Durch die Nutzung dieser
             Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen
             Daten durch Google in der zuvor beschriebenen Art und Weise und zu

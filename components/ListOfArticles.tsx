@@ -64,7 +64,7 @@ export const ListOfArticles: React.FC<ListOfArticlesProps> = (props) => {
     <UnorderedList marginTop={marginTop}>
       {postList.map((post: any) => (
         <ListItem key={post.title}>
-          <Link href={post.path} passHref>
+          <Link href={`/${post.path}`} passHref>
             <ListItemL>
               <div style={{ display: "flex" }}>
                 <IconWrapper>

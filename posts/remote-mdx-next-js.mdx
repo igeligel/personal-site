@@ -1,0 +1,123 @@
+---
+title: "Remote MDX with Next.js"
+seoTitle: "Remote MDX with Next.js"
+description: ""
+openGraphDescription: ""
+twitterDescription: ""
+cover: "/thumbnails/... .png"
+date: "01/07/2021"
+tags:
+  - next.js
+  - javascript
+  - react
+  - software-engineering
+---
+
+# Remote MDX with Next.js
+
+Recently I migrated this website from Gatsby to Next.js. During the migration, I also decided to migrate the content from Markdown to MDX. With the offical guides and resources I struggled a bit to set this up in a proper way. So after figuring all these small bits, I decided to write an article on how you can setup your Next.js page with MDX.
+
+## What is MDX
+
+If you read this article you probably know Markdown. It is a content format that you can use to style text. The markdown cheat sheet shows this quite nicely:
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+A problem for developers was always on how to include more complicated content in these files. Markdown supports HTML in most cases as well, but a problem is that modern development changed.
+
+```md
+Lorem Ipsum
+
+<SomeComplicatedInteractiveGraph data={data} />
+
+Some longer text describing the graph.
+```
+
+Styles are injected into React components directly or are rendered with styled-components or emotion. Another problem related to that is to use custom components for the markdown text. No one wants to write this for every paragraph:
+
+```HTML
+<p>Lorem Ipsum</p>
+```
+
+Instead in markdown, you should be just able to write
+
+```md
+Lorem Ipsum
+```
+
+And it should use a custom paragraph component somehow. Most markdown and MDX rendering engines support that via custom configurations. Some engines had some problems with the interpretation and compilation of styles that we will look at later.
+
+When looking for solutions regarding MDX, you will most likely find this blog article: “Markdown/MDX with Next.js” (https://nextjs.org/blog/markdown) by Lee Robinson. The blog article is really good but fails at some point. The problems appear with “Remote Markdown and MDX” which will be covered now. For that, we need to set up a quick project. So let me run you through.
+
+## Creating the Next.js Project
+
+Since we will create the base ourselves and will use TypeScript, I will explain how to setup a basic TypeScript/Next.js project as well. You can find the documentation here (https://nextjs.org/docs).
+
+```bash
+mkdir remote-mdx-next
+cd remote-mdx-next
+npm init -y
+yarn add next react react-dom
+yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion
+yarn add gray-matter @mdx-js/react @mdx-js/runtime
+yarn add -D typescript @types/react and @types/node
+```
+
+Next, we need to add some commands to our package.json file.
+
+```json
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start"
+}
+```
+
+Now we can start creating a page. Let us create a folder called pages first. In the folder, a file should be created that is called index.tsx. The content should be like this:
+
+```tsx
+const Home = () => {
+  return <div>This is Home</div>;
+};
+
+export default Home;
+```
+
+That should render a home page on localhost:3000
+
+TODO: insert screenshot here.
+
+## Creating an MDX Page
+
+So you are probably reading this article to get to know how MDX is now rendered. As explained in the official blog article linked above, MDX can be rendered in different ways. If you really just have static pages and do not really care about layouting feel free to use the mentioned approach in the documentation. My setup was a bit more sophisticated. So let us focus on what we want to achieve:
+
+TODO: Insert fancy diagram of folder with MDX and post page.
+
+<BlogImage
+  src="/remote-mdx-1.svg"
+  alt="Architecture of the MDX remote rendering application"
+/>
+
+So there is a generic post page. The generic in this sense means that Next.js is actually doing something during the generation phase of the HTML to check if a path is valid. The feature is called dynamic routes and documentation can be found [here](https://nextjs.org/docs/routing/dynamic-routes).
+
+So the workflow for our page should be similar to this:
+
+1. User opens `/file-1`
+1. Our server looks up if it can find `file1.mdx`
+1. If successful, it will render the MDX as HTML and send it to the client
+
+The unhappy path can be done by responding with a 404, but this will already happen if you decide to statically export the pages which we will try here.
+
+So now we can actually start with creating the page. In the pages directory, create another file that is called [post].tsx. The content, for now, should look like the following:
+
+```tsx
+import { GetStaticProps } from "next";
+
+const Post = () => {
+  return <div></div>;
+};
+
+export const getStaticProps: GetStaticProps = async (props) => {
+  return { props: {} };
+};
+
+export default Post;
+```

@@ -149,6 +149,22 @@ export const PostPage: React.FC<PostPageProps> = (props) => {
               .blog-post li p {
                 margin-top: 0;
               }
+
+              .blog-post li code {
+                color: #9cdcfe;
+                background: #364354;
+                border-radius: 2px;
+                padding: 3px 5px;
+                font-size: 16px;
+              }
+
+              .blog-post ul code {
+                color: #9cdcfe;
+                background: #364354;
+                border-radius: 2px;
+                padding: 3px 5px;
+                font-size: 16px;
+              }
             `}
           </style>
           <Box display="flex" flexDirection="column" alignItems="center">

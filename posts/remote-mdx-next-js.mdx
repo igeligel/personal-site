@@ -239,10 +239,7 @@ export const getStaticProps: GetStaticProps = async (props) => {
 
 In that case, you can clearly see how `someTestProperty` is being passed to the component to be actually rendered in the page. For that just open `http://localhost:3000/some-random-path`:
 
-<BlogImage
-  src="/remote-mdx-second-screen.png"
-  alt="Second screen"
-/>
+<BlogImage src="/remote-mdx-second-screen.png" alt="Second screen" />
 
 So if this works, we can also read the MDX in that function and pass it to the component. We can use the node packages `fs` and `path` to read the actual content and pass it to the component. Remember you need to call `toString()` in this case because an MDX file by itself is not serializable. We are just doing it in this step to make it work. The component should look like the following then:
 
@@ -287,10 +284,7 @@ export default Post;
 
 That will now just render the MDX as text. Nothing we want. But hey, we got the first part working. Passing the MDX content to the frontend. You can view the content on `http://localhost:300/some-random-path`
 
-<BlogImage
-  src="/remote-mdx-third-screen.png"
-  alt="awdawwaaw"
-/>
+<BlogImage src="/remote-mdx-third-screen.png" alt="awdawwaaw" />
 
 ### Reading Meta information
 
@@ -397,10 +391,7 @@ module.exports = {
 
 Now, after a restart of the server, it should render the MDX with the normal HTML tags. Just open `http://localhost:3001/some-random-path`. You could start styling these components with global styles. The problem with that is, that it is quite hard to maintain and can cause conflicts in the overall application if style violations happen across different components. So let us assign custom components instead.
 
-<BlogImage
-  src="/remote-mdx-fourth-screen.png"
-  alt="Some cool description"
-/>
+<BlogImage src="/remote-mdx-fourth-screen.png" alt="Some cool description" />
 
 ## Customizing components
 
@@ -472,10 +463,7 @@ const Post: React.FC<PostProps> = (props) => {
 };
 ```
 
-<BlogImage
-  src="/remote-mdx-fifth-screen.png"
-  alt="Some coolio description"
-/>
+<BlogImage src="/remote-mdx-fifth-screen.png" alt="Some coolio description" />
 
 When entering the pages now the heading should be rendered in red and the paragraphg in green. Since this is working, we can also try to introduce custom components. I like to use Chakra-UI for most of my User Interfaces. It has a nice API and is also accessible. Just a perfect framework to build UI components.
 
@@ -538,10 +526,7 @@ const Post: React.FC<PostProps> = (props) => {
 
 This works great. You can extend this approach to all the other types of components. It is a little hassle, but definitely worth it, because readability and design will be improved.
 
-<BlogImage
-  src="/remote-mdx-sixth-screen.png"
-  alt="Needs cool description"
-/>
+<BlogImage src="/remote-mdx-sixth-screen.png" alt="Needs cool description" />
 
 ## Introducing custom components
 
@@ -585,10 +570,7 @@ const Post: React.FC<PostProps> = (props) => {
 };
 ```
 
-<BlogImage
-  src="/remote-mdx-seventh-screen.png"
-  alt="Some cool description"
-/>
+<BlogImage src="/remote-mdx-seventh-screen.png" alt="Some cool description" />
 
 This is quite simple and works. But we could try to generate the data statically for the graph in the `getStaticProps` function and then pass it to the component. So let us first change our MDX back again:
 

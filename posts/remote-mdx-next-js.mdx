@@ -58,7 +58,7 @@ npm init -y
 yarn add next react react-dom
 yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion
 yarn add gray-matter @mdx-js/react @mdx-js/runtime
-yarn add -D typescript @types/react and @types/node
+yarn add -D typescript @types/react and @types/node @types/mdx-js__react
 ```
 
 Next, we need to add some commands to our package.json file.
@@ -73,6 +73,8 @@ Next, we need to add some commands to our package.json file.
 
 Now we can start creating a page. Let us create a folder called pages first. In the folder, a file should be created that is called index.tsx. The content should be like this:
 
+![TODO: Replace - Some file path](/remote-mdx-file-path-1.png)
+
 ```tsx
 const Home = () => {
   return <div>This is Home</div>;
@@ -83,7 +85,7 @@ export default Home;
 
 That should render a home page on localhost:3000
 
-TODO: insert screenshot here.
+![Webview of a basic home page](/remote-mdx-first-screen.png)
 
 ## Laying out the different pages
 
@@ -100,8 +102,8 @@ So there is a generic post page. The generic in this sense means that Next.js is
 
 So the workflow for our page should be similar to this:
 
-1. User opens `/file-1`
-1. Our server looks up if it can find `file1.mdx`
+1. User opens `/some-random-path`
+1. Our server looks up if it can find `some-random-path.mdx`
 1. If successful, it will render the MDX as HTML and send it to the client
 
 The unhappy path can be done by responding with a 404, but this will already happen if you decide to statically export the pages which we will try here.
@@ -167,53 +169,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 ```
 
-Now we can have a look on how the `getStaticProps` function works. The function has `props` as parameter. These props are generated based on the returned object in `getStaticPaths`. Which means we could basically share the types as following:
-
-```tsx
-type GeneratedProps = {
-  params: {
-    post: string;
-  };
-};
-
-export const getStaticProps: GetStaticProps = async (props: GeneratedProps) => {
-  return { props: {} };
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  // paths is an Array<GeneratedProps>
-  return {
-    paths: [
-      { params: { post: "some-random-path" } },
-      { params: { post: "alternative-random-path" } },
-    ],
-    fallback: false,
-  };
-};
-```
-
-So inside the `getStaticProps` the `post` property can be read. That is great, because it will enable us to query the MDX and meta information about the page.
+So what happens is that Next.js exports the returned object from `getStaticPaths` and pass this object to the `getStaticProps` function as the `props` parameter. This will enable us to read the `post` property inside the `getStaticProps` function. That is great, because it will enable us to query the MDX and meta information about the page.
 
 ## Getting that MDX and passing it to the component
 
 Now we have a setup where `getStaticProps` has access to the `post` parameter. Its actually time to get the MDX. So currently we have the following folder structure:
 
-- pages
-  - `[post].tsx`
-  - `index.tsx`
-- `package.json`
-- `...`
+![TODO: Replace - Second file path](/remote-mdx-file-path-2.png)
 
 Let us create another directory, called `content`. Inside there we create two files: `some-random-path.mdx`, `alternative-random-path.mdx`. The whole directory structure should look like the following:
 
-- pages
-  - `[post].tsx`
-  - `index.tsx`
-- content
-  - `some-random-path.mdx`
-  - `alternative-random-path.mdx`
-- `package.json`
-- `...`
+![TODO: Replace - Third file path](/remote-mdx-file-path-3.png)
 
 Both of these files should have some content now. For simplicity let us just enter a heading and a small paragraph like the following:
 
@@ -254,11 +220,18 @@ export const getStaticProps: GetStaticProps = async (props) => {
     },
   };
 };
+
+// Do not replace getStaticPaths
+// ...
 ```
 
-In that case, you can clearly see how `someTestProperty` is being passed to the component to be actually rendered in the page. So if this works, we can also read the MDX in that function and pass it to the component. We can use the node packages `fs` and `path` to read the actual content and pass it to the component. The component should look like the following then:
+In that case, you can clearly see how `someTestProperty` is being passed to the component to be actually rendered in the page. For that just open `http://localhost:3000/some-random-path`:
 
-```tsx
+![Second screen](/remote-mdx-second-screen.png)
+
+So if this works, we can also read the MDX in that function and pass it to the component. We can use the node packages `fs` and `path` to read the actual content and pass it to the component. Remember you need to call `toString()` in this case because an MDX file by itself is not serializable. We are just doing it in this step to make it work. The component should look like the following then:
+
+```tsx{2-3,6-8,11,15-23}
 import React from "react";
 import fs from "fs";
 import path from "path";
@@ -268,24 +241,18 @@ type PostProps = {
   mdx: string;
 };
 
-type GeneratedProps = {
-  params: {
-    post: string;
-  };
-};
-
 const Post: React.FC<PostProps> = (props) => {
   return <div>{props.mdx}</div>;
 };
 
-export const getStaticProps: GetStaticProps = async (props: GeneratedProps) => {
-  const folderPath = path.join(process.cwd(), "posts");
+export const getStaticProps: GetStaticProps = async (props) => {
+  const folderPath = path.join(process.cwd(), "content");
   const filePath = path.join(folderPath, `${props.params.post}.mdx`);
 
   const source = fs.readFileSync(filePath);
   return {
     props: {
-      mdx: source,
+      mdx: source.toString(),
     },
   };
 };
@@ -303,13 +270,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export default Post;
 ```
 
-That will now just render the MDX as text. Nothing we want. But hey, we got the first part working. Passing the MDX content to the frontend.
+That will now just render the MDX as text. Nothing we want. But hey, we got the first part working. Passing the MDX content to the frontend. You can view the content on `http://localhost:300/some-random-path`
+
+![awdawwaaw](/remote-mdx-third-screen.png)
 
 ### Reading Meta information
 
 MDX and Markdown both support the Meta information tag inside the content files. You can simply define it with like the following:
 
-```mdx
+```txt
 ---
 seoTitle: "This is a nice title"
 ---
@@ -327,13 +296,13 @@ yarn add gray-matter
 
 That dependency is exporting a simple function that takes the MDX source code and splits it into two parts: The meta information and the actual content. So let us change our `getStaticProps` function. Hint: You might need to adjust types as well.
 
-```tsx{8,10}
+```tsx{1,8,10}
 import matter from "gray-matter";
 
 // ...
 
-export const getStaticProps: GetStaticProps = async (props: GeneratedProps) => {
-  const folderPath = path.join(process.cwd(), "posts");
+export const getStaticProps: GetStaticProps = async (props) => {
+  const folderPath = path.join(process.cwd(), "content");
   const filePath = path.join(folderPath, `${props.params.post}.mdx`);
   const rawFileSource = fs.readFileSync(filePath);
 
@@ -348,7 +317,20 @@ export const getStaticProps: GetStaticProps = async (props: GeneratedProps) => {
 };
 ```
 
-That should also return us the meta information. Just use it if you really need it though. I use it to define extra data for Social Media for example. The description for the meta tag or the Twitter or OpenGraph Social Card. You can use that information to have [next-seo](https://github.com/garmeeh/next-seo) in your application. That will take care around that meta information for the most part. I will skip this in this blog article because it would overblow the normal purpose.
+That should also return us the meta information. Just use it if you really need it though. I use it to define extra data for Social Media for example. The description for the meta tag or the Twitter or OpenGraph Social Card. You can use that information to have [next-seo](https://github.com/garmeeh/next-seo) in your application. That will take care around that meta information for the most part. I will skip this in this blog article because it would overblow the normal purpose. So for example the `Post` component could look similar to this now:
+
+```tsx
+const Post: React.FC<PostProps> = (props) => {
+  return (
+    <>
+      <div>SEO Information: {JSON.stringify(props.metaInformation)}</div>
+      <div>{props.mdx}</div>
+    </>
+  );
+};
+```
+
+This is just example, do not change it if you follow this tutorial throughly.
 
 ## Rendering the MDX
 
@@ -362,14 +344,42 @@ import MDX from "@mdx-js/runtime";
 
 const Post: React.FC<PostProps> = (props) => {
   return (
-    <MDXProvider>
+    <MDXProvider components={{}}>
       <MDX>{props.mdx}</MDX>
     </MDXProvider>
   );
 };
 ```
 
-That should render the MDX with the normal HTML tags. You could start styling these components with global styles. The problem with that is, that it is quite hard to maintain and can cause conflicts in the overall application if style violations happen across different components. So let us assign custom components instead.
+Ooopsie...This is still not working and will error with something like the following:
+
+```bash
+error - ./node_modules/@babel/core/lib/transformation/normalize-file.js:9:0
+Module not found: Can't resolve 'fs'
+null
+Error from chokidar (E:\): Error: EBUSY: resource busy or locked, lstat 'E:\pagefile.sys'
+Could not find files for /[post] in .next/build-manifest.json
+Could not find files for /[post] in .next/build-manifest.json
+```
+
+Googling the error will help you to quickly solve the error. You have to extend the webpack config. But we can do that easily within Next.js. You can find documentation here, but I will make it quick for you. Create a file under root called `next.config.js` with the following content:
+
+```js
+module.exports = {
+  webpack: (config, { isServer }) => {
+    // console.log({ config });
+    // Fixes npm packages that depend on `fs` module
+    if (!isServer) {
+      config.node = { fs: "empty" };
+    }
+    return config;
+  },
+};
+```
+
+Now, after a restart of the server, it should render the MDX with the normal HTML tags. Just open `http://localhost:3001/some-random-path`. You could start styling these components with global styles. The problem with that is, that it is quite hard to maintain and can cause conflicts in the overall application if style violations happen across different components. So let us assign custom components instead.
+
+![Some cool description](/remote-mdx-fourth-screen.png)
 
 ## Customizing components
 
@@ -417,9 +427,11 @@ declare module "@mdx-js/react" {
 }
 ```
 
+You do not have to include these types manually since they are imported already in our initial installation. If you use JavaScript just read through the types to see what is all supported.
+
 So as we can see the `components` takes an object that must have the keys like `h1`, `h2`, `li`, or many more. In our case, the MDX we defined had a Headline and Paragraph. This can be customized as well:
 
-```tsx
+```tsx{6-9,13}
 import { MDXProvider } from "@mdx-js/react";
 import MDX from "@mdx-js/runtime";
 
@@ -432,16 +444,43 @@ const components = {
 
 const Post: React.FC<PostProps> = (props) => {
   return (
-    <MDXProvider>
+    <MDXProvider components={components}>
       <MDX>{props.mdx}</MDX>
     </MDXProvider>
   );
 };
 ```
 
-When entering the pages now the heading should be rendered in red and the paragraphg in green. Since this is working, we can also try to introduce custom components. I like to use Chakra-UI for most of my User Interfaces. It has a nice API and is also accessible. Just a perfect framework to build UI components. So with chakra-ui the component would look like the following:
+![Some coolio description](/remote-mdx-fifth-screen.png)
+
+When entering the pages now the heading should be rendered in red and the paragraphg in green. Since this is working, we can also try to introduce custom components. I like to use Chakra-UI for most of my User Interfaces. It has a nice API and is also accessible. Just a perfect framework to build UI components.
+
+For the Chakra-UI installation, we have to prepare our app though. But that is also simple. Add another file under the `/pages` directory called `_app.tsx` with the following content:
 
 ```tsx
+import React from "react";
+import type { AppProps } from "next/app";
+import { ChakraProvider, theme, CSSReset } from "@chakra-ui/react";
+
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <ChakraProvider theme={theme}>
+      <CSSReset />
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
+};
+
+export default App;
+```
+
+![TODO: Some filepath to be replaced](/remote-mdx-file-path-4.png)
+
+This will set up the `ChakraProvider` which is needed, so that the Chakra-UI components will work.
+
+So with chakra-ui, the `[post].tsx` page would look like the following:
+
+```tsx{3,9-11,14-16}
 import { MDXProvider } from "@mdx-js/react";
 import MDX from "@mdx-js/runtime";
 import { Heading, Text } from "@chakra-ui/react";
@@ -472,22 +511,13 @@ const Post: React.FC<PostProps> = (props) => {
 
 This works great. You can extend this approach to all the other types of components. It is a little hassle, but definitely worth it, because readability and design will be improved.
 
+![Needs cool description](/remote-mdx-sixth-screen.png)
+
 ## Introducing custom components
 
-So everything we did so far should also work with normal Markdown, right? We have not included any custom components so far. The MDX files just included regular markdown with the inclusion of meta data that was also kind of markdown comform. But what if we want to have a custom component, as mentioned before with `<SomeComplicatedInteractiveGraph data={data} />`? That is what MDX is for. Normally you could import files inside the MDX file. This is not possible unfortunately with our method, so we need to register the components manually. But that is also easy. Let us first add a component called `SomeComplicatedInteractiveGraph`. The file tree should look similar to the following:
+So everything we did so far should also work with normal Markdown, right? We have not included any custom components so far. The MDX files just included regular markdown with the inclusion of meta data that was also kind of markdown comform. But what if we want to have a custom component, as mentioned before with `<SomeComplicatedInteractiveGraph data={data} />`? That is what MDX is for. Normally you could import files inside the MDX file. This is not possible unfortunately with our method, so we need to register the components manually.
 
-- components
-  - `SomeComplicatedInteractiveGraph.tsx`
-- pages
-  - `[post].tsx`
-  - `index.tsx`
-- content
-  - `some-random-path.mdx`
-  - `alternative-random-path.mdx`
-- `package.json`
-- `...`
-
-The newly crated `SomeComplicatedInteractiveGraph.tsx` can be designed as you want. The props will receive data. There are different ways of course, but the most common is to generate that data either in the MDX data directly which would look like the following:
+We need to adjust our MDX to use that custom component as the following. I included the following changes in `content/some-random-path.mdx`.
 
 ```mdx
 ...
@@ -507,7 +537,12 @@ You just have to remember to pass the component as a prop as well to the `<MDX>`
 const components = {
   // ...
   SomeComplicatedInteractiveGraph: (props) => {
-    return <div>{/* Here is some graph logic */}</div>;
+    return (
+      <div>
+        {/* Here could be some graph logic, this is now really simple */}
+        {JSON.stringify(props.data)}
+      </div>
+    );
   },
 };
 
@@ -520,64 +555,204 @@ const Post: React.FC<PostProps> = (props) => {
 };
 ```
 
-This is quite simple and works. But data could be generated at build time as well. For that pass the data from `getStaticProps` to the component. Inside the component you can use the `scope` property to pass this data to the MDX component and then also render the MDX properly. The component would like the following:
+![Some cool description](/remote-mdx-seventh-screen.png)
 
-```tsx
+This is quite simple and works. But we could try to generate the data statically for the graph in the `getStaticProps` function and then pass it to the component. So let us first change our MDX back again:
+
+```mdx
+...
+
+<SomeComplicatedInteractiveGraph />
+```
+
+Now we should not see anything rendered for this component which is fine since it does not take any data.
+
+So now in our `[post].tsx`, we have to create components dynamically per page. That can be quite simply done in the following fashion:
+
+```tsx{3-14,17-22,25}
 // ...
 
-const components = {
-  // ...
-  SomeComplicatedInteractiveGraph: (props) => {
-    return <div>{/* Here is some graph logic */}</div>;
-  },
+const baseComponents = {
+  h1: (props) => (
+    <Heading as="h1" size="lg">
+      {props.children}
+    </Heading>
+  ),
+  p: (props) => (
+    <Text as="p" size="md">
+      {props.children}
+    </Text>
+  ),
 };
 
-const Post: React.FC<PostProps> = (props) => {
+const Post: React.FC<any> = (props) => {
+  const adjustedComponents = {
+    ...baseComponents,
+    SomeComplicatedInteractiveGraph: () => {
+      return <div>{JSON.stringify([{ x: 2, y: 3 }])}</div>;
+    },
+  };
+
   return (
-    <MDXProvider>
-      <MDX components={components} source={props}>
-        {props.mdx}
-      </MDX>
+    <MDXProvider components={adjustedComponents}>
+      <MDX>{props.mdx}</MDX>
     </MDXProvider>
   );
 };
 
-export const getStaticProps: GetStaticProps = async (props: GeneratedProps) => {
-  const folderPath = path.join(process.cwd(), "posts");
-  const filePath = path.join(folderPath, `${props.params.post}.mdx`);
+// ...
+```
 
-  const source = fs.readFileSync(filePath);
+Our `baseComponents` stay the same throughout all paths. But the `<SomeComplicatedInteractiveGraph />` changes with every post and gets replaced with the real component that also accepts the data and renders it. The only thing is passing the props dynamically now. But that is simple:
+
+```tsx{5,27-31}
+const Post: React.FC<any> = (props) => {
+  const adjustedComponents = {
+    ...baseComponents,
+    SomeComplicatedInteractiveGraph: () => {
+      return <div>{JSON.stringify(props.customGraphData)}</div>;
+    },
+  };
+
+  return (
+    <MDXProvider components={adjustedComponents}>
+      <MDX>{props.mdx}</MDX>
+    </MDXProvider>
+  );
+};
+
+export const getStaticProps: GetStaticProps = async (props) => {
+  const folderPath = path.join(process.cwd(), "content");
+  const filePath = path.join(folderPath, `${props.params.post}.mdx`);
+  const rawFileSource = fs.readFileSync(filePath);
+
+  const { content, data } = matter(rawFileSource);
+
   return {
     props: {
-      mdx: source,
-      graphData: [
-        { x: 3, y: 4 },
-        { x: 4, y: 5 },
+      mdx: content,
+      metaInformation: data,
+      customGraphData: [
+        { x: 1, y: 1 },
+        { x: 3, y: 5 },
+        { x: 32, y: 32 },
       ],
     },
   };
 };
 ```
 
-This example will pass the `graphData` to the `props` of the component. In there we just pass the props to the MDX runtime. The runtime will then pass the data to the custom components. So in the custom component you can have something similar to this:
-
-```tsx
-const components = {
-  // ...
-  SomeComplicatedInteractiveGraph: (props) => {
-    return <div>{JSON.stringify(props.graphData)}</div>;
-  },
-};
-```
-
-This should now simply render the JSON stringified data. But yeah, you can use any component you would like in there. Any professional graph library or just random custom components.
-
 With this technique you can use MDX to render custom components and so on. A use-case would be for example, Ads that would be custom implemented but also general customizations regarding style. This whole blog is implemented in this way, and I profit from this workflow a lot - simply making it easier to edit blogs and extend them. In the following chapter I will list a short summary of all we did.
 
-## Cheat sheet
+## Cheat sheet with 3-step Installation
 
-To have full MDX support simply create a component called `[post].tsx` and insert the following content:
+> With this cheat sheet you will be able to use MDX for your custom blog in minutes. This should be just used if you are experienced with Next.js.
+
+### Add the following dependencies
+
+```bash
+yarn add next react react-dom gray-matter @mdx-js/react @mdx-js/runtime
+# If typescript
+yarn add -D typescript @types/react and @types/node @types/mdx-js__react
+```
+
+### Create content
+
+Create Folder: `content` with the file `some-random-path.mdx`
+
+Include the following content:
+
+```md
+---
+seoTitle: "This is a nice title"
+---
+
+# Some Random Path
+
+Lorem Ipsum
+
+<SomeComplicatedInteractiveGraph />
+```
+
+### Create Next.js dynamic page
+
+After that create a `[post].tsx` page or in any subdirectory. Be careful with subdirectories because some file paths might have changed:
 
 ```tsx
-...
+import matter from "gray-matter";
+import { GetStaticPaths, GetStaticProps } from "next";
+import fs from "fs";
+import path from "path";
+import { MDXProvider } from "@mdx-js/react";
+import MDX from "@mdx-js/runtime";
+
+type PostProps = {
+  mdx: string;
+  metaInformation: { seoTitle: string };
+  customGraphData: Array<{ x: number; y: number }>;
+};
+
+const baseComponents = {
+  h1: (props) => <h1 style={{ color: "red" }}>{props.children}</h1>,
+  p: (props) => <p style={{ color: "green" }}>{props.children}</p>,
+};
+
+const Post: React.FC<PostProps> = (props) => {
+  const adjustedComponents = {
+    ...baseComponents,
+    SomeComplicatedInteractiveGraph: () => {
+      return <div>{JSON.stringify(props.customGraphData)}</div>;
+    },
+  };
+
+  return (
+    <MDXProvider components={adjustedComponents}>
+      <MDX>{props.mdx}</MDX>
+    </MDXProvider>
+  );
+};
+
+export const getStaticProps: GetStaticProps = async (props) => {
+  const folderPath = path.join(process.cwd(), "content");
+  const filePath = path.join(folderPath, `${props.params.post}.mdx`);
+  const rawFileSource = fs.readFileSync(filePath);
+
+  const { content, data } = matter(rawFileSource);
+
+  return {
+    props: {
+      mdx: content,
+      metaInformation: data,
+      customGraphData: [
+        { x: 1, y: 1 },
+        { x: 3, y: 5 },
+        { x: 32, y: 32 },
+      ],
+    },
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [{ params: { post: "some-random-path" } }],
+    fallback: false,
+  };
+};
+
+export default Post;
+```
+
+### Adjust next.config.js
+
+```js
+module.exports = {
+  webpack: (config, { isServer }) => {
+    // console.log({ config });
+    // Fixes npm packages that depend on `fs` module
+    if (!isServer) {
+      config.node = { fs: "empty" };
+    }
+    return config;
+  },
+};
 ```

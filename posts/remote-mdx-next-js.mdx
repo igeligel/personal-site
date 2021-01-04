@@ -73,7 +73,10 @@ Next, we need to add some commands to our package.json file.
 
 Now we can start creating a page. Let us create a folder called pages first. In the folder, a file should be created that is called index.tsx. The content should be like this:
 
-![TODO: Replace - Some file path](/remote-mdx-file-path-1.png)
+<BlogImage
+  src="/remote-mdx-file-path-1.png"
+  alt="TODO: Replace - Some file path"
+/>
 
 ```tsx
 const Home = () => {
@@ -85,7 +88,10 @@ export default Home;
 
 That should render a home page on localhost:3000
 
-![Webview of a basic home page](/remote-mdx-first-screen.png)
+<BlogImage
+  src="/remote-mdx-first-screen.png"
+  alt="Webview of a basic home page"
+/>
 
 ## Laying out the different pages
 
@@ -175,11 +181,17 @@ So what happens is that Next.js exports the returned object from `getStaticPaths
 
 Now we have a setup where `getStaticProps` has access to the `post` parameter. Its actually time to get the MDX. So currently we have the following folder structure:
 
-![TODO: Replace - Second file path](/remote-mdx-file-path-2.png)
+<BlogImage
+  src="/remote-mdx-file-path-2.png"
+  alt="TODO: Replace - Second file path"
+/>
 
 Let us create another directory, called `content`. Inside there we create two files: `some-random-path.mdx`, `alternative-random-path.mdx`. The whole directory structure should look like the following:
 
-![TODO: Replace - Third file path](/remote-mdx-file-path-3.png)
+<BlogImage
+  src="/remote-mdx-file-path-3.png"
+  alt="TODO: Replace - Third file path"
+/>
 
 Both of these files should have some content now. For simplicity let us just enter a heading and a small paragraph like the following:
 
@@ -227,7 +239,10 @@ export const getStaticProps: GetStaticProps = async (props) => {
 
 In that case, you can clearly see how `someTestProperty` is being passed to the component to be actually rendered in the page. For that just open `http://localhost:3000/some-random-path`:
 
-![Second screen](/remote-mdx-second-screen.png)
+<BlogImage
+  src="/remote-mdx-second-screen.png"
+  alt="Second screen"
+/>
 
 So if this works, we can also read the MDX in that function and pass it to the component. We can use the node packages `fs` and `path` to read the actual content and pass it to the component. Remember you need to call `toString()` in this case because an MDX file by itself is not serializable. We are just doing it in this step to make it work. The component should look like the following then:
 
@@ -272,7 +287,10 @@ export default Post;
 
 That will now just render the MDX as text. Nothing we want. But hey, we got the first part working. Passing the MDX content to the frontend. You can view the content on `http://localhost:300/some-random-path`
 
-![awdawwaaw](/remote-mdx-third-screen.png)
+<BlogImage
+  src="/remote-mdx-third-screen.png"
+  alt="awdawwaaw"
+/>
 
 ### Reading Meta information
 
@@ -379,7 +397,10 @@ module.exports = {
 
 Now, after a restart of the server, it should render the MDX with the normal HTML tags. Just open `http://localhost:3001/some-random-path`. You could start styling these components with global styles. The problem with that is, that it is quite hard to maintain and can cause conflicts in the overall application if style violations happen across different components. So let us assign custom components instead.
 
-![Some cool description](/remote-mdx-fourth-screen.png)
+<BlogImage
+  src="/remote-mdx-fourth-screen.png"
+  alt="Some cool description"
+/>
 
 ## Customizing components
 
@@ -451,7 +472,10 @@ const Post: React.FC<PostProps> = (props) => {
 };
 ```
 
-![Some coolio description](/remote-mdx-fifth-screen.png)
+<BlogImage
+  src="/remote-mdx-fifth-screen.png"
+  alt="Some coolio description"
+/>
 
 When entering the pages now the heading should be rendered in red and the paragraphg in green. Since this is working, we can also try to introduce custom components. I like to use Chakra-UI for most of my User Interfaces. It has a nice API and is also accessible. Just a perfect framework to build UI components.
 
@@ -474,7 +498,10 @@ const App = ({ Component, pageProps }: AppProps) => {
 export default App;
 ```
 
-![TODO: Some filepath to be replaced](/remote-mdx-file-path-4.png)
+<BlogImage
+  src="/remote-mdx-file-path-4.png"
+  alt="TODO: Some filepath to be replaced"
+/>
 
 This will set up the `ChakraProvider` which is needed, so that the Chakra-UI components will work.
 
@@ -511,7 +538,10 @@ const Post: React.FC<PostProps> = (props) => {
 
 This works great. You can extend this approach to all the other types of components. It is a little hassle, but definitely worth it, because readability and design will be improved.
 
-![Needs cool description](/remote-mdx-sixth-screen.png)
+<BlogImage
+  src="/remote-mdx-sixth-screen.png"
+  alt="Needs cool description"
+/>
 
 ## Introducing custom components
 
@@ -555,7 +585,10 @@ const Post: React.FC<PostProps> = (props) => {
 };
 ```
 
-![Some cool description](/remote-mdx-seventh-screen.png)
+<BlogImage
+  src="/remote-mdx-seventh-screen.png"
+  alt="Some cool description"
+/>
 
 This is quite simple and works. But we could try to generate the data statically for the graph in the `getStaticProps` function and then pass it to the component. So let us first change our MDX back again:
 

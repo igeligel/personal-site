@@ -27,6 +27,7 @@ import { BlogCodeBlock } from "../components/BlogCodeBlock";
 import { GetStaticProps } from "next";
 import config from "../data/SiteConfig";
 
+import { BlogFileTree } from "../components/BlogFileTree";
 import PostTags from "../src/components/PostTags/PostTags";
 import SocialLinks from "../src/components/SocialLinks/SocialLinks";
 import UserInfo from "../src/components/UserInfo/UserInfo";
@@ -96,6 +97,7 @@ const components = {
   th: Th,
   td: Td,
   AdBanner: AdBanner,
+  BlogFileTree,
 };
 
 type PostPageProps = {

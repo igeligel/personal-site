@@ -1,11 +1,11 @@
 ---
 title: "Remote MDX with Next.js"
 seoTitle: "Remote MDX with Next.js"
-description: ""
-openGraphDescription: ""
-twitterDescription: ""
-cover: "/thumbnails/... .png"
-date: "01/07/2021"
+description: "Creating a Blog with Next.js, MDX, and Chakra UI should not be difficult. Follow this blog to build a simple project for a blog, a SaaS, or a simple web application."
+openGraphDescription: "Creating a Blog with Next.js, MDX, and Chakra UI should not be difficult. Follow this blog to build a simple project for a blog, a SaaS, or a simple web application."
+twitterDescription: "Creating a Blog with Next.js, MDX, and Chakra UI should not be difficult. Follow this blog to build a simple project for a blog, a SaaS, or a simple web application."
+cover: "/thumbnails/remote-mdx-next-js.png"
+date: "01/06/2021"
 tags:
   - next.js
   - javascript
@@ -17,11 +17,11 @@ tags:
 
 Recently I migrated this website from Gatsby to Next.js. During the migration, I also decided to migrate the content from Markdown to MDX. With the offical guides and resources I struggled a bit to set this up in a proper way. So after figuring all these small bits, I decided to write an article on how you can setup your Next.js page with MDX.
 
+You can find a small cheat sheet at the end of the article that skips most of the explanations in this article. Also feel free, to check out the example repository containing the actual code here: [igeligel/remote-mdx-next](https://github.com/igeligel/remote-mdx-next).
+
 ## What is MDX
 
-If you read this article you probably know Markdown. It is a content format that you can use to style text. The markdown cheat sheet shows this quite nicely:
-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-A problem for developers was always on how to include more complicated content in these files. Markdown supports HTML in most cases as well, but a problem is that modern development changed.
+If you read this article you probably know Markdown. It is a content format that you can use to style text. [This markdown cheat sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) shows this quite nicely. A problem for developers was always on how to include more complicated content in these files. Markdown supports HTML in most cases as well, but a problem is that modern development changed.
 
 ```md
 Lorem Ipsum
@@ -45,11 +45,11 @@ Lorem Ipsum
 
 And it should use a custom paragraph component somehow. Most markdown and MDX rendering engines support that via custom configurations. Some engines had some problems with the interpretation and compilation of styles that we will look at later.
 
-When looking for solutions regarding MDX, you will most likely find this blog article: “Markdown/MDX with Next.js” (https://nextjs.org/blog/markdown) by Lee Robinson. The blog article is really good but fails at some point. The problems appear with “Remote Markdown and MDX” which will be covered now. For that, we need to set up a quick project. So let me run you through.
+When looking for solutions regarding MDX, you will most likely find this blog article: "[Markdown/MDX with Next.js](https://nextjs.org/blog/markdown)" by Lee Robinson. The blog article is really good but fails at some point. The problems appear with “Remote Markdown and MDX” which will be covered now. For that, we need to set up a quick project. So let me run you through.
 
 ## Creating the Next.js Project
 
-Since we will create the base ourselves and will use TypeScript, I will explain how to setup a basic TypeScript/Next.js project as well. You can find the documentation here (https://nextjs.org/docs).
+Since we will create the base ourselves and will use TypeScript, I will explain how to setup a basic TypeScript/Next.js project as well. You can find the documentation [here](https://nextjs.org/docs).
 
 ```bash
 mkdir remote-mdx-next
@@ -73,9 +73,40 @@ Next, we need to add some commands to our package.json file.
 
 Now we can start creating a page. Let us create a folder called pages first. In the folder, a file should be created that is called index.tsx. The content should be like this:
 
-<BlogImage
-  src="/remote-mdx-file-path-1.png"
-  alt="TODO: Replace - Some file path"
+<BlogFileTree
+  data={[
+    {
+      name: "node_modules",
+      children: [],
+      opened: false,
+      toggable: false,
+    },
+    {
+      name: "pages",
+      opened: true,
+      toggable: false,
+      children: [
+        {
+          name: "index.tsx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+      ],
+    },
+    {
+      name: "package.json",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+    {
+      name: "yarn.lock",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+  ]}
 />
 
 ```tsx
@@ -86,7 +117,7 @@ const Home = () => {
 export default Home;
 ```
 
-That should render a home page on localhost:3000
+That should render a home page on [localhost:3000](http://localhost:3000).
 
 <BlogImage
   src="/remote-mdx-first-screen.png"
@@ -96,8 +127,6 @@ That should render a home page on localhost:3000
 ## Laying out the different pages
 
 So you are probably reading this article to get to know how MDX is now rendered. As explained in the official blog article linked above, MDX can be rendered in different ways. If you really just have static pages and do not really care about layouting feel free to use the mentioned approach in the documentation. My setup was a bit more sophisticated. So let us focus on what we want to achieve:
-
-TODO: Insert fancy diagram of folder with MDX and post page.
 
 <BlogImage
   src="/remote-mdx-1.svg"
@@ -114,7 +143,7 @@ So the workflow for our page should be similar to this:
 
 The unhappy path can be done by responding with a 404, but this will already happen if you decide to statically export the pages which we will try here.
 
-So now we can actually start with creating the page. In the pages directory, create another file that is called [post].tsx. The content, for now, should look like the following:
+So now we can actually start with creating the page. In the pages directory, create another file that is called `[post].tsx`. The content, for now, should look like the following:
 
 ```tsx
 import { GetStaticPaths, GetStaticProps } from "next";
@@ -181,16 +210,145 @@ So what happens is that Next.js exports the returned object from `getStaticPaths
 
 Now we have a setup where `getStaticProps` has access to the `post` parameter. Its actually time to get the MDX. So currently we have the following folder structure:
 
-<BlogImage
-  src="/remote-mdx-file-path-2.png"
-  alt="TODO: Replace - Second file path"
+<BlogFileTree
+  data={[
+    {
+      name: ".next",
+      children: [],
+      opened: false,
+      toggable: false,
+    },
+    {
+      name: "node_modules",
+      children: [],
+      opened: false,
+      toggable: false,
+    },
+    {
+      name: "pages",
+      opened: true,
+      toggable: false,
+      children: [
+        {
+          name: "[post].tsx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+        {
+          name: "index.tsx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+      ],
+    },
+    {
+      name: "next-env.d.ts",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+    {
+      name: "package.json",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+    {
+      name: "tsconfig.json",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+    {
+      name: "yarn.lock",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+  ]}
 />
 
 Let us create another directory, called `content`. Inside there we create two files: `some-random-path.mdx`, `alternative-random-path.mdx`. The whole directory structure should look like the following:
 
-<BlogImage
-  src="/remote-mdx-file-path-3.png"
-  alt="TODO: Replace - Third file path"
+<BlogFileTree
+  data={[
+    {
+      name: ".next",
+      children: [],
+      opened: false,
+      toggable: false,
+    },
+    {
+      name: "content",
+      children: [
+        {
+          name: "alternative-random-path.mdx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+        {
+          name: "some-random-path.mdx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+      ],
+      opened: false,
+      toggable: false,
+    },
+    {
+      name: "node_modules",
+      children: [],
+      opened: false,
+      toggable: false,
+    },
+    {
+      name: "pages",
+      opened: true,
+      toggable: false,
+      children: [
+        {
+          name: "[post].tsx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+        {
+          name: "index.tsx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+      ],
+    },
+    {
+      name: "next-env.d.ts",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+    {
+      name: "package.json",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+    {
+      name: "tsconfig.json",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+    {
+      name: "yarn.lock",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+  ]}
 />
 
 Both of these files should have some content now. For simplicity let us just enter a heading and a small paragraph like the following:
@@ -239,7 +397,10 @@ export const getStaticProps: GetStaticProps = async (props) => {
 
 In that case, you can clearly see how `someTestProperty` is being passed to the component to be actually rendered in the page. For that just open `http://localhost:3000/some-random-path`:
 
-<BlogImage src="/remote-mdx-second-screen.png" alt="Second screen" />
+<BlogImage
+  src="/remote-mdx-second-screen.png"
+  alt="A screenshot from the Hello World page"
+/>
 
 So if this works, we can also read the MDX in that function and pass it to the component. We can use the node packages `fs` and `path` to read the actual content and pass it to the component. Remember you need to call `toString()` in this case because an MDX file by itself is not serializable. We are just doing it in this step to make it work. The component should look like the following then:
 
@@ -282,9 +443,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export default Post;
 ```
 
-That will now just render the MDX as text. Nothing we want. But hey, we got the first part working. Passing the MDX content to the frontend. You can view the content on `http://localhost:300/some-random-path`
+That will now just render the MDX as text. Nothing we want. But hey, we got the first part working. Passing the MDX content to the frontend. You can view the content on `http://localhost:3000/some-random-path`
 
-<BlogImage src="/remote-mdx-third-screen.png" alt="awdawwaaw" />
+<BlogImage
+  src="/remote-mdx-third-screen.png"
+  alt="A screenshot showin the raw MDX content rendered as text in a web page"
+/>
 
 ### Reading Meta information
 
@@ -389,9 +553,12 @@ module.exports = {
 };
 ```
 
-Now, after a restart of the server, it should render the MDX with the normal HTML tags. Just open `http://localhost:3001/some-random-path`. You could start styling these components with global styles. The problem with that is, that it is quite hard to maintain and can cause conflicts in the overall application if style violations happen across different components. So let us assign custom components instead.
+Now, after a restart of the server, it should render the MDX with the normal HTML tags. Just open `http://localhost:3000/some-random-path`. You could start styling these components with global styles. The problem with that is, that it is quite hard to maintain and can cause conflicts in the overall application if style violations happen across different components. So let us assign custom components instead.
 
-<BlogImage src="/remote-mdx-fourth-screen.png" alt="Some cool description" />
+<BlogImage
+  src="/remote-mdx-fourth-screen.png"
+  alt="The initial MDX rendered as HTML"
+/>
 
 ## Customizing components
 
@@ -463,9 +630,12 @@ const Post: React.FC<PostProps> = (props) => {
 };
 ```
 
-<BlogImage src="/remote-mdx-fifth-screen.png" alt="Some coolio description" />
+<BlogImage
+  src="/remote-mdx-fifth-screen.png"
+  alt="The MDX rendered page with custom styles"
+/>
 
-When entering the pages now the heading should be rendered in red and the paragraphg in green. Since this is working, we can also try to introduce custom components. I like to use Chakra-UI for most of my User Interfaces. It has a nice API and is also accessible. Just a perfect framework to build UI components.
+When entering the pages now the heading should be rendered in red and the paragraphg in green. Since this is working, we can also try to introduce custom components. I like to use Chakra UI for most of my User Interfaces. It has a nice API and is also accessible. Just a perfect framework to build UI components.
 
 For the Chakra-UI installation, we have to prepare our app though. But that is also simple. Add another file under the `/pages` directory called `_app.tsx` with the following content:
 
@@ -486,14 +656,100 @@ const App = ({ Component, pageProps }: AppProps) => {
 export default App;
 ```
 
-<BlogImage
-  src="/remote-mdx-file-path-4.png"
-  alt="TODO: Some filepath to be replaced"
+<BlogFileTree
+  data={[
+    {
+      name: ".next",
+      children: [],
+      opened: false,
+      toggable: false,
+    },
+    {
+      name: "content",
+      children: [
+        {
+          name: "alternative-random-path.mdx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+        {
+          name: "some-random-path.mdx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+      ],
+      opened: false,
+      toggable: false,
+    },
+    {
+      name: "node_modules",
+      children: [],
+      opened: false,
+      toggable: false,
+    },
+    {
+      name: "pages",
+      opened: true,
+      toggable: false,
+      children: [
+        {
+          name: "_app.tsx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+        {
+          name: "[post].tsx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+        {
+          name: "index.tsx",
+          children: null,
+          toggled: false,
+          openable: false,
+        },
+      ],
+    },
+    {
+      name: "next-env.d.ts",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+    {
+      name: "next.config.js",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+    {
+      name: "package.json",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+    {
+      name: "tsconfig.json",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+    {
+      name: "yarn.lock",
+      opened: false,
+      toggable: false,
+      children: null,
+    },
+  ]}
 />
 
-This will set up the `ChakraProvider` which is needed, so that the Chakra-UI components will work.
+This will set up the `ChakraProvider` which is needed, so that the Chakra UI components will work.
 
-So with chakra-ui, the `[post].tsx` page would look like the following:
+So with Chakra UI, the `[post].tsx` page would look like the following:
 
 ```tsx{3,9-11,14-16}
 import { MDXProvider } from "@mdx-js/react";
@@ -526,7 +782,10 @@ const Post: React.FC<PostProps> = (props) => {
 
 This works great. You can extend this approach to all the other types of components. It is a little hassle, but definitely worth it, because readability and design will be improved.
 
-<BlogImage src="/remote-mdx-sixth-screen.png" alt="Needs cool description" />
+<BlogImage
+  src="/remote-mdx-sixth-screen.png"
+  alt="The MDX rendered with Chakra UI components"
+/>
 
 ## Introducing custom components
 
@@ -570,7 +829,10 @@ const Post: React.FC<PostProps> = (props) => {
 };
 ```
 
-<BlogImage src="/remote-mdx-seventh-screen.png" alt="Some cool description" />
+<BlogImage
+  src="/remote-mdx-seventh-screen.png"
+  alt="The same webpage, but rendered with a custom component"
+/>
 
 This is quite simple and works. But we could try to generate the data statically for the graph in the `getStaticProps` function and then pass it to the component. So let us first change our MDX back again:
 

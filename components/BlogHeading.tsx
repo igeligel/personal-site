@@ -31,6 +31,7 @@ export const BlogHeading: React.FC<BlogHeadingProps> = (props) => {
       alignContent="center"
       alignItems="center"
       marginTop={MARGIN_TOPS[props.as]}
+      paddingLeft={["1.25rem", "1.25rem", "0", "0"]}
       width={["100%", "100%", "100%", "680px"]}
     >
       <a

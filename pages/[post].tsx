@@ -27,6 +27,7 @@ import { BlogCodeBlock } from "../components/BlogCodeBlock";
 import { GetStaticProps } from "next";
 import config from "../data/SiteConfig";
 
+import { BlogFileTree } from "../components/BlogFileTree";
 import PostTags from "../src/components/PostTags/PostTags";
 import SocialLinks from "../src/components/SocialLinks/SocialLinks";
 import UserInfo from "../src/components/UserInfo/UserInfo";
@@ -96,6 +97,7 @@ const components = {
   th: Th,
   td: Td,
   AdBanner: AdBanner,
+  BlogFileTree,
 };
 
 type PostPageProps = {
@@ -148,6 +150,22 @@ export const PostPage: React.FC<PostPageProps> = (props) => {
 
               .blog-post li p {
                 margin-top: 0;
+              }
+
+              .blog-post li code {
+                color: #9cdcfe;
+                background: #364354;
+                border-radius: 2px;
+                padding: 3px 5px;
+                font-size: 16px;
+              }
+
+              .blog-post ul code {
+                color: #9cdcfe;
+                background: #364354;
+                border-radius: 2px;
+                padding: 3px 5px;
+                font-size: 16px;
               }
             `}
           </style>

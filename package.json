@@ -99,7 +99,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "sitemap:generate": "node ./your_nextjs_sitemap_generator"
+    "sitemap:generate": "yarn build && yarn export && node ./your_nextjs_sitemap_generator"
   },
   "remarkConfig": {
     "plugins": [

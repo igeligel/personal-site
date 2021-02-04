@@ -47,6 +47,7 @@ import { BlogRecommendationItem } from "../components/BlogRecommendationItem";
 import { MDXProvider } from "@mdx-js/react";
 // @ts-ignore
 import MDX from "@mdx-js/runtime";
+import { BlogCustomDate } from "../components/BlogCustomDate";
 
 const LeadContainerParapraph = styled.p`
   margin: 0;
@@ -98,6 +99,7 @@ const components = {
   td: Td,
   AdBanner: AdBanner,
   BlogFileTree,
+  CustomDate: BlogCustomDate,
 };
 
 type PostPageProps = {

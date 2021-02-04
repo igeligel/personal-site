@@ -1,3 +1,4 @@
+import { ColorModeScript } from "@chakra-ui/react";
 import Document, {
   Head,
   Html,
@@ -7,6 +8,7 @@ import Document, {
 } from "next/document";
 import React from "react";
 import { ServerStyleSheet } from "styled-components";
+import { theme } from "./theme";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -41,6 +43,8 @@ class MyDocument extends Document {
         registration.unregister();
       }
     });
+
+    localStorage.setItem("chakra-ui-color-mode", "ligth");
   }
 
   render() {
@@ -53,6 +57,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Main />
           <NextScript />
         </body>

@@ -8,7 +8,7 @@ import Document, {
 } from "next/document";
 import React from "react";
 import { ServerStyleSheet } from "styled-components";
-import { theme } from "./theme";
+import { theme } from "../utils/theme";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

@@ -42,6 +42,7 @@ export const NavbarContainer = () => {
           <NavigationLink href="/about">About</NavigationLink>
           <NavigationLink href="/articles">Articles</NavigationLink>
           <NavigationLink href="/projects">Projects</NavigationLink>
+          <NavigationLink href="/bookmarks">Bookmarks</NavigationLink>
           <NavigationLink href="/contact">Contact</NavigationLink>
         </Box>
       </Box>

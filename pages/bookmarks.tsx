@@ -104,6 +104,12 @@ const Bookmarks = () => {
             title="A cold email template that works"
             link="https://www.indiehackers.com/post/the-cold-email-id-send-to-get-my-first-10-customers-f4a6215ae6"
           />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING]}
+            title="A tweet showing on how to improve your pricing table"
+            link="https://twitter.com/damengchen/status/1366505122772054016"
+            description="Grammarly and others are doing that, so listen: If you have a pricing table the information is condensed most of the time. For that you can implement tooltips that give you an opportunity to show more of the feature directly on the pricing page. Do not link to an external page so people do not forget to actually pay."
+          />
         </Box>
       </Box>
     </>

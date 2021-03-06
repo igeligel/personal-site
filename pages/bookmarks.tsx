@@ -110,6 +110,28 @@ const Bookmarks = () => {
             link="https://twitter.com/damengchen/status/1366505122772054016"
             description="Grammarly and others are doing that, so listen: If you have a pricing table the information is condensed most of the time. For that you can implement tooltips that give you an opportunity to show more of the feature directly on the pricing page. Do not link to an external page so people do not forget to actually pay."
           />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING]}
+            title="Which acquisition channels do make sense?"
+            link="https://www.indiehackers.com/post/whats-your-top-acquisition-channel-right-now-1d022752f5?commentId=-MTDyXS0G-0likXjJvTr"
+            description={`A thread regarding which acquisition channels make sense in the beginning. The consens is to use "spiky" channels like reddit, hackernews, facebook groups or LinkedIn because SEO which should be build at the same time will just take an affect 6 months after establishing the content.`}
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.STORY_TIME]}
+            title="The story of Udemy from the view of an entrepreneur"
+            link="https://www.gaganbiyani.com/blog/udemy-a-product-of-recession"
+            description={`This 3 part story covers how Udemy was created, how it grew and how it got VC investments. A quite interesting and unique story of struggling to grow a business.`}
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.BOOTSTRAPPING,
+              BookmarksTag.UX,
+              BookmarksTag.MARKETING,
+            ]}
+            title="A step-by-step guide on how to create landing pages that convert"
+            link="https://marketingexamples.com/conversion/landing-page-guide"
+            description={`Marketing examples is a great resource to grow your marketing skills. In this article Harry is covering how a landing page should be done to convert visitors to customers.`}
+          />
         </Box>
       </Box>
     </>

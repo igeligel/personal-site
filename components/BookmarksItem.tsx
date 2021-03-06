@@ -7,7 +7,7 @@ type BookmarksItemProps = {
   tags: BookmarksTags;
   title: string;
   link: string;
-  description?: string;
+  description?: string | React.ReactNode;
 };
 
 export const BookmarksItem: React.FC<BookmarksItemProps> = (props) => {

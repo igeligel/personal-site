@@ -1,9 +1,8 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 import Head from "next/head";
-import React, { useEffect } from "react";
+import React from "react";
 import { BookmarksItem } from "../components/BookmarksItem";
 import { BookmarksTag } from "../types/BookmarkTags";
-import { BookmarksTagFilter } from "../components/BookmarksTagFilter";
 import SEO from "../src/components/SEO/SEO";
 
 const Bookmarks = () => {
@@ -131,6 +130,40 @@ const Bookmarks = () => {
             title="A step-by-step guide on how to create landing pages that convert"
             link="https://marketingexamples.com/conversion/landing-page-guide"
             description={`Marketing examples is a great resource to grow your marketing skills. In this article Harry is covering how a landing page should be done to convert visitors to customers.`}
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.VIDEO]}
+            title="From Zero to $4M without quora, hackernews or anything"
+            link="https://www.youtube.com/watch?v=jw8N7YrBM4o"
+            description="A talk on MicroConf 2014 regarding how to grow your business with social media and the like."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.MARKETING]}
+            title="The best time to post on Hacker News"
+            link="https://towardsdatascience.com/how-to-get-upvoted-on-hacker-news-692360e85ef8"
+            description="Getting traction on Hacker News is difficult but posting at certain times will help you to actually receive upvotes. This article analyzed the data and summed it up in this blog article."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.BOOTSTRAPPING,
+              BookmarksTag.MARKETING,
+              BookmarksTag.BLOG,
+            ]}
+            title="How to build backlinks on data"
+            link="https://www.indiehackers.com/post/how-i-build-backlinks-to-every-article-i-write-c0ba351cb9"
+            description="In this short post Brendan is covering on how you can build content based on existing data and create your own data sets that can be shared with the communities. With these data sets you will be able to create even more content and enhance your existing articles. It also gives a lot of backlinks because if you share the data, organically people will link to it more often."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.GROWTH]}
+            title="How to Grow Your Startup on a $0 Marketing Budget"
+            link="https://producthabits.com/how-to-grow-your-startup-on-a-0-marketing-budget/"
+            description="A guide on how you can grow your startup or side project with a $0 budget. It is quite an amazing article and gives you multiple processes/frameworks on how to grow your marketing efforts with free tools and resources."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.GROWTH]}
+            title="Reframing discounts to increase yearly plans"
+            link="https://blog.friger.io/how-reframing-discounts-led-to-a-4x-increase-in-yearly-plans/"
+            description={`A lot of SaaS are having monthly and yearly plans. The yearly plans are mostly more profitable and this guide will teach you how you can incentivize with discounts at the checkout how you can 'convince' people to signup for the yearly plan.`}
           />
         </Box>
       </Box>

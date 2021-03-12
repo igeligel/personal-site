@@ -6,6 +6,9 @@ export enum BookmarksTag {
   SOFTWARE_ENGINEERING = "Software Engineering",
   DOCUMENTATION = "Documentation",
   STORY_TIME = "Story Time",
+  VIDEO = "Video",
+  BLOG = "Blog",
+  GROWTH = "Growth"
 }
 
 export type BookmarksTags = Array<BookmarksTag>;

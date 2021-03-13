@@ -165,6 +165,111 @@ const Bookmarks = () => {
             link="https://blog.friger.io/how-reframing-discounts-led-to-a-4x-increase-in-yearly-plans/"
             description={`A lot of SaaS are having monthly and yearly plans. The yearly plans are mostly more profitable and this guide will teach you how you can incentivize with discounts at the checkout how you can 'convince' people to signup for the yearly plan.`}
           />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.STORY_TIME]}
+            title="A few lessons about building a side project"
+            link="https://algodaily.com/blog/what-i-didnt-expect-to-learn-from-running-my-side-hustle"
+            description={`Jake from AlgoDaily gives a few lessons on what he learnt during building his side project: Engineering Quality Does Not Matter, you need people to support you, read less and do things.`}
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING]}
+            title="A twitter thread to grow your Twitter"
+            link="https://twitter.com/JanelSGM/status/1299326094416531461"
+            description="These simple 13 steps will help you to grow your twitter audience. Really helpful insights that you can use as a framework to increase your follower count."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.SOFTWARE_ENGINEERING, BookmarksTag.PODCAST]}
+            title="A podcast to grow your soft skills as Software Engineer"
+            link="https://softskills.audio/"
+            description="This podcast with weekly episodes is talking about your software career. Many useful tips that you can get you more far within your career."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING]}
+            title="Canva templates for social graphics"
+            link="https://www.canva.com/social-graphics/templates/"
+            description="A simple collection of social templates to share your content on social media and the likes."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.CAREER, BookmarksTag.PRODUCT_MANAGEMENT]}
+            title="What makes a great product manager"
+            link="https://informedpm.com/posts/great-product-manager"
+            description="A great article that discovers what are the qualities needed to be an amazing product manager."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING, BookmarksTag.GROWTH]}
+            title="Marketing channels after launching your side project"
+            link="https://www.indiehackers.com/post/after-reddit-hn-betalist-producthunt-where-do-you-market-your-startup-next-6853fb82ed"
+            description="After launching your side project in many communities you might experience slower growth than usual. A discussion on what are the next steps with actionable advice."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.MARKETING,
+              BookmarksTag.GROWTH,
+              BookmarksTag.TOOLS,
+            ]}
+            title="A simple tool that sends you an email when something is mentioned"
+            link="https://f5bot.com"
+            description="This tool is perfect whenever someone on reddit or hackernews is mentioning your side project or has the need for it. An incredible tool to help you to provide value to people and link them to your project."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.TOOLS,
+              BookmarksTag.NEXTJS,
+              BookmarksTag.TYPESCRIPT,
+            ]}
+            title="A SEO component for Next.js applications"
+            link="https://github.com/garmeeh/next-seo"
+            description="Generating meta tags and so on is annoying, use this tool to improve your technical SEO score."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.TOOLS, BookmarksTag.GROWTH]}
+            title="Cold emailing templates"
+            link="https://hunter.io/templates"
+            description="Struggling to come up with cold emails for Sales, Recruitment, SEO, follow-ups, Marketing or Networking? This directory of cold email templates will help you out."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.BOOTSTRAPPING,
+              BookmarksTag.GROWTH,
+              BookmarksTag.SEO,
+              BookmarksTag.STORY_TIME,
+            ]}
+            title="A step-by-step guide to SEO"
+            link="https://apollodigital.io/blog/seo-process"
+            description="This is probably the best guide on how to drive highly qualified leads to your website. It is in-depth and received a lot of traction on reddit. The advice is just next level and really amazing."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.BOOTSTRAPPING,
+              BookmarksTag.GROWTH,
+              BookmarksTag.SEO,
+            ]}
+            title="The SaaS SEO MBA"
+            link="https://www.notion.so/The-SaaS-SEO-MBA-2e4dbb15e24b4d6c9ffe5a98a788bc6a"
+            description="A collection of useful links that can be used as a guide to improve the SEO score of your project."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.BOOTSTRAPPING,
+              BookmarksTag.MARKETING,
+              BookmarksTag.GROWTH,
+            ]}
+            title="A guide on how to get press for your project"
+            link="https://www.indiehackers.com/post/want-free-press-heres-how-to-actually-get-it-cc7795150c"
+            description="Getting into publications and letting people write about your project is mostly the most efficient way to grow the amount of clicks your product gets. This guide explains a simple framework to get to this point actually."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.GROWTH]}
+            title="A story about how storytelling is the REAL content"
+            link="https://medium.com/swlh/how-we-got-11-3-million-pageviews-without-the-growth-hacking-bullshit-5e0456dcbe3"
+            description="Ali describes in his blog how storytelling helped his clients to actually improve SEO because the stories actually caused an interest within blogs and similar."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.GROWTH]}
+            title="A framework for writing your next blog"
+            link="https://www.julian.com/guide/write/intro"
+            description="Julian created this handbook on how he is writing articles. You can use this handbook for your own blogging technique if you like. It has a lot of great ideas I try to follow within my blogs."
+          />
         </Box>
       </Box>
     </>

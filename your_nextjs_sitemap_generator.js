@@ -7,7 +7,20 @@ const fs = require("fs");
   try {
     await sitemap({
       baseUrl: "https://kevinpeters.net",
-      ignoredPaths: [],
+      ignoredPaths: [
+        "/404",
+        "/ads",
+        "/index",
+        "/money",
+        "/personal-branding-faang-banner",
+        "/remote-mdx-1",
+        "/robots",
+        "/roll-safe",
+        "/sitemap",
+        "/spongebob-searching",
+        "/sw",
+        "/vue-js-review-of-2017-preview",
+      ],
       extraPaths: [],
       pagesDirectory: __dirname + "\\out",
       targetDirectory: "public/",

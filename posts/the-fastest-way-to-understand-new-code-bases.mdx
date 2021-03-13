@@ -1,0 +1,239 @@
+---
+title: "The #1 tip to familiarize with new JavaScript Codebases"
+seoTitle: "The #1 tip to familiarize with new JavaScript Codebases"
+description: "Getting thrown into a new codebase is difficult. But with tools for architecture analysis you can make your journey at your next job's JavaScript or TypeScript codebase a breeze."
+openGraphDescription: "Getting thrown into a new codebase is difficult. But with tools for architecture analysis you can make your journey at your next job's JavaScript or TypeScript codebase a breeze."
+twitterDescription: "Getting thrown into a new codebase is difficult. But with tools for architecture analysis you can make your journey at your next job's JavaScript or TypeScript codebase a breeze."
+cover: "/thumbnails/the-fastest-way-to-understand-new-code-bases.png"
+category: "software-engineering"
+date: "03/13/2021"
+tags:
+  - javascript
+  - software-engineering
+---
+
+# The #1 tip to familiarize with new JavaScript Codebases
+
+In my years as a software engineer, I have probably looked at hundreds of codebases. Too many to count. I struggled a lot with understanding where the relevant code is most of the time. Normally, asking for help what I should look for and guidance in tickets will bring me forward. Slowly and surely I will understand what the code is doing. And you will too. Some people are better at this and some people will be slow. No shame. Most code is complex. But I found a simple tool that will make it easier for you. It is called [code-complexity](https://github.com/simonrenoult/code-complexity) and you can use it as the following code snippet shows:
+
+```bash
+npx code-complexity . --limit 20 --sort ratio
+# You can also use --filter '**/*.js' to use glob patterns to filter files
+```
+
+It will return an output like the following:
+
+| file                         | complexity | churn | ratio |
+| ---------------------------- | ---------- | ----- | ----- |
+| src/cli.ts                   | 103        | 8     | 824   |
+| test/code-complexity.test.ts | 107        | 7     | 749   |
+| .idea/workspace.xml          | 123        | 6     | 738   |
+
+This will show the biggest and most changed files. The likelihood that these files are crucial for understanding the application is quite high. Read through them and understand them. What this data means in detail will be explained in this blog article now.
+
+## Complexity and Churn
+
+In this chapter, I will explain to you the concepts of complexity and churn when it comes to code. It is the baseline to understand the technique we are using here to improve your understanding of a codebase.
+
+### What is Complexity?
+
+Complexity can be defined in different ways. The level of nesting of functions is normally used as a measurement of how complex code is. Code with small functions and composed behavior is normally more readable and easy to understand. So we could say that complex code also consists of a few functions that are far nested and it is mostly true. Nesting is hard to track though so we could find another metric somehow.
+
+With long functions normally there comes large files as well. People tend to put everything into one file if they also put a lot into one function. So in theory we could take the lines of code as a measurement as well. There are a lot of utility packages out there that solve this problem. One of these tools is called [sloc](https://github.com/flosse/sloc#readme). It will output the number of lines of code within a file. But do not use it directly. The tool I mentioned before includes this by default.
+
+So in conclusion we can say complex files are either super nested or super long. One of these things normally comes with the other so that’s great to hear because analyzing the length of a file tends to be easier than nesting.
+
+### What is Churn?
+
+Churn is a bit more complicated to explain. But let us start somewhere. A churned file is a file that has a lot of changes. But what does this mean?
+
+A lot of changes to a file happens when yeah, a lot of people have changed the file. But how can someone measure that? The git history is telling us how often a file was checked in. So we can make sure with that how likely a file is to be changed. Normally this means files of this type are the main point of the application. A problem that occurs though is that often there are configuration files included here, but you can simply exclude them for this analysis.
+
+### What can Complexity + Churn teach us?
+
+Now, after learning what complexity and churn mean, we can focus on the combination of them. Files that normally charge a lot but are also really complex should be normally refactored. And most of the time, with that, it is natural that these files might be the core of the application. The basic logic is written in them directly or in files related to that. So let us check how we can analyze that further.
+
+## Checking the files in detail
+
+My technique to check the files in detail is quite simple. I first look over the file and check what the exported functions are called. Ideally, I write them down. Internal functions are firstly not important to understand. Once I have an overview of all the exported functions I foremost check if there are any unit tests. If the functions have parameters as well, then I will try to write them down as well. With TypeScript or Flow types, this gets, even more, easier to get an overall feeling of the structure.
+
+<BlogImage
+  src="/spongebob-searching.gif"
+  alt="Spongebob checking the code in detail"
+  maxWidth="400px"
+/>
+
+Unit tests are a good first approach to see how the functions are working. To understand functions you probably just need to look at the input, the function name, and what it is returning. In most of the cases, types even support you with that, and unit tests will show you edge cases for the function and how it can be used. So that’s mostly enough to understand the function. At least if you know the programming language. If you want to get deeper into the function feel free to, but you do not have to do that. Why? Explained in the next chapter.
+
+## Why do not understand every detail?
+
+Understanding a function in detail can be important. But during onboarding, a lot of other things are more important. You will not be able to understand every bit of the application within a short time frame, but understanding the core parts should give you a track of where the core logic of the application is executed.
+
+With that knowledge, you can jump into the first issues for you. Ideally, the team has prepared smaller tasks in the codebase to give you a nice onboarding experience. If that is not the case, ask your manager or senior engineers in your team if any of the current issues is suitable for you. Make sure to transmit your gained knowledge of the codebase though so they understand your knowledge level.
+
+A good idea for the first issue is also to do pair programming with other software engineers from the team. Make sure to tell them that you want to type mostly and they should be more of supervisors so you learn how to navigate the codebase by yourself. Because of that guided onboarding or easier tickets, you do not have to jump into details. The details of the code will be discovered now during the implementation phase of fixing bugs or adding features. The more tickets you will do the more you learn about the codebase in detail. But look back at churn and complexity because it can change over time.
+
+## Debugging the details?
+
+Having to work on the code base now will also involve another bigger thing: Debugging. With your first tasks, you will probably learn already how to run the application locally, run unit tests, and integration or E2E tests if these exist. These become vital once you implement the feature because adding tests will make sure your application is working as expected. Often these tests cover a lot of code though and are kind of abstract. In these cases, you have to learn to debug your code. Because most of the tests are being run in a Node.js environment we will have a quick peek into how to debug Node.js-based applications. Most engineers use `console.log` to debug and it is completely valid. But if you need to follow larger structures of code I can recommend using a proper debugger. JavaScript and TypeScript support the `debugger` keyword, nevertheless, it is a bit tricky to run your test suite and have a nice debugger experience because within Node.js it is a bit difficult to spawn a browser instance’s developer tools and connect it to the program. Another option would be to use your IDE or Editor to connect a debugger supported by your coding user interface. For example, Visual Studio Code supports debugging Node.js applications directly in the IDE. A guide on how ["Node.js debugging in VS Code" can be found here](https://code.visualstudio.com/docs/nodejs/nodejs-debugging).
+
+Debugging is an art in itself. You should get comfortable using breakpoints and what the debugging functions "step over" and "step into" mean. These will be extremely helpful when debugging nested functions.
+
+## Some examples
+
+In this chapter, I will go through some codebases with this technique to explain where the main core of the application is and how the process mentioned above can help you to get familiar with the code base quicker.
+
+### Blitz.js
+
+[Blitz.js](https://github.com/blitz-js/blitz) is a framework built on top of Next.js. It describes itself as the Ruby on Rails for JavaScript/TypeScript. The team is working for more than a year on this framework and it would be quite interesting to see where the core of their logic is being placed.
+
+The first step, of course, is to clone the repository to a local folder and then run:
+
+```bash
+npx code-complexity . --limit 20 --sort ratio
+```
+
+This will output the following table:
+
+| file                                                    | complexity | churn | ratio |
+| ------------------------------------------------------- | ---------- | ----- | ----- |
+| nextjs/packages/next/compiled/webpack/bundle5.js        | 91501      | 1     | 91501 |
+| nextjs/packages/next/compiled/webpack/bundle5.js        | 91501      | 1     | 91501 |
+| nextjs/packages/next/compiled/webpack/bundle4.js        | 74436      | 1     | 74436 |
+| packages/cli/src/commands/generate.ts                   | 228        | 28    | 6384  |
+| packages/cli/src/commands/new.ts                        | 177        | 35    | 6195  |
+| packages/generator/src/generators/app-generator.ts      | 235        | 23    | 5405  |
+| packages/generator/src/generator.ts                     | 283        | 19    | 5377  |
+| packages/server/src/stages/rpc/index.ts                 | 184        | 28    | 5152  |
+| packages/server/test/dev.test.ts                        | 190        | 27    | 5130  |
+| packages/core/src/types.ts                              | 160        | 28    | 4480  |
+| packages/server/src/next-utils.ts                       | 176        | 25    | 4400  |
+| packages/generator/templates/app/app/pages/index.tsx    | 240        | 18    | 4320  |
+| packages/server/src/config.ts                           | 116        | 37    | 4292  |
+| packages/core/src/use-query-hooks.ts                    | 184        | 22    | 4048  |
+| nextjs/test/integration/file-serving/test/index.test.js | 3561       | 1     | 3561  |
+| examples/auth/app/pages/index.tsx                       | 210        | 16    | 3360  |
+| packages/cli/src/commands/db.ts                         | 75         | 44    | 3300  |
+| .github/workflows/main.yml                              | 132        | 24    | 3168  |
+| packages/cli/test/commands/new.test.ts                  | 141        | 19    | 2679  |
+| examples/store/app/pages/index.tsx                      | 181        | 14    | 2534  |
+| packages/display/src/index.ts                           | 158        | 16    | 2528  |
+
+As you can see, there are a lot of unrelated files that could be filtered out like the compiled folder but for an initial analysis, this is enough.
+
+We can see multiple directories being important here:
+
+- packages/cli
+- packages/generator
+- packages/server
+- packages/core
+
+If we get a task we would at least know already where to look for related code. Initially, I would try to understand the `packages/core` files to understand what they are doing. Understand the tests if they exist and then you should have a good grasp of what Blitz is doing.
+
+### React.js
+
+React.js is a frontend framework that almost every web developer knows by now. What most people do not know is how the codebase is structured and what are the core parts. So let us have a look at it.
+
+```bash
+npx code-complexity . --limit 20 --sort ratio
+```
+
+Running the command will lead to the following result:
+
+| file                                                                                       | complexity | churn | ratio  |
+| ------------------------------------------------------------------------------------------ | ---------- | ----- | ------ |
+| packages/eslint-plugin-react-hooks/\*\*tests\*\*/ESLintRuleExhaustiveDeps-test.js          | 7742       | 51    | 394842 |
+| packages/react/src/\*\*tests\*\*/ReactProfiler-test.internal.js                            | 4002       | 95    | 380190 |
+| packages/react-reconciler/src/ReactFiberWorkLoop.new.js                                    | 2373       | 139   | 329847 |
+| packages/react-reconciler/src/ReactFiberWorkLoop.old.js                                    | 2373       | 114   | 270522 |
+| packages/react-dom/src/server/ReactPartialRenderer.js                                      | 1379       | 122   | 168238 |
+| packages/react-reconciler/src/ReactFiberCommitWork.new.js                                  | 2262       | 71    | 160602 |
+| packages/react-devtools-shared/src/backend/renderer.js                                     | 2952       | 54    | 159408 |
+| packages/react-reconciler/src/ReactFiberBeginWork.new.js                                   | 2903       | 53    | 153859 |
+| scripts/rollup/bundles.js                                                                  | 760        | 199   | 151240 |
+| packages/react-reconciler/src/ReactFiberHooks.new.js                                       | 2622       | 56    | 146832 |
+| packages/react-dom/src/client/ReactDOMHostConfig.js                                        | 1018       | 140   | 142520 |
+| packages/react-reconciler/src/ReactFiberHooks.old.js                                       | 2622       | 50    | 131100 |
+| packages/react-reconciler/src/\*\*tests\*\*/ReactHooks-test.internal.js                    | 1641       | 74    | 121434 |
+| packages/react-dom/src/\*\*tests\*\*/ReactDOMComponent-test.js                             | 2346       | 51    | 119646 |
+| packages/react-dom/src/\*\*tests\*\*/ReactDOMServerPartialHydration-test.internal.js       | 2150       | 49    | 105350 |
+| packages/react-noop-renderer/src/createReactNoop.js                                        | 966        | 109   | 105294 |
+| packages/react-reconciler/src/ReactFiberCommitWork.old.js                                  | 2262       | 46    | 104052 |
+| packages/react-reconciler/src/ReactFiberBeginWork.old.js                                   | 2903       | 35    | 101605 |
+| packages/react-reconciler/src/\*\*tests\*\*/ReactIncrementalErrorHandling-test.internal.js | 1532       | 62    | 94984  |
+| packages/react-refresh/src/\*\*tests\*\*/ReactFresh-test.js                                | 3165       | 29    | 91785  |
+
+What we can see here is that two sub-packages are probably the most interesting to understand:
+
+- packages/react-dom
+- packages/react-reconciler
+
+Understanding React Fiber and how react-dom's partial renderer is working will give you a good idea about React's architecture. A good thing about the code within React is that it is well documented with comments even though it is complex at first.
+
+### Venom - A TypeScript Client for Whatsapp
+
+Venom is a library to interact with Whatsapp. You can send messages via this library and do many more things. It is a bit more practical because on such applications you will work mostly in your day-to-day job. So let us run our usual command:
+
+```bash
+npx code-complexity . --limit 20 --sort ratio
+```
+
+| file                                               | complexity | churn | ratio |
+| -------------------------------------------------- | ---------- | ----- | ----- |
+| src/lib/jsQR/jsQR.js                               | 9760       | 5     | 48800 |
+| src/lib/wapi/wapi.js                               | 474        | 44    | 20856 |
+| src/api/layers/sender.layer.ts                     | 546        | 36    | 19656 |
+| src/lib/wapi/store/store-objects.js                | 362        | 24    | 8688  |
+| src/controllers/initializer.ts                     | 178        | 48    | 8544  |
+| src/lib/wapi/jssha/index.js                        | 1204       | 5     | 6020  |
+| src/api/layers/retriever.layer.ts                  | 171        | 29    | 4959  |
+| src/types/WAPI.d.ts                                | 203        | 24    | 4872  |
+| src/api/layers/host.layer.ts                       | 258        | 17    | 4386  |
+| src/api/layers/listener.layer.ts                   | 206        | 21    | 4326  |
+| src/controllers/browser.ts                         | 141        | 29    | 4089  |
+| src/controllers/auth.ts                            | 192        | 21    | 4032  |
+| src/api/model/enum/definitions.ts                  | 589        | 6     | 3534  |
+| src/api/whatsapp.ts                                | 95         | 30    | 2850  |
+| src/lib/wapi/functions/index.js                    | 97         | 24    | 2328  |
+| src/api/layers/profile.layer.ts                    | 82         | 22    | 1804  |
+| src/lib/wapi/business/send-message-with-buttons.js | 323        | 5     | 1615  |
+| src/api/layers/group.layer.ts                      | 115        | 14    | 1610  |
+| src/api/layers/controls.layer.ts                   | 76         | 20    | 1520  |
+| src/api/model/message.ts                           | 114        | 11    | 1254  |
+
+What we can see here is that there are these directories which are from importance:
+
+- src/lib
+- src/api
+- src/controllers
+
+As we can see from the `src/lib` directory, the files included are automatically generated. Ideally, we can filter them out but for now, let us look at the other files.
+
+We can see that `src/api/layers/sender.layer.ts` and `src/api/layers/retriever.layer.ts` are not complex but have a lot of changes. So every time a feature is added or deleted these files are touched. These are the core files of the application and understanding them will give you a good grasp of how the codebase is structured and what you should focus on.
+
+## Where does this technique come from?
+
+This technique of analyzing a codebase originally came from a book that handles refactoring large codebases via a process: [Software Design X-Rays](https://www.amazon.de/Software-Design-X-Rays-Technical-Behavioral/dp/1680502727?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Software+Design+X-Rays&qid=1615637678&sr=8-1&linkCode=ll1&tag=kevinpeters38-21&linkId=e90c90e5869a073cebb13f2fe26e865e&language=de_DE&ref_=as_li_ss_tl) by Adam Tornhill. It is a great book and teaches you a lot of ways to structure your code and what parts are worth refactoring. A great book. I think every software engineer should have read it at some point because it will help them to understand a codebase differently. With working on a project, people will get familiar with different parts of the software and of course, they will have their special "area" of code where they are super comfortable. If this code is good and understandable is another question though, that this book tries to answer.
+
+<a
+  href="https://www.amazon.de/Software-Design-X-Rays-Technical-Behavioral/dp/1680502727?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Software+Design+X-Rays&qid=1615637678&sr=8-1&linkCode=ll1&tag=kevinpeters38-21&linkId=e90c90e5869a073cebb13f2fe26e865e&language=de_DE&ref_=as_li_ss_tl"
+  target="_blank"
+>
+  <BlogImage
+    src="/software-design-x-rays-cover.jpg"
+    alt="Software Design X-Rays by Adam Tornhill"
+    maxWidth="200px"
+  />
+</a>
+
+Based on the refactoring efforts, we can also use the knowledge to see which parts of the application are important. Hopefully, I explained this in this blog article to you.
+
+## Other Languages
+
+The tool [code-complexity](https://github.com/simonrenoult/code-complexity) is closely coupled to JavaScript and TypeScript-based codebases. For other languages like Java, C#, Python, or PHP there are other tools, but one tool that is generic and works for most of the codebases is [code-maat](https://github.com/adamtornhill/code-maat). It is a tool created by the author of the book mentioned in the chapter before.
+
+With that, you can analyze a software project as well and come to the same conclusions as mentioned in the blog article.
+
+## Conclusion
+
+I hope you liked this article and made your life a bit easier. Coming to a new code base is difficult and especially with the ever-changing JavaScript world, it is difficult to follow. With the tools and processes presented in this article, you might have an easier time actually fit well into a new codebase. Feel free to share this article with your workers and also tell them about the techniques you are using. Most of the developers I know do not know about the churn and complexity analysis and it might be really helpful for everyone. So share it!

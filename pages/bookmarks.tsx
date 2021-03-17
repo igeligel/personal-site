@@ -304,6 +304,16 @@ const Bookmarks = () => {
             link="https://www.linkedin.com/posts/harrydry_my-copywriting-handbook-activity-6712423627406536704-x9oQ/"
             description="Harry from marketingexamples is giving a small slideshow of 30 slides that will help you to improve your slides."
           />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.CAREER,
+              BookmarksTag.SOFTWARE_ENGINEERING,
+              BookmarksTag.PRODUCT_MANAGEMENT,
+            ]}
+            title="A guide on how to deal with people in a software project"
+            link="https://www.howtodeal.dev/"
+            description="This website will teach you how to deal with different type of people in a software project, with their weaknesses and how to improve them or when to move on from specific positions."
+          />
         </Box>
       </Box>
     </>

@@ -270,6 +270,40 @@ const Bookmarks = () => {
             link="https://www.julian.com/guide/write/intro"
             description="Julian created this handbook on how he is writing articles. You can use this handbook for your own blogging technique if you like. It has a lot of great ideas I try to follow within my blogs."
           />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING, BookmarksTag.GROWTH]}
+            title="An analysis on post on hacker news"
+            link="https://www.ankle.io/posts/hacker-news-analysis"
+            description="In this blog post hacker news post are analyzed when it comes to what type of post is upvoted, what category will give you the most exposure, when to post and many other things. Quite useful if you want to post something on there."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.SOFTWARE_ENGINEERING, BookmarksTag.CAREER]}
+            title="A useful tip when joining a new team"
+            link="https://www.annashipman.co.uk/jfdi/meeting-everyone.html"
+            description="In this blog article Anna presents a way on how she iss entering a new team from a real story at Financial Times. It focuses on meeting everyone and building a map of who knows what."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.GROWTH]}
+            title="A simple way to grow your traffic in SaaS"
+            link="https://www.indiehackers.com/post/how-to-boost-traffic-to-your-boring-saas-product-not-clickbait-2cfb507f37"
+            description="Using your own SaaS to create free tools will bring traffic to your website that will help you to get users. In this IndieHackers post Richard is shining some light on how he grew sheet2api."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.SOFTWARE_ENGINEERING, BookmarksTag.CAREER]}
+            title="A guide to tune your LinkedIn profile"
+            link="https://cultivatedculture.com/linkedin-profile-tips/"
+            description="This guide with 15+ tips will guide you to improve your LinkedIn profile to get more connections, better job opportunities or be able to promote your products in a better way. A lot of useful tips for all periods in your career."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.COPYWRITING,
+              BookmarksTag.MARKETING,
+              BookmarksTag.GROWTH,
+            ]}
+            title="How to learn copywriting in 30 slides"
+            link="https://www.linkedin.com/posts/harrydry_my-copywriting-handbook-activity-6712423627406536704-x9oQ/"
+            description="Harry from marketingexamples is giving a small slideshow of 30 slides that will help you to improve your slides."
+          />
         </Box>
       </Box>
     </>

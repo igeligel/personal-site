@@ -344,6 +344,40 @@ const Bookmarks = () => {
             link="https://www.positivehuman.co/articles/first-10-saas-customers"
             description="A guide on the different sales processes for B2B SaaS that will help you to actually get customers."
           />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.GROWTH]}
+            title="How to write good hacker news titles"
+            link="https://www.indiehackers.com/post/tripled-my-subscribers-with-a-front-page-post-on-hacker-news-how-to-write-a-good-hn-headline-7130b4b414"
+            description="This IndieHackers post is describing how you can push content to hackernews and how to structure your title to get more upvotes and more exposure."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING]}
+            title="8 principles for new user onboarding"
+            link="https://www.indiehackers.com/post/8-principles-for-new-user-onboarding-e613e969c0"
+            description="A short guide on what to look out for when onboarding new users."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.BOOTSTRAPPING,
+              BookmarksTag.UX,
+              BookmarksTag.COPYWRITING,
+            ]}
+            title="7 tips to improve your landing page"
+            link="https://www.indiehackers.com/post/7-tips-to-write-landing-page-text-without-sounding-like-a-salesman-1cd527c9c6"
+            description="In this post Sjors is presenting 7 tips on how to improve your landing page by improving your copy and the user experience."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.GROWTH, BookmarksTag.MARKETING]}
+            title="16 tips to write every day"
+            link="https://www.indiehackers.com/post/16-vital-lessons-from-60-days-of-writing-online-a9287ff3b2"
+            description="Joe presents helpful on how to keep a routine about writing every day to create content to grow your side project."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.GROWTH, BookmarksTag.MARKETING]}
+            title="A simple technique to boost your sales email cycle"
+            link="https://www.indiehackers.com/post/sending-cold-emails-dont-follow-up-nurture-instead-56fd17dcbb"
+            description="Instead of writing a cold email to ask for a big demo, do a sequence of small and easy asks and continue doing so turning bigger and bigger."
+          />
         </Box>
       </Box>
     </>

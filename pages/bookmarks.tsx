@@ -314,6 +314,36 @@ const Bookmarks = () => {
             link="https://www.howtodeal.dev/"
             description="This website will teach you how to deal with different type of people in a software project, with their weaknesses and how to improve them or when to move on from specific positions."
           />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.GROWTH]}
+            title="The email guide by lemlist"
+            link="https://blog.lemlist.com/cold-email-guide-for-beginners/"
+            description="In this blog article Ilya will present you how they grew lemlist with extensive cold emailing. It worked quite great for them and the tips about personalizing the email are super interesting."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING, BookmarksTag.GROWTH]}
+            title="Marketing funnels"
+            link="https://trends.vc/trends-0031-marketing-funnels/"
+            description="In this newsletter post the new generation marketing funnels will be explained. Traditional marketing these days like Ads and so on are competitive. This article will shine some lights on alternative marketing and sales channels."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.MARKETING]}
+            title="A list of places to post your project"
+            link="https://www.notion.so/Where-to-post-your-project-bc6ce54240884770b2467c3b0f7c1624"
+            description="When creating your project and initial growth is important, backlinks are golden. Gathering these backlinks is difficult. The notion page linked here will give you an opportunity to post your projects at different sides and collect backlinks."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.SEO, BookmarksTag.STORY_TIME]}
+            title="Reaching the first page on google in 24 hours"
+            link="https://www.indiehackers.com/post/reach-the-first-page-of-google-in-24-hours-using-long-tail-keywords-real-life-example-d6c3878bcb"
+            description="A simple technique with an example on how Nicolas reached the first page in Google quite quickly."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.GROWTH]}
+            title="A guide to get your first 10 customers"
+            link="https://www.positivehuman.co/articles/first-10-saas-customers"
+            description="A guide on the different sales processes for B2B SaaS that will help you to actually get customers."
+          />
         </Box>
       </Box>
     </>

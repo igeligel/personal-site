@@ -378,6 +378,39 @@ const Bookmarks = () => {
             link="https://www.indiehackers.com/post/sending-cold-emails-dont-follow-up-nurture-instead-56fd17dcbb"
             description="Instead of writing a cold email to ask for a big demo, do a sequence of small and easy asks and continue doing so turning bigger and bigger."
           />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING]}
+            title="A simple website to name your project"
+            link="https://namepanda.net/"
+            description="A website that generates names for your project based on animals."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.MARKETING]}
+            title="The best 404 Page"
+            link="https://i.redd.it/mnghlm1xbc411.png"
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.MARKETING]}
+            title="A list to post your projects"
+            link="https://github.com/mmccaff/PlacesToPostYourStartup"
+            description="This GitHub repository is giving you many opportunities to post your startup and get some marketing visibility."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.SOFTWARE_ENGINEERING]}
+            title="A book about building secure and reliable systems"
+            link="https://sre.google/books/building-secure-reliable-systems/"
+            description="Building good software engineering systems is difficult. This free ebook by Google will teach you on how to do this exactly. Google builds scalable systems for a long time, so get that experience as well."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.MARKETING,
+              BookmarksTag.GROWTH,
+              BookmarksTag.STORY_TIME,
+            ]}
+            title="Getting 35k visitors in 36 hours"
+            link="https://patwalls.com/side-project-marketing-in-36-hours"
+            description="Patrick describes how he built a simple side project / info product and launched it. He got great success with it, because the project was needed and helpful. Quite inspiring story."
+          />
         </Box>
       </Box>
     </>

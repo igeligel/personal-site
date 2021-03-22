@@ -411,6 +411,82 @@ const Bookmarks = () => {
             link="https://patwalls.com/side-project-marketing-in-36-hours"
             description="Patrick describes how he built a simple side project / info product and launched it. He got great success with it, because the project was needed and helpful. Quite inspiring story."
           />
+          <BookmarksItem
+            tags={[BookmarksTag.GROWTH, BookmarksTag.UX]}
+            title="Duolingos awesome onboarding user experience"
+            link="https://www.reallygoodux.io/blog/duolingo-user-onboarding"
+            description="In this article it will be presented on how Duolingo has one of the best onboarding flows for users and why the app is so popular."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.GROWTH, BookmarksTag.BOOTSTRAPPING]}
+            title="Gamification in software projects"
+            link="https://trends.vc/trends-0021-gamification/"
+            description="An article on how gamification is a tool to use within your side project to grow. It will help to keep users onboard if you reward them at the right time with the right methods. See how other companies are doing this."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.STORY_TIME, BookmarksTag.BOOTSTRAPPING]}
+            title="30 lessons when bootstrapping solo"
+            link="https://www.indiehackers.com/post/30-lessons-i-learned-bootstrapping-company-of-one-from-0-to-9k-mmr-cc97df6f9d"
+            description="Alex is sharing his short 30+ tips in an IndieHackers post on what to focus on during the creationg of your side project. It is focused on developers and what they have to do better like Marketing and Sales."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.MARKETING]}
+            title="How to make a how to video with a 0$ budget"
+            link="https://www.indiehackers.com/post/i-made-how-to-video-for-0-this-way-what-is-your-method-2236652420"
+            description="In this post exdeve presents how they created a small how to video of their project. Including how to put songs below the video and just keep it simple. It works quite well and can help to grow your project as well."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.STORY_TIME]}
+            title="3 Lessons learnt from analzing dozens of MVPs"
+            link="https://www.indiehackers.com/post/what-i-learned-from-reviewing-50-indie-hacker-mvps-last-week-4e4c5e98b5"
+            description="In this post Gordon analyzed multiple MVPs and put out the lessons learnt by him. Focusing on the landing page, the value provided and optimizing the CTA."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.SEO,
+              BookmarksTag.GROWTH,
+              BookmarksTag.STORY_TIME,
+            ]}
+            title="Gamification on your website"
+            link="https://www.indiehackers.com/post/when-people-land-on-your-webpage-give-them-goals-growth-experiment-2-case-studies-d0d436354e"
+            description="Salil is giving us a lesson on how he increased the time users spend on his website by a simple gamification tip for blog articles. It increased in a 100% uptick in organic traffic from Google because of these small challenges."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BLOG, BookmarksTag.GROWTH]}
+            title="A video course by ahrefs regarding blogging for business"
+            link="https://ahrefs.com/academy/blogging-for-business"
+            description="Probably the best resource on creating effective blogging for your business. From small startup to big enterprise. This course has it all. It will teach you methodically on how to find ideas for content to write and how to convert the readers. A masterpiece."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.GROWTH, BookmarksTag.BOOTSTRAPPING]}
+            title="Ways of building virality into your product"
+            link="https://www.indiehackers.com/post/7-ways-to-build-virality-into-your-product-60eca56828"
+            description="7 tips to implement techniques that will help your product to build a community by itself. It goes from simple tips like rewarding users through referral system to simply vanity metrics."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.COPYWRITING]}
+            title="A tutorial on how to write Indie Hackers / Reddit post titles"
+            link="https://www.indiehackers.com/post/got-100-upvotes-on-reddit-a-fast-tutorial-on-how-to-write-a-title-for-indie-hackers-reddit-d0aabf3491"
+            description="In this post Naveh will describe how he reached multiple times the #1 spot on those platforms by choosing the right title. A workflow is explained how you can apply the rules to your content."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING, BookmarksTag.GROWTH]}
+            title="Do Interviews, not Surveys"
+            link="https://www.indiehackers.com/post/people-hate-surveys-but-like-being-interviewed-4af96eeaef"
+            description="Getting data for your project is difficult. Creating a survey will most likely not help because it is not personal. Instead do interviews that are more personal. You will get more data but also much more true data. Read on why in this post."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING, BookmarksTag.BOOTSTRAPPING]}
+            title="How to implement social proof on your landing page"
+            link="https://canny.io/blog/saas-businesses-visual-social-proof/"
+            description="Canny is probably the leading product feedback platform you can use. Social proof is really important for many projects to actually convert users into paying users. With these simple tips canny will share how it is easy to apply social proof to your project as well."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING]}
+            title="The best tips for cold emailing"
+            link="https://www.indiehackers.com/post/what-are-your-best-tips-for-cold-emailing-a648e1f26e"
+            description="A discussion on IndieHackers on how to write good cold emails and the process behind it. When do you need to follow up and how to make your call to action clear."
+          />
         </Box>
       </Box>
     </>

@@ -487,6 +487,40 @@ const Bookmarks = () => {
             link="https://www.indiehackers.com/post/what-are-your-best-tips-for-cold-emailing-a648e1f26e"
             description="A discussion on IndieHackers on how to write good cold emails and the process behind it. When do you need to follow up and how to make your call to action clear."
           />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.GROWTH]}
+            title="How to include gamification in products, or doing game design"
+            link="https://a16z.com/2020/01/13/game-design-not-gamification/"
+            description="In this presentation Rahul presents in the name of a16z on how game design can be applied in your product to enable growth and create user retention."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.MARKETING]}
+            title="Simple techniques to do marketing on a small budget"
+            link="https://producthabits.com/how-to-grow-your-startup-on-a-0-marketing-budget/"
+            description="In this article the blog of product habits will present 3 techniques to do marketing for your side project. It does not cost a dime to execute the ideas but will cost some time of course initially."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.COPYWRITING]}
+            title="A collection of cold email templates"
+            link="https://99leads.io/cold-emails-templates"
+            description="This small free tool is a collection of 90+ email templates for different use cases. Really useful to copy paste some email content if you need to do a sale, refer someone or any other use case. I am sure you will find some content here."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.GROWTH, BookmarksTag.STORY_TIME]}
+            title="A guide on how to master anything"
+            link="https://iuliangulea.com/pyramid-of-mastery/"
+            description="In this blog Iulian covers on the mastery of how to learn anything. Getting to expert-level within any field is difficult, but this article really guided me on reevaluating on how I tackle problems and learn."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.BOOTSTRAPPING,
+              BookmarksTag.MARKETING,
+              BookmarksTag.GROWTH,
+            ]}
+            title="A collection of the best SaaS and Marketing blogs"
+            link="https://www.cenario.co/top-saas-marketing-blogs"
+            description="This collection showcases the most popular blogs for marketing and SaaS. Most of them will talk about growth and principles that can be applied to your side project as well."
+          />
         </Box>
       </Box>
     </>

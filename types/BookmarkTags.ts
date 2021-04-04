@@ -15,6 +15,8 @@ export enum BookmarksTag {
   TOOLS = "Tools",
   NEXTJS = "Next.js",
   REACT = "React.js",
+  JAVASCRIPT = "JavaScript",
+  NODE_JS = "Node.js",
   TYPESCRIPT = "TypeScript",
   SEO = "SEO",
 }

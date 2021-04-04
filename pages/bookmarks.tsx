@@ -521,6 +521,68 @@ const Bookmarks = () => {
             link="https://www.cenario.co/top-saas-marketing-blogs"
             description="This collection showcases the most popular blogs for marketing and SaaS. Most of them will talk about growth and principles that can be applied to your side project as well."
           />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.GROWTH]}
+            title="11 tips to improve onboarding conversion rates"
+            link="https://www.swipe.page/p/improve-your-saas-conversion-rate-with-11-onboarding-strategies"
+            description="In this post you will learn how to apply 11 simple techniques that will help you to onboard more users. The onboarding is the first step in a user journey and doing this right will give you a lot of credibility."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.SOFTWARE_ENGINEERING, BookmarksTag.NODE_JS]}
+            title="A guide to lay out your Node.js application"
+            link="https://github.com/goldbergyoni/nodebestpractices"
+            description="In this repository the author will describe how you can structure your Node.js projects and which patterns to follow to create a nice application that can be understood but also changed in quick ways."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.MARKETING]}
+            title="Create custom campaigns within Google Analytics"
+            link="https://support.google.com/analytics/answer/1033863?hl=en"
+            description="Creating custom campaigns in Google Analytics will help you to track the traffic in more detail, where it is coming from and other things. The trick is that people will click on an URL rather than being tracked via the referrer header. More reliable and better event flows can be built with it."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING]}
+            title="How to increase your retention rate on blogs"
+            link="https://www.indiehackers.com/post/simple-trick-for-your-blog-retention-rate-600638f984"
+            description="A simple tip to integrate pocket on your blog. Users from pocket tend to engage more with blogs."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.MARKETING]}
+            title="Where to post your project before hackernews or IndieHackers"
+            link="https://www.indiehackers.com/post/what-are-good-places-to-advertise-your-product-before-posting-on-hn-or-product-hunt-81d28b7f61"
+            description="A post that discusses which places you can post your startup at to actually get feedback and get initial traction for your side project."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.GROWTH, BookmarksTag.STORY_TIME]}
+            title="Growing a side project to 100k visitors and 5k email subscriber"
+            link="https://www.indiehackers.com/post/100k-visitors-and-5k-email-subs-in-6-weeks-heres-what-i-did-wrong-b9bc6bc352"
+            description="Peter from built for mars, a UX analyzing blog, is sharing his intial findings on how he grew his website full of case studies."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.GROWTH]}
+            title="Lessons learned from running a product"
+            link="https://www.indiehackers.com/post/lessons-learned-after-6-months-in-beta-and-3-acquisition-offers-4968715ebe"
+            description="In this post the author is presenting how they have ran a product for 6 months in beta and are quite successful running it. They had multiple acquisition offers and are sharing all of their tips regarding growing the business."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING, BookmarksTag.GROWTH]}
+            title="How Harry of marketingexamples shares his content"
+            link="https://www.indiehackers.com/post/0-19k-email-subs-how-i-promote-my-content-83a2be1707"
+            description="Marketing Examples is one of the biggest marketing blogs out on the internet. Harry shares his process of sharing content, creating a content plan and in which way to distribute content. One key lesson: Provide value upfront on the platform."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING, BookmarksTag.GROWTH]}
+            title="How to build a million dollar business with content"
+            link="https://www.groovehq.com/blog/how-we-built-a-5m-business-with-content-marketing"
+            description="In this post groovehq shares their content marketing strategy. It is indeed interesting because they grew mainly through it during a high growth phase and the insights will teach you a lot."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING, BookmarksTag.GROWTH]}
+            title="How to grow your content with really-long-lists"
+            link="https://www.indiehackers.com/post/2-167-new-subscribers-in-48-hours-one-tactic-you-should-try-283601e91d"
+            description="In this post Dan describes how he grew his subscriber count by writing viral content, simply by creating really long lists, a technique used by many content marketers to get a lot of users."
+          />
+
+          {/* https://coursemaker.org/blog/how-to-use-stripe-dynamic-tax-eu-vat/ */}
         </Box>
       </Box>
     </>

@@ -581,8 +581,170 @@ const Bookmarks = () => {
             link="https://www.indiehackers.com/post/2-167-new-subscribers-in-48-hours-one-tactic-you-should-try-283601e91d"
             description="In this post Dan describes how he grew his subscriber count by writing viral content, simply by creating really long lists, a technique used by many content marketers to get a lot of users."
           />
-
-          {/* https://coursemaker.org/blog/how-to-use-stripe-dynamic-tax-eu-vat/ */}
+          <BookmarksItem
+            tags={[BookmarksTag.TOOLS]}
+            title="A SVG search for logos"
+            link="https://logosear.ch/search.html"
+            description="Google really sucks to find SVGs for company logos. This tool will help you to find the SVGs. It is scraping multiple platforms to enable listing them."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.TOOLS]}
+            title="Free products to build your project/app/webapp"
+            link="https://github.com/255kb/stack-on-a-budget"
+            description="This awesome list features many parts that are needed for a technical project but can be used for free till a certain limit. Still a lot of great services."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.COPYWRITING, BookmarksTag.MARKETING]}
+            title="A copywriting case study"
+            link="https://copywritingexamples.substack.com/p/copy-case-express-3-abinaya-from"
+            description="In this case study the landing page of remote leaf will be analyzed and optimized to really show the product value to potential customers."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING]}
+            title='Improvements to the "Contact Us" page / widget'
+            link="https://www.indiehackers.com/post/how-to-get-more-leads-from-your-contact-us-section-2481c8de9d"
+            description="In this small post it is described how the contact us page or widget can be improved to be more personal and engaged."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.SOFTWARE_ENGINEERING]}
+            title="Using Stripe's dynamic tax rate feature for EU VAT"
+            link="https://coursemaker.org/blog/how-to-use-stripe-dynamic-tax-eu-vat/"
+            description="In this article it will be described how you can use the dynamic tax rate feature of Stripe to integrate EU VAT. A pain for everyone normally but with this new feature it can get quite simple."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.TOOLS]}
+            title="A marketplace to buy and sell SaaS"
+            link="https://indiemaker.co/"
+            description="A marketplace to sell and buy projects. A lot of SaaS solutions are listed there and if you have a project that might be worth selling, try to list it there."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING]}
+            title="An Indie Hackers post on how to find ideas"
+            link="https://www.indiehackers.com/post/where-do-your-ideas-come-from-8e38e40f32"
+            description="In this post ideas are brought up on how to find ideas. A lot of mentions on how you have to be within a certain industry to really know the problem but also a lot of other methodologies are discussed."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.SALES]}
+            title="1000 true fans? Try 100"
+            link="https://a16z.com/2020/02/06/100-true-fans/"
+            description="There is an essay about building communities of 1000 people that are willing to pay for your product. But a16z really shows that this is also possible with a following of around 100 fans that love your product a lot."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.GROWTH, BookmarksTag.SEO]}
+            title="Scaling to almost 200000 monthly visits - a case study"
+            link="https://apollodigital.io/blog/seo-case-study"
+            description="In this case study Noel describes with a case study on how their business grew a client to 200k site visits per month. The website mainly grew through SEO and following the tips and tricks from this case study can help you as well."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.SOFTWARE_ENGINEERING]}
+            title="Hackernews gives tips on how to be a good tech lead"
+            link="https://news.ycombinator.com/item?id=22255301"
+            description="In this discussion hacker news is giving tips to new tech leads on what they have to focus on to be successful. A lot of golden advice is written here to helo you to get to tech lead level but also help you navigating in that role."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.SOFTWARE_ENGINEERING]}
+            title="System design till 100k users"
+            link="https://alexpareto.com/scalability/systems/2020/02/03/scaling-100k.html"
+            description="In this article alex is showcasing generic rules on how to scale your application to 100k users. It is quite simply initially and will build up more and more with caches, read-write replicas and similar techniques to make your system ready to handle that big amount of traffic."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.UX]}
+            title="10 sign in screen designs"
+            link="https://did.app/articles/best-sign-in-page-ux-features-for-your-website"
+            description="In this post there are 10 different sign in forms presented. Really good user interface inspirations that you can use for your next project to make a simple design."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.SOFTWARE_ENGINEERING, BookmarksTag.STORY_TIME]}
+            title="A guide on how to achieve career growth"
+            link="https://review.firstround.com/the-engineers-guide-to-career-growth-advice-from-my-time-at-stripe-and-facebook"
+            description="In this interview Raylene Yung gives an overview on how she managed to grow here engineering career to be an engineering manager at Facebook and Stripe. She is sharing rare insights from the big tech companies and gives you tips to apply to grow as she was doing."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.GROWTH,
+              BookmarksTag.CAREER,
+              BookmarksTag.STORY_TIME,
+            ]}
+            title="Working backwards, a technique to solving all problems"
+            link="https://www.allthingsdistributed.com/2006/11/working_backwards.html"
+            description="The CTO of Amazon, Werner Vogels, gave the tip to work backwards for all projects. For example, when releasing a new feature, you should start with a press release and then work backwards over the FAQ, to customer experience to writing an user manaual and then maybe start implementing. This principle can be applied to many problem-solving processes and is highly paying off for me."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.CAREER]}
+            title="How much is startup equity actually worth?"
+            link="https://danluu.com/startup-tradeoffs/"
+            description="In this post Dan showcases on how equity can be valued and why it does not make sense in most cases to join a startup because the equity/options being worthy any kind of money is highly unlikely."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.UX]}
+            title="34 simple UI and UX tips"
+            link="https://marcandrew.me/ui-ux-tips-collection-vol-one/"
+            description="In this post Marc is describing 34 simple patterns that you can use to improve the the user experience and interface of your application. If you like the book Refactoring UI you will also like this blog article because it has some really nice tips and tricks."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.CAREER, BookmarksTag.GROWTH]}
+            title="Operations and internal communication strategies for CEOs"
+            link="https://pulseasync.com/operators/operations-and-internal-communication-strategies-for-effective-ceos/"
+            description="This blog post is targeted for CEOs, but operating and communicating with other people is important for you as an employee as well. This blog shines some light on how CEOs should communicate. Simple tips like saying the why first when making a statement will help you in discussion. This and many more tips can be found in this article."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.CAREER, BookmarksTag.SOFTWARE_ENGINEERING]}
+            title="How to lead a team by the US Army"
+            link="https://fas.org/irp/doddir/army/adp6_22.pdf"
+            description="In this book you can find how the US army is training their leaders to be real leaders. Even though it is in a military context the lessons won out of this book are valuable for engineering leads or tech leads as well. You can find a version of epubs also here: https://armypubs.army.mil/ProductMaps/PubForm/Details.aspx?PUB_ID=1007609"
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.CAREER]}
+            title="The Manager's Path"
+            link="https://www.amazon.de/-/en/Camille-Fournier/dp/1491973897?&linkCode=ll1&tag=kevinpeters38-21&linkId=fa8cf6940e8fc0b724f75f963b17e112&language=en_GB&ref_=as_li_ss_tl"
+            description="A great book on what are the engineering manager's qualities and simple guides that you can follow to shine as manager and be loved by all your reports."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.STORY_TIME]}
+            title="A story of selling a side project"
+            link="https://www.goddamnyouryan.com/blog/selling-juicer/"
+            description="In this post Ryan shares the story of juicer, a combined social media feed for people to keep distraction low. He is explaining on how he grew the software and what motivated him to actually sell. The process behind it and how everything went."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.CAREER]}
+            title="A Hackernews discussion regarding burnout"
+            link="https://news.ycombinator.com/item?id=21661054"
+            description="Burnout is probably heard of by everyone in the technology community. Technology requires a lot from your mental ability, to keep up with the current technology or just solving problems all of the time. A lot of people get burnt out and have serious problems because of that. Read that hackernews discussion to see what you can change to avoid burning out."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.UX]}
+            title="How to build a drag and drop UI - with mobile support"
+            link="https://blog.prototypr.io/building-a-responsive-drag-and-drop-ui-5761fd5281d5"
+            description="In this blog post Graeme describes how you can build a simple drag and drop UI. Drag and drop is used in many applications and a lot of plugins exist to help you with this. But making it work on mobile is even more difficult. Learn how they did it at prototypr, a simple platform to build apps."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.CAREER]}
+            title="Sharing tips to grow as engineering manager"
+            link="https://www.pluralsight.com/blog/teams/camille-fournier-on-scaling--structure--and-growing-as-an-engine"
+            description="Camille Fournier is sharing some tips on how to grow your career as engineering manager. She gives a lot of tips on structure, scaling and organization. What you should focus on and how you can distribute tasks to focus on the real bits."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.BLOG,
+              BookmarksTag.GROWTH,
+              BookmarksTag.MARKETING,
+            ]}
+            title="100+ ways to distribute your blog content"
+            link="https://www.indiehackers.com/@indieorbust/100-effective-tactics-to-promote-your-blog-posts-d8905f76d3"
+            description="Promoting your blog content is difficult. But once the blog is written you can create content around it. With content around it like Slideshows for instagram you can find even more opportunities to promote your blog."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.STORY_TIME]}
+            title="The first time getting $10k/month"
+            link="https://blog.everview.app/the-first-step-to-10k-a-month"
+            description="In this article Kyle describes how he grew his product to the milestone of $10k revenue per month, what he learned and what you can get out of this."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.STORY_TIME]}
+            title="Free trials?"
+            link="https://www.indiehackers.com/post/i-rewrote-my-trial-system-to-be-credit-card-less-and-now-have-5x-as-many-trials-c7e8ce5c09"
+            description="Kilian describes in his post how they increased their trial sign up rate 5x. Also a discussion have been turning out of this post on how it affects their trial to paid conversion rate. Quite interesting!"
+          />
         </Box>
       </Box>
     </>

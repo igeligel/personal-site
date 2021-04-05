@@ -19,6 +19,7 @@ export enum BookmarksTag {
   NODE_JS = "Node.js",
   TYPESCRIPT = "TypeScript",
   SEO = "SEO",
+  SALES = "Sales",
 }
 
 export type BookmarksTags = Array<BookmarksTag>;

@@ -745,6 +745,19 @@ const Bookmarks = () => {
             link="https://www.indiehackers.com/post/i-rewrote-my-trial-system-to-be-credit-card-less-and-now-have-5x-as-many-trials-c7e8ce5c09"
             description="Kilian describes in his post how they increased their trial sign up rate 5x. Also a discussion have been turning out of this post on how it affects their trial to paid conversion rate. Quite interesting!"
           />
+          <BookmarksItem
+            tags={[BookmarksTag.SOFTWARE_ENGINEERING]}
+            title="How to do Code Reviews like a human"
+            link="https://mtlynch.io/human-code-reviews-1/"
+            description="A simple guide on how to Pull Requests. With the tips you can organize the Pull Request flow within your company."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.SOFTWARE_ENGINEERING]}
+            title="A guide on how to write the perfect Pull Request"
+            link="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/"
+            description="In this guide a GitHub Engineer guides you to "
+          />
+          {/* https://builtbywords.substack.com/p/writing-tools-i-learned-from-the */}
         </Box>
       </Box>
     </>

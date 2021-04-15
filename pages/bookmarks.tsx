@@ -755,7 +755,7 @@ const Bookmarks = () => {
             tags={[BookmarksTag.SOFTWARE_ENGINEERING]}
             title="A guide on how to write the perfect Pull Request"
             link="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/"
-            description="In this guide a GitHub Engineer guides you to "
+            description="In this guide a GitHub Engineer guides you to how to create a good Pull request with really helpful tips to actually make all your reviewers."
           />
           {/* https://builtbywords.substack.com/p/writing-tools-i-learned-from-the */}
         </Box>

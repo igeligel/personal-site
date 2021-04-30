@@ -757,6 +757,43 @@ const Bookmarks = () => {
             link="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/"
             description="In this guide a GitHub Engineer guides you to how to create a good Pull request with really helpful tips to actually make all your reviewers."
           />
+          <BookmarksItem
+            tags={[BookmarksTag.SALES, BookmarksTag.BOOTSTRAPPING]}
+            title="Simple tips to generate sales on LinkedIn"
+            link="https://www.indiehackers.com/post/linkedin-is-a-cringefest-but-it-works-for-b2b-startups-heres-what-you-need-to-do-to-generate-leads-and-get-clients-066ea39f7e"
+            description="11 small tips to make LinkedIn work as a marketing tool for you. LinkedIn can be a cringe fest, but it is sure worth it when used right."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING, BookmarksTag.BOOTSTRAPPING]}
+            title="Content Marketing for Bootstrappers"
+            link="https://jameschambers.co.uk/saas-content-marketing"
+            description="In this guide James shows how he is growing his side projects with content marketing. He will cover keyword research, viability, how to create content and a simple publishing checklist."
+          />
+
+          <BookmarksItem
+            tags={[BookmarksTag.MARKETING, BookmarksTag.BOOTSTRAPPING]}
+            title="Simple little tip to improve description of features"
+            link="https://www.indiehackers.com/post/simple-little-formula-for-writing-better-features-and-benefits-371e3e8273"
+            description="In this post Harry from MarketingExamples is presenting how you can present your products features in a nicer way to actually show the real value of the product."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.STORY_TIME, BookmarksTag.BOOTSTRAPPING]}
+            title="How to turn around a failing SaaS"
+            link="https://open.growsurf.com/blog/how-we-turned-around-a-failing-saas-to-$24k-mrr"
+            description="In this blog Kevin is describing how they turned around their software for referral marketing from a failure to a succeeding business."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.TOOLS]}
+            title="A startup equity calculator"
+            link="http://foundrs.com/"
+            description="A calculator that shows you how much shares should be given to all the founders. This is super useful for an initial equity split and an objective approach to share equity properly."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING]}
+            title="MRR is stuck but how to grow?"
+            link="https://www.indiehackers.com/post/saas-already-making-400-usd-in-mrr-but-stuck-there-2209860641"
+            description="In this post a simple question is asked, how to grow a validated product. Someone created a product that makes 400 USD MRR for a certain time but they struggle with growing it even more. An itneresting discussion on how to grow in these periods."
+          />
           {/* https://builtbywords.substack.com/p/writing-tools-i-learned-from-the */}
         </Box>
       </Box>

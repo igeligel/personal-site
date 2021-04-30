@@ -794,6 +794,12 @@ const Bookmarks = () => {
             link="https://www.indiehackers.com/post/saas-already-making-400-usd-in-mrr-but-stuck-there-2209860641"
             description="In this post a simple question is asked, how to grow a validated product. Someone created a product that makes 400 USD MRR for a certain time but they struggle with growing it even more. An itneresting discussion on how to grow in these periods."
           />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.MARKETING]}
+            title="The power of competitor/alternative pages"
+            link="https://www.indiehackers.com/post/the-power-of-competitor-alternative-pages-af65370532"
+            description="In this post Harry from MarketingExamples will describe how alternative pages can actually drive traffic to your site. You just have to make sure your project is actually better in some parts and then create these pages. They will give Google a lot of signal and are super useful for getting high-quality traffic."
+          />
           {/* https://builtbywords.substack.com/p/writing-tools-i-learned-from-the */}
         </Box>
       </Box>

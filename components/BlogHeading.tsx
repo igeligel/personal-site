@@ -3,19 +3,21 @@ import { Heading } from "@chakra-ui/react";
 import slugify from "slugify";
 
 type BlogHeadingProps = {
-  as: "h1" | "h2" | "h3";
+  as: "h1" | "h2" | "h3" | "h4";
 };
 
 const SIZES = {
   h1: "xl",
   h2: "lg",
   h3: "md",
+  h4: "md",
 };
 
 const MARGIN_TOPS = {
   h1: "0",
   h2: "0.7rem",
   h3: "0.5rem",
+  h4: "0.5rem",
 };
 
 export const BlogHeading: React.FC<BlogHeadingProps> = (props) => {

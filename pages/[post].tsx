@@ -48,6 +48,9 @@ import { MDXProvider } from "@mdx-js/react";
 // @ts-ignore
 import MDX from "@mdx-js/runtime";
 import { BlogCustomDate } from "../components/BlogCustomDate";
+import { BlogHeadingFourth } from "../components/BlogHeadingFourth";
+import { BlogTweet } from "../components/BlogTweet";
+import { BlogNewsletterSignupForm } from "../components/BlogNewsletterSignupForm";
 
 const LeadContainerParapraph = styled.p`
   margin: 0;
@@ -76,6 +79,7 @@ const components = {
   h1: BlogHeadingPrimary,
   h2: BlogHeadingSecondary,
   h3: BlogHeadingTertiary,
+  h4: BlogHeadingFourth,
   blockquote: BlogBlockquote,
   img: BlogImage,
   pre: BlogPre,
@@ -100,6 +104,8 @@ const components = {
   AdBanner: AdBanner,
   BlogFileTree,
   CustomDate: BlogCustomDate,
+  Tweet: BlogTweet,
+  BlogNewsletterSignupForm,
 };
 
 type PostPageProps = {

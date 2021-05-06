@@ -11,11 +11,29 @@ export const BlogTweet: React.FC<BlogTweetProps> = (props) => {
     <>
       <style global jsx>{`
         .twitter-embed-container {
-          width: 100%;
+          width: 100% !important;
+        }
+
+        .twitter-embed-container > div {
+          width: 100% !important;
+          display: flex;
+          justify-content: center;
+        }
+
+        .twitter-embed-container > div > div {
+          width: 100% !important;
+          display: flex;
+          justify-content: center;
         }
 
         .twitter-embed-container .twitter-tweet-rendered {
           width: ${props.width || "500px"} !important;
+        }
+
+        @media only screen and (max-width: 780px) {
+          .twitter-embed-container .twitter-tweet-rendered {
+            width: 100% !important;
+          }
         }
       `}</style>
       <Box

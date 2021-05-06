@@ -16,11 +16,21 @@ export const SimpleFormCollection = () => {
   const [email, setEmail] = useState<string>("");
 
   return (
-    <Box display="flex" justifyContent="space-between">
+    <Box
+      display="flex"
+      justifyContent="space-between"
+      flexDirection={["column", "column", "column", "row"]}
+    >
       <Heading as="h3">
         Get the monthly dose of web dev and indie hacking
       </Heading>
-      <Box display="flex" width="100%" maxWidth="400px" alignItems="center">
+      <Box
+        marginTop={[5, 5, 5, 0]}
+        display="flex"
+        width="100%"
+        maxWidth="400px"
+        alignItems="center"
+      >
         <form
           action="https://www.getrevue.co/profile/kevinpeters/add_subscriber"
           method="post"

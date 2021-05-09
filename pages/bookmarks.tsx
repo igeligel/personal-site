@@ -800,7 +800,55 @@ const Bookmarks = () => {
             link="https://www.indiehackers.com/post/the-power-of-competitor-alternative-pages-af65370532"
             description="In this post Harry from MarketingExamples will describe how alternative pages can actually drive traffic to your site. You just have to make sure your project is actually better in some parts and then create these pages. They will give Google a lot of signal and are super useful for getting high-quality traffic."
           />
-          {/* https://builtbywords.substack.com/p/writing-tools-i-learned-from-the */}
+          <BookmarksItem
+            tags={[BookmarksTag.SALES]}
+            title="10 tips for Cross-and upselling"
+            link="https://www.mightyforms.com/blog/cross-selling-and-upselling"
+            description="In this blog post Olivia shines some ligh on what cross-selling and upselling actually means and how you can build it into your product. The author will also mention how you can automate the cross- and upselling which will be useful if you have your own SaaS."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.BOOTSTRAPPING, BookmarksTag.MARKETING]}
+            title="19 lessons for launching on ProductHunt"
+            link="https://www.indiehackers.com/@alexanderisora/cf94b003a5"
+            description="In this indiehackers post some advice is shared how you can make the most out of a ProductHunt launch, get viral, get feedback and most importantly get initial traction. ProductHunt is a perfect platform for that but to get a good launch there you have to follow many things."
+          />
+          <BookmarksItem
+            tags={[
+              BookmarksTag.SOFTWARE_ENGINEERING,
+              BookmarksTag.PRODUCT_MANAGEMENT,
+            ]}
+            title="How to have a great planning process"
+            link="https://review.firstround.com/the-secret-to-a-great-planning-process-lessons-from-airbnb-and-eventbrite"
+            description="This blog post will cover how a great planning process looks like. Examples will be given how the planning process was implemented in bigger tech companies like Airbnb and Eventbrite and how it helped them to scale their company to where they are now."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.TOOLS, BookmarksTag.COPYWRITING]}
+            title="Writing tools - by The Economist"
+            link="https://builtbywords.substack.com/p/writing-tools-i-learned-from-the"
+            description="In this blogpost Ahmed will present the 6 writing tools he has learned about when writing for The Economist. It shines a light on why the newspaper is delivering high-quality articles for years and how you can use the tools to improve your writing and improve the blog of your side project or simply the writing you do at your current company."
+          />
+          <BookmarksItem
+            tags={[BookmarksTag.STORY_TIME, BookmarksTag.BOOTSTRAPPING]}
+            title="The best way to understand your most engaged users"
+            link="https://andrewchen.com/power-user-curve/"
+            description="In this article Andrew Chen is writing about how you can actually analyze the user behavior by your power users. He is explaning it from figuring out who is the power user and why this is important. Ideally you convert every user into such users and make sure your product is used to the maximum. More Value means a better world and more money for you, right?"
+          />
+          {/* https://www.growthmachine.com/blog/b2b-seo-case-study it also has many other nice blog posts */}
+          {/* https://backlinko.com/increase-website-traffic */}
+          {/* https://neilpatel.com/blog/dropbox-hacked-growth/ */}
+          {/* https://news.ycombinator.com/item?id=21332072 */}
+          {/* https://pawelurbanek.com/side-project-profit */}
+          {/* https://blog.pragmaticengineer.com/ */}
+          {/* https://nickmchardy.com/2019/02/on-being-an-engineering-manager.html */}
+          {/* https://www.designerfund.com/blog/thrown-into-management-lessons-learned-leading-thumbtacks-design-team/ */}
+          {/* https://github.com/LappleApple/awesome-leading-and-managing */}
+          {/* https://m.signalvnoise.com/the-9-questions-that-uncover-the-most-surprising-insights-from-employees/ */}
+          {/* https://manifold.co/blog/founders-guide-developer-tools-sell-to-engineers */}
+          {/* https://vcstarterkit.substack.com/p/how-vcs-make-money */}
+          {/* https://github.com/charlax/engineering-management */}
+          {/* https://unreasonablegroup.com/articles/the-7-emails-you-need-to-know-how-to-write/ */}
+          {/* https://news.ycombinator.com/item?id=21908577 */}
+          {/* https://www.sequoiacap.com/article/pricing-your-product/ */}
         </Box>
       </Box>
     </>

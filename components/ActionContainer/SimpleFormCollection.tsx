@@ -6,13 +6,15 @@ import {
   Button,
   InputRightElement,
 } from "@chakra-ui/react";
-// import { validate } from "email-validator";
 import React, { useState } from "react";
-// import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-// import { CheckCircle } from "react-feather";
 
-export const SimpleFormCollection = () => {
-  // const { colorMode } = useColorMode();
+export type SimpleFormCollectionProps = {
+  text: string;
+};
+
+export const SimpleFormCollection: React.FC<SimpleFormCollectionProps> = (
+  props,
+) => {
   const [email, setEmail] = useState<string>("");
 
   return (
@@ -21,9 +23,7 @@ export const SimpleFormCollection = () => {
       justifyContent="space-between"
       flexDirection={["column", "column", "column", "row"]}
     >
-      <Heading as="h3">
-        Get the monthly dose of web dev and indie hacking
-      </Heading>
+      <Heading as="h3">{props.text}</Heading>
       <Box
         marginTop={[5, 5, 5, 0]}
         display="flex"

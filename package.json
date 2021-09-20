@@ -43,7 +43,7 @@
     "next": "^10.0.4",
     "next-mdx-remote": "^2.0.0",
     "prism-react-renderer": "^1.1.1",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.25.0",
     "react": "^17.0.1",
     "react-accessible-accordion": "^3.0.1",
     "react-adsense": "^0.1.0",
